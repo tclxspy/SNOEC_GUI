@@ -179,7 +179,12 @@ namespace SNOEC_GUI
                 else
                 {
                     buff = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 2);
-                    txp = 10 * (Math.Log10((buff[0] * 256 + buff[1]) * (1E-4)));
+                    int data = buff[0] * 256 + buff[1];
+                    if (data == 0)
+                    {
+                        return Algorithm.MyNaN;
+                    }
+                    txp = 10 * (Math.Log10((data) * (1E-4)));
                 }
                 txp = Math.Round(txp, 4);
                 return txp;
@@ -206,7 +211,12 @@ namespace SNOEC_GUI
                 else
                 {
                     buff = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 2);
-                    rxp = 10 * (Math.Log10((buff[0] * 256 + buff[1]) * (1E-4)));
+                    int data = buff[0] * 256 + buff[1];
+                    if (data == 0)
+                    {
+                        return Algorithm.MyNaN;
+                    }
+                    rxp = 10 * (Math.Log10((data) * (1E-4)));
                 }
                 rxp = Math.Round(rxp, 4);
                 return rxp;

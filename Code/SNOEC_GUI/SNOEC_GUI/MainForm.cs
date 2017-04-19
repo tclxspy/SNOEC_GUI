@@ -107,6 +107,12 @@ namespace SNOEC_GUI
             {
                 this.Read_DMI_ADC();
             }
+
+            if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
+            {
+                this.txtSN.Text = serialNumber;
+                this.txtPN.Text = partNumber;
+            }
         }
 
         private void Read_DMI_ADC()
@@ -144,7 +150,7 @@ namespace SNOEC_GUI
                     MessageBox.Show("disconnect to I2C", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 MessageBox.Show("disconnect to I2C", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
