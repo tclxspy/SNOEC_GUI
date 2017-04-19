@@ -22,7 +22,49 @@ namespace SNOEC_GUI
             InitializeComponent();
 
             this.tabControl1.SelectedIndex = 1;
-            
+
+            this.dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView4.AllowUserToAddRows = false;
+
+            for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
+            {
+                this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
+            }
+
+            for (int i = 0; i < this.dataGridView2.Columns.Count; i++)
+            {
+                this.dataGridView2.Columns[i].Width = this.dataGridView2.Width / this.dataGridView2.Columns.Count;
+            }
+
+            for (int i = 0; i < this.dataGridView3.Columns.Count; i++)
+            {
+                this.dataGridView3.Columns[i].Width = this.dataGridView3.Width / this.dataGridView3.Columns.Count;
+            }
+
+            for (int i = 0; i < this.dataGridView4.Columns.Count; i++)
+            {
+                this.dataGridView4.Columns[i].Width = this.dataGridView4.Width / this.dataGridView4.Columns.Count;
+            }
+            this.dataGridView1.Rows.Add(6);
+            this.dataGridView2.Rows.Add(6);
+            this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView3.Rows.Add(6);
+            this.dataGridView4.Rows.Add(6);
+            this.dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView4.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+
             txts_dmi_TxPower[0] = txtDMI_TxPower_Ch1;
             txts_dmi_TxPower[1] = txtDMI_TxPower_Ch2;
             txts_dmi_TxPower[2] = txtDMI_TxPower_Ch3;
