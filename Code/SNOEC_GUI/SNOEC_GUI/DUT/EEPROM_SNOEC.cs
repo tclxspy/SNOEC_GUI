@@ -228,5 +228,6 @@ namespace SNOEC_GUI
                 return Algorithm.MyNaN;
             }
         }
+
     }
 }

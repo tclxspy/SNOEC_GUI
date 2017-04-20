@@ -77,16 +77,16 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabpageChOnOff = new System.Windows.Forms.TabPage();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRxCh4_Dis = new System.Windows.Forms.Button();
+            this.btnTxCh4_Dis = new System.Windows.Forms.Button();
+            this.btnRxCh3_Dis = new System.Windows.Forms.Button();
+            this.btnTxCh3_Dis = new System.Windows.Forms.Button();
+            this.btnRxCh2_Dis = new System.Windows.Forms.Button();
+            this.btnTxCh2_Dis = new System.Windows.Forms.Button();
+            this.btnRxCh1_Dis = new System.Windows.Forms.Button();
+            this.btnTxCh1_Dis = new System.Windows.Forms.Button();
+            this.btnRxCh1_4_Dis = new System.Windows.Forms.Button();
+            this.btnTxCh1_4_Dis = new System.Windows.Forms.Button();
             this.tabpageDMIADC = new System.Windows.Forms.TabPage();
             this.label51 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
@@ -329,7 +329,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEngMode = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qSFP28SR4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qSFP28CWDM4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -430,6 +433,8 @@
             // 
             // configToolStripMenuItem
             // 
+            this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productsToolStripMenuItem});
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
             this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
             this.configToolStripMenuItem.Text = "Config";
@@ -439,6 +444,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -452,7 +458,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
             this.panel1.Size = new System.Drawing.Size(764, 497);
             this.panel1.TabIndex = 2;
             // 
@@ -483,19 +489,20 @@
             this.tabControl1.Size = new System.Drawing.Size(744, 380);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabpageChOnOff
             // 
-            this.tabpageChOnOff.Controls.Add(this.button10);
-            this.tabpageChOnOff.Controls.Add(this.button5);
-            this.tabpageChOnOff.Controls.Add(this.button9);
-            this.tabpageChOnOff.Controls.Add(this.button4);
-            this.tabpageChOnOff.Controls.Add(this.button8);
-            this.tabpageChOnOff.Controls.Add(this.button3);
-            this.tabpageChOnOff.Controls.Add(this.button7);
-            this.tabpageChOnOff.Controls.Add(this.button2);
-            this.tabpageChOnOff.Controls.Add(this.button6);
-            this.tabpageChOnOff.Controls.Add(this.button1);
+            this.tabpageChOnOff.Controls.Add(this.btnRxCh4_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnTxCh4_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnRxCh3_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnTxCh3_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnRxCh2_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnTxCh2_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnRxCh1_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnTxCh1_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnRxCh1_4_Dis);
+            this.tabpageChOnOff.Controls.Add(this.btnTxCh1_4_Dis);
             this.tabpageChOnOff.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageChOnOff.Location = new System.Drawing.Point(4, 28);
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -506,115 +513,120 @@
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnRxCh4_Dis
             // 
-            this.button10.BackColor = System.Drawing.Color.Lime;
-            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button10.Location = new System.Drawing.Point(581, 185);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(111, 68);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "Rx Ch4";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnRxCh4_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnRxCh4_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnRxCh4_Dis.Location = new System.Drawing.Point(581, 185);
+            this.btnRxCh4_Dis.Name = "btnRxCh4_Dis";
+            this.btnRxCh4_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnRxCh4_Dis.TabIndex = 0;
+            this.btnRxCh4_Dis.Text = "Rx Ch4";
+            this.btnRxCh4_Dis.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnTxCh4_Dis
             // 
-            this.button5.BackColor = System.Drawing.Color.Lime;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button5.Location = new System.Drawing.Point(581, 65);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 68);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Tx Ch4";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnTxCh4_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnTxCh4_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnTxCh4_Dis.Location = new System.Drawing.Point(581, 65);
+            this.btnTxCh4_Dis.Name = "btnTxCh4_Dis";
+            this.btnTxCh4_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnTxCh4_Dis.TabIndex = 0;
+            this.btnTxCh4_Dis.Text = "Tx Ch4";
+            this.btnTxCh4_Dis.UseVisualStyleBackColor = false;
+            this.btnTxCh4_Dis.Click += new System.EventHandler(this.btnTxCh4_Dis_Click);
             // 
-            // button9
+            // btnRxCh3_Dis
             // 
-            this.button9.BackColor = System.Drawing.Color.Lime;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button9.Location = new System.Drawing.Point(442, 185);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(111, 68);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "Rx Ch3";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnRxCh3_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnRxCh3_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnRxCh3_Dis.Location = new System.Drawing.Point(442, 185);
+            this.btnRxCh3_Dis.Name = "btnRxCh3_Dis";
+            this.btnRxCh3_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnRxCh3_Dis.TabIndex = 0;
+            this.btnRxCh3_Dis.Text = "Rx Ch3";
+            this.btnRxCh3_Dis.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnTxCh3_Dis
             // 
-            this.button4.BackColor = System.Drawing.Color.Lime;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button4.Location = new System.Drawing.Point(442, 65);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(111, 68);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Tx Ch3";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnTxCh3_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnTxCh3_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnTxCh3_Dis.Location = new System.Drawing.Point(442, 65);
+            this.btnTxCh3_Dis.Name = "btnTxCh3_Dis";
+            this.btnTxCh3_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnTxCh3_Dis.TabIndex = 0;
+            this.btnTxCh3_Dis.Text = "Tx Ch3";
+            this.btnTxCh3_Dis.UseVisualStyleBackColor = false;
+            this.btnTxCh3_Dis.Click += new System.EventHandler(this.btnTxCh3_Dis_Click);
             // 
-            // button8
+            // btnRxCh2_Dis
             // 
-            this.button8.BackColor = System.Drawing.Color.Lime;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button8.Location = new System.Drawing.Point(299, 185);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(111, 68);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Rx Ch2";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnRxCh2_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnRxCh2_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnRxCh2_Dis.Location = new System.Drawing.Point(299, 185);
+            this.btnRxCh2_Dis.Name = "btnRxCh2_Dis";
+            this.btnRxCh2_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnRxCh2_Dis.TabIndex = 0;
+            this.btnRxCh2_Dis.Text = "Rx Ch2";
+            this.btnRxCh2_Dis.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnTxCh2_Dis
             // 
-            this.button3.BackColor = System.Drawing.Color.Lime;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button3.Location = new System.Drawing.Point(299, 65);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(111, 68);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Tx Ch2";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnTxCh2_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnTxCh2_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnTxCh2_Dis.Location = new System.Drawing.Point(299, 65);
+            this.btnTxCh2_Dis.Name = "btnTxCh2_Dis";
+            this.btnTxCh2_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnTxCh2_Dis.TabIndex = 0;
+            this.btnTxCh2_Dis.Text = "Tx Ch2";
+            this.btnTxCh2_Dis.UseVisualStyleBackColor = false;
+            this.btnTxCh2_Dis.Click += new System.EventHandler(this.btnTxCh2_Dis_Click);
             // 
-            // button7
+            // btnRxCh1_Dis
             // 
-            this.button7.BackColor = System.Drawing.Color.Lime;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button7.Location = new System.Drawing.Point(167, 185);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(111, 68);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Rx Ch1";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnRxCh1_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnRxCh1_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnRxCh1_Dis.Location = new System.Drawing.Point(167, 185);
+            this.btnRxCh1_Dis.Name = "btnRxCh1_Dis";
+            this.btnRxCh1_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnRxCh1_Dis.TabIndex = 0;
+            this.btnRxCh1_Dis.Text = "Rx Ch1";
+            this.btnRxCh1_Dis.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnTxCh1_Dis
             // 
-            this.button2.BackColor = System.Drawing.Color.Lime;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button2.Location = new System.Drawing.Point(167, 65);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 68);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Tx Ch1";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnTxCh1_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnTxCh1_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnTxCh1_Dis.Location = new System.Drawing.Point(167, 65);
+            this.btnTxCh1_Dis.Name = "btnTxCh1_Dis";
+            this.btnTxCh1_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnTxCh1_Dis.TabIndex = 0;
+            this.btnTxCh1_Dis.Text = "Tx Ch1";
+            this.btnTxCh1_Dis.UseVisualStyleBackColor = false;
+            this.btnTxCh1_Dis.Click += new System.EventHandler(this.btnTxCh1_Dis_Click);
             // 
-            // button6
+            // btnRxCh1_4_Dis
             // 
-            this.button6.BackColor = System.Drawing.Color.Lime;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button6.Location = new System.Drawing.Point(30, 185);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(111, 68);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Rx Ch1_Ch4";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnRxCh1_4_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnRxCh1_4_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnRxCh1_4_Dis.Location = new System.Drawing.Point(30, 185);
+            this.btnRxCh1_4_Dis.Name = "btnRxCh1_4_Dis";
+            this.btnRxCh1_4_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnRxCh1_4_Dis.TabIndex = 0;
+            this.btnRxCh1_4_Dis.Text = "Rx Ch1_Ch4";
+            this.btnRxCh1_4_Dis.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnTxCh1_4_Dis
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(30, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 68);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Tx Ch1_Ch4";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnTxCh1_4_Dis.BackColor = System.Drawing.Color.Lime;
+            this.btnTxCh1_4_Dis.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnTxCh1_4_Dis.Location = new System.Drawing.Point(30, 65);
+            this.btnTxCh1_4_Dis.Name = "btnTxCh1_4_Dis";
+            this.btnTxCh1_4_Dis.Size = new System.Drawing.Size(111, 68);
+            this.btnTxCh1_4_Dis.TabIndex = 0;
+            this.btnTxCh1_4_Dis.Text = "Tx Ch1_Ch4";
+            this.btnTxCh1_4_Dis.UseVisualStyleBackColor = false;
+            this.btnTxCh1_4_Dis.Click += new System.EventHandler(this.btnTxCh1_4_Dis_Click);
             // 
             // tabpageDMIADC
             // 
@@ -1627,7 +1639,7 @@
             // chart39
             // 
             this.chart39.BackColor = System.Drawing.Color.Lime;
-            this.chart39.Location = new System.Drawing.Point(296, 281);
+            this.chart39.Location = new System.Drawing.Point(594, 281);
             this.chart39.Name = "chart39";
             series6.Name = "Series1";
             this.chart39.Series.Add(series6);
@@ -1638,7 +1650,7 @@
             // chart31
             // 
             this.chart31.BackColor = System.Drawing.Color.Lime;
-            this.chart31.Location = new System.Drawing.Point(296, 229);
+            this.chart31.Location = new System.Drawing.Point(594, 229);
             this.chart31.Name = "chart31";
             series7.Name = "Series1";
             this.chart31.Series.Add(series7);
@@ -1649,7 +1661,7 @@
             // chart23
             // 
             this.chart23.BackColor = System.Drawing.Color.Lime;
-            this.chart23.Location = new System.Drawing.Point(296, 176);
+            this.chart23.Location = new System.Drawing.Point(594, 176);
             this.chart23.Name = "chart23";
             series8.Name = "Series1";
             this.chart23.Series.Add(series8);
@@ -1660,7 +1672,7 @@
             // chart15
             // 
             this.chart15.BackColor = System.Drawing.Color.Lime;
-            this.chart15.Location = new System.Drawing.Point(296, 123);
+            this.chart15.Location = new System.Drawing.Point(594, 123);
             this.chart15.Name = "chart15";
             series9.Name = "Series1";
             this.chart15.Series.Add(series9);
@@ -1682,7 +1694,7 @@
             // chart38
             // 
             this.chart38.BackColor = System.Drawing.Color.Lime;
-            this.chart38.Location = new System.Drawing.Point(594, 281);
+            this.chart38.Location = new System.Drawing.Point(522, 281);
             this.chart38.Name = "chart38";
             series11.Name = "Series1";
             this.chart38.Series.Add(series11);
@@ -1693,7 +1705,7 @@
             // chart30
             // 
             this.chart30.BackColor = System.Drawing.Color.Lime;
-            this.chart30.Location = new System.Drawing.Point(594, 229);
+            this.chart30.Location = new System.Drawing.Point(522, 229);
             this.chart30.Name = "chart30";
             series12.Name = "Series1";
             this.chart30.Series.Add(series12);
@@ -1704,7 +1716,7 @@
             // chart22
             // 
             this.chart22.BackColor = System.Drawing.Color.Lime;
-            this.chart22.Location = new System.Drawing.Point(594, 176);
+            this.chart22.Location = new System.Drawing.Point(522, 176);
             this.chart22.Name = "chart22";
             series13.Name = "Series1";
             this.chart22.Series.Add(series13);
@@ -1715,7 +1727,7 @@
             // chart14
             // 
             this.chart14.BackColor = System.Drawing.Color.Lime;
-            this.chart14.Location = new System.Drawing.Point(594, 123);
+            this.chart14.Location = new System.Drawing.Point(522, 123);
             this.chart14.Name = "chart14";
             series14.Name = "Series1";
             this.chart14.Series.Add(series14);
@@ -1737,7 +1749,7 @@
             // chart37
             // 
             this.chart37.BackColor = System.Drawing.Color.Lime;
-            this.chart37.Location = new System.Drawing.Point(226, 281);
+            this.chart37.Location = new System.Drawing.Point(441, 281);
             this.chart37.Name = "chart37";
             series16.Name = "Series1";
             this.chart37.Series.Add(series16);
@@ -1748,7 +1760,7 @@
             // chart29
             // 
             this.chart29.BackColor = System.Drawing.Color.Lime;
-            this.chart29.Location = new System.Drawing.Point(226, 229);
+            this.chart29.Location = new System.Drawing.Point(441, 229);
             this.chart29.Name = "chart29";
             series17.Name = "Series1";
             this.chart29.Series.Add(series17);
@@ -1759,7 +1771,7 @@
             // chart21
             // 
             this.chart21.BackColor = System.Drawing.Color.Lime;
-            this.chart21.Location = new System.Drawing.Point(226, 176);
+            this.chart21.Location = new System.Drawing.Point(448, 176);
             this.chart21.Name = "chart21";
             series18.Name = "Series1";
             this.chart21.Series.Add(series18);
@@ -1770,7 +1782,7 @@
             // chart13
             // 
             this.chart13.BackColor = System.Drawing.Color.Lime;
-            this.chart13.Location = new System.Drawing.Point(226, 123);
+            this.chart13.Location = new System.Drawing.Point(448, 123);
             this.chart13.Name = "chart13";
             series19.Name = "Series1";
             this.chart13.Series.Add(series19);
@@ -1792,7 +1804,7 @@
             // chart36
             // 
             this.chart36.BackColor = System.Drawing.Color.Lime;
-            this.chart36.Location = new System.Drawing.Point(522, 281);
+            this.chart36.Location = new System.Drawing.Point(296, 281);
             this.chart36.Name = "chart36";
             series21.Name = "Series1";
             this.chart36.Series.Add(series21);
@@ -1803,7 +1815,7 @@
             // chart28
             // 
             this.chart28.BackColor = System.Drawing.Color.Lime;
-            this.chart28.Location = new System.Drawing.Point(522, 229);
+            this.chart28.Location = new System.Drawing.Point(296, 229);
             this.chart28.Name = "chart28";
             series22.Name = "Series1";
             this.chart28.Series.Add(series22);
@@ -1814,7 +1826,7 @@
             // chart20
             // 
             this.chart20.BackColor = System.Drawing.Color.Lime;
-            this.chart20.Location = new System.Drawing.Point(522, 176);
+            this.chart20.Location = new System.Drawing.Point(296, 176);
             this.chart20.Name = "chart20";
             series23.Name = "Series1";
             this.chart20.Series.Add(series23);
@@ -1825,7 +1837,7 @@
             // chart12
             // 
             this.chart12.BackColor = System.Drawing.Color.Lime;
-            this.chart12.Location = new System.Drawing.Point(522, 123);
+            this.chart12.Location = new System.Drawing.Point(296, 123);
             this.chart12.Name = "chart12";
             series24.Name = "Series1";
             this.chart12.Series.Add(series24);
@@ -1847,7 +1859,7 @@
             // chart35
             // 
             this.chart35.BackColor = System.Drawing.Color.Lime;
-            this.chart35.Location = new System.Drawing.Point(154, 281);
+            this.chart35.Location = new System.Drawing.Point(226, 281);
             this.chart35.Name = "chart35";
             series26.Name = "Series1";
             this.chart35.Series.Add(series26);
@@ -1858,7 +1870,7 @@
             // chart27
             // 
             this.chart27.BackColor = System.Drawing.Color.Lime;
-            this.chart27.Location = new System.Drawing.Point(154, 229);
+            this.chart27.Location = new System.Drawing.Point(226, 229);
             this.chart27.Name = "chart27";
             series27.Name = "Series1";
             this.chart27.Series.Add(series27);
@@ -1869,7 +1881,7 @@
             // chart19
             // 
             this.chart19.BackColor = System.Drawing.Color.Lime;
-            this.chart19.Location = new System.Drawing.Point(154, 176);
+            this.chart19.Location = new System.Drawing.Point(226, 176);
             this.chart19.Name = "chart19";
             series28.Name = "Series1";
             this.chart19.Series.Add(series28);
@@ -1880,7 +1892,7 @@
             // chart11
             // 
             this.chart11.BackColor = System.Drawing.Color.Lime;
-            this.chart11.Location = new System.Drawing.Point(154, 123);
+            this.chart11.Location = new System.Drawing.Point(226, 123);
             this.chart11.Name = "chart11";
             series29.Name = "Series1";
             this.chart11.Series.Add(series29);
@@ -1902,7 +1914,7 @@
             // chart34
             // 
             this.chart34.BackColor = System.Drawing.Color.Lime;
-            this.chart34.Location = new System.Drawing.Point(448, 281);
+            this.chart34.Location = new System.Drawing.Point(154, 281);
             this.chart34.Name = "chart34";
             series31.Name = "Series1";
             this.chart34.Series.Add(series31);
@@ -1913,7 +1925,7 @@
             // chart26
             // 
             this.chart26.BackColor = System.Drawing.Color.Lime;
-            this.chart26.Location = new System.Drawing.Point(448, 229);
+            this.chart26.Location = new System.Drawing.Point(154, 229);
             this.chart26.Name = "chart26";
             series32.Name = "Series1";
             this.chart26.Series.Add(series32);
@@ -1924,7 +1936,7 @@
             // chart18
             // 
             this.chart18.BackColor = System.Drawing.Color.Lime;
-            this.chart18.Location = new System.Drawing.Point(448, 176);
+            this.chart18.Location = new System.Drawing.Point(154, 176);
             this.chart18.Name = "chart18";
             series33.Name = "Series1";
             this.chart18.Series.Add(series33);
@@ -1935,7 +1947,7 @@
             // chart10
             // 
             this.chart10.BackColor = System.Drawing.Color.Lime;
-            this.chart10.Location = new System.Drawing.Point(448, 123);
+            this.chart10.Location = new System.Drawing.Point(154, 123);
             this.chart10.Name = "chart10";
             series34.Name = "Series1";
             this.chart10.Series.Add(series34);
@@ -2937,10 +2949,10 @@
             this.panel3.Controls.Add(this.comboBoxFrequency);
             this.panel3.Controls.Add(this.comboBoxDeviceIndex);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(10, 43);
+            this.panel3.Location = new System.Drawing.Point(10, 38);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(744, 64);
+            this.panel3.Size = new System.Drawing.Size(744, 69);
             this.panel3.TabIndex = 2;
             // 
             // label9
@@ -3109,9 +3121,9 @@
             // 
             this.panel2.Controls.Add(this.btnEngMode);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(10, 10);
+            this.panel2.Location = new System.Drawing.Point(10, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(744, 33);
@@ -3140,19 +3152,44 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "v1.0";
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(247, 3);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "QSFP28 SR4 GUI";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(247, 1);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(204, 29);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "QSFP28 SR4 GUI";
+            // 
+            // productsToolStripMenuItem
+            // 
+            this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.qSFP28SR4ToolStripMenuItem,
+            this.qSFP28CWDM4ToolStripMenuItem});
+            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productsToolStripMenuItem.Text = "Products";
+            // 
+            // qSFP28SR4ToolStripMenuItem
+            // 
+            this.qSFP28SR4ToolStripMenuItem.Checked = true;
+            this.qSFP28SR4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.qSFP28SR4ToolStripMenuItem.Name = "qSFP28SR4ToolStripMenuItem";
+            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28SR4ToolStripMenuItem.Text = "QSFP28 SR4";
+            this.qSFP28SR4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28SR4ToolStripMenuItem_Click);
+            // 
+            // qSFP28CWDM4ToolStripMenuItem
+            // 
+            this.qSFP28CWDM4ToolStripMenuItem.Name = "qSFP28CWDM4ToolStripMenuItem";
+            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
+            this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -3269,7 +3306,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -3513,16 +3550,19 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart25;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart17;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnTxCh1_4_Dis;
+        private System.Windows.Forms.Button btnRxCh4_Dis;
+        private System.Windows.Forms.Button btnTxCh4_Dis;
+        private System.Windows.Forms.Button btnRxCh3_Dis;
+        private System.Windows.Forms.Button btnTxCh3_Dis;
+        private System.Windows.Forms.Button btnRxCh2_Dis;
+        private System.Windows.Forms.Button btnTxCh2_Dis;
+        private System.Windows.Forms.Button btnRxCh1_Dis;
+        private System.Windows.Forms.Button btnTxCh1_Dis;
+        private System.Windows.Forms.Button btnRxCh1_4_Dis;
+        private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qSFP28SR4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem qSFP28CWDM4ToolStripMenuItem;
     }
 }
 
