@@ -10,7 +10,7 @@ namespace SNOEC_GUI
     {
         private static int DUT_USB_Port = 0;
         private static object syncRoot = new Object();//used for thread synchronization
-        private const IOPort.SoftHard softHard = IOPort.SoftHard.OnEasyB_I2C;
+        public static IOPort.SoftHard softHard = IOPort.SoftHard.OnEasyB_I2C;
 
         public QSFP28_SNOEC(int deviceIndex)
         {
@@ -19,12 +19,29 @@ namespace SNOEC_GUI
 
         private QSFP28_SNOEC() { }
 
+        private static void EnterEngMode(int page)
+        {
+
+        }
+
+        public static byte[] WriteReg(int deviceIndex, int deviceAddress, int page, int regAddress, byte[] dataToWrite)
+        {
+            EnterEngMode(page);
+            return IOPort.WriteReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite);
+        }
+
+        public static byte[] ReadReg(int deviceIndex, int deviceAddress, int page, int regAddress, int length)
+        {
+            EnterEngMode(page);
+            return IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, length);
+        }
+
         public string ReadSN()
         {
             lock (syncRoot)
             {
                 string SN = "";
-                //EnterEngMode(0);
+                EnterEngMode(0);
                 SN = EEPROM_SNOEC.ReadSn(DUT_USB_Port, 0xA0, 196);
                 return SN.Trim();
             }
@@ -33,7 +50,7 @@ namespace SNOEC_GUI
         public string ReadPn()
         {
             string pn = "";
-            //Engmod(0);
+            EnterEngMode(0);
             pn = EEPROM_SNOEC.ReadPn(DUT_USB_Port, 0xA0, 168);
             return pn.Trim();
         }
@@ -168,22 +185,22 @@ namespace SNOEC_GUI
                         case 1:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x01);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         case 2:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x02);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         case 3:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x04);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         case 4:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x08);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         default:
                             break;
@@ -206,7 +223,7 @@ namespace SNOEC_GUI
                 byte[] dataReadArray;
                 for (int i = 0; i < 3; i++)
                 {
-                    IOPort.WrtieReg(DUT_USB_Port, 0xA0, 86, softHard, dataToWrite);
+                    IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, dataToWrite);
                     dataReadArray = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                     if (dataReadArray[0] == 0xFF)
                     {
@@ -229,22 +246,22 @@ namespace SNOEC_GUI
                         case 1:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0xFE);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         case 2:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0xFD);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         case 3:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0xFB);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         case 4:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0xF7);
-                            IOPort.WrtieReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
                             break;
                         default:
                             break;
@@ -267,7 +284,7 @@ namespace SNOEC_GUI
                 byte[] dataReadArray;
                 for (int i = 0; i < 3; i++)
                 {
-                    IOPort.WrtieReg(DUT_USB_Port, 0xA0, 86, softHard, dataToWrite);
+                    IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, dataToWrite);
                     dataReadArray = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                     if (dataReadArray[0] == 0x00)
                     {

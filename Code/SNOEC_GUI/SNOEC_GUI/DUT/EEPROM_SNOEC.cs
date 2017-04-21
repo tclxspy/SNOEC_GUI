@@ -8,9 +8,9 @@ namespace SNOEC_GUI
 {
     public class EEPROM_SNOEC
     {
-        private EEPROM_SNOEC() { }//make sure it will not be instantiated
+        private static IOPort.SoftHard softHard = QSFP28_SNOEC.softHard;
 
-        private const IOPort.SoftHard softHard = IOPort.SoftHard.OnEasyB_I2C;
+        private EEPROM_SNOEC() { }//make sure it will not be instantiated        
 
         public static string ReadSn(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
         {

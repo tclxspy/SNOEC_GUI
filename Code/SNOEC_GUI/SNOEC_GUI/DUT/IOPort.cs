@@ -350,7 +350,7 @@ namespace SNOEC_GUI
             (CFKType)0, new byte[readLength]);
         }
 
-        public static byte[] WrtieReg(int deviceIndex, int deviceAddress, int regAddress, SoftHard softHard, byte[] dataToWrite)
+        public static byte[] WriteReg(int deviceIndex, int deviceAddress, int regAddress, SoftHard softHard, byte[] dataToWrite)
         {
             if (softHard == SoftHard.OnEasyB_I2C)
             {
