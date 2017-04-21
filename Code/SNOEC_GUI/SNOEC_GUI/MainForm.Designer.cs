@@ -72,6 +72,9 @@
             this.btnReadWrite = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.configToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qSFP28SR4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.qSFP28CWDM4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -313,26 +316,23 @@
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
+            this.numericUpDownBytes = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownRegAddress = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPage = new System.Windows.Forms.NumericUpDown();
+            this.domainUpDownDeviceAddress = new System.Windows.Forms.DomainUpDown();
             this.comboBoxFrequency = new System.Windows.Forms.ComboBox();
             this.comboBoxDeviceIndex = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEngMode = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.qSFP28SR4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.qSFP28CWDM4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -400,9 +400,9 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -438,6 +438,31 @@
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
             this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
             this.configToolStripMenuItem.Text = "Config";
+            // 
+            // productsToolStripMenuItem
+            // 
+            this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.qSFP28SR4ToolStripMenuItem,
+            this.qSFP28CWDM4ToolStripMenuItem});
+            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.productsToolStripMenuItem.Text = "Products";
+            // 
+            // qSFP28SR4ToolStripMenuItem
+            // 
+            this.qSFP28SR4ToolStripMenuItem.Checked = true;
+            this.qSFP28SR4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.qSFP28SR4ToolStripMenuItem.Name = "qSFP28SR4ToolStripMenuItem";
+            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28SR4ToolStripMenuItem.Text = "QSFP28 SR4";
+            this.qSFP28SR4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28SR4ToolStripMenuItem_Click);
+            // 
+            // qSFP28CWDM4ToolStripMenuItem
+            // 
+            this.qSFP28CWDM4ToolStripMenuItem.Name = "qSFP28CWDM4ToolStripMenuItem";
+            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
+            this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -2181,6 +2206,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2349,6 +2376,8 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.ColumnHeadersVisible = false;
@@ -2595,6 +2624,8 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
             this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2622,6 +2653,7 @@
             this.dataGridView4.RowHeadersWidth = 50;
             this.dataGridView4.Size = new System.Drawing.Size(722, 146);
             this.dataGridView4.TabIndex = 0;
+            this.dataGridView4.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellEndEdit);
             // 
             // dataGridViewTextBoxColumn33
             // 
@@ -2774,6 +2806,8 @@
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToResizeColumns = false;
+            this.dataGridView3.AllowUserToResizeRows = false;
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.ColumnHeadersVisible = false;
@@ -2935,17 +2969,17 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.btnReadWrite);
-            this.panel3.Controls.Add(this.comboBox3);
+            this.panel3.Controls.Add(this.comboBoxSoftHard);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.numericUpDown3);
-            this.panel3.Controls.Add(this.numericUpDown2);
-            this.panel3.Controls.Add(this.numericUpDown1);
-            this.panel3.Controls.Add(this.domainUpDown1);
+            this.panel3.Controls.Add(this.numericUpDownBytes);
+            this.panel3.Controls.Add(this.numericUpDownRegAddress);
+            this.panel3.Controls.Add(this.numericUpDownPage);
+            this.panel3.Controls.Add(this.domainUpDownDeviceAddress);
             this.panel3.Controls.Add(this.comboBoxFrequency);
             this.panel3.Controls.Add(this.comboBoxDeviceIndex);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -2965,22 +2999,22 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Hard/Soft";
             // 
-            // comboBox3
+            // comboBoxSoftHard
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSoftHard.FormattingEnabled = true;
+            this.comboBoxSoftHard.Items.AddRange(new object[] {
             "OnEasyB_I2C",
             "HARDWARE_SEQUENT",
             "SOFTWARE_SEQUENT",
             "HARDWARE_SINGLE",
             "SOFTWARE_SINGLE"});
-            this.comboBox3.Location = new System.Drawing.Point(109, 27);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(162, 25);
-            this.comboBox3.TabIndex = 9;
-            this.comboBox3.Text = "OnEasyB_I2C";
+            this.comboBoxSoftHard.Location = new System.Drawing.Point(109, 27);
+            this.comboBoxSoftHard.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxSoftHard.Name = "comboBoxSoftHard";
+            this.comboBoxSoftHard.Size = new System.Drawing.Size(162, 25);
+            this.comboBoxSoftHard.TabIndex = 9;
+            this.comboBoxSoftHard.Text = "OnEasyB_I2C";
             // 
             // label8
             // 
@@ -3042,47 +3076,50 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Device Index";
             // 
-            // numericUpDown3
+            // numericUpDownBytes
             // 
-            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDown3.Location = new System.Drawing.Point(573, 28);
-            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(45, 23);
-            this.numericUpDown3.TabIndex = 7;
+            this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
+            this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownBytes.Name = "numericUpDownBytes";
+            this.numericUpDownBytes.Size = new System.Drawing.Size(45, 23);
+            this.numericUpDownBytes.TabIndex = 7;
             // 
-            // numericUpDown2
+            // numericUpDownRegAddress
             // 
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDown2.Location = new System.Drawing.Point(504, 28);
-            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
+            this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
             65535,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDown2.TabIndex = 6;
+            this.numericUpDownRegAddress.Name = "numericUpDownRegAddress";
+            this.numericUpDownRegAddress.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownRegAddress.TabIndex = 6;
             // 
-            // numericUpDown1
+            // numericUpDownPage
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDown1.Location = new System.Drawing.Point(444, 28);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(50, 23);
-            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownPage.Location = new System.Drawing.Point(444, 28);
+            this.numericUpDownPage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownPage.Name = "numericUpDownPage";
+            this.numericUpDownPage.Size = new System.Drawing.Size(50, 23);
+            this.numericUpDownPage.TabIndex = 5;
             // 
-            // domainUpDown1
+            // domainUpDownDeviceAddress
             // 
-            this.domainUpDown1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.domainUpDown1.Location = new System.Drawing.Point(358, 28);
-            this.domainUpDown1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.domainUpDown1.Name = "domainUpDown1";
-            this.domainUpDown1.Size = new System.Drawing.Size(76, 23);
-            this.domainUpDown1.TabIndex = 2;
-            this.domainUpDown1.Text = "0xA0";
+            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.domainUpDownDeviceAddress.Items.Add("0xA0");
+            this.domainUpDownDeviceAddress.Items.Add("0xA2");
+            this.domainUpDownDeviceAddress.Items.Add("0xA8");
+            this.domainUpDownDeviceAddress.Location = new System.Drawing.Point(358, 28);
+            this.domainUpDownDeviceAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.domainUpDownDeviceAddress.Name = "domainUpDownDeviceAddress";
+            this.domainUpDownDeviceAddress.Size = new System.Drawing.Size(76, 23);
+            this.domainUpDownDeviceAddress.TabIndex = 2;
+            this.domainUpDownDeviceAddress.Text = "0xA0";
             // 
             // comboBoxFrequency
             // 
@@ -3165,31 +3202,6 @@
             this.labelTitle.Size = new System.Drawing.Size(204, 29);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 SR4 GUI";
-            // 
-            // productsToolStripMenuItem
-            // 
-            this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.qSFP28SR4ToolStripMenuItem,
-            this.qSFP28CWDM4ToolStripMenuItem});
-            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.productsToolStripMenuItem.Text = "Products";
-            // 
-            // qSFP28SR4ToolStripMenuItem
-            // 
-            this.qSFP28SR4ToolStripMenuItem.Checked = true;
-            this.qSFP28SR4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.qSFP28SR4ToolStripMenuItem.Name = "qSFP28SR4ToolStripMenuItem";
-            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.qSFP28SR4ToolStripMenuItem.Text = "QSFP28 SR4";
-            this.qSFP28SR4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28SR4ToolStripMenuItem_Click);
-            // 
-            // qSFP28CWDM4ToolStripMenuItem
-            // 
-            this.qSFP28CWDM4ToolStripMenuItem.Name = "qSFP28CWDM4ToolStripMenuItem";
-            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
-            this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -3287,9 +3299,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -3314,13 +3326,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.DomainUpDown domainUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDownBytes;
+        private System.Windows.Forms.NumericUpDown numericUpDownRegAddress;
+        private System.Windows.Forms.NumericUpDown numericUpDownPage;
+        private System.Windows.Forms.DomainUpDown domainUpDownDeviceAddress;
         private System.Windows.Forms.ComboBox comboBoxFrequency;
         private System.Windows.Forms.ComboBox comboBoxDeviceIndex;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxSoftHard;
         private System.Windows.Forms.Button btnEngMode;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel4;

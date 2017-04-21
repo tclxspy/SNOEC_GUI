@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Text.RegularExpressions;
 
 namespace SNOEC_GUI
 {
@@ -146,24 +147,50 @@ namespace SNOEC_GUI
             try
             {
                 IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
+                switch (this.comboBoxSoftHard.Text)
+                {
+                    case "HARDWARE_SEQUENT":
+                        QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
+                        break;
+
+                    case "SOFTWARE_SEQUENT":
+                        QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SEQUENT;
+                        break;
+
+                    case "HARDWARE_SINGLE":
+                        QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SINGLE;
+                        break;
+
+                    case "SOFTWARE_SINGLE":
+                        QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SINGLE;
+                        break;
+
+                    case "OnEasyB_I2C":
+                        QSFP28_SNOEC.softHard = IOPort.SoftHard.OnEasyB_I2C;
+                        break;
+
+                    default:
+                        QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
+                        break;
+                }
+
                 dut = new QSFP28_SNOEC(this.comboBoxDeviceIndex.SelectedIndex);
-                string partNumber = dut.ReadPn();
-                string serialNumber = dut.ReadSN();
-
-                if (this.tabControl1.SelectedTab.ToString().Contains("DMI/ADC"))
-                {
-                    this.Read_DMI_ADC();
-                }
-
-                if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
-                {
-                    this.txtSN.Text = serialNumber;
-                    this.txtPN.Text = partNumber;
-                }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Ch On/Off"))
                 {
                     this.ChOnOff();
+                }
+
+                if (this.tabControl1.SelectedTab.ToString().Contains("DMI/ADC"))
+                {
+                    this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
+                    this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
+                    for (int i = 0; i < txts_dmi_TxBias.Length; i++)
+                    {
+                        txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
+                        txts_dmi_TxPower[i].Text = dut.ReadDmiTxP(i + 1).ToString();
+                        txts_dmi_RxPower[i].Text = dut.ReadDmiRxP(i + 1).ToString();
+                    }
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Alarm/Warning"))
@@ -182,26 +209,83 @@ namespace SNOEC_GUI
                     this.chart33.BackColor = this.chart34.BackColor = this.chart35.BackColor = this.chart36.BackColor = this.GetColor(dut.GetInteTempAlarm());
                     this.chart37.BackColor = this.chart38.BackColor = this.chart39.BackColor = this.chart40.BackColor = this.GetColor(dut.GetInteTempWarning());
                 }
-            }
-            catch
-            {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
-        private void Read_DMI_ADC()
-        {
-            try
-            {
-                this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
-                this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
-                for (int i = 0; i < txts_dmi_TxBias.Length; i++)
+                int deviceAddress = 0xA0;
+                switch (this.domainUpDownDeviceAddress.Text)
                 {
-                    txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
-                    txts_dmi_TxPower[i].Text = dut.ReadDmiTxP(i + 1).ToString();
-                    txts_dmi_RxPower[i].Text = dut.ReadDmiRxP(i + 1).ToString();
+                    case "0xA0":
+                        deviceAddress = 0xA0;
+                        break;
+
+                    case "0xA2":
+                        deviceAddress = 0xA2;
+                        break;
+
+                    case "0xA8":
+                        deviceAddress = 0xA8;
+                        break;
+
+                    default:
+                        deviceAddress = 0xA0;
+                        break;
                 }
 
+                if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
+                {
+                    this.txtSN.Text = dut.ReadSN(); 
+                    this.txtPN.Text = dut.ReadPn();
+
+                    //byte[] buff = QSFP28_SNOEC.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
+                    //if (buff == null)
+                    //{
+                    //    return;
+                    //}
+
+                    byte[] buff = new byte[4] { 0x32, 0x45, 0x31, 0x00 };
+                    for (int i = 0; i < buff.Length; i++)
+                    {
+                        this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
+                        this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = Convert.ToChar(buff[i]);
+                    }
+                }
+
+                if (this.tabControl1.SelectedTab.ToString().Contains("I2C Write"))
+                {
+                    byte[] writeData = new byte[(int)this.numericUpDownBytes.Value];
+                    if (writeData.Length == 0)
+                    {
+                        return;
+                    }
+
+                    try
+                    {
+                        for (int i = 0; i < writeData.Length; i++)
+                        {
+                            object ob = this.dataGridView4.Rows[i / 16].Cells[i % 16].Value;
+                            if (ob == null)
+                            {
+                                return;
+                            }
+                            writeData[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    byte[] buff = QSFP28_SNOEC.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, writeData);
+                    if (buff == null)
+                    {
+                        return;
+                    }
+
+                    for (int i = 0; i < buff.Length; i++)
+                    {
+                        this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
+                    }
+                }
             }
             catch
             {
@@ -489,6 +573,22 @@ namespace SNOEC_GUI
         {
             HelpForm helpFrom = new HelpForm();
             helpFrom.ShowDialog();
+        }
+
+        private void dataGridView4_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var content = this.dataGridView4.CurrentCell.Value;
+            if (content == null)
+            {
+                return;
+            }
+
+            Regex reg = new Regex(@"^[0-9a-fA-F]{1,2}$");
+            if(!reg.IsMatch((string)content))
+            {
+                this.dataGridView4.CurrentCell.Value = null;
+                MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
