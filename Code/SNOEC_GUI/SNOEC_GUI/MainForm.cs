@@ -235,13 +235,13 @@ namespace SNOEC_GUI
                     this.txtSN.Text = dut.ReadSN(); 
                     this.txtPN.Text = dut.ReadPn();
 
-                    //byte[] buff = QSFP28_SNOEC.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
-                    //if (buff == null)
-                    //{
-                    //    return;
-                    //}
+                    byte[] buff = QSFP28_SNOEC.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
+                    if (buff == null)
+                    {
+                        return;
+                    }
 
-                    byte[] buff = new byte[4] { 0x32, 0x45, 0x31, 0x00 };
+
                     for (int i = 0; i < buff.Length; i++)
                     {
                         this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
@@ -335,9 +335,9 @@ namespace SNOEC_GUI
                     MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Disconnect to I2C", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
