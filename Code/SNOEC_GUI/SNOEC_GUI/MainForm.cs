@@ -19,6 +19,8 @@ namespace SNOEC_GUI
         private TextBox[] txts_dmi_TxBias = new TextBox[4];
         private TextBox[] txts_dmi_RxPower = new TextBox[4];
         private Chart[,] chart = new Chart[5, 8];
+        private const int maxCells = 16 * 6;
+        private QSFP28_SNOEC.Company whichcompany = QSFP28_SNOEC.Company.SNOEC;
 
         public MainForm()
         {
@@ -174,7 +176,7 @@ namespace SNOEC_GUI
                         break;
                 }
 
-                dut = new QSFP28_SNOEC(this.comboBoxDeviceIndex.SelectedIndex);
+                dut = new QSFP28_SNOEC(this.comboBoxDeviceIndex.SelectedIndex, whichcompany);
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Ch On/Off"))
                 {
@@ -185,6 +187,7 @@ namespace SNOEC_GUI
                 {
                     this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
                     this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
+                    this.txtFW_Version.Text = dut.ReadFWRev();
                     for (int i = 0; i < txts_dmi_TxBias.Length; i++)
                     {
                         txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
@@ -232,17 +235,26 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
                 {
+                    //clear cells
+                    for (int i = 0; i < maxCells; i++)
+                    {
+                        this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = null;
+                        this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = null;
+                    }
+
                     this.txtSN.Text = dut.ReadSN(); 
                     this.txtPN.Text = dut.ReadPn();
+                    this.txtFW.Text = dut.ReadFWRev();
 
-                    byte[] buff = QSFP28_SNOEC.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
+                    byte[] buff = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
                     if (buff == null)
                     {
                         return;
                     }
 
+                    int length = Math.Min(maxCells, buff.Length);
 
-                    for (int i = 0; i < buff.Length; i++)
+                    for (int i = 0; i < length; i++)
                     {
                         this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
                         this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = Convert.ToChar(buff[i]);
@@ -275,10 +287,16 @@ namespace SNOEC_GUI
                         return;
                     }
 
-                    byte[] buff = QSFP28_SNOEC.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, writeData);
+                    byte[] buff = dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, writeData);
                     if (buff == null)
                     {
                         return;
+                    }
+
+                    //clear cells
+                    for (int i = 0; i < maxCells; i++)
+                    {
+                        this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = null;
                     }
 
                     for (int i = 0; i < buff.Length; i++)
@@ -370,6 +388,10 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh1_4_Dis.BackColor = Color.Gray;
+                    btnTxCh1_Dis.BackColor = Color.Gray;
+                    btnTxCh2_Dis.BackColor = Color.Gray;
+                    btnTxCh3_Dis.BackColor = Color.Gray;
+                    btnTxCh4_Dis.BackColor = Color.Gray;
                 }
                 else
                 {
@@ -378,6 +400,10 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh1_4_Dis.BackColor = Color.Lime;
+                    btnTxCh1_Dis.BackColor = Color.Lime;
+                    btnTxCh2_Dis.BackColor = Color.Lime;
+                    btnTxCh3_Dis.BackColor = Color.Lime;
+                    btnTxCh4_Dis.BackColor = Color.Lime;
                 }
             }
             catch
@@ -397,6 +423,7 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh1_Dis.BackColor = Color.Gray;
+                    btnTxCh1_4_Dis.BackColor = Color.Gray;
                 }
                 else
                 {
@@ -405,6 +432,10 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh1_Dis.BackColor = Color.Lime;
+                    if ((btnTxCh1_Dis.BackColor == Color.Lime) && (btnTxCh2_Dis.BackColor == Color.Lime) && (btnTxCh3_Dis.BackColor == Color.Lime) && (btnTxCh4_Dis.BackColor == Color.Lime))
+                    {
+                        btnTxCh1_4_Dis.BackColor = Color.Lime;
+                    }
                 }
             }
             catch
@@ -424,6 +455,7 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh2_Dis.BackColor = Color.Gray;
+                    btnTxCh1_4_Dis.BackColor = Color.Gray;
                 }
                 else
                 {
@@ -432,6 +464,10 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh2_Dis.BackColor = Color.Lime;
+                    if ((btnTxCh1_Dis.BackColor == Color.Lime) && (btnTxCh2_Dis.BackColor == Color.Lime) && (btnTxCh3_Dis.BackColor == Color.Lime) && (btnTxCh4_Dis.BackColor == Color.Lime))
+                    {
+                        btnTxCh1_4_Dis.BackColor = Color.Lime;
+                    }
                 }
             }
             catch
@@ -451,6 +487,7 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh3_Dis.BackColor = Color.Gray;
+                    btnTxCh1_4_Dis.BackColor = Color.Gray;
                 }
                 else
                 {
@@ -459,6 +496,10 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh3_Dis.BackColor = Color.Lime;
+                    if ((btnTxCh1_Dis.BackColor == Color.Lime) && (btnTxCh2_Dis.BackColor == Color.Lime) && (btnTxCh3_Dis.BackColor == Color.Lime) && (btnTxCh4_Dis.BackColor == Color.Lime))
+                    {
+                        btnTxCh1_4_Dis.BackColor = Color.Lime;
+                    }
                 }
             }
             catch
@@ -478,6 +519,7 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh4_Dis.BackColor = Color.Gray;
+                    btnTxCh1_4_Dis.BackColor = Color.Gray;
                 }
                 else
                 {
@@ -486,6 +528,10 @@ namespace SNOEC_GUI
                         throw new Exception();
                     }
                     btnTxCh4_Dis.BackColor = Color.Lime;
+                    if ((btnTxCh1_Dis.BackColor == Color.Lime) && (btnTxCh2_Dis.BackColor == Color.Lime) && (btnTxCh3_Dis.BackColor == Color.Lime) && (btnTxCh4_Dis.BackColor == Color.Lime))
+                    {
+                        btnTxCh1_4_Dis.BackColor = Color.Lime;
+                    }
                 }
             }
             catch
@@ -526,7 +572,7 @@ namespace SNOEC_GUI
                 btns[9] = this.btnRxCh4_Dis;
 
                 IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
-                dut = new QSFP28_SNOEC(this.comboBoxDeviceIndex.SelectedIndex);
+                dut = new QSFP28_SNOEC(this.comboBoxDeviceIndex.SelectedIndex, whichcompany);
                 byte[] buff = dut.GetTxChEnStatus();
 
                 if ((buff[0] & 0x0F) == 0x0F)
@@ -536,16 +582,17 @@ namespace SNOEC_GUI
                 else
                 {
                     btns[0].BackColor = Color.Lime;
-                    for (int i = 0; i < 4; i++)
+                }
+
+                for (int i = 0; i < 4; i++)
+                {
+                    if (((buff[0] >> i) & 1) == 1)
                     {
-                        if (((buff[0] >> i) & 1) == 1)
-                        {
-                            btns[i + 1].BackColor = Color.Gray;
-                        }
-                        else
-                        {
-                            btns[i + 1].BackColor = Color.Lime;
-                        }
+                        btns[i + 1].BackColor = Color.Gray;
+                    }
+                    else
+                    {
+                        btns[i + 1].BackColor = Color.Lime;
                     }
                 }
             }
@@ -589,6 +636,30 @@ namespace SNOEC_GUI
                 this.dataGridView4.CurrentCell.Value = null;
                 MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void innoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            whichcompany = QSFP28_SNOEC.Company.Inno;
+            this.innoToolStripMenuItem.Checked = true;
+            this.fNRToolStripMenuItem.Checked = false;
+            this.sNOECToolStripMenuItem.Checked = false;
+        }
+
+        private void sNOECToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            whichcompany = QSFP28_SNOEC.Company.SNOEC;
+            this.innoToolStripMenuItem.Checked = false;
+            this.fNRToolStripMenuItem.Checked = false;
+            this.sNOECToolStripMenuItem.Checked = true;
+        }
+
+        private void fNRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            whichcompany = QSFP28_SNOEC.Company.FNR;
+            this.innoToolStripMenuItem.Checked = false;
+            this.fNRToolStripMenuItem.Checked = true;
+            this.sNOECToolStripMenuItem.Checked = false;
         }
     }
 }

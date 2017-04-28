@@ -166,7 +166,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtFW_Version = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -333,6 +333,10 @@
             this.btnEngMode = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sNOECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.innoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fNRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -434,7 +438,8 @@
             // configToolStripMenuItem
             // 
             this.configToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productsToolStripMenuItem});
+            this.productsToolStripMenuItem,
+            this.companyToolStripMenuItem});
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
             this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
             this.configToolStripMenuItem.Text = "Config";
@@ -445,7 +450,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -1427,7 +1432,7 @@
             this.panel6.Controls.Add(this.label17);
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.textBox7);
-            this.panel6.Controls.Add(this.textBox8);
+            this.panel6.Controls.Add(this.txtFW_Version);
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.label21);
             this.panel6.Controls.Add(this.label22);
@@ -1466,14 +1471,14 @@
             this.textBox7.TabIndex = 0;
             this.textBox7.Text = "NaN";
             // 
-            // textBox8
+            // txtFW_Version
             // 
-            this.textBox8.Location = new System.Drawing.Point(11, 22);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(80, 22);
-            this.textBox8.TabIndex = 0;
-            this.textBox8.Text = "NaN";
+            this.txtFW_Version.Location = new System.Drawing.Point(11, 22);
+            this.txtFW_Version.Name = "txtFW_Version";
+            this.txtFW_Version.ReadOnly = true;
+            this.txtFW_Version.Size = new System.Drawing.Size(80, 22);
+            this.txtFW_Version.TabIndex = 0;
+            this.txtFW_Version.Text = "NaN";
             // 
             // label20
             // 
@@ -3203,6 +3208,39 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 SR4 GUI";
             // 
+            // companyToolStripMenuItem
+            // 
+            this.companyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sNOECToolStripMenuItem,
+            this.innoToolStripMenuItem,
+            this.fNRToolStripMenuItem});
+            this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.companyToolStripMenuItem.Text = "Company";
+            // 
+            // sNOECToolStripMenuItem
+            // 
+            this.sNOECToolStripMenuItem.Checked = true;
+            this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sNOECToolStripMenuItem.Text = "SNOEC";
+            this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
+            // 
+            // innoToolStripMenuItem
+            // 
+            this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.innoToolStripMenuItem.Text = "Inno";
+            this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
+            // 
+            // fNRToolStripMenuItem
+            // 
+            this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fNRToolStripMenuItem.Text = "FNR";
+            this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -3347,7 +3385,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtFW_Version;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -3575,6 +3613,10 @@
         private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qSFP28SR4ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem qSFP28CWDM4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem companyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sNOECToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem innoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fNRToolStripMenuItem;
     }
 }
 

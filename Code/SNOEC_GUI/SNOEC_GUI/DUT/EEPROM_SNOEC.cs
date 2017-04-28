@@ -71,6 +71,35 @@ namespace SNOEC_GUI
             }
         }
 
+        public static string ReadFWRev(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
+        {
+            byte[] buff = new byte[2];
+            string fwrev = "ff";
+            UInt16[] buff1 = new UInt16[1];
+            try
+            {
+                if (mdiomode == 1)
+                {
+                    buff1 = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 2);
+                    buff[0] = (byte)(buff1[0]);
+                    buff[1] = (byte)(buff1[1]);
+                }
+                else
+                {
+
+                    buff = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 2);
+
+                }
+                fwrev = Convert.ToString((buff[0] * 256 + buff[1]), 16);
+                return fwrev.Trim();
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN.ToString();
+            }
+        }
+
         public static double readdmitemp(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
         {
             byte[] buff = new byte[2];

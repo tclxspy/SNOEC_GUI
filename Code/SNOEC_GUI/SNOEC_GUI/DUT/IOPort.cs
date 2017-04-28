@@ -354,14 +354,11 @@ namespace SNOEC_GUI
         {
             if (softHard == SoftHard.OnEasyB_I2C)
             {
+                OnEasyB_I2C.USBIO_OpenDeviceByNumber(OnEasyB_I2C.serialNumber);
                 OnEasyB_I2C.USBIO_I2cSetConfig((byte)deviceIndex, (byte)deviceAddress, Frequency, tmptime);
 
-                byte[] cmd = BitConverter.GetBytes(regAddress);
-                bool result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)cmd.Length, dataToWrite, (ushort)dataToWrite.Length);
-                if (result == false)
-                {
-                    return null;
-                }
+                byte[] cmd = BitConverter.GetBytes((byte)regAddress);
+                bool result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length/2), dataToWrite, (ushort)dataToWrite.Length);
                 return ReadReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite.Length);
             }
             return ReadWriteReg(deviceIndex, deviceAddress, regAddress, false, softHard, ReadWrite.Write,
