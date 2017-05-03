@@ -40,6 +40,16 @@ namespace SNOEC_GUI
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }
+            else
+            {
+                byte[] buff = new byte[5];
+                buff[0] = 0x00;
+                buff[1] = 0x00;
+                buff[2] = 0x10;
+                buff[3] = 0x11;
+                buff[4] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+            }
         }
 
         public byte[] WriteReg(int deviceIndex, int deviceAddress, int page, int regAddress, byte[] dataToWrite)
@@ -86,6 +96,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
+                EnterEngMode(0);
                 return EEPROM_SNOEC.readdmitemp(DUT_USB_Port, 0xA0, 22);
             }
         }
@@ -94,6 +105,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
+                EnterEngMode(0);
                 return EEPROM_SNOEC.readdmivcc(DUT_USB_Port, 0xA0, 26);
             }
         }
@@ -104,6 +116,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
+                    EnterEngMode(0);
                     double dmibias = 0.0;
                     switch (channel)
                     {
@@ -138,6 +151,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
+                    EnterEngMode(0);
                     double dmitxp = 0.0;
                     switch (channel)
                     {
@@ -172,6 +186,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
+                    EnterEngMode(0);
                     double dmirxp = 0.0;
                     switch (channel)
                     {
@@ -207,6 +222,7 @@ namespace SNOEC_GUI
                 byte[] buff = new byte[1];
                 try
                 {
+                    EnterEngMode(0);
                     switch (channel)
                     {
                         case 1:
@@ -246,6 +262,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
+                EnterEngMode(0);
                 byte[] dataToWrite = { 0xFF };
                 byte[] dataReadArray;
                 for (int i = 0; i < 3; i++)
@@ -265,6 +282,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
+                EnterEngMode(0);
                 byte[] buff = new byte[1];
                 try
                 {
@@ -307,6 +325,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
+                EnterEngMode(0);
                 byte[] dataToWrite = { 0x00 };
                 byte[] dataReadArray;
                 for (int i = 0; i < 3; i++)
@@ -328,7 +347,8 @@ namespace SNOEC_GUI
             {
                 byte[] buff = new byte[1];
                 try
-                {                  
+                {
+                    EnterEngMode(0);
                     buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                     return buff;
                 }
@@ -345,6 +365,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(0, 0xA0, 6, softHard, 1);
                 if (buff == null)
                 {
@@ -363,7 +384,8 @@ namespace SNOEC_GUI
         public int GetInteTempWarning()
         {
             try
-            { 
+            {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(0, 0xA0, 6, softHard, 1);
                 if (buff == null)
                 {
@@ -383,6 +405,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(0, 0xA0, 7, softHard, 1);
                 if (buff == null)
                 {
@@ -402,6 +425,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(0, 0xA0, 7, softHard, 1);
                 if (buff == null)
                 {
@@ -420,7 +444,8 @@ namespace SNOEC_GUI
         public int GetInteRxPowerAlarm(int channel)
         {
             try
-            {               
+            {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 9, softHard, 2);
                 if (buff == null)
                 {
@@ -457,6 +482,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 9, softHard, 2);
                 if (buff == null)
                 {
@@ -493,6 +519,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 13, softHard, 2);
                 if (buff == null)
                 {
@@ -529,6 +556,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 13, softHard, 2);
                 if (buff == null)
                 {
@@ -565,6 +593,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 11, softHard, 2);
                 if (buff == null)
                 {
@@ -601,6 +630,7 @@ namespace SNOEC_GUI
         {
             try
             {
+                EnterEngMode(0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 11, softHard, 2);
                 if (buff == null)
                 {
