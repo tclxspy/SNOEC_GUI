@@ -332,14 +332,17 @@ namespace SNOEC_GUI
         {
             if(softHard == SoftHard.OnEasyB_I2C)
             {
+                Thread.Sleep(30);
                 OnEasyB_I2C.USBIO_OpenDeviceByNumber(OnEasyB_I2C.serialNumber);
+
                 OnEasyB_I2C.USBIO_I2cSetConfig((byte)deviceIndex, (byte)deviceAddress, Frequency, tmptime);
 
                 byte[] cmd = BitConverter.GetBytes(regAddress);
                 byte[] readData = new byte[readLength];
                 bool result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length/4), readData,(ushort) readLength);
-                
+
                 OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);
+                Thread.Sleep(20);
                 if (result == false)
                 {
                     return null;
