@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace SNOEC_GUI
 {
@@ -146,8 +147,11 @@ namespace SNOEC_GUI
 
         private void btnReadWrite_Click(object sender, EventArgs e)
         {
+            this.btnReadWrite.Enabled = false;
+            this.btnReadWrite.BackColor = Color.Yellow;
+            this.btnReadWrite.Refresh();
             try
-            {
+            {                
                 IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
                 switch (this.comboBoxSoftHard.Text)
                 {
@@ -242,7 +246,7 @@ namespace SNOEC_GUI
                         this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = null;
                     }
 
-                    this.txtSN.Text = dut.ReadSN(); 
+                    this.txtSN.Text = dut.ReadSN();
                     this.txtPN.Text = dut.ReadPn();
                     this.txtFW.Text = dut.ReadFWRev();
 
@@ -304,9 +308,14 @@ namespace SNOEC_GUI
                         this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
                     }
                 }
+
+                this.btnReadWrite.Enabled = true;
+                this.btnReadWrite.BackColor = SystemColors.Control;
             }
             catch
             {
+                this.btnReadWrite.Enabled = true;
+                this.btnReadWrite.BackColor = SystemColors.Control;
                 MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

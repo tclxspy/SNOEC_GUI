@@ -75,6 +75,10 @@
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qSFP28SR4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qSFP28CWDM4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sNOECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.innoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fNRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -330,13 +334,8 @@
             this.comboBoxFrequency = new System.Windows.Forms.ComboBox();
             this.comboBoxDeviceIndex = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnEngMode = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sNOECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.innoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fNRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -450,7 +449,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -468,6 +467,39 @@
             this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
             this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
+            // 
+            // companyToolStripMenuItem
+            // 
+            this.companyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sNOECToolStripMenuItem,
+            this.innoToolStripMenuItem,
+            this.fNRToolStripMenuItem});
+            this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem.Text = "Company";
+            // 
+            // sNOECToolStripMenuItem
+            // 
+            this.sNOECToolStripMenuItem.Checked = true;
+            this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sNOECToolStripMenuItem.Text = "SNOEC";
+            this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
+            // 
+            // innoToolStripMenuItem
+            // 
+            this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.innoToolStripMenuItem.Text = "Inno";
+            this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
+            // 
+            // fNRToolStripMenuItem
+            // 
+            this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.fNRToolStripMenuItem.Text = "FNR";
+            this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -3161,7 +3193,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnEngMode);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3170,18 +3201,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(744, 33);
             this.panel2.TabIndex = 1;
-            // 
-            // btnEngMode
-            // 
-            this.btnEngMode.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnEngMode.ForeColor = System.Drawing.Color.Black;
-            this.btnEngMode.Location = new System.Drawing.Point(637, 4);
-            this.btnEngMode.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnEngMode.Name = "btnEngMode";
-            this.btnEngMode.Size = new System.Drawing.Size(83, 25);
-            this.btnEngMode.TabIndex = 11;
-            this.btnEngMode.Text = "Eng Mode";
-            this.btnEngMode.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -3207,39 +3226,6 @@
             this.labelTitle.Size = new System.Drawing.Size(204, 29);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 SR4 GUI";
-            // 
-            // companyToolStripMenuItem
-            // 
-            this.companyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sNOECToolStripMenuItem,
-            this.innoToolStripMenuItem,
-            this.fNRToolStripMenuItem});
-            this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.companyToolStripMenuItem.Text = "Company";
-            // 
-            // sNOECToolStripMenuItem
-            // 
-            this.sNOECToolStripMenuItem.Checked = true;
-            this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sNOECToolStripMenuItem.Text = "SNOEC";
-            this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
-            // 
-            // innoToolStripMenuItem
-            // 
-            this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.innoToolStripMenuItem.Text = "Inno";
-            this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
-            // 
-            // fNRToolStripMenuItem
-            // 
-            this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
-            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.fNRToolStripMenuItem.Text = "FNR";
-            this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -3371,7 +3357,6 @@
         private System.Windows.Forms.ComboBox comboBoxFrequency;
         private System.Windows.Forms.ComboBox comboBoxDeviceIndex;
         private System.Windows.Forms.ComboBox comboBoxSoftHard;
-        private System.Windows.Forms.Button btnEngMode;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TabControl tabControl1;
