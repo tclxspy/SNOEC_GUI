@@ -670,5 +670,11 @@ namespace SNOEC_GUI
             this.fNRToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.Checked = false;
         }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestForm testFrom = new TestForm();
+            testFrom.ShowDialog();
+        }
     }
 }
