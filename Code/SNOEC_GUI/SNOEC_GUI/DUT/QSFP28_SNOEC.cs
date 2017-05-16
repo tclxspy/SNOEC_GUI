@@ -8,10 +8,10 @@ namespace SNOEC_GUI
 {
     public class QSFP28_SNOEC
     {
-        private static int DUT_USB_Port = 0;
-        private static object syncRoot = new Object();//used for thread synchronization
-        private Company company = Company.SNOEC;
+        public static int DUT_USB_Port = 0;        
+        public static Company company = Company.SNOEC;
         public static IOPort.SoftHard softHard = IOPort.SoftHard.OnEasyB_I2C;
+        private static object syncRoot = new Object();//used for thread synchronization
 
         public enum Company : int
         {
@@ -20,13 +20,7 @@ namespace SNOEC_GUI
             FNR = 2
         }
 
-        public QSFP28_SNOEC(int deviceIndex, Company whichcompany)
-        {
-            DUT_USB_Port = deviceIndex;
-            company = whichcompany;
-        }
-
-        private QSFP28_SNOEC() { }
+        public QSFP28_SNOEC() { }
 
         private void EnterEngMode(int page)
         {
