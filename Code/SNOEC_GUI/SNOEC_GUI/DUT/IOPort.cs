@@ -357,7 +357,7 @@ namespace SNOEC_GUI
         {
             if (softHard == SoftHard.OnEasyB_I2C)
             {
-                Thread.Sleep(30);
+                //Thread.Sleep(30);
                 OnEasyB_I2C.USBIO_OpenDeviceByNumber(OnEasyB_I2C.serialNumber);
                 OnEasyB_I2C.USBIO_I2cSetConfig((byte)deviceIndex, (byte)deviceAddress, Frequency, tmptime);
 
@@ -366,15 +366,8 @@ namespace SNOEC_GUI
                 
                 byte[] readData = new byte[dataToWrite.Length];
                 result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length / 4), readData, (ushort)readData.Length);
-                
-                OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);
-                Thread.Sleep(20);
 
-                if (result == false)
-                {
-                    return null;
-                }
-                return readData;
+                return ReadReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite.Length);
             }
             return ReadWriteReg(deviceIndex, deviceAddress, regAddress, false, softHard, ReadWrite.Write,
                 (CFKType)0, dataToWrite);
