@@ -140,6 +140,8 @@
     <None Include="Resources\logo.png" />
     <None Include="Resources\stop.ico" />
     <None Include="Resources\run.ico" />
+    <None Include="Resources\Online.ICO" />
+    <Content Include="Resources\OnLineBusy.ico" />
     <Content Include="sync.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
