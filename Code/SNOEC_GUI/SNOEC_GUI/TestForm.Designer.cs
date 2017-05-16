@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnRun = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnStop = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox15 = new System.Windows.Forms.CheckBox();
@@ -53,11 +53,13 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxPowerSupplyer = new System.Windows.Forms.ComboBox();
             this.comboBoxFrequency = new System.Windows.Forms.ComboBox();
             this.comboBoxDeviceIndex = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelResult = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownCycles = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtSavePath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxPowerSupplyer = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -82,31 +82,33 @@
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.Silver;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
-            this.toolStripButton1});
+            this.toolStripBtnRun,
+            this.toolStripBtnStop});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(493, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton2
+            // toolStripBtnRun
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::SNOEC_GUI.Properties.Resources.run;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripBtnRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBtnRun.Image = global::SNOEC_GUI.Properties.Resources.run;
+            this.toolStripBtnRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnRun.Name = "toolStripBtnRun";
+            this.toolStripBtnRun.Size = new System.Drawing.Size(23, 22);
+            this.toolStripBtnRun.Text = "toolStripButton2";
+            this.toolStripBtnRun.Click += new System.EventHandler(this.toolStripBtnRun_Click);
             // 
-            // toolStripButton1
+            // toolStripBtnStop
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::SNOEC_GUI.Properties.Resources.stop;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripBtnStop.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBtnStop.Image = global::SNOEC_GUI.Properties.Resources.stop;
+            this.toolStripBtnStop.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnStop.Name = "toolStripBtnStop";
+            this.toolStripBtnStop.Size = new System.Drawing.Size(23, 22);
+            this.toolStripBtnStop.Text = "toolStripButton1";
+            this.toolStripBtnStop.Click += new System.EventHandler(this.toolStripBtnStop_Click);
             // 
             // panel1
             // 
@@ -321,7 +323,7 @@
             this.groupBox2.Controls.Add(this.comboBoxPowerSupplyer);
             this.groupBox2.Controls.Add(this.comboBoxFrequency);
             this.groupBox2.Controls.Add(this.comboBoxDeviceIndex);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.labelResult);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.numericUpDownCycles);
             this.groupBox2.Controls.Add(this.label2);
@@ -365,6 +367,17 @@
             this.comboBoxSoftHard.Size = new System.Drawing.Size(162, 25);
             this.comboBoxSoftHard.TabIndex = 22;
             this.comboBoxSoftHard.Text = "OnEasyB_I2C";
+            this.comboBoxSoftHard.SelectedIndexChanged += new System.EventHandler(this.comboBoxSoftHard_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(394, 21);
+            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Supplyer";
             // 
             // label6
             // 
@@ -386,6 +399,19 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Device Index";
             // 
+            // comboBoxPowerSupplyer
+            // 
+            this.comboBoxPowerSupplyer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxPowerSupplyer.FormattingEnabled = true;
+            this.comboBoxPowerSupplyer.Items.AddRange(new object[] {
+            "E3631"});
+            this.comboBoxPowerSupplyer.Location = new System.Drawing.Point(397, 46);
+            this.comboBoxPowerSupplyer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxPowerSupplyer.Name = "comboBoxPowerSupplyer";
+            this.comboBoxPowerSupplyer.Size = new System.Drawing.Size(67, 25);
+            this.comboBoxPowerSupplyer.TabIndex = 19;
+            this.comboBoxPowerSupplyer.Text = "E3631";
+            // 
             // comboBoxFrequency
             // 
             this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -401,6 +427,7 @@
             this.comboBoxFrequency.Size = new System.Drawing.Size(67, 25);
             this.comboBoxFrequency.TabIndex = 19;
             this.comboBoxFrequency.Text = "400K";
+            this.comboBoxFrequency.SelectedIndexChanged += new System.EventHandler(this.comboBoxFrequency_SelectedIndexChanged);
             // 
             // comboBoxDeviceIndex
             // 
@@ -418,16 +445,17 @@
             this.comboBoxDeviceIndex.Size = new System.Drawing.Size(86, 25);
             this.comboBoxDeviceIndex.TabIndex = 18;
             this.comboBoxDeviceIndex.Text = "Device 0";
+            this.comboBoxDeviceIndex.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeviceIndex_SelectedIndexChanged);
             // 
-            // label4
+            // labelResult
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(358, 98);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 25);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "0/100";
+            this.labelResult.AutoSize = true;
+            this.labelResult.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelResult.Location = new System.Drawing.Point(358, 98);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(64, 25);
+            this.labelResult.TabIndex = 15;
+            this.labelResult.Text = "0/100";
             // 
             // label3
             // 
@@ -526,29 +554,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Save Path:";
             // 
-            // comboBoxPowerSupplyer
-            // 
-            this.comboBoxPowerSupplyer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxPowerSupplyer.FormattingEnabled = true;
-            this.comboBoxPowerSupplyer.Items.AddRange(new object[] {
-            "E3631"});
-            this.comboBoxPowerSupplyer.Location = new System.Drawing.Point(397, 46);
-            this.comboBoxPowerSupplyer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBoxPowerSupplyer.Name = "comboBoxPowerSupplyer";
-            this.comboBoxPowerSupplyer.Size = new System.Drawing.Size(67, 25);
-            this.comboBoxPowerSupplyer.TabIndex = 19;
-            this.comboBoxPowerSupplyer.Text = "E3631";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(394, 21);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Supplyer";
-            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -565,6 +570,7 @@
             this.Name = "TestForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Test";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TestForm_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -611,9 +617,9 @@
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox txtSavePath;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolStripButton toolStripBtnStop;
+        private System.Windows.Forms.ToolStripButton toolStripBtnRun;
+        private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBoxSoftHard;
         private System.Windows.Forms.Label label6;
