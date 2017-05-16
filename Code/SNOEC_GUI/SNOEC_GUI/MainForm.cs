@@ -21,7 +21,6 @@ namespace SNOEC_GUI
         private TextBox[] txts_dmi_RxPower = new TextBox[4];
         private Chart[,] chart = new Chart[5, 8];
         private const int maxCells = 16 * 6;
-        private QSFP28_SNOEC.Company whichcompany = QSFP28_SNOEC.Company.SNOEC;
 
         public MainForm()
         {
@@ -151,36 +150,8 @@ namespace SNOEC_GUI
             this.btnReadWrite.BackColor = Color.Yellow;
             this.btnReadWrite.Refresh();
             try
-            {                
-                IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
-                switch (this.comboBoxSoftHard.Text)
-                {
-                    case "HARDWARE_SEQUENT":
-                        QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
-                        break;
-
-                    case "SOFTWARE_SEQUENT":
-                        QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SEQUENT;
-                        break;
-
-                    case "HARDWARE_SINGLE":
-                        QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SINGLE;
-                        break;
-
-                    case "SOFTWARE_SINGLE":
-                        QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SINGLE;
-                        break;
-
-                    case "OnEasyB_I2C":
-                        QSFP28_SNOEC.softHard = IOPort.SoftHard.OnEasyB_I2C;
-                        break;
-
-                    default:
-                        QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
-                        break;
-                }
-
-                dut = new QSFP28_SNOEC(this.comboBoxDeviceIndex.SelectedIndex, whichcompany);
+            {  
+                dut = new QSFP28_SNOEC();
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Ch On/Off"))
                 {
@@ -249,11 +220,17 @@ namespace SNOEC_GUI
                     this.txtSN.Text = dut.ReadSN();
                     this.txtPN.Text = dut.ReadPn();
                     this.txtFW.Text = dut.ReadFWRev();
-
-                    byte[] buff = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
-                    if (buff == null)
+                    byte[] buff = new byte[(int)this.numericUpDownBytes.Value];
+                    if ((int)this.numericUpDownBytes.Value > 0)
                     {
-                        return;
+
+                        buff = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
+                        if (buff == null)
+                        {
+                            this.btnReadWrite.Enabled = true;
+                            this.btnReadWrite.BackColor = SystemColors.Control;
+                            return;
+                        }
                     }
 
                     int length = Math.Min(maxCells, buff.Length);
@@ -270,6 +247,8 @@ namespace SNOEC_GUI
                     byte[] writeData = new byte[(int)this.numericUpDownBytes.Value];
                     if (writeData.Length == 0)
                     {
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
                         return;
                     }
 
@@ -280,6 +259,8 @@ namespace SNOEC_GUI
                             object ob = this.dataGridView4.Rows[i / 16].Cells[i % 16].Value;
                             if (ob == null)
                             {
+                                this.btnReadWrite.Enabled = true;
+                                this.btnReadWrite.BackColor = SystemColors.Control;
                                 return;
                             }
                             writeData[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
@@ -288,12 +269,16 @@ namespace SNOEC_GUI
                     catch
                     {
                         MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
                         return;
                     }
 
                     byte[] buff = dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, writeData);
                     if (buff == null)
                     {
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
                         return;
                     }
 
@@ -316,7 +301,7 @@ namespace SNOEC_GUI
             {
                 this.btnReadWrite.Enabled = true;
                 this.btnReadWrite.BackColor = SystemColors.Control;
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -359,12 +344,12 @@ namespace SNOEC_GUI
 
                 if (list.Count == 0)
                 {
-                    MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Disconnect to I2C", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -417,7 +402,7 @@ namespace SNOEC_GUI
             }
             catch
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -449,7 +434,7 @@ namespace SNOEC_GUI
             }
             catch
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -481,7 +466,7 @@ namespace SNOEC_GUI
             }
             catch
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -513,7 +498,7 @@ namespace SNOEC_GUI
             }
             catch
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -545,7 +530,7 @@ namespace SNOEC_GUI
             }
             catch
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -560,7 +545,7 @@ namespace SNOEC_GUI
             }
             catch
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -580,8 +565,7 @@ namespace SNOEC_GUI
                 btns[8] = this.btnRxCh3_Dis;
                 btns[9] = this.btnRxCh4_Dis;
 
-                IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
-                dut = new QSFP28_SNOEC(this.comboBoxDeviceIndex.SelectedIndex, whichcompany);
+                dut = new QSFP28_SNOEC();
                 byte[] buff = dut.GetTxChEnStatus();
 
                 if ((buff[0] & 0x0F) == 0x0F)
@@ -607,7 +591,7 @@ namespace SNOEC_GUI
             }
             catch
             {
-                MessageBox.Show("Disconnect to I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -649,7 +633,7 @@ namespace SNOEC_GUI
 
         private void innoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            whichcompany = QSFP28_SNOEC.Company.Inno;
+            QSFP28_SNOEC.company = QSFP28_SNOEC.Company.Inno;
             this.innoToolStripMenuItem.Checked = true;
             this.fNRToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = false;
@@ -657,7 +641,7 @@ namespace SNOEC_GUI
 
         private void sNOECToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            whichcompany = QSFP28_SNOEC.Company.SNOEC;
+            QSFP28_SNOEC.company = QSFP28_SNOEC.Company.SNOEC;
             this.innoToolStripMenuItem.Checked = false;
             this.fNRToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = true;
@@ -665,7 +649,7 @@ namespace SNOEC_GUI
 
         private void fNRToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            whichcompany = QSFP28_SNOEC.Company.FNR;
+            QSFP28_SNOEC.company = QSFP28_SNOEC.Company.FNR;
             this.innoToolStripMenuItem.Checked = false;
             this.fNRToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.Checked = false;
@@ -675,6 +659,46 @@ namespace SNOEC_GUI
         {
             TestForm testFrom = new TestForm();
             testFrom.ShowDialog();
+        }
+
+        private void comboBoxDeviceIndex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QSFP28_SNOEC.DUT_USB_Port = this.comboBoxDeviceIndex.SelectedIndex;
+        }
+
+        private void comboBoxSoftHard_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (this.comboBoxSoftHard.Text)
+            {
+                case "HARDWARE_SEQUENT":
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
+                    break;
+
+                case "SOFTWARE_SEQUENT":
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SEQUENT;
+                    break;
+
+                case "HARDWARE_SINGLE":
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SINGLE;
+                    break;
+
+                case "SOFTWARE_SINGLE":
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SINGLE;
+                    break;
+
+                case "OnEasyB_I2C":
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.OnEasyB_I2C;
+                    break;
+
+                default:
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
+                    break;
+            }
+        }
+
+        private void comboBoxFrequency_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
         }
     }
 }

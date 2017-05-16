@@ -79,6 +79,7 @@
             this.sNOECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.innoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fNRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -336,7 +337,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -451,7 +451,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -477,7 +477,7 @@
             this.innoToolStripMenuItem,
             this.fNRToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -485,23 +485,30 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // fNRToolStripMenuItem
             // 
             this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
-            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.fNRToolStripMenuItem.Text = "FNR";
             this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -3054,6 +3061,7 @@
             this.comboBoxSoftHard.Size = new System.Drawing.Size(162, 25);
             this.comboBoxSoftHard.TabIndex = 9;
             this.comboBoxSoftHard.Text = "OnEasyB_I2C";
+            this.comboBoxSoftHard.SelectedIndexChanged += new System.EventHandler(this.comboBoxSoftHard_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -3175,6 +3183,7 @@
             this.comboBoxFrequency.Size = new System.Drawing.Size(67, 25);
             this.comboBoxFrequency.TabIndex = 1;
             this.comboBoxFrequency.Text = "400K";
+            this.comboBoxFrequency.SelectedIndexChanged += new System.EventHandler(this.comboBoxFrequency_SelectedIndexChanged);
             // 
             // comboBoxDeviceIndex
             // 
@@ -3192,6 +3201,7 @@
             this.comboBoxDeviceIndex.Size = new System.Drawing.Size(86, 25);
             this.comboBoxDeviceIndex.TabIndex = 0;
             this.comboBoxDeviceIndex.Text = "Device 0";
+            this.comboBoxDeviceIndex.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeviceIndex_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -3228,13 +3238,6 @@
             this.labelTitle.Size = new System.Drawing.Size(204, 29);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 SR4 GUI";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
-            this.viewToolStripMenuItem.Text = "View";
-            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // MainForm
             // 
