@@ -333,13 +333,19 @@ namespace SNOEC_GUI
             if(softHard == SoftHard.OnEasyB_I2C)
             {
                 Thread.Sleep(30);
-                OnEasyB_I2C.USBIO_OpenDeviceByNumber(OnEasyB_I2C.serialNumber);
-
-                OnEasyB_I2C.USBIO_I2cSetConfig((byte)deviceIndex, (byte)deviceAddress, Frequency, tmptime);
+                byte byDevIndex = OnEasyB_I2C.USBIO_OpenDeviceByNumber(OnEasyB_I2C.serialNumber);
+                if (byDevIndex == 0xFF)
+                {
+                    return null;
+                }
+                if (!OnEasyB_I2C.USBIO_I2cSetConfig((byte)deviceIndex, (byte)deviceAddress, Frequency, tmptime))
+                {
+                    return null;
+                }
 
                 byte[] cmd = BitConverter.GetBytes(regAddress);
                 byte[] readData = new byte[readLength];
-                bool result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length/4), readData,(ushort) readLength);
+                bool result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length / 4), readData, (ushort)readLength);
 
                 OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);
                 Thread.Sleep(20);
@@ -357,16 +363,27 @@ namespace SNOEC_GUI
         {
             if (softHard == SoftHard.OnEasyB_I2C)
             {
-                //Thread.Sleep(30);
-                OnEasyB_I2C.USBIO_OpenDeviceByNumber(OnEasyB_I2C.serialNumber);
-                OnEasyB_I2C.USBIO_I2cSetConfig((byte)deviceIndex, (byte)deviceAddress, Frequency, tmptime);
+                Thread.Sleep(30);
+                byte byDevIndex = OnEasyB_I2C.USBIO_OpenDeviceByNumber(OnEasyB_I2C.serialNumber);
+                if (byDevIndex == 0xFF)
+                {
+                    return null;
+                }
+                if (!OnEasyB_I2C.USBIO_I2cSetConfig((byte)deviceIndex, (byte)deviceAddress, Frequency, tmptime))
+                {
+                    return null;
+                }
 
                 byte[] cmd = BitConverter.GetBytes((byte)regAddress);
-                bool result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length/2), dataToWrite, (ushort)dataToWrite.Length);
-                
+                bool result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length / 2), dataToWrite, (ushort)dataToWrite.Length);
+                Thread.Sleep(50);
                 byte[] readData = new byte[dataToWrite.Length];
-                result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length / 4), readData, (ushort)readData.Length);
-
+                OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);
+                Thread.Sleep(20);
+                if (result == false)
+                {
+                    return null;
+                }
                 return ReadReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite.Length);
             }
             return ReadWriteReg(deviceIndex, deviceAddress, regAddress, false, softHard, ReadWrite.Write,

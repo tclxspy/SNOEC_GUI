@@ -72,7 +72,7 @@ namespace SNOEC_GUI
                 decimal cycles = this.numericUpDownCycles.Value;
                 status = 0;
 
-                string sn = dut.ReadSN();
+                string sn = dut.ReadPn();
                 int count = 0;
                 int delay = (int)this.numericUpDownDelay.Value;
                 Dictionary<string, int> dic = new Dictionary<string, int>();
@@ -88,7 +88,7 @@ namespace SNOEC_GUI
                             return;
                         }
 
-                        sn = dut.ReadSN();
+                        sn = dut.ReadPn();
                         if (!dic.Keys.Contains(sn))
                         {
                             dic.Add(sn, ++count);
@@ -115,7 +115,7 @@ namespace SNOEC_GUI
                     {
                         this.BeginInvoke(new MethodInvoker(delegate
                         {
-                            string message = "Serial number-->" + "\n";
+                            string message = "Serial number-->";
                             foreach (string key in dic.Keys)
                             {
                                 message += key + " ";
@@ -128,7 +128,7 @@ namespace SNOEC_GUI
                     }
                     else
                     {
-                        string message = "Serial number-->" + "\n";
+                        string message = "Serial number-->";
                         foreach (string key in dic.Keys)
                         {
                             message += key + " ";
