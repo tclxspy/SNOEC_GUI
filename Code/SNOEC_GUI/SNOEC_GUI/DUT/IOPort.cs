@@ -5,6 +5,7 @@ using System.Text;
 using Ivi.Visa.Interop;
 using System.Threading;
 using System.Runtime.InteropServices;
+using System.IO.Ports;
 
 namespace SNOEC_GUI
 {
@@ -77,6 +78,7 @@ namespace SNOEC_GUI
             HARDWARE_SINGLE = 0xA3,
             SOFTWARE_SINGLE = 0xA4,
             OnEasyB_I2C = 0x00,
+            SerialPort = 0x01,
         }
 
         public enum MDIOSoftHard : byte
@@ -147,11 +149,7 @@ namespace SNOEC_GUI
 
         public static byte[] ReadWriteReg(int deviceIndex, int deviceAddress, int regAddress, bool regAddressWide, SoftHard softHard,
             ReadWrite operate, CFKType cfk, byte[] buffer)
-        {
-            semaphore.WaitOne();
-            OpenDevice(deviceIndex);
-            CH375SetTimeout((byte)deviceIndex, 100, 100);
-
+        {  
             byte[] arr = new byte[buffer.Length + 8];
 
             arr[0] = regAddressWide ? (byte)1 : (byte)0;
@@ -163,6 +161,70 @@ namespace SNOEC_GUI
             arr[6] = (byte)buffer.Length;
             arr[7] = (byte)cfk;
             buffer.CopyTo(arr, 8);
+
+            if (softHard == SoftHard.SerialPort)
+            {
+                semaphore.WaitOne();
+                SerialPort _serialPort;
+                byte[] readBytes = new byte[buffer.Length];
+                try
+                {
+                    string comIndex = "COM2";
+                    switch (deviceIndex)
+                    {
+                        case 0:
+                            comIndex = "COM1";
+                            break;
+                        case 1:
+                            comIndex = "COM2";
+                            break;
+                        case 2:
+                            comIndex = "COM3";
+                            break;
+                        case 3:
+                            comIndex = "COM4";
+                            break;
+                        case 4:
+                            comIndex = "COM5";
+                            break;
+                        default:
+                            comIndex = "COM2";
+                            break;
+                    }
+
+                    _serialPort = new SerialPort(comIndex, 9600, Parity.None, 8, StopBits.One);
+
+                    // Set the read/write timeouts
+                    _serialPort.ReadTimeout = 500;
+                    _serialPort.WriteTimeout = 500;
+
+                
+                    _serialPort.Open();
+                    _serialPort.Write(arr, 0, arr.Length);                    
+                    System.Threading.Thread.Sleep(20);
+                    
+                    if (operate == ReadWrite.Read)
+                    {
+                        _serialPort.Read(readBytes, 0, buffer.Length);
+                    }
+                    _serialPort.Close();
+                    semaphore.Release();
+                    System.Threading.Thread.Sleep(10);
+                    return readBytes;
+                }
+                catch
+                { 
+                    semaphore.Release();
+                    _serialPort = null;
+                    readBytes = null;
+                    return readBytes;
+                }
+            }
+
+            semaphore.WaitOne();
+            OpenDevice(deviceIndex);
+            CH375SetTimeout((byte)deviceIndex, 100, 100);
+
             bool b = CH375WriteData(deviceIndex, arr);
             System.Threading.Thread.Sleep(50);
             byte[] arrRead = CH375ReadData(deviceIndex, buffer.Length);
@@ -171,8 +233,6 @@ namespace SNOEC_GUI
             //  System.Threading.Thread.Sleep(50);
             //  System.Threading.Thread.Sleep(100);
             return arrRead;
-
-
         }
 
         public static byte[] ReadWriteMDIO(int deviceIndex, int deviceAddress, int phycialAddress, int regAddress, bool regAddressWide, MDIOSoftHard softHard,
@@ -355,6 +415,7 @@ namespace SNOEC_GUI
                 }
                 return readData;
             }
+
             return ReadWriteReg(deviceIndex, deviceAddress, regAddress, false, softHard, ReadWrite.Read,
             (CFKType)0, new byte[readLength]);
         }

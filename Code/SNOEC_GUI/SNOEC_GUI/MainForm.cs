@@ -328,24 +328,24 @@ namespace SNOEC_GUI
         {
             try
             {
-                byte i, re;
-                OnEasyB_I2C.serialNumber = new StringBuilder(255);
-                byte MaxDevNum = OnEasyB_I2C.USBIO_GetMaxNumofDev();
-                List<String> list = new List<string>();
+                //byte i, re;
+                //OnEasyB_I2C.serialNumber = new StringBuilder(255);
+                //byte MaxDevNum = OnEasyB_I2C.USBIO_GetMaxNumofDev();
+                //List<String> list = new List<string>();
 
-                for (i = 0; i < MaxDevNum; i++)
-                {
-                    re = OnEasyB_I2C.USBIO_GetSerialNo(i, OnEasyB_I2C.serialNumber);
-                    if (re != 0)
-                    {
-                        list.Add(OnEasyB_I2C.serialNumber.ToString());
-                    }
-                }
+                //for (i = 0; i < MaxDevNum; i++)
+                //{
+                //    re = OnEasyB_I2C.USBIO_GetSerialNo(i, OnEasyB_I2C.serialNumber);
+                //    if (re != 0)
+                //    {
+                //        list.Add(OnEasyB_I2C.serialNumber.ToString());
+                //    }
+                //}
 
-                if (list.Count == 0)
-                {
-                    MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //if (list.Count == 0)
+                //{
+                //    MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
             catch(Exception ex)
             {
@@ -688,6 +688,10 @@ namespace SNOEC_GUI
 
                 case "OnEasyB_I2C":
                     QSFP28_SNOEC.softHard = IOPort.SoftHard.OnEasyB_I2C;
+                    break;
+
+                case "SerialPort":
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.SerialPort;
                     break;
 
                 default:

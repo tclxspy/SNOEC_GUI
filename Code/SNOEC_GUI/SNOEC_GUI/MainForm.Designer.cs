@@ -451,7 +451,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -477,7 +477,7 @@
             this.innoToolStripMenuItem,
             this.fNRToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -485,21 +485,21 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // fNRToolStripMenuItem
             // 
             this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
-            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.fNRToolStripMenuItem.Text = "FNR";
             this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
             // 
@@ -3050,6 +3050,7 @@
             this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxSoftHard.FormattingEnabled = true;
             this.comboBoxSoftHard.Items.AddRange(new object[] {
+            "SerialPort",
             "OnEasyB_I2C",
             "HARDWARE_SEQUENT",
             "SOFTWARE_SEQUENT",
@@ -3060,7 +3061,7 @@
             this.comboBoxSoftHard.Name = "comboBoxSoftHard";
             this.comboBoxSoftHard.Size = new System.Drawing.Size(162, 25);
             this.comboBoxSoftHard.TabIndex = 9;
-            this.comboBoxSoftHard.Text = "OnEasyB_I2C";
+            this.comboBoxSoftHard.Text = "SerialPort";
             this.comboBoxSoftHard.SelectedIndexChanged += new System.EventHandler(this.comboBoxSoftHard_SelectedIndexChanged);
             // 
             // label8
@@ -3200,7 +3201,7 @@
             this.comboBoxDeviceIndex.Name = "comboBoxDeviceIndex";
             this.comboBoxDeviceIndex.Size = new System.Drawing.Size(86, 25);
             this.comboBoxDeviceIndex.TabIndex = 0;
-            this.comboBoxDeviceIndex.Text = "Device 0";
+            this.comboBoxDeviceIndex.Text = "Device 1";
             this.comboBoxDeviceIndex.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeviceIndex_SelectedIndexChanged);
             // 
             // panel2

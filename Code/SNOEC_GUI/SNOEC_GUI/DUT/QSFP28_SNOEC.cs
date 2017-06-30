@@ -8,9 +8,9 @@ namespace SNOEC_GUI
 {
     public class QSFP28_SNOEC
     {
-        public static int DUT_USB_Port = 0;        
+        public static int DUT_USB_Port = 1;        
         public static Company company = Company.SNOEC;
-        public static IOPort.SoftHard softHard = IOPort.SoftHard.OnEasyB_I2C;
+        public static IOPort.SoftHard softHard = IOPort.SoftHard.SerialPort;
         private static object syncRoot = new Object();//used for thread synchronization
 
         public enum Company : int
