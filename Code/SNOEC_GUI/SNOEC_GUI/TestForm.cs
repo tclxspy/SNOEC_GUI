@@ -176,6 +176,10 @@ namespace SNOEC_GUI
                     QSFP28_SNOEC.softHard = IOPort.SoftHard.OnEasyB_I2C;
                     break;
 
+                case "SerialPort":
+                    QSFP28_SNOEC.softHard = IOPort.SoftHard.SerialPort;
+                    break;
+
                 default:
                     QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
                     break;

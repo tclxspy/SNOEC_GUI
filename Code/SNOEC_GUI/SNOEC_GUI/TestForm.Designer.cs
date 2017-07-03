@@ -356,6 +356,7 @@
             this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxSoftHard.FormattingEnabled = true;
             this.comboBoxSoftHard.Items.AddRange(new object[] {
+            "SerialPort",
             "OnEasyB_I2C",
             "HARDWARE_SEQUENT",
             "SOFTWARE_SEQUENT",
@@ -366,7 +367,7 @@
             this.comboBoxSoftHard.Name = "comboBoxSoftHard";
             this.comboBoxSoftHard.Size = new System.Drawing.Size(162, 25);
             this.comboBoxSoftHard.TabIndex = 22;
-            this.comboBoxSoftHard.Text = "OnEasyB_I2C";
+            this.comboBoxSoftHard.Text = "SerialPort";
             this.comboBoxSoftHard.SelectedIndexChanged += new System.EventHandler(this.comboBoxSoftHard_SelectedIndexChanged);
             // 
             // label5
@@ -444,7 +445,7 @@
             this.comboBoxDeviceIndex.Name = "comboBoxDeviceIndex";
             this.comboBoxDeviceIndex.Size = new System.Drawing.Size(86, 25);
             this.comboBoxDeviceIndex.TabIndex = 18;
-            this.comboBoxDeviceIndex.Text = "Device 0";
+            this.comboBoxDeviceIndex.Text = "Device 1";
             this.comboBoxDeviceIndex.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeviceIndex_SelectedIndexChanged);
             // 
             // labelResult

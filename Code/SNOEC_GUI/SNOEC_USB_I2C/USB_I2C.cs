@@ -53,9 +53,6 @@ namespace SNOEC_USB_I2C
                 string comIndex = "COM2";
                 switch (deviceIndex)
                 {
-                    case 0:
-                        comIndex = "COM1";
-                        break;
                     case 1:
                         comIndex = "COM2";
                         break;
