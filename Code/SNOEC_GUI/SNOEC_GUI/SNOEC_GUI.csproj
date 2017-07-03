@@ -58,6 +58,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>C:\Windows\assembly\GAC_32\Ivi.Visa.Interop\5.7.0.0__a128c98f1d7717c1\Ivi.Visa.Interop.dll</HintPath>
     </Reference>
+    <Reference Include="SNOEC_USB_I2C">
+      <HintPath>..\SNOEC_USB_I2C\bin\Debug\SNOEC_USB_I2C.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />

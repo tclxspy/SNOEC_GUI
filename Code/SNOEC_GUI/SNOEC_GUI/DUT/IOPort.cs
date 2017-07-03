@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Ivi.Visa.Interop;
 using System.Threading;
 using System.Runtime.InteropServices;
-using System.IO.Ports;
 
 namespace SNOEC_GUI
 {
@@ -149,9 +146,20 @@ namespace SNOEC_GUI
 
         public static byte[] ReadWriteReg(int deviceIndex, int deviceAddress, int regAddress, bool regAddressWide, SoftHard softHard,
             ReadWrite operate, CFKType cfk, byte[] buffer)
-        {  
-            byte[] arr = new byte[buffer.Length + 8];
+        {
+            if (softHard == SoftHard.SerialPort)
+            {
+                if (operate == ReadWrite.Read)
+                {
+                    return SNOEC_USB_I2C.USB_I2C.ReadPort(deviceIndex, deviceAddress, regAddress, regAddressWide, buffer);
+                }
+                else
+                {
+                    return SNOEC_USB_I2C.USB_I2C.WritePort(deviceIndex, deviceAddress, regAddress, regAddressWide, buffer);
+                }
+            }
 
+            byte[] arr = new byte[buffer.Length + 8];
             arr[0] = regAddressWide ? (byte)1 : (byte)0;
             arr[1] = (byte)(regAddress / 256);
             arr[2] = (byte)softHard;
@@ -160,66 +168,7 @@ namespace SNOEC_GUI
             arr[5] = (byte)(regAddress & 0xFF);
             arr[6] = (byte)buffer.Length;
             arr[7] = (byte)cfk;
-            buffer.CopyTo(arr, 8);
-
-            if (softHard == SoftHard.SerialPort)
-            {
-                semaphore.WaitOne();
-                SerialPort _serialPort;
-                byte[] readBytes = new byte[buffer.Length];
-                try
-                {
-                    string comIndex = "COM2";
-                    switch (deviceIndex)
-                    {
-                        case 0:
-                            comIndex = "COM1";
-                            break;
-                        case 1:
-                            comIndex = "COM2";
-                            break;
-                        case 2:
-                            comIndex = "COM3";
-                            break;
-                        case 3:
-                            comIndex = "COM4";
-                            break;
-                        case 4:
-                            comIndex = "COM5";
-                            break;
-                        default:
-                            comIndex = "COM2";
-                            break;
-                    }
-
-                    _serialPort = new SerialPort(comIndex, 9600, Parity.None, 8, StopBits.One);
-
-                    // Set the read/write timeouts
-                    _serialPort.ReadTimeout = 500;
-                    _serialPort.WriteTimeout = 500;
-
-                
-                    _serialPort.Open();
-                    _serialPort.Write(arr, 0, arr.Length);                    
-                    System.Threading.Thread.Sleep(20);
-                    
-                    if (operate == ReadWrite.Read)
-                    {
-                        _serialPort.Read(readBytes, 0, buffer.Length);
-                    }
-                    _serialPort.Close();
-                    semaphore.Release();
-                    System.Threading.Thread.Sleep(10);
-                    return readBytes;
-                }
-                catch
-                { 
-                    semaphore.Release();
-                    _serialPort = null;
-                    readBytes = null;
-                    return readBytes;
-                }
-            }
+            buffer.CopyTo(arr, 8);            
 
             semaphore.WaitOne();
             OpenDevice(deviceIndex);
