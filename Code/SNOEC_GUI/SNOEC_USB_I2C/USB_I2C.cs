@@ -10,7 +10,7 @@ namespace SNOEC_USB_I2C
 {
     public class USB_I2C
     {
-        private static Semaphore semaphore = new Semaphore(1, 1);
+        //private static Semaphore semaphore = new Semaphore(1, 1);
 
         private USB_I2C() { }
 
@@ -30,6 +30,10 @@ namespace SNOEC_USB_I2C
             return ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, ReadWrite.Write, buffer);
         }
 
+
+        private static volatile Dictionary<string, SerialPort> dicMyPort = null;
+        private static volatile SerialPort _serialPort;
+
         private static byte[] ReadWriteReg(int deviceIndex, int deviceAddress, int regAddress, bool regAddressWide,
            ReadWrite operate, byte[] buffer)
         {
@@ -45,8 +49,8 @@ namespace SNOEC_USB_I2C
             arr[7] = (byte)0;//CFKType
             buffer.CopyTo(arr, 8);
 
-            semaphore.WaitOne();
-            SerialPort _serialPort;
+            //semaphore.WaitOne();
+            
             byte[] readBytes = new byte[buffer.Length];
             try
             {
@@ -70,14 +74,44 @@ namespace SNOEC_USB_I2C
                         break;
                 }
 
-                _serialPort = new SerialPort(comIndex, 9600, Parity.None, 8, StopBits.One);
+                if (_serialPort == null)
+                {
+                    _serialPort = new SerialPort(comIndex, 9600, Parity.None, 8, StopBits.One);
+                    dicMyPort = new Dictionary<string, SerialPort>();
+                    dicMyPort.Add(comIndex, _serialPort);
+                }
+
+                if (_serialPort != null && dicMyPort.ContainsKey(comIndex))
+                {
+                    _serialPort = dicMyPort[comIndex];
+                }
+                else
+                {
+                    _serialPort = new SerialPort(comIndex, 9600, Parity.None, 8, StopBits.One);
+                    dicMyPort = new Dictionary<string, SerialPort>();
+                    dicMyPort.Add(comIndex, _serialPort);
+                }
 
                 // Set the read/write timeouts
                 _serialPort.ReadTimeout = 500;
                 _serialPort.WriteTimeout = 500;
 
+                if (_serialPort.IsOpen == true)
+                {
+                    _serialPort.Close();
+                }
+                
+                try
+                {
+                    _serialPort.Open();
+                }
+                catch
+                {
+                    _serialPort.Close();
+                    _serialPort.Open();
+                }
 
-                _serialPort.Open();
+                _serialPort.DiscardInBuffer();
                 _serialPort.Write(arr, 0, arr.Length);
                 System.Threading.Thread.Sleep(20);
 
@@ -85,14 +119,17 @@ namespace SNOEC_USB_I2C
                 {
                     _serialPort.Read(readBytes, 0, buffer.Length);
                 }
+                
                 _serialPort.Close();
-                semaphore.Release();
+                
+                //semaphore.Release();
                 System.Threading.Thread.Sleep(10);
                 return readBytes;
             }
-            catch
+            catch(Exception ex)
             {
-                semaphore.Release();
+                //semaphore.Release();
+                _serialPort.Close();
                 _serialPort = null;
                 readBytes = null;
                 return readBytes;

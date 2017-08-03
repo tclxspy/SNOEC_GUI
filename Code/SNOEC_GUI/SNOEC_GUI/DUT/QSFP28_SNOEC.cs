@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SNOEC_GUI
 {
@@ -71,18 +72,32 @@ namespace SNOEC_GUI
 
         public string ReadPn()
         {
-            EnterEngMode(0);
-            string pn = "";
-            pn = EEPROM_SNOEC.ReadPn(DUT_USB_Port, 0xA0, 168);
-            return pn.Trim();
+            try
+            {
+                lock (syncRoot)
+                {
+                    EnterEngMode(0);
+                    string pn = "";
+                    pn = EEPROM_SNOEC.ReadPn(DUT_USB_Port, 0xA0, 168);
+                    return pn.Trim();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No link.");
+                return "999";
+            }
         }
 
         public string ReadFWRev()
         {
-            string fwrev = "";
-            EnterEngMode(4);
-            fwrev = EEPROM_SNOEC.ReadFWRev(DUT_USB_Port, 0xA0, 128);
-            return fwrev;
+            lock (syncRoot)
+            {
+                string fwrev = "";
+                EnterEngMode(4);
+                fwrev = EEPROM_SNOEC.ReadFWRev(DUT_USB_Port, 0xA0, 128);
+                return fwrev;
+            }
         }
 
 
