@@ -319,6 +319,9 @@
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabDAC = new System.Windows.Forms.TabPage();
+            this.numericUpDownDAC = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDAC_Adress = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
@@ -337,6 +340,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -403,6 +408,9 @@
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabDAC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Adress)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
@@ -412,7 +420,7 @@
             // 
             // btnReadWrite
             // 
-            this.btnReadWrite.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReadWrite.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReadWrite.ForeColor = System.Drawing.Color.Black;
             this.btnReadWrite.Location = new System.Drawing.Point(636, 7);
             this.btnReadWrite.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -432,7 +440,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(764, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(764, 27);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -442,7 +450,7 @@
             this.productsToolStripMenuItem,
             this.companyToolStripMenuItem});
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.configToolStripMenuItem.Text = "Config";
             // 
             // productsToolStripMenuItem
@@ -451,7 +459,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -459,14 +467,14 @@
             this.qSFP28SR4ToolStripMenuItem.Checked = true;
             this.qSFP28SR4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.qSFP28SR4ToolStripMenuItem.Name = "qSFP28SR4ToolStripMenuItem";
-            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.qSFP28SR4ToolStripMenuItem.Text = "QSFP28 SR4";
             this.qSFP28SR4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28SR4ToolStripMenuItem_Click);
             // 
             // qSFP28CWDM4ToolStripMenuItem
             // 
             this.qSFP28CWDM4ToolStripMenuItem.Name = "qSFP28CWDM4ToolStripMenuItem";
-            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
             this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
             // 
@@ -477,7 +485,7 @@
             this.innoToolStripMenuItem,
             this.fNRToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -485,35 +493,35 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // fNRToolStripMenuItem
             // 
             this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
-            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.fNRToolStripMenuItem.Text = "FNR";
             this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -524,13 +532,13 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.panel1.Size = new System.Drawing.Size(764, 497);
+            this.panel1.Size = new System.Drawing.Size(764, 495);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -541,7 +549,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 107);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(744, 380);
+            this.panel4.Size = new System.Drawing.Size(744, 378);
             this.panel4.TabIndex = 3;
             // 
             // tabControl1
@@ -551,13 +559,14 @@
             this.tabControl1.Controls.Add(this.tabpageAlarmWarning);
             this.tabControl1.Controls.Add(this.tabpageI2CRead);
             this.tabControl1.Controls.Add(this.tabPageI2CWrite);
+            this.tabControl1.Controls.Add(this.tabDAC);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(744, 380);
+            this.tabControl1.Size = new System.Drawing.Size(744, 378);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -574,12 +583,12 @@
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnRxCh1_4_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_4_Dis);
-            this.tabpageChOnOff.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageChOnOff.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageChOnOff.Location = new System.Drawing.Point(4, 28);
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabpageChOnOff.Name = "tabpageChOnOff";
             this.tabpageChOnOff.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 348);
+            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 346);
             this.tabpageChOnOff.TabIndex = 1;
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
@@ -713,11 +722,11 @@
             this.tabpageDMIADC.Controls.Add(this.panel7);
             this.tabpageDMIADC.Controls.Add(this.panel5);
             this.tabpageDMIADC.Controls.Add(this.panel6);
-            this.tabpageDMIADC.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageDMIADC.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageDMIADC.ForeColor = System.Drawing.Color.Black;
             this.tabpageDMIADC.Location = new System.Drawing.Point(4, 28);
             this.tabpageDMIADC.Name = "tabpageDMIADC";
-            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 348);
+            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 346);
             this.tabpageDMIADC.TabIndex = 2;
             this.tabpageDMIADC.Text = "DMI/ADC";
             this.tabpageDMIADC.UseVisualStyleBackColor = true;
@@ -814,7 +823,7 @@
             this.panel10.Controls.Add(this.txtDMI_TxBias_Ch4);
             this.panel10.Location = new System.Drawing.Point(617, 29);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 305);
+            this.panel10.Size = new System.Drawing.Size(100, 303);
             this.panel10.TabIndex = 0;
             // 
             // label45
@@ -948,7 +957,7 @@
             this.panel9.Controls.Add(this.txtDMI_TxBias_Ch3);
             this.panel9.Location = new System.Drawing.Point(497, 29);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(100, 305);
+            this.panel9.Size = new System.Drawing.Size(100, 303);
             this.panel9.TabIndex = 0;
             // 
             // label38
@@ -1082,7 +1091,7 @@
             this.panel8.Controls.Add(this.txtDMI_TxBias_Ch2);
             this.panel8.Location = new System.Drawing.Point(377, 29);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(100, 305);
+            this.panel8.Size = new System.Drawing.Size(100, 303);
             this.panel8.TabIndex = 0;
             // 
             // label31
@@ -1216,7 +1225,7 @@
             this.panel7.Controls.Add(this.txtDMI_TxBias_Ch1);
             this.panel7.Location = new System.Drawing.Point(257, 29);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 305);
+            this.panel7.Size = new System.Drawing.Size(100, 303);
             this.panel7.TabIndex = 0;
             // 
             // label24
@@ -1350,7 +1359,7 @@
             this.panel5.Controls.Add(this.txtDMI_VCC);
             this.panel5.Location = new System.Drawing.Point(137, 29);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(100, 305);
+            this.panel5.Size = new System.Drawing.Size(100, 303);
             this.panel5.TabIndex = 0;
             // 
             // label10
@@ -1482,7 +1491,7 @@
             this.panel6.Controls.Add(this.textBox12);
             this.panel6.Location = new System.Drawing.Point(17, 29);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 305);
+            this.panel6.Size = new System.Drawing.Size(100, 303);
             this.panel6.TabIndex = 0;
             // 
             // label17
@@ -1580,10 +1589,10 @@
             // tabpageAlarmWarning
             // 
             this.tabpageAlarmWarning.Controls.Add(this.groupBox2);
-            this.tabpageAlarmWarning.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageAlarmWarning.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 28);
             this.tabpageAlarmWarning.Name = "tabpageAlarmWarning";
-            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 348);
+            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 346);
             this.tabpageAlarmWarning.TabIndex = 5;
             this.tabpageAlarmWarning.Text = "Alarm/Warning";
             this.tabpageAlarmWarning.UseVisualStyleBackColor = true;
@@ -1648,7 +1657,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(736, 348);
+            this.groupBox2.Size = new System.Drawing.Size(736, 346);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -2232,10 +2241,10 @@
             this.tabpageI2CRead.Controls.Add(this.panel13);
             this.tabpageI2CRead.Controls.Add(this.panel12);
             this.tabpageI2CRead.Controls.Add(this.panel11);
-            this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageI2CRead.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageI2CRead.Location = new System.Drawing.Point(4, 28);
             this.tabpageI2CRead.Name = "tabpageI2CRead";
-            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 348);
+            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 346);
             this.tabpageI2CRead.TabIndex = 3;
             this.tabpageI2CRead.Text = "I2C Read";
             this.tabpageI2CRead.UseVisualStyleBackColor = true;
@@ -2247,7 +2256,7 @@
             this.panel13.Location = new System.Drawing.Point(0, 48);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.panel13.Size = new System.Drawing.Size(736, 146);
+            this.panel13.Size = new System.Drawing.Size(736, 144);
             this.panel13.TabIndex = 3;
             // 
             // dataGridView1
@@ -2279,7 +2288,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(722, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 144);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -2414,7 +2423,7 @@
             // 
             this.panel12.Controls.Add(this.dataGridView2);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 194);
+            this.panel12.Location = new System.Drawing.Point(0, 192);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(7, 17, 7, 14);
             this.panel12.Size = new System.Drawing.Size(736, 154);
@@ -2650,10 +2659,10 @@
             this.tabPageI2CWrite.Controls.Add(this.panel17);
             this.tabPageI2CWrite.Controls.Add(this.panel14);
             this.tabPageI2CWrite.Controls.Add(this.panel15);
-            this.tabPageI2CWrite.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageI2CWrite.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 28);
             this.tabPageI2CWrite.Name = "tabPageI2CWrite";
-            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 348);
+            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 346);
             this.tabPageI2CWrite.TabIndex = 4;
             this.tabPageI2CWrite.Text = "I2C Write";
             this.tabPageI2CWrite.UseVisualStyleBackColor = true;
@@ -2665,7 +2674,7 @@
             this.panel17.Location = new System.Drawing.Point(0, 31);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.panel17.Size = new System.Drawing.Size(736, 146);
+            this.panel17.Size = new System.Drawing.Size(736, 144);
             this.panel17.TabIndex = 5;
             // 
             // dataGridView4
@@ -2697,7 +2706,7 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.RowHeadersWidth = 50;
-            this.dataGridView4.Size = new System.Drawing.Size(722, 146);
+            this.dataGridView4.Size = new System.Drawing.Size(722, 144);
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellEndEdit);
             // 
@@ -2836,7 +2845,7 @@
             this.panel15.Controls.Add(this.label55);
             this.panel15.Controls.Add(this.dataGridView3);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(0, 177);
+            this.panel15.Location = new System.Drawing.Point(0, 175);
             this.panel15.Name = "panel15";
             this.panel15.Padding = new System.Windows.Forms.Padding(7, 28, 7, 20);
             this.panel15.Size = new System.Drawing.Size(736, 171);
@@ -3010,6 +3019,57 @@
             this.dataGridViewTextBoxColumn32.ReadOnly = true;
             this.dataGridViewTextBoxColumn32.Width = 46;
             // 
+            // tabDAC
+            // 
+            this.tabDAC.Controls.Add(this.label71);
+            this.tabDAC.Controls.Add(this.label1);
+            this.tabDAC.Controls.Add(this.numericUpDownDAC);
+            this.tabDAC.Controls.Add(this.numericUpDownDAC_Adress);
+            this.tabDAC.Location = new System.Drawing.Point(4, 28);
+            this.tabDAC.Name = "tabDAC";
+            this.tabDAC.Size = new System.Drawing.Size(736, 346);
+            this.tabDAC.TabIndex = 6;
+            this.tabDAC.Text = "DAC";
+            this.tabDAC.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDownDAC
+            // 
+            this.numericUpDownDAC.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownDAC.Location = new System.Drawing.Point(316, 49);
+            this.numericUpDownDAC.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownDAC.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDownDAC.Name = "numericUpDownDAC";
+            this.numericUpDownDAC.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownDAC.TabIndex = 7;
+            // 
+            // numericUpDownDAC_Adress
+            // 
+            this.numericUpDownDAC_Adress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownDAC_Adress.Location = new System.Drawing.Point(130, 49);
+            this.numericUpDownDAC_Adress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownDAC_Adress.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numericUpDownDAC_Adress.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownDAC_Adress.Name = "numericUpDownDAC_Adress";
+            this.numericUpDownDAC_Adress.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownDAC_Adress.TabIndex = 7;
+            this.numericUpDownDAC_Adress.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3047,7 +3107,7 @@
             // 
             // comboBoxSoftHard
             // 
-            this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSoftHard.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxSoftHard.FormattingEnabled = true;
             this.comboBoxSoftHard.Items.AddRange(new object[] {
             "SerialPort",
@@ -3126,7 +3186,7 @@
             // 
             // numericUpDownBytes
             // 
-            this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownBytes.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
             this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownBytes.Name = "numericUpDownBytes";
@@ -3135,7 +3195,7 @@
             // 
             // numericUpDownRegAddress
             // 
-            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownRegAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
             this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
@@ -3149,7 +3209,7 @@
             // 
             // numericUpDownPage
             // 
-            this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownPage.Location = new System.Drawing.Point(444, 28);
             this.numericUpDownPage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownPage.Name = "numericUpDownPage";
@@ -3158,7 +3218,7 @@
             // 
             // domainUpDownDeviceAddress
             // 
-            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.domainUpDownDeviceAddress.Items.Add("0xA0");
             this.domainUpDownDeviceAddress.Items.Add("0xA2");
             this.domainUpDownDeviceAddress.Items.Add("0xA8");
@@ -3171,7 +3231,7 @@
             // 
             // comboBoxFrequency
             // 
-            this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxFrequency.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFrequency.FormattingEnabled = true;
             this.comboBoxFrequency.Items.AddRange(new object[] {
             "100K",
@@ -3188,7 +3248,7 @@
             // 
             // comboBoxDeviceIndex
             // 
-            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxDeviceIndex.FormattingEnabled = true;
             this.comboBoxDeviceIndex.Items.AddRange(new object[] {
             "Device 0",
@@ -3233,12 +3293,30 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.Location = new System.Drawing.Point(247, 1);
+            this.labelTitle.Location = new System.Drawing.Point(253, 0);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(204, 29);
+            this.labelTitle.Size = new System.Drawing.Size(152, 29);
             this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "QSFP28 SR4 GUI";
+            this.labelTitle.Text = "QSFP28 GUI";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 19);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Channel";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(232, 49);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(43, 19);
+            this.label71.TabIndex = 9;
+            this.label71.Text = "Value";
             // 
             // MainForm
             // 
@@ -3247,7 +3325,7 @@
             this.ClientSize = new System.Drawing.Size(764, 522);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -3334,6 +3412,10 @@
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabDAC.ResumeLayout(false);
+            this.tabDAC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Adress)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).EndInit();
@@ -3616,6 +3698,11 @@
         private System.Windows.Forms.ToolStripMenuItem innoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fNRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabDAC;
+        private System.Windows.Forms.NumericUpDown numericUpDownDAC_Adress;
+        private System.Windows.Forms.NumericUpDown numericUpDownDAC;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label1;
     }
 }
 

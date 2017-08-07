@@ -134,7 +134,7 @@ namespace SNOEC_GUI
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.tabControl1.SelectedTab.ToString().Contains("I2C Write"))
+            if ((this.tabControl1.SelectedTab.ToString().Contains("I2C Write")|| (this.tabControl1.SelectedTab.ToString().Contains("DAC"))))
             {
                 this.btnReadWrite.Text = "Write";
             }
@@ -292,6 +292,11 @@ namespace SNOEC_GUI
                     {
                         this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
                     }
+                }
+
+                if (this.tabControl1.SelectedTab.ToString().Contains("DAC"))
+                {
+                    dut.SetDAC((int)numericUpDownDAC_Adress.Value, (byte)numericUpDownDAC.Value);
                 }
 
                 this.btnReadWrite.Enabled = true;

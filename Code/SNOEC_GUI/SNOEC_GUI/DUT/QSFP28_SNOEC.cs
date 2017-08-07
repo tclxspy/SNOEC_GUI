@@ -237,22 +237,22 @@ namespace SNOEC_GUI
                         case 1:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x01);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         case 2:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x02);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         case 3:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x04);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         case 4:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] | 0x08);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         default:
                             break;
@@ -300,22 +300,22 @@ namespace SNOEC_GUI
                         case 1:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] & 0xFE);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         case 2:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] & 0xFD);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         case 3:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] & 0xFB);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         case 4:
                             buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 86, softHard, 1);
                             buff[0] = (byte)(buff[0] & 0xF7);
-                            IOPort.WriteReg(0, 0xA0, 86, softHard, buff);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 86, softHard, buff);
                             break;
                         default:
                             break;
@@ -375,7 +375,7 @@ namespace SNOEC_GUI
             try
             {
                 EnterEngMode(0);
-                byte[] buff = IOPort.ReadReg(0, 0xA0, 6, softHard, 1);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 6, softHard, 1);
                 if (buff == null)
                 {
                     return Algorithm.MyNaN;
@@ -395,7 +395,7 @@ namespace SNOEC_GUI
             try
             {
                 EnterEngMode(0);
-                byte[] buff = IOPort.ReadReg(0, 0xA0, 6, softHard, 1);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 6, softHard, 1);
                 if (buff == null)
                 {
                     return Algorithm.MyNaN;
@@ -415,7 +415,7 @@ namespace SNOEC_GUI
             try
             {
                 EnterEngMode(0);
-                byte[] buff = IOPort.ReadReg(0, 0xA0, 7, softHard, 1);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 7, softHard, 1);
                 if (buff == null)
                 {
                     return Algorithm.MyNaN;
@@ -435,7 +435,7 @@ namespace SNOEC_GUI
             try
             {
                 EnterEngMode(0);
-                byte[] buff = IOPort.ReadReg(0, 0xA0, 7, softHard, 1);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 7, softHard, 1);
                 if (buff == null)
                 {
                     return Algorithm.MyNaN;
@@ -668,6 +668,42 @@ namespace SNOEC_GUI
             {
                 //Log.SaveLogToTxt(ex.Message);
                 return Algorithm.MyNaN;
+            }
+        }
+
+        public bool SetDAC(int channel, byte value)
+        {
+            lock (syncRoot)
+            {
+                byte[] buff = new byte[1];
+                buff[0] = value;
+                try
+                {
+                    //EnterEngMode(0);
+                    switch (channel)
+                    {
+                        case 1:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 0, softHard, buff);
+                            break;
+                        case 2:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 1, softHard, buff);
+                            break;
+                        case 3:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 2, softHard, buff);
+                            break;
+                        case 4:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 3, softHard, buff);
+                            break;
+                        default:
+                            break;
+                    }
+                    return true;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return false;
+                }
             }
         }
     }
