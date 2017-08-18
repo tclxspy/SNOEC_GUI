@@ -694,6 +694,9 @@ namespace SNOEC_GUI
                         case 4:
                             IOPort.WriteReg(DUT_USB_Port, 0xA0, 3, softHard, buff);
                             break;
+                        case 5:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 4, softHard, buff);
+                            break;
                         default:
                             break;
                     }
@@ -703,6 +706,32 @@ namespace SNOEC_GUI
                 {
                     //Log.SaveLogToTxt(ex.ToString());
                     return false;
+                }
+            }
+        }
+
+        public byte[] GetDAC(int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    byte[] buff = new byte[1];
+                    //EnterEngMode(0);
+                    switch (channel)
+                    {
+                        case 6:
+                            buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 5, softHard, 1);
+                            break;
+                        default:
+                            break;
+                    }
+                    return buff;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return null;
                 }
             }
         }

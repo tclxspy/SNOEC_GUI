@@ -296,7 +296,16 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("DAC"))
                 {
-                    dut.SetDAC((int)numericUpDownDAC_Adress.Value, (byte)numericUpDownDAC.Value);
+                    int channel = (int)numericUpDownDAC_Adress.Value;
+                    if (channel == 6)
+                    {
+                        byte[] temp = dut.GetDAC(channel);
+                        this.numericUpDownDAC_Get.Value = temp[0];
+                    }
+                    else
+                    {
+                        dut.SetDAC(channel, (byte)numericUpDownDAC.Value);
+                    }                    
                 }
 
                 this.btnReadWrite.Enabled = true;
@@ -708,6 +717,32 @@ namespace SNOEC_GUI
         private void comboBoxFrequency_SelectedIndexChanged(object sender, EventArgs e)
         {
             IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
+        }
+
+        private void numericUpDownDAC_Adress_ValueChanged(object sender, EventArgs e)
+        {
+            if (this.numericUpDownDAC_Adress.Value != 6)
+            {
+                this.btnReadWrite.Text = "Write";
+            }
+            else
+            {
+                this.btnReadWrite.Text = "Read";
+            }
+        }
+
+        private void buttonReadDAC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dut = new QSFP28_SNOEC();
+                byte[] temp = dut.GetDAC(6);
+                this.numericUpDownDAC_Get.Value = temp[0];
+            }
+            catch
+            {
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

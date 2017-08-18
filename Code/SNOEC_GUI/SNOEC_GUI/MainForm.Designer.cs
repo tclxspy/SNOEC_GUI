@@ -320,6 +320,10 @@
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabDAC = new System.Windows.Forms.TabPage();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numericUpDownDAC_Get = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownDAC = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownDAC_Adress = new System.Windows.Forms.NumericUpDown();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -340,8 +344,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
+            this.buttonReadDAC = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -409,6 +412,7 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabDAC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Get)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Adress)).BeginInit();
             this.panel3.SuspendLayout();
@@ -459,7 +463,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -485,7 +489,7 @@
             this.innoToolStripMenuItem,
             this.fNRToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -3021,8 +3025,11 @@
             // 
             // tabDAC
             // 
+            this.tabDAC.Controls.Add(this.buttonReadDAC);
+            this.tabDAC.Controls.Add(this.label72);
             this.tabDAC.Controls.Add(this.label71);
             this.tabDAC.Controls.Add(this.label1);
+            this.tabDAC.Controls.Add(this.numericUpDownDAC_Get);
             this.tabDAC.Controls.Add(this.numericUpDownDAC);
             this.tabDAC.Controls.Add(this.numericUpDownDAC_Adress);
             this.tabDAC.Location = new System.Drawing.Point(4, 28);
@@ -3032,10 +3039,51 @@
             this.tabDAC.Text = "DAC";
             this.tabDAC.UseVisualStyleBackColor = true;
             // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(342, 157);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(68, 19);
+            this.label72.TabIndex = 10;
+            this.label72.Text = "ReadData";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(342, 111);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(71, 19);
+            this.label71.TabIndex = 9;
+            this.label71.Text = "WriteData";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(175, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 19);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Channel";
+            // 
+            // numericUpDownDAC_Get
+            // 
+            this.numericUpDownDAC_Get.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownDAC_Get.Location = new System.Drawing.Point(426, 157);
+            this.numericUpDownDAC_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownDAC_Get.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDownDAC_Get.Name = "numericUpDownDAC_Get";
+            this.numericUpDownDAC_Get.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownDAC_Get.TabIndex = 7;
+            // 
             // numericUpDownDAC
             // 
             this.numericUpDownDAC.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownDAC.Location = new System.Drawing.Point(316, 49);
+            this.numericUpDownDAC.Location = new System.Drawing.Point(426, 111);
             this.numericUpDownDAC.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownDAC.Maximum = new decimal(new int[] {
             255,
@@ -3049,10 +3097,10 @@
             // numericUpDownDAC_Adress
             // 
             this.numericUpDownDAC_Adress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownDAC_Adress.Location = new System.Drawing.Point(130, 49);
+            this.numericUpDownDAC_Adress.Location = new System.Drawing.Point(254, 111);
             this.numericUpDownDAC_Adress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownDAC_Adress.Maximum = new decimal(new int[] {
-            4,
+            255,
             0,
             0,
             0});
@@ -3069,6 +3117,7 @@
             0,
             0,
             0});
+            this.numericUpDownDAC_Adress.ValueChanged += new System.EventHandler(this.numericUpDownDAC_Adress_ValueChanged);
             // 
             // panel3
             // 
@@ -3300,23 +3349,15 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
             // 
-            // label1
+            // buttonReadDAC
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 19);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Channel";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(232, 49);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(43, 19);
-            this.label71.TabIndex = 9;
-            this.label71.Text = "Value";
+            this.buttonReadDAC.Location = new System.Drawing.Point(254, 153);
+            this.buttonReadDAC.Name = "buttonReadDAC";
+            this.buttonReadDAC.Size = new System.Drawing.Size(75, 23);
+            this.buttonReadDAC.TabIndex = 11;
+            this.buttonReadDAC.Text = "read";
+            this.buttonReadDAC.UseVisualStyleBackColor = true;
+            this.buttonReadDAC.Click += new System.EventHandler(this.buttonReadDAC_Click);
             // 
             // MainForm
             // 
@@ -3414,6 +3455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabDAC.ResumeLayout(false);
             this.tabDAC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Get)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Adress)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -3703,6 +3745,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDownDAC;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown numericUpDownDAC_Get;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Button buttonReadDAC;
     }
 }
 
