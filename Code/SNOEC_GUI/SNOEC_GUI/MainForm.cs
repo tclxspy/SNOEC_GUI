@@ -134,13 +134,21 @@ namespace SNOEC_GUI
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if ((this.tabControl1.SelectedTab.ToString().Contains("I2C Write")|| (this.tabControl1.SelectedTab.ToString().Contains("DAC"))))
+            this.btnReadWrite.Enabled = true;
+
+            if (this.tabControl1.SelectedTab.ToString().Contains("I2C Write"))
             {
                 this.btnReadWrite.Text = "Write";
             }
             else
             {
                 this.btnReadWrite.Text = "Read";
+            }
+
+            if (this.tabControl1.SelectedTab.ToString().Contains("Driver"))
+            {
+                dut = new QSFP28_SNOEC();
+                this.btnReadWrite.Enabled = false;
             }
         }
 
@@ -237,7 +245,7 @@ namespace SNOEC_GUI
 
                     for (int i = 0; i < length; i++)
                     {
-                        this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
+                        this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16).ToUpper();
                         this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = Convert.ToChar(buff[i]);
                     }
                 }
@@ -294,18 +302,18 @@ namespace SNOEC_GUI
                     }
                 }
 
-                if (this.tabControl1.SelectedTab.ToString().Contains("DAC"))
+                if (this.tabControl1.SelectedTab.ToString().Contains("Driver"))
                 {
-                    int channel = (int)numericUpDownDAC_Adress.Value;
-                    if (channel == 6)
-                    {
-                        byte[] temp = dut.GetDAC(channel);
-                        this.numericUpDownDAC_Get.Value = temp[0];
-                    }
-                    else
-                    {
-                        dut.SetDAC(channel, (byte)numericUpDownDAC.Value);
-                    }                    
+                    //int channel = (int)numericUpDownIbias_Adress.Value;
+                    //if (channel == 6)
+                    //{
+                    //    byte[] temp = dut.GetDAC(channel);
+                    //    this.numericUpDownIbias_Get.Value = temp[0];
+                    //}
+                    //else
+                    //{
+                    //    dut.SetDAC(channel, (byte)numericUpDownIbias_Set.Value);
+                    //}                    
                 }
 
                 this.btnReadWrite.Enabled = true;
@@ -719,30 +727,96 @@ namespace SNOEC_GUI
             IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
         }
 
-        private void numericUpDownDAC_Adress_ValueChanged(object sender, EventArgs e)
-        {
-            if (this.numericUpDownDAC_Adress.Value != 6)
-            {
-                this.btnReadWrite.Text = "Write";
-            }
-            else
-            {
-                this.btnReadWrite.Text = "Read";
-            }
-        }
-
         private void buttonReadDAC_Click(object sender, EventArgs e)
         {
             try
             {
-                dut = new QSFP28_SNOEC();
-                byte[] temp = dut.GetDAC(6);
-                this.numericUpDownDAC_Get.Value = temp[0];
+                byte[] temp = dut.PSM4_GetIbias(6);
+                this.numericUpDownIbias_Get.Value = temp[0];
             }
             catch
             {
                 MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonWriteIbias_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int channel = (int)numericUpDownIbias_CH.Value;
+
+                if ((channel <= 4) && (channel >= 1))
+                {
+                    dut.PSM4_SetIbias(channel, (byte)numericUpDownIbias_Set.Value);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void checkBoxIbias_EN2_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int value = (this.checkBoxIbias_EN1.Checked ? 1 : 0) + ((this.checkBoxIbias_EN2.Checked ? 1 : 0) << 1);
+                dut.PSM4_SetIbias(5, (byte)value);                
+            }
+            catch
+            {
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void checkBoxIbias_EN1_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int value = (this.checkBoxIbias_EN1.Checked ? 1 : 0) + ((this.checkBoxIbias_EN2.Checked ? 1 : 0) << 1);
+                dut.PSM4_SetIbias(5, (byte)value);
+            }
+            catch
+            {
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonWriteHeator_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int channel = (int)numericUpDownHeator_CH.Value;
+
+                if ((channel <= 4) && (channel >= 1))
+                {
+                    dut.PSM4_SetHeator(channel, (ushort)numericUpDownHeator_Set.Value);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonReadHeator_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int channel = (int)numericUpDownHeator_CH.Value;
+
+                if ((channel <= 4) && (channel >= 1))
+                {
+                    byte[] temp = dut.PSM4_GetHeator(channel);
+                    this.numericUpDownHeator_Get.Value = temp[0] + temp[1] * 256;
+                    //this.numericUpDownHeator_Get.Value = temp[0];
+                }
+            }
+            catch
+            {
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }   
     }
 }

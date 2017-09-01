@@ -319,13 +319,27 @@
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabDAC = new System.Windows.Forms.TabPage();
+            this.tabDriver = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonWriteHeator = new System.Windows.Forms.Button();
+            this.buttonReadHeator = new System.Windows.Forms.Button();
+            this.label75 = new System.Windows.Forms.Label();
+            this.numericUpDownHeator_Get = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHeator_Set = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHeator_CH = new System.Windows.Forms.NumericUpDown();
+            this.label73 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonWriteIbias = new System.Windows.Forms.Button();
+            this.label74 = new System.Windows.Forms.Label();
+            this.checkBoxIbias_EN2 = new System.Windows.Forms.CheckBox();
+            this.buttonReadIbias = new System.Windows.Forms.Button();
+            this.checkBoxIbias_EN1 = new System.Windows.Forms.CheckBox();
+            this.numericUpDownIbias_CH = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownIbias_Set = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownIbias_Get = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDownDAC_Get = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownDAC = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownDAC_Adress = new System.Windows.Forms.NumericUpDown();
+            this.label71 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
@@ -344,7 +358,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.buttonReadDAC = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -411,10 +424,15 @@
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabDAC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Get)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Adress)).BeginInit();
+            this.tabDriver.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Get)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Set)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_CH)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_CH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Set)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Get)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
@@ -424,7 +442,7 @@
             // 
             // btnReadWrite
             // 
-            this.btnReadWrite.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReadWrite.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReadWrite.ForeColor = System.Drawing.Color.Black;
             this.btnReadWrite.Location = new System.Drawing.Point(636, 7);
             this.btnReadWrite.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -444,7 +462,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(764, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(764, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -454,7 +472,7 @@
             this.productsToolStripMenuItem,
             this.companyToolStripMenuItem});
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
             this.configToolStripMenuItem.Text = "Config";
             // 
             // productsToolStripMenuItem
@@ -463,7 +481,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -471,14 +489,14 @@
             this.qSFP28SR4ToolStripMenuItem.Checked = true;
             this.qSFP28SR4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.qSFP28SR4ToolStripMenuItem.Name = "qSFP28SR4ToolStripMenuItem";
-            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.qSFP28SR4ToolStripMenuItem.Text = "QSFP28 SR4";
             this.qSFP28SR4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28SR4ToolStripMenuItem_Click);
             // 
             // qSFP28CWDM4ToolStripMenuItem
             // 
             this.qSFP28CWDM4ToolStripMenuItem.Name = "qSFP28CWDM4ToolStripMenuItem";
-            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
             this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
             // 
@@ -489,7 +507,7 @@
             this.innoToolStripMenuItem,
             this.fNRToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -497,35 +515,35 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // fNRToolStripMenuItem
             // 
             this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
-            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.fNRToolStripMenuItem.Text = "FNR";
             this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -536,13 +554,13 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.panel1.Size = new System.Drawing.Size(764, 495);
+            this.panel1.Size = new System.Drawing.Size(764, 497);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -553,7 +571,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 107);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(744, 378);
+            this.panel4.Size = new System.Drawing.Size(744, 380);
             this.panel4.TabIndex = 3;
             // 
             // tabControl1
@@ -563,14 +581,14 @@
             this.tabControl1.Controls.Add(this.tabpageAlarmWarning);
             this.tabControl1.Controls.Add(this.tabpageI2CRead);
             this.tabControl1.Controls.Add(this.tabPageI2CWrite);
-            this.tabControl1.Controls.Add(this.tabDAC);
+            this.tabControl1.Controls.Add(this.tabDriver);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(744, 378);
+            this.tabControl1.Size = new System.Drawing.Size(744, 380);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -587,12 +605,12 @@
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnRxCh1_4_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_4_Dis);
-            this.tabpageChOnOff.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageChOnOff.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageChOnOff.Location = new System.Drawing.Point(4, 28);
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabpageChOnOff.Name = "tabpageChOnOff";
             this.tabpageChOnOff.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 346);
+            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 348);
             this.tabpageChOnOff.TabIndex = 1;
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
@@ -726,7 +744,7 @@
             this.tabpageDMIADC.Controls.Add(this.panel7);
             this.tabpageDMIADC.Controls.Add(this.panel5);
             this.tabpageDMIADC.Controls.Add(this.panel6);
-            this.tabpageDMIADC.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageDMIADC.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageDMIADC.ForeColor = System.Drawing.Color.Black;
             this.tabpageDMIADC.Location = new System.Drawing.Point(4, 28);
             this.tabpageDMIADC.Name = "tabpageDMIADC";
@@ -827,7 +845,7 @@
             this.panel10.Controls.Add(this.txtDMI_TxBias_Ch4);
             this.panel10.Location = new System.Drawing.Point(617, 29);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 303);
+            this.panel10.Size = new System.Drawing.Size(100, 305);
             this.panel10.TabIndex = 0;
             // 
             // label45
@@ -961,7 +979,7 @@
             this.panel9.Controls.Add(this.txtDMI_TxBias_Ch3);
             this.panel9.Location = new System.Drawing.Point(497, 29);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(100, 303);
+            this.panel9.Size = new System.Drawing.Size(100, 305);
             this.panel9.TabIndex = 0;
             // 
             // label38
@@ -1095,7 +1113,7 @@
             this.panel8.Controls.Add(this.txtDMI_TxBias_Ch2);
             this.panel8.Location = new System.Drawing.Point(377, 29);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(100, 303);
+            this.panel8.Size = new System.Drawing.Size(100, 305);
             this.panel8.TabIndex = 0;
             // 
             // label31
@@ -1229,7 +1247,7 @@
             this.panel7.Controls.Add(this.txtDMI_TxBias_Ch1);
             this.panel7.Location = new System.Drawing.Point(257, 29);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 303);
+            this.panel7.Size = new System.Drawing.Size(100, 305);
             this.panel7.TabIndex = 0;
             // 
             // label24
@@ -1363,7 +1381,7 @@
             this.panel5.Controls.Add(this.txtDMI_VCC);
             this.panel5.Location = new System.Drawing.Point(137, 29);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(100, 303);
+            this.panel5.Size = new System.Drawing.Size(100, 305);
             this.panel5.TabIndex = 0;
             // 
             // label10
@@ -1495,7 +1513,7 @@
             this.panel6.Controls.Add(this.textBox12);
             this.panel6.Location = new System.Drawing.Point(17, 29);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 303);
+            this.panel6.Size = new System.Drawing.Size(100, 305);
             this.panel6.TabIndex = 0;
             // 
             // label17
@@ -1593,7 +1611,7 @@
             // tabpageAlarmWarning
             // 
             this.tabpageAlarmWarning.Controls.Add(this.groupBox2);
-            this.tabpageAlarmWarning.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageAlarmWarning.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 28);
             this.tabpageAlarmWarning.Name = "tabpageAlarmWarning";
             this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 346);
@@ -2245,7 +2263,7 @@
             this.tabpageI2CRead.Controls.Add(this.panel13);
             this.tabpageI2CRead.Controls.Add(this.panel12);
             this.tabpageI2CRead.Controls.Add(this.panel11);
-            this.tabpageI2CRead.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageI2CRead.Location = new System.Drawing.Point(4, 28);
             this.tabpageI2CRead.Name = "tabpageI2CRead";
             this.tabpageI2CRead.Size = new System.Drawing.Size(736, 346);
@@ -2663,7 +2681,7 @@
             this.tabPageI2CWrite.Controls.Add(this.panel17);
             this.tabPageI2CWrite.Controls.Add(this.panel14);
             this.tabPageI2CWrite.Controls.Add(this.panel15);
-            this.tabPageI2CWrite.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageI2CWrite.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 28);
             this.tabPageI2CWrite.Name = "tabPageI2CWrite";
             this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 346);
@@ -3023,101 +3041,278 @@
             this.dataGridViewTextBoxColumn32.ReadOnly = true;
             this.dataGridViewTextBoxColumn32.Width = 46;
             // 
-            // tabDAC
+            // tabDriver
             // 
-            this.tabDAC.Controls.Add(this.buttonReadDAC);
-            this.tabDAC.Controls.Add(this.label72);
-            this.tabDAC.Controls.Add(this.label71);
-            this.tabDAC.Controls.Add(this.label1);
-            this.tabDAC.Controls.Add(this.numericUpDownDAC_Get);
-            this.tabDAC.Controls.Add(this.numericUpDownDAC);
-            this.tabDAC.Controls.Add(this.numericUpDownDAC_Adress);
-            this.tabDAC.Location = new System.Drawing.Point(4, 28);
-            this.tabDAC.Name = "tabDAC";
-            this.tabDAC.Size = new System.Drawing.Size(736, 346);
-            this.tabDAC.TabIndex = 6;
-            this.tabDAC.Text = "DAC";
-            this.tabDAC.UseVisualStyleBackColor = true;
+            this.tabDriver.Controls.Add(this.groupBox3);
+            this.tabDriver.Controls.Add(this.groupBox1);
+            this.tabDriver.Location = new System.Drawing.Point(4, 28);
+            this.tabDriver.Name = "tabDriver";
+            this.tabDriver.Size = new System.Drawing.Size(736, 348);
+            this.tabDriver.TabIndex = 6;
+            this.tabDriver.Text = "Driver";
+            this.tabDriver.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonWriteHeator);
+            this.groupBox3.Controls.Add(this.buttonReadHeator);
+            this.groupBox3.Controls.Add(this.label75);
+            this.groupBox3.Controls.Add(this.numericUpDownHeator_Get);
+            this.groupBox3.Controls.Add(this.numericUpDownHeator_Set);
+            this.groupBox3.Controls.Add(this.numericUpDownHeator_CH);
+            this.groupBox3.Controls.Add(this.label73);
+            this.groupBox3.Controls.Add(this.label72);
+            this.groupBox3.Location = new System.Drawing.Point(386, 42);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(189, 228);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Heater";
+            // 
+            // buttonWriteHeator
+            // 
+            this.buttonWriteHeator.Location = new System.Drawing.Point(99, 45);
+            this.buttonWriteHeator.Name = "buttonWriteHeator";
+            this.buttonWriteHeator.Size = new System.Drawing.Size(75, 23);
+            this.buttonWriteHeator.TabIndex = 17;
+            this.buttonWriteHeator.Text = "write";
+            this.buttonWriteHeator.UseVisualStyleBackColor = true;
+            this.buttonWriteHeator.Click += new System.EventHandler(this.buttonWriteHeator_Click);
+            // 
+            // buttonReadHeator
+            // 
+            this.buttonReadHeator.Location = new System.Drawing.Point(10, 45);
+            this.buttonReadHeator.Name = "buttonReadHeator";
+            this.buttonReadHeator.Size = new System.Drawing.Size(75, 23);
+            this.buttonReadHeator.TabIndex = 16;
+            this.buttonReadHeator.Text = "read";
+            this.buttonReadHeator.UseVisualStyleBackColor = true;
+            this.buttonReadHeator.Click += new System.EventHandler(this.buttonReadHeator_Click);
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(6, 186);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(68, 19);
+            this.label75.TabIndex = 17;
+            this.label75.Text = "ReadData";
+            // 
+            // numericUpDownHeator_Get
+            // 
+            this.numericUpDownHeator_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_Get.Location = new System.Drawing.Point(112, 182);
+            this.numericUpDownHeator_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownHeator_Get.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numericUpDownHeator_Get.Name = "numericUpDownHeator_Get";
+            this.numericUpDownHeator_Get.ReadOnly = true;
+            this.numericUpDownHeator_Get.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownHeator_Get.TabIndex = 16;
+            // 
+            // numericUpDownHeator_Set
+            // 
+            this.numericUpDownHeator_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_Set.Location = new System.Drawing.Point(112, 142);
+            this.numericUpDownHeator_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownHeator_Set.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numericUpDownHeator_Set.Name = "numericUpDownHeator_Set";
+            this.numericUpDownHeator_Set.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownHeator_Set.TabIndex = 15;
+            // 
+            // numericUpDownHeator_CH
+            // 
+            this.numericUpDownHeator_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_CH.Location = new System.Drawing.Point(112, 98);
+            this.numericUpDownHeator_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownHeator_CH.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numericUpDownHeator_CH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownHeator_CH.Name = "numericUpDownHeator_CH";
+            this.numericUpDownHeator_CH.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownHeator_CH.TabIndex = 9;
+            this.numericUpDownHeator_CH.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(6, 142);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(71, 19);
+            this.label73.TabIndex = 16;
+            this.label73.Text = "WriteData";
             // 
             // label72
             // 
             this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(342, 157);
+            this.label72.Location = new System.Drawing.Point(6, 102);
             this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(68, 19);
+            this.label72.Size = new System.Drawing.Size(59, 19);
             this.label72.TabIndex = 10;
-            this.label72.Text = "ReadData";
+            this.label72.Text = "Channel";
             // 
-            // label71
+            // groupBox1
             // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(342, 111);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(71, 19);
-            this.label71.TabIndex = 9;
-            this.label71.Text = "WriteData";
+            this.groupBox1.Controls.Add(this.buttonWriteIbias);
+            this.groupBox1.Controls.Add(this.label74);
+            this.groupBox1.Controls.Add(this.checkBoxIbias_EN2);
+            this.groupBox1.Controls.Add(this.buttonReadIbias);
+            this.groupBox1.Controls.Add(this.checkBoxIbias_EN1);
+            this.groupBox1.Controls.Add(this.numericUpDownIbias_CH);
+            this.groupBox1.Controls.Add(this.numericUpDownIbias_Set);
+            this.groupBox1.Controls.Add(this.numericUpDownIbias_Get);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label71);
+            this.groupBox1.Location = new System.Drawing.Point(131, 42);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(181, 228);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ibias";
+            // 
+            // buttonWriteIbias
+            // 
+            this.buttonWriteIbias.Location = new System.Drawing.Point(77, 64);
+            this.buttonWriteIbias.Name = "buttonWriteIbias";
+            this.buttonWriteIbias.Size = new System.Drawing.Size(75, 23);
+            this.buttonWriteIbias.TabIndex = 14;
+            this.buttonWriteIbias.Text = "write";
+            this.buttonWriteIbias.UseVisualStyleBackColor = true;
+            this.buttonWriteIbias.Click += new System.EventHandler(this.buttonWriteIbias_Click);
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(7, 186);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(68, 19);
+            this.label74.TabIndex = 15;
+            this.label74.Text = "ReadData";
+            // 
+            // checkBoxIbias_EN2
+            // 
+            this.checkBoxIbias_EN2.AutoSize = true;
+            this.checkBoxIbias_EN2.Checked = true;
+            this.checkBoxIbias_EN2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxIbias_EN2.Location = new System.Drawing.Point(11, 65);
+            this.checkBoxIbias_EN2.Name = "checkBoxIbias_EN2";
+            this.checkBoxIbias_EN2.Size = new System.Drawing.Size(54, 23);
+            this.checkBoxIbias_EN2.TabIndex = 14;
+            this.checkBoxIbias_EN2.Text = "EN2";
+            this.checkBoxIbias_EN2.UseVisualStyleBackColor = true;
+            this.checkBoxIbias_EN2.CheckedChanged += new System.EventHandler(this.checkBoxIbias_EN2_CheckedChanged);
+            // 
+            // buttonReadIbias
+            // 
+            this.buttonReadIbias.Location = new System.Drawing.Point(77, 24);
+            this.buttonReadIbias.Name = "buttonReadIbias";
+            this.buttonReadIbias.Size = new System.Drawing.Size(75, 23);
+            this.buttonReadIbias.TabIndex = 11;
+            this.buttonReadIbias.Text = "read";
+            this.buttonReadIbias.UseVisualStyleBackColor = true;
+            this.buttonReadIbias.Click += new System.EventHandler(this.buttonReadDAC_Click);
+            // 
+            // checkBoxIbias_EN1
+            // 
+            this.checkBoxIbias_EN1.AutoSize = true;
+            this.checkBoxIbias_EN1.Checked = true;
+            this.checkBoxIbias_EN1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxIbias_EN1.Location = new System.Drawing.Point(12, 27);
+            this.checkBoxIbias_EN1.Name = "checkBoxIbias_EN1";
+            this.checkBoxIbias_EN1.Size = new System.Drawing.Size(54, 23);
+            this.checkBoxIbias_EN1.TabIndex = 13;
+            this.checkBoxIbias_EN1.Text = "EN1";
+            this.checkBoxIbias_EN1.UseVisualStyleBackColor = true;
+            this.checkBoxIbias_EN1.CheckedChanged += new System.EventHandler(this.checkBoxIbias_EN1_CheckedChanged);
+            // 
+            // numericUpDownIbias_CH
+            // 
+            this.numericUpDownIbias_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_CH.Location = new System.Drawing.Point(86, 98);
+            this.numericUpDownIbias_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownIbias_CH.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.numericUpDownIbias_CH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDownIbias_CH.Name = "numericUpDownIbias_CH";
+            this.numericUpDownIbias_CH.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownIbias_CH.TabIndex = 7;
+            this.numericUpDownIbias_CH.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDownIbias_Set
+            // 
+            this.numericUpDownIbias_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_Set.Location = new System.Drawing.Point(86, 142);
+            this.numericUpDownIbias_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownIbias_Set.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDownIbias_Set.Name = "numericUpDownIbias_Set";
+            this.numericUpDownIbias_Set.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownIbias_Set.TabIndex = 7;
+            // 
+            // numericUpDownIbias_Get
+            // 
+            this.numericUpDownIbias_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_Get.Location = new System.Drawing.Point(86, 182);
+            this.numericUpDownIbias_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownIbias_Get.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericUpDownIbias_Get.Name = "numericUpDownIbias_Get";
+            this.numericUpDownIbias_Get.ReadOnly = true;
+            this.numericUpDownIbias_Get.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownIbias_Get.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 111);
+            this.label1.Location = new System.Drawing.Point(7, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 19);
             this.label1.TabIndex = 8;
             this.label1.Text = "Channel";
             // 
-            // numericUpDownDAC_Get
+            // label71
             // 
-            this.numericUpDownDAC_Get.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownDAC_Get.Location = new System.Drawing.Point(426, 157);
-            this.numericUpDownDAC_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownDAC_Get.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericUpDownDAC_Get.Name = "numericUpDownDAC_Get";
-            this.numericUpDownDAC_Get.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownDAC_Get.TabIndex = 7;
-            // 
-            // numericUpDownDAC
-            // 
-            this.numericUpDownDAC.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownDAC.Location = new System.Drawing.Point(426, 111);
-            this.numericUpDownDAC.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownDAC.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericUpDownDAC.Name = "numericUpDownDAC";
-            this.numericUpDownDAC.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownDAC.TabIndex = 7;
-            // 
-            // numericUpDownDAC_Adress
-            // 
-            this.numericUpDownDAC_Adress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownDAC_Adress.Location = new System.Drawing.Point(254, 111);
-            this.numericUpDownDAC_Adress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownDAC_Adress.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericUpDownDAC_Adress.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownDAC_Adress.Name = "numericUpDownDAC_Adress";
-            this.numericUpDownDAC_Adress.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownDAC_Adress.TabIndex = 7;
-            this.numericUpDownDAC_Adress.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownDAC_Adress.ValueChanged += new System.EventHandler(this.numericUpDownDAC_Adress_ValueChanged);
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(7, 142);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(71, 19);
+            this.label71.TabIndex = 9;
+            this.label71.Text = "WriteData";
             // 
             // panel3
             // 
@@ -3156,7 +3351,7 @@
             // 
             // comboBoxSoftHard
             // 
-            this.comboBoxSoftHard.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxSoftHard.FormattingEnabled = true;
             this.comboBoxSoftHard.Items.AddRange(new object[] {
             "SerialPort",
@@ -3235,7 +3430,7 @@
             // 
             // numericUpDownBytes
             // 
-            this.numericUpDownBytes.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
             this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownBytes.Name = "numericUpDownBytes";
@@ -3244,7 +3439,7 @@
             // 
             // numericUpDownRegAddress
             // 
-            this.numericUpDownRegAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
             this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
@@ -3258,7 +3453,7 @@
             // 
             // numericUpDownPage
             // 
-            this.numericUpDownPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownPage.Location = new System.Drawing.Point(444, 28);
             this.numericUpDownPage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownPage.Name = "numericUpDownPage";
@@ -3267,7 +3462,7 @@
             // 
             // domainUpDownDeviceAddress
             // 
-            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.domainUpDownDeviceAddress.Items.Add("0xA0");
             this.domainUpDownDeviceAddress.Items.Add("0xA2");
             this.domainUpDownDeviceAddress.Items.Add("0xA8");
@@ -3280,7 +3475,7 @@
             // 
             // comboBoxFrequency
             // 
-            this.comboBoxFrequency.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFrequency.FormattingEnabled = true;
             this.comboBoxFrequency.Items.AddRange(new object[] {
             "100K",
@@ -3297,7 +3492,7 @@
             // 
             // comboBoxDeviceIndex
             // 
-            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxDeviceIndex.FormattingEnabled = true;
             this.comboBoxDeviceIndex.Items.AddRange(new object[] {
             "Device 0",
@@ -3349,16 +3544,6 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
             // 
-            // buttonReadDAC
-            // 
-            this.buttonReadDAC.Location = new System.Drawing.Point(254, 153);
-            this.buttonReadDAC.Name = "buttonReadDAC";
-            this.buttonReadDAC.Size = new System.Drawing.Size(75, 23);
-            this.buttonReadDAC.TabIndex = 11;
-            this.buttonReadDAC.Text = "read";
-            this.buttonReadDAC.UseVisualStyleBackColor = true;
-            this.buttonReadDAC.Click += new System.EventHandler(this.buttonReadDAC_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -3366,7 +3551,7 @@
             this.ClientSize = new System.Drawing.Size(764, 522);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -3453,11 +3638,17 @@
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabDAC.ResumeLayout(false);
-            this.tabDAC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Get)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDAC_Adress)).EndInit();
+            this.tabDriver.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Get)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Set)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_CH)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_CH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Set)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Get)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).EndInit();
@@ -3740,14 +3931,27 @@
         private System.Windows.Forms.ToolStripMenuItem innoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fNRToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.TabPage tabDAC;
-        private System.Windows.Forms.NumericUpDown numericUpDownDAC_Adress;
-        private System.Windows.Forms.NumericUpDown numericUpDownDAC;
+        private System.Windows.Forms.TabPage tabDriver;
+        private System.Windows.Forms.NumericUpDown numericUpDownIbias_CH;
+        private System.Windows.Forms.NumericUpDown numericUpDownIbias_Set;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDownDAC_Get;
+        private System.Windows.Forms.NumericUpDown numericUpDownIbias_Get;
+        private System.Windows.Forms.Button buttonReadIbias;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.NumericUpDown numericUpDownHeator_Get;
+        private System.Windows.Forms.NumericUpDown numericUpDownHeator_Set;
+        private System.Windows.Forms.NumericUpDown numericUpDownHeator_CH;
+        private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Button buttonReadDAC;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.CheckBox checkBoxIbias_EN2;
+        private System.Windows.Forms.CheckBox checkBoxIbias_EN1;
+        private System.Windows.Forms.Button buttonWriteHeator;
+        private System.Windows.Forms.Button buttonReadHeator;
+        private System.Windows.Forms.Button buttonWriteIbias;
     }
 }
 
