@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SNOEC_GUI
@@ -671,7 +671,7 @@ namespace SNOEC_GUI
             }
         }
 
-        public bool SetDAC(int channel, byte value)
+        public bool PSM4_SetIbias(int channel, byte value)
         {
             lock (syncRoot)
             {
@@ -710,7 +710,7 @@ namespace SNOEC_GUI
             }
         }
 
-        public byte[] GetDAC(int channel)
+        public byte[] PSM4_GetIbias(int channel)
         {
             lock (syncRoot)
             {
@@ -726,6 +726,91 @@ namespace SNOEC_GUI
                         default:
                             break;
                     }
+                    return buff;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return null;
+                }
+            }
+        }
+
+        public bool PSM4_SetHeator(int channel, UInt16 value)
+        {
+            lock (syncRoot)
+            {
+                byte[] buff_L = new byte[1];
+                buff_L[0] = (byte)(value % 256);
+                byte[] buff_H = new byte[1];
+                buff_H[0] = (byte)(value / 256);
+                try
+                {
+                    //EnterEngMode(0);
+                    switch (channel)
+                    {
+                        case 1:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 6, softHard, buff_L);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 7, softHard, buff_H);
+                            break;
+                        case 2:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 8, softHard, buff_L);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 9, softHard, buff_H);
+                            break;
+                        case 3:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 10, softHard, buff_L);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 11, softHard, buff_H);
+                            break;
+                        case 4:
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 12, softHard, buff_L);
+                            IOPort.WriteReg(DUT_USB_Port, 0xA0, 13, softHard, buff_H);
+                            break;
+                        default:
+                            break;
+                    }
+                    return true;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return false;
+                }
+            }
+        }
+
+        public byte[] PSM4_GetHeator(int channel)
+        {
+            lock (syncRoot)
+            {
+                byte[] buff = new byte[2];
+                byte[] buff_L = new byte[1];
+                byte[] buff_H = new byte[1];
+                try
+                {
+                    //EnterEngMode(0);
+                    switch (channel)
+                    {
+                        case 1:
+                            buff_L = IOPort.ReadReg(DUT_USB_Port, 0xA0, 14, softHard, 1);
+                            buff_H = IOPort.ReadReg(DUT_USB_Port, 0xA0, 15, softHard, 1);
+                            break;
+                        case 2:
+                            buff_L = IOPort.ReadReg(DUT_USB_Port, 0xA0, 16, softHard, 1);
+                            buff_H = IOPort.ReadReg(DUT_USB_Port, 0xA0, 17, softHard, 1);
+                            break;
+                        case 3:
+                            buff_L = IOPort.ReadReg(DUT_USB_Port, 0xA0, 18, softHard, 1);
+                            buff_H = IOPort.ReadReg(DUT_USB_Port, 0xA0, 19, softHard, 1);
+                            break;
+                        case 4:
+                            buff_L = IOPort.ReadReg(DUT_USB_Port, 0xA0, 20, softHard, 1);
+                            buff_H = IOPort.ReadReg(DUT_USB_Port, 0xA0, 21, softHard, 1);
+                            break;
+                        default:
+                            break;
+                    }
+                    buff[0] = buff_L[0];
+                    buff[1] = buff_H[0];
                     return buff;
                 }
                 catch
