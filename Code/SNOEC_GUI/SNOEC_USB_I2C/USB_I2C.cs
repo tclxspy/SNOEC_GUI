@@ -21,13 +21,70 @@ namespace SNOEC_USB_I2C
         }
 
         public static byte[] ReadPort(int deviceIndex, int deviceAddress, int regAddress, bool regAddressWide, byte[] buffer)
-        {
-            return ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, ReadWrite.Read, buffer);
+        {            
+            if (buffer.Length > 255)
+            {
+                return null;
+            }
+
+            if (buffer.Length<= 56)
+            {
+                return ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, ReadWrite.Read, buffer);
+            }
+
+            //USB虚拟串口一次只能穿64个字节,减去8个字节的格式位，所以一次传送56个数据
+            byte[] readBytes = new byte[buffer.Length];
+            int cycles = buffer.Length / 56;
+            int left = buffer.Length % 56;
+            byte[] buff;
+            int i = 0;
+
+            for (;i< cycles;i++)
+            {
+                buff = new byte[56];
+                buff = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * 56, regAddressWide, ReadWrite.Read, buff);
+                buff.CopyTo(readBytes, i * 56);
+            }
+
+            buff = new byte[left];
+            buff = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * 56, regAddressWide, ReadWrite.Read, buff);
+            buff.CopyTo(readBytes, i * 56);
+
+            return readBytes;
         }
 
+        //无回读
         public static byte[] WritePort(int deviceIndex, int deviceAddress, int regAddress, bool regAddressWide, byte[] buffer)
         {
-            return ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, ReadWrite.Write, buffer);
+            if (buffer.Length > 255)
+            {
+                return null;
+            }
+
+            if (buffer.Length <= 56)
+            {
+                return ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, ReadWrite.Write, buffer);
+            }
+
+            //USB虚拟串口一次只能穿64个字节,减去8个字节的格式位，所以一次传送56个数据
+            byte[] readBytes = new byte[buffer.Length];
+            int cycles = buffer.Length / 56;
+            int left = buffer.Length % 56;
+            byte[] buff;
+            int i = 0;
+
+            for (; i < cycles; i++)
+            {
+                buff = new byte[56];
+                Array.Copy(buffer, i * 56, buff, 0, 56);
+                ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * 56, regAddressWide, ReadWrite.Write, buff);
+            }
+
+            buff = new byte[left];
+            Array.Copy(buffer, i * 56, buff, 0, left);
+            buff = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * 56, regAddressWide, ReadWrite.Write, buff);
+
+            return readBytes;
         }
 
 
@@ -48,6 +105,12 @@ namespace SNOEC_USB_I2C
             arr[6] = (byte)buffer.Length;
             arr[7] = (byte)0;//CFKType
             buffer.CopyTo(arr, 8);
+
+            //USB虚拟串口一次只能穿64个字节
+            if (arr.Length > 64)
+            {
+                return null;
+            }
 
             //semaphore.WaitOne();
             
@@ -93,8 +156,8 @@ namespace SNOEC_USB_I2C
                 }
 
                 // Set the read/write timeouts
-                _serialPort.ReadTimeout = 500;
-                _serialPort.WriteTimeout = 500;
+                _serialPort.ReadTimeout = 5000;
+                _serialPort.WriteTimeout = 5000;
 
                 if (_serialPort.IsOpen == true)
                 {
