@@ -25,6 +25,7 @@ namespace SNOEC_GUI
         public MainForm()
         {
             InitializeComponent();
+            this.labelDate.Text = DateTime.Now.ToShortDateString() + "   " + DateTime.Now.ToShortTimeString();
 
             this.tabControl1.SelectedIndex = 1;
 
@@ -260,6 +261,12 @@ namespace SNOEC_GUI
                         return;
                     }
 
+                    //clear cells
+                    for (int i = 0; i < maxCells; i++)
+                    {
+                        this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = null;
+                    }
+
                     try
                     {
                         for (int i = 0; i < writeData.Length; i++)
@@ -290,12 +297,6 @@ namespace SNOEC_GUI
                         return;
                     }
 
-                    //clear cells
-                    for (int i = 0; i < maxCells; i++)
-                    {
-                        this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = null;
-                    }
-
                     for (int i = 0; i < buff.Length; i++)
                     {
                         this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
@@ -304,16 +305,7 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Driver"))
                 {
-                    //int channel = (int)numericUpDownIbias_Adress.Value;
-                    //if (channel == 6)
-                    //{
-                    //    byte[] temp = dut.GetDAC(channel);
-                    //    this.numericUpDownIbias_Get.Value = temp[0];
-                    //}
-                    //else
-                    //{
-                    //    dut.SetDAC(channel, (byte)numericUpDownIbias_Set.Value);
-                    //}                    
+                    
                 }
 
                 this.btnReadWrite.Enabled = true;
