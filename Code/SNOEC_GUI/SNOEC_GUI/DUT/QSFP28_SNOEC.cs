@@ -13,6 +13,7 @@ namespace SNOEC_GUI
         public static Company company = Company.SNOEC;
         public static IOPort.SoftHard softHard = IOPort.SoftHard.SerialPort;
         private static object syncRoot = new Object();//used for thread synchronization
+        protected DUTCoeffControlByPN dataTable_DUTCoeffControlByPN;
 
         public enum Company : int
         {
@@ -21,7 +22,10 @@ namespace SNOEC_GUI
             FNR = 2
         }
 
-        public QSFP28_SNOEC() { }
+        public QSFP28_SNOEC(DUTCoeffControlByPN tabe)
+        {
+            this.dataTable_DUTCoeffControlByPN = tabe;
+        }
 
         private void EnterEngMode(int page)
         {
@@ -38,10 +42,10 @@ namespace SNOEC_GUI
             else
             {
                 byte[] buff = new byte[5];
-                buff[0] = 0x00;
-                buff[1] = 0x00;
-                buff[2] = 0x10;
-                buff[3] = 0x11;
+                buff[0] = 0xdf;
+                buff[1] = 0x5e;
+                buff[2] = 0x75;
+                buff[3] = 0xcd;
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }
@@ -817,6 +821,81 @@ namespace SNOEC_GUI
                 {
                     //Log.SaveLogToTxt(ex.ToString());
                     return null;
+                }
+            }
+        }
+
+        public enum Coeff : int
+        {
+            DmiTempSlope,
+            DmiVccSlope,
+            DmiTxpowerSlope,
+            DmiRxpowerSlope,
+            DmiTxBiasSlope,
+            DmiTempOffset,
+            DmiVccOffset,
+            DmiTxpowerOffset,
+            DmiRxpowerOffset,
+            DmiTxBiasOffset,
+            DmiTempShift,
+            DmiVccShift,
+            DmiTxpowerShift,
+            DmiRxpowerShift,
+            DmiTxBiasShift,
+        }
+
+        public string GetCoeff(Coeff coeff, int channel)
+        {
+            lock (syncRoot)
+            {
+                string coeffName = coeff.ToString();
+                try
+                {
+                    DUTCoeffControlByPN.CoeffInfo coeffInfo = dataTable_DUTCoeffControlByPN.GetOneInfoFromTable(coeffName, channel);
+
+                    EnterEngMode(coeffInfo.Page);
+                    string value = EEPROM_SNOEC.ReadCoef(DUT_USB_Port, 0xA0, coeffInfo.StartAddress, coeffInfo.Format);
+
+                    //Log.SaveLogToTxt("Get " + coeffName + " is " + value);
+                    return value;
+
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt("Failed to get value of " + coeffName);
+                    return Algorithm.MyNaN.ToString();
+                }
+            }
+        }
+
+        public enum NameOfADC : int
+        {
+            TemperatureAdc,
+            VccAdc,
+            TxPowerAdc,
+            RxPowerAdc,
+            TxBiasAdc,
+        }
+
+        public ushort ReadADC(NameOfADC enumName, int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    string name = enumName.ToString();
+                    DUTCoeffControlByPN.CoeffInfo coeffInfo = dataTable_DUTCoeffControlByPN.GetOneInfoFromTable(name, channel);
+
+                    EnterEngMode(coeffInfo.Page);
+                    UInt16 valueADC = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, coeffInfo.StartAddress);
+                    //Log.SaveLogToTxt("Current TXPOWERADC is " + valueADC);
+                    return valueADC;
+
+                }
+                catch (Exception ex)
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return Algorithm.MyNaN;
                 }
             }
         }

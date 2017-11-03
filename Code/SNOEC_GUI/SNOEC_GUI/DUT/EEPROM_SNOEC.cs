@@ -258,5 +258,175 @@ namespace SNOEC_GUI
             }
         }
 
+        public static string ReadCoef(int deviceIndex, int deviceAddress, int regAddress, byte format, int phycialAdress = 0, int mdiomode = 0)
+        {//1 ieee754;2 UInt16;3 UInt32;4 Int16
+            string strcoef = "";
+            try
+            {
+
+                switch (format)
+                {
+                    case 1:
+                        float fcoef = ieeetofloat(deviceIndex, deviceAddress, regAddress, phycialAdress, mdiomode);
+                        strcoef = fcoef.ToString();
+                        break;
+                    case 2:
+                        UInt16 u16coef = bytetou16(deviceIndex, deviceAddress, regAddress, phycialAdress, mdiomode);
+                        strcoef = u16coef.ToString();
+                        break;
+                    case 3:
+                        UInt32 u32coef = bytetou32(deviceIndex, deviceAddress, regAddress, phycialAdress, mdiomode);
+                        strcoef = u32coef.ToString();
+                        break;
+                    case 4:
+                        Int16 i16coef = bytetoi16(deviceIndex, deviceAddress, regAddress, phycialAdress, mdiomode);
+                        strcoef = i16coef.ToString();
+                        break;
+                    default:
+                        strcoef = "";
+                        break;
+                }
+
+                return strcoef;
+            }
+            catch (Exception ex)
+            {
+
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN.ToString();
+            }
+        }
+
+        public static float ieeetofloat(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
+        {
+            float fcoef;
+            byte[] bcoef = new byte[4];
+
+            UInt16[] bcoefmdio = new UInt16[4];
+            if (mdiomode == 1)
+            {
+                bcoefmdio = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 4);
+                for (int i = 0; i < 4; i++)
+                {
+                    bcoef[i] = (byte)(bcoefmdio[i]);
+                }
+            }
+            else
+            {
+                bcoef = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 4);
+
+            }
+            System.Threading.Thread.Sleep(200);
+            bcoef.Reverse();
+            fcoef = BitConverter.ToSingle(bcoef, 0);
+            return fcoef;
+        }
+
+        public static UInt16 bytetou16(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
+        {
+            byte[] bcoef = new byte[2];
+            UInt16[] bcoefmdio = new UInt16[2];
+            if (mdiomode == 1)
+            {
+                bcoefmdio = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 2);
+                for (int i = 0; i < 2; i++)
+                {
+                    bcoef[i] = (byte)(bcoefmdio[i]);
+                }
+            }
+            else
+            {
+                bcoef = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 2);
+
+            }
+
+            System.Threading.Thread.Sleep(200);
+
+            UInt16 U16coef = (UInt16)((bcoef[1] << 8) + bcoef[0]);
+            return U16coef;
+
+        }
+
+        public static UInt32 bytetou32(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
+        {
+            byte[] bcoef = new byte[4];
+            UInt16[] bcoefmdio = new UInt16[4];
+            if (mdiomode == 1)
+            {
+                bcoefmdio = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 4);
+                for (int i = 0; i < 4; i++)
+                {
+                    bcoef[i] = (byte)(bcoefmdio[i]);
+                }
+            }
+            else
+            {
+                bcoef = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 4);
+            }
+            UInt32 U32coef = (UInt32)((bcoef[0] << 24) + (bcoef[1] << 16) + (bcoef[2] << 8) + bcoef[3]);
+            System.Threading.Thread.Sleep(200);
+            return U32coef;
+        }
+
+        public static Int16 bytetoi16(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
+        {
+            byte[] bcoef = new byte[2];
+            UInt16[] bcoefmdio = new UInt16[2];
+            if (mdiomode == 1)
+            {
+                bcoefmdio = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 2);
+                for (int i = 0; i < 2; i++)
+                {
+                    bcoef[i] = (byte)(bcoefmdio[i]);
+                }
+            }
+            else
+            {
+                bcoef = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 2);
+
+            }
+
+            System.Threading.Thread.Sleep(200);
+
+            Int16 i16coef = (Int16)((bcoef[1] << 8) + bcoef[0]);
+            return i16coef;
+
+        }
+
+        //read adc
+        public static UInt16 readadc(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
+        {
+            byte[] buff = new byte[2];
+            UInt16 adc = 0;
+            UInt16[] buff1 = new UInt16[2];
+            try
+            {
+                for (int i = 0; i < 4; i++)
+                {
+                    if (mdiomode == 1)
+                    {
+                        buff1 = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 2);
+                        buff[0] = (byte)(buff1[0]);
+                        buff[1] = (byte)(buff1[1]);
+                    }
+                    else
+                    {
+                        buff = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 2);
+                    }
+                    if (buff[0] != 0)
+                        break;
+
+                }
+
+                adc = (UInt16)((buff[1]) * 256 + buff[0]);
+                return adc;
+
+            }
+            catch (Exception ex)
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
     }
 }
