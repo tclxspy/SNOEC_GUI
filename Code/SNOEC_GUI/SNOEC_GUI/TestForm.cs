@@ -16,9 +16,10 @@ namespace SNOEC_GUI
         private QSFP28_SNOEC dut;
         private static int status = 0;
 
-        public TestForm()
+        public TestForm(QSFP28_SNOEC dt)
         {
             InitializeComponent();
+            this.dut = dt;
         }
 
         protected override void WndProc(ref Message m)
@@ -68,7 +69,6 @@ namespace SNOEC_GUI
 
                 this.Icon = Properties.Resources.OnLineBusy;
                 this.toolStripBtnRun.Enabled = false;
-                dut = new QSFP28_SNOEC();
                 decimal cycles = this.numericUpDownCycles.Value;
                 status = 0;
 
@@ -143,53 +143,9 @@ namespace SNOEC_GUI
             {
                 this.Icon = Properties.Resources.Online;
                 this.toolStripBtnRun.Enabled = true;
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No link. please click read buton fistly on tha main GUI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void comboBoxDeviceIndex_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            QSFP28_SNOEC.DUT_USB_Port = this.comboBoxDeviceIndex.SelectedIndex;
-        }
-
-        private void comboBoxSoftHard_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (this.comboBoxSoftHard.Text)
-            {
-                case "HARDWARE_SEQUENT":
-                    QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
-                    break;
-
-                case "SOFTWARE_SEQUENT":
-                    QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SEQUENT;
-                    break;
-
-                case "HARDWARE_SINGLE":
-                    QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SINGLE;
-                    break;
-
-                case "SOFTWARE_SINGLE":
-                    QSFP28_SNOEC.softHard = IOPort.SoftHard.SOFTWARE_SINGLE;
-                    break;
-
-                case "OnEasyB_I2C":
-                    QSFP28_SNOEC.softHard = IOPort.SoftHard.OnEasyB_I2C;
-                    break;
-
-                case "SerialPort":
-                    QSFP28_SNOEC.softHard = IOPort.SoftHard.SerialPort;
-                    break;
-
-                default:
-                    QSFP28_SNOEC.softHard = IOPort.SoftHard.HARDWARE_SEQUENT;
-                    break;
-            }
-        }
-
-        private void comboBoxFrequency_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
-        }
+        }        
 
         private void toolStripBtnStop_Click(object sender, EventArgs e)
         {

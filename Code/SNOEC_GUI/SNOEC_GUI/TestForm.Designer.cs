@@ -51,14 +51,6 @@
             this.checkBoxPN = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxPowerSupplyer = new System.Windows.Forms.ComboBox();
-            this.comboBoxFrequency = new System.Windows.Forms.ComboBox();
-            this.comboBoxDeviceIndex = new System.Windows.Forms.ComboBox();
             this.labelResult = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownCycles = new System.Windows.Forms.NumericUpDown();
@@ -309,20 +301,12 @@
             this.panel2.Location = new System.Drawing.Point(0, 158);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(493, 194);
+            this.panel2.Size = new System.Drawing.Size(493, 140);
             this.panel2.TabIndex = 2;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.comboBoxSoftHard);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.comboBoxPowerSupplyer);
-            this.groupBox2.Controls.Add(this.comboBoxFrequency);
-            this.groupBox2.Controls.Add(this.comboBoxDeviceIndex);
             this.groupBox2.Controls.Add(this.labelResult);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.numericUpDownCycles);
@@ -337,122 +321,15 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(5, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(483, 184);
+            this.groupBox2.Size = new System.Drawing.Size(483, 130);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(117, 21);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 16);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Hard/Soft";
-            // 
-            // comboBoxSoftHard
-            // 
-            this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxSoftHard.FormattingEnabled = true;
-            this.comboBoxSoftHard.Items.AddRange(new object[] {
-            "SerialPort",
-            "OnEasyB_I2C",
-            "HARDWARE_SEQUENT",
-            "SOFTWARE_SEQUENT",
-            "HARDWARE_SINGLE",
-            "SOFTWARE_SINGLE"});
-            this.comboBoxSoftHard.Location = new System.Drawing.Point(120, 46);
-            this.comboBoxSoftHard.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBoxSoftHard.Name = "comboBoxSoftHard";
-            this.comboBoxSoftHard.Size = new System.Drawing.Size(162, 25);
-            this.comboBoxSoftHard.TabIndex = 22;
-            this.comboBoxSoftHard.Text = "SerialPort";
-            this.comboBoxSoftHard.SelectedIndexChanged += new System.EventHandler(this.comboBoxSoftHard_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(394, 21);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 16);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Supplyer";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(304, 21);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Frequency";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 21);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 16);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Device Index";
-            // 
-            // comboBoxPowerSupplyer
-            // 
-            this.comboBoxPowerSupplyer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxPowerSupplyer.FormattingEnabled = true;
-            this.comboBoxPowerSupplyer.Items.AddRange(new object[] {
-            "E3631"});
-            this.comboBoxPowerSupplyer.Location = new System.Drawing.Point(397, 46);
-            this.comboBoxPowerSupplyer.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBoxPowerSupplyer.Name = "comboBoxPowerSupplyer";
-            this.comboBoxPowerSupplyer.Size = new System.Drawing.Size(67, 25);
-            this.comboBoxPowerSupplyer.TabIndex = 19;
-            this.comboBoxPowerSupplyer.Text = "E3631";
-            // 
-            // comboBoxFrequency
-            // 
-            this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxFrequency.FormattingEnabled = true;
-            this.comboBoxFrequency.Items.AddRange(new object[] {
-            "100K",
-            "200K",
-            "300K",
-            "400K"});
-            this.comboBoxFrequency.Location = new System.Drawing.Point(307, 46);
-            this.comboBoxFrequency.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBoxFrequency.Name = "comboBoxFrequency";
-            this.comboBoxFrequency.Size = new System.Drawing.Size(67, 25);
-            this.comboBoxFrequency.TabIndex = 19;
-            this.comboBoxFrequency.Text = "400K";
-            this.comboBoxFrequency.SelectedIndexChanged += new System.EventHandler(this.comboBoxFrequency_SelectedIndexChanged);
-            // 
-            // comboBoxDeviceIndex
-            // 
-            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxDeviceIndex.FormattingEnabled = true;
-            this.comboBoxDeviceIndex.Items.AddRange(new object[] {
-            "Device 0",
-            "Device 1",
-            "Device 2",
-            "Device 3",
-            "Device 4"});
-            this.comboBoxDeviceIndex.Location = new System.Drawing.Point(12, 46);
-            this.comboBoxDeviceIndex.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBoxDeviceIndex.Name = "comboBoxDeviceIndex";
-            this.comboBoxDeviceIndex.Size = new System.Drawing.Size(86, 25);
-            this.comboBoxDeviceIndex.TabIndex = 18;
-            this.comboBoxDeviceIndex.Text = "Device 1";
-            this.comboBoxDeviceIndex.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeviceIndex_SelectedIndexChanged);
             // 
             // labelResult
             // 
             this.labelResult.AutoSize = true;
             this.labelResult.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelResult.Location = new System.Drawing.Point(358, 98);
+            this.labelResult.Location = new System.Drawing.Point(358, 34);
             this.labelResult.Name = "labelResult";
             this.labelResult.Size = new System.Drawing.Size(64, 25);
             this.labelResult.TabIndex = 15;
@@ -461,7 +338,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(177, 119);
+            this.label3.Location = new System.Drawing.Point(177, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 13;
@@ -469,7 +346,7 @@
             // 
             // numericUpDownCycles
             // 
-            this.numericUpDownCycles.Location = new System.Drawing.Point(246, 117);
+            this.numericUpDownCycles.Location = new System.Drawing.Point(246, 53);
             this.numericUpDownCycles.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -487,7 +364,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(177, 87);
+            this.label2.Location = new System.Drawing.Point(177, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 14;
@@ -495,7 +372,7 @@
             // 
             // numericUpDownDelay
             // 
-            this.numericUpDownDelay.Location = new System.Drawing.Point(246, 85);
+            this.numericUpDownDelay.Location = new System.Drawing.Point(246, 21);
             this.numericUpDownDelay.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -508,7 +385,7 @@
             // radioButtonPowerCyclesTest
             // 
             this.radioButtonPowerCyclesTest.AutoSize = true;
-            this.radioButtonPowerCyclesTest.Location = new System.Drawing.Point(12, 119);
+            this.radioButtonPowerCyclesTest.Location = new System.Drawing.Point(12, 55);
             this.radioButtonPowerCyclesTest.Name = "radioButtonPowerCyclesTest";
             this.radioButtonPowerCyclesTest.Size = new System.Drawing.Size(119, 20);
             this.radioButtonPowerCyclesTest.TabIndex = 9;
@@ -519,7 +396,7 @@
             // 
             this.radioButtonI2C_Com_Test.AutoSize = true;
             this.radioButtonI2C_Com_Test.Checked = true;
-            this.radioButtonI2C_Com_Test.Location = new System.Drawing.Point(12, 85);
+            this.radioButtonI2C_Com_Test.Location = new System.Drawing.Point(12, 21);
             this.radioButtonI2C_Com_Test.Name = "radioButtonI2C_Com_Test";
             this.radioButtonI2C_Com_Test.Size = new System.Drawing.Size(153, 20);
             this.radioButtonI2C_Com_Test.TabIndex = 10;
@@ -531,7 +408,7 @@
             // btnBrowse
             // 
             this.btnBrowse.Enabled = false;
-            this.btnBrowse.Location = new System.Drawing.Point(389, 150);
+            this.btnBrowse.Location = new System.Drawing.Point(389, 86);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 8;
@@ -541,7 +418,7 @@
             // txtSavePath
             // 
             this.txtSavePath.Enabled = false;
-            this.txtSavePath.Location = new System.Drawing.Point(82, 150);
+            this.txtSavePath.Location = new System.Drawing.Point(82, 86);
             this.txtSavePath.Name = "txtSavePath";
             this.txtSavePath.Size = new System.Drawing.Size(292, 22);
             this.txtSavePath.TabIndex = 7;
@@ -549,7 +426,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 153);
+            this.label1.Location = new System.Drawing.Point(9, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 6;
@@ -559,7 +436,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 352);
+            this.ClientSize = new System.Drawing.Size(493, 298);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -621,13 +498,5 @@
         private System.Windows.Forms.ToolStripButton toolStripBtnStop;
         private System.Windows.Forms.ToolStripButton toolStripBtnRun;
         private System.Windows.Forms.Label labelResult;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBoxSoftHard;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxFrequency;
-        private System.Windows.Forms.ComboBox comboBoxDeviceIndex;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBoxPowerSupplyer;
     }
 }
