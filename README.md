@@ -11,7 +11,16 @@ Each tab is a part function operation. See below:
 - Alarm/Warning --> data monitor interrupt flag
 - I2C Read/Write --> read and write register
 
-![](http://i.imgur.com/ReyyWa2.jpg)
+![](https://i.imgur.com/TlEhZHQ.jpg)
+
+
+## Calculate ##
+
+ADC function, DEC to IEEE753/Int16, calculate DMI.    
+
+	formula: Y=X*Slope/2^Shift+Offset.
+
+![](https://i.imgur.com/mVGu31l.jpg)
 
 ## Read monitor interrupt flag ##
 
@@ -20,13 +29,19 @@ The interrupt shows module's status: Tx/Rx loss, high/low VCC, etc.
 - high/low alarm
 - high/low warning
 
-![](http://i.imgur.com/LAdKeSy.jpg)
+![](https://i.imgur.com/qrIqpQz.jpg)
 
 ## Read and write register ##
 
 Fist to set device address 0xA0 and then choose register address.
 
-![](http://i.imgur.com/6dJSbiW.jpg)
+![](https://i.imgur.com/KotfF4J.jpg)
+
+## I2C Test ##
+
+Test the reliability of I2C communication.
+
+![](https://i.imgur.com/V1HdWFe.jpg)
 
 ## Note: ##
 
