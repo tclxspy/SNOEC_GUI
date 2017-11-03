@@ -16,9 +16,13 @@ namespace SNOEC_GUI
     public partial class MainForm : Form
     {
         private QSFP28_SNOEC dut;
+        private DUTCoeffControlByPN dataTable_DUTCoeffControlByPN;
         private TextBox[] txts_dmi_TxPower = new TextBox[4];
         private TextBox[] txts_dmi_TxBias = new TextBox[4];
         private TextBox[] txts_dmi_RxPower = new TextBox[4];
+        private TextBox[] txts_adc_TxPower = new TextBox[4];
+        private TextBox[] txts_adc_TxBias = new TextBox[4];
+        private TextBox[] txts_adc_RxPower = new TextBox[4];
         private Chart[,] chart = new Chart[5, 8];
         private const int maxCells = 16 * 6;
 
@@ -26,6 +30,9 @@ namespace SNOEC_GUI
         {
             InitializeComponent();
             this.labelDate.Text = DateTime.Now.ToShortDateString() + "   " + DateTime.Now.ToShortTimeString();
+            this.comboBoxDeviceIndex.SelectedIndex = 1;
+            this.comboBoxSoftHard.SelectedIndex = 0;
+            this.comboBoxFrequency.SelectedIndex = 3;
 
             this.tabControl1.SelectedIndex = 1;
 
@@ -85,6 +92,21 @@ namespace SNOEC_GUI
             txts_dmi_RxPower[1] = txtDMI_RxPower_Ch2;
             txts_dmi_RxPower[2] = txtDMI_RxPower_Ch3;
             txts_dmi_RxPower[3] = txtDMI_RxPower_Ch4;
+
+            txts_adc_TxPower[0] = txtTxPowerADC_Ch1;
+            txts_adc_TxPower[1] = txtTxPowerADC_Ch2;
+            txts_adc_TxPower[2] = txtTxPowerADC_Ch3;
+            txts_adc_TxPower[3] = txtTxPowerADC_Ch4;
+
+            txts_adc_TxBias[0] = txtTxBiasADC_Ch1;
+            txts_adc_TxBias[1] = txtTxBiasADC_Ch2;
+            txts_adc_TxBias[2] = txtTxBiasADC_Ch3;
+            txts_adc_TxBias[3] = txtTxBiasADC_Ch4;
+
+            txts_adc_RxPower[0] = txtRxPowerADC_Ch1;
+            txts_adc_RxPower[1] = txtRxPowerADC_Ch2;
+            txts_adc_RxPower[2] = txtRxPowerADC_Ch3;
+            txts_adc_RxPower[3] = txtRxPowerADC_Ch4;
 
             //initial chart[,]
             chart[0, 0] = this.chart1;
@@ -148,8 +170,27 @@ namespace SNOEC_GUI
 
             if (this.tabControl1.SelectedTab.ToString().Contains("Driver"))
             {
-                dut = new QSFP28_SNOEC();
+                dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
                 this.btnReadWrite.Enabled = false;
+            }
+        }
+
+        private void ClearTextBox()
+        {
+            this.txtDMI_Temp.Text = "NaN";
+            this.txtDMI_VCC.Text = "NaN";
+            this.txtTempADC.Text = "NaN";
+            this.txtVccADC.Text = "NaN";
+            this.txtFW_Version.Text = "NaN";
+            for (int i = 0; i < txts_dmi_TxBias.Length; i++)
+            {
+                txts_dmi_TxBias[i].Text = "NaN";
+                txts_dmi_TxPower[i].Text = "NaN";
+                txts_dmi_RxPower[i].Text = "NaN";
+
+                txts_adc_TxBias[i].Text = "NaN";
+                txts_adc_TxPower[i].Text = "NaN";
+                txts_adc_RxPower[i].Text = "NaN";
             }
         }
 
@@ -159,8 +200,16 @@ namespace SNOEC_GUI
             this.btnReadWrite.BackColor = Color.Yellow;
             this.btnReadWrite.Refresh();
             try
-            {  
-                dut = new QSFP28_SNOEC();
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            try
+            {              
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Ch On/Off"))
                 {
@@ -169,14 +218,28 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("DMI/ADC"))
                 {
+                    ClearTextBox();
+
                     this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
                     this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
+                    if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
+                    {
+                        this.txtTempADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TemperatureAdc, 0).ToString();
+                        this.txtVccADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.VccAdc, 0).ToString();
+                    }
                     this.txtFW_Version.Text = dut.ReadFWRev();
                     for (int i = 0; i < txts_dmi_TxBias.Length; i++)
                     {
                         txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
                         txts_dmi_TxPower[i].Text = dut.ReadDmiTxP(i + 1).ToString();
                         txts_dmi_RxPower[i].Text = dut.ReadDmiRxP(i + 1).ToString();
+
+                        if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
+                        {
+                            txts_adc_TxBias[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxBiasAdc, (i + 1)).ToString();
+                            txts_adc_TxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxPowerAdc, (i + 1)).ToString();
+                            txts_adc_RxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.RxPowerAdc, (i + 1)).ToString();
+                        }
                     }
                 }
 
@@ -305,12 +368,13 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Driver"))
                 {
-                    
+
                 }
 
                 this.btnReadWrite.Enabled = true;
                 this.btnReadWrite.BackColor = SystemColors.Control;
             }
+
             catch
             {
                 this.btnReadWrite.Enabled = true;
@@ -318,6 +382,7 @@ namespace SNOEC_GUI
                 MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         //normal:0, low:1, high:2
         private Color GetColor(int value)
@@ -342,26 +407,13 @@ namespace SNOEC_GUI
         {
             try
             {
-                //byte i, re;
-                //OnEasyB_I2C.serialNumber = new StringBuilder(255);
-                //byte MaxDevNum = OnEasyB_I2C.USBIO_GetMaxNumofDev();
-                //List<String> list = new List<string>();
+                this.labelTitle.Text = "QSFP28 SR4 GUI";
+                string strFileSourse = Application.StartupPath + @"\Map\" + "QSFP28_SR4_Map" + ".xlsx";
+                dataTable_DUTCoeffControlByPN = new DUTCoeffControlByPN(GetExcelTable(strFileSourse));
+                dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
 
-                //for (i = 0; i < MaxDevNum; i++)
-                //{
-                //    re = OnEasyB_I2C.USBIO_GetSerialNo(i, OnEasyB_I2C.serialNumber);
-                //    if (re != 0)
-                //    {
-                //        list.Add(OnEasyB_I2C.serialNumber.ToString());
-                //    }
-                //}
-
-                //if (list.Count == 0)
-                //{
-                //    MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -579,7 +631,7 @@ namespace SNOEC_GUI
                 btns[8] = this.btnRxCh3_Dis;
                 btns[9] = this.btnRxCh4_Dis;
 
-                dut = new QSFP28_SNOEC();
+                dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
                 byte[] buff = dut.GetTxChEnStatus();
 
                 if ((buff[0] & 0x0F) == 0x0F)
@@ -614,6 +666,94 @@ namespace SNOEC_GUI
             this.qSFP28SR4ToolStripMenuItem.Checked = true;
             this.qSFP28CWDM4ToolStripMenuItem.Checked = false;
             this.labelTitle.Text = "QSFP28 SR4 GUI";
+            string strFileSourse = Application.StartupPath + @"\Map\" + "QSFP28_SR4_Map" + ".xlsx";
+            dataTable_DUTCoeffControlByPN = new DUTCoeffControlByPN(GetExcelTable(strFileSourse));
+            dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
+        }
+
+        /// <summary>
+        /// 将Excel文件读取到DataTable
+        /// </summary>
+        /// <param name="excelFilePath"></param>
+        /// <returns></returns>
+        public DataTable GetExcelTable(string excelFilePath)
+        {
+            try
+            {
+                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Sheets sheets;
+                Microsoft.Office.Interop.Excel.Workbook workbook;
+                System.Data.DataTable dt = new System.Data.DataTable();
+                if (app == null)
+                {
+                    return null;
+                }
+
+
+                object oMissiong = System.Reflection.Missing.Value;
+                workbook = app.Workbooks.Open(excelFilePath, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong);
+
+
+                //将数据读入到DataTable中——Start   
+                sheets = workbook.Worksheets;
+                Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)sheets.get_Item(1);
+                if (worksheet == null)
+                    return null;
+
+
+                string cellContent;
+                int iRowCount = worksheet.UsedRange.Rows.Count;
+                int iColCount = worksheet.UsedRange.Columns.Count;
+                Microsoft.Office.Interop.Excel.Range range;
+
+
+                for (int iRow = 1; iRow <= iRowCount; iRow++)
+                {
+                    DataRow dr = dt.NewRow();
+
+
+                    for (int iCol = 1; iCol <= iColCount; iCol++)
+                    {
+                        range = (Microsoft.Office.Interop.Excel.Range)worksheet.Cells[iRow, iCol];
+
+
+                        cellContent = (range.Value2 == null) ? "" : range.Text.ToString();
+
+
+                        if (iRow == 1)
+                        {
+                            dt.Columns.Add(cellContent);
+                        }
+                        else
+                        {
+                            dr[iCol - 1] = cellContent;
+                        }
+                    }
+
+
+                    if (iRow != 1)
+                        dt.Rows.Add(dr);
+                }
+
+
+                //将数据读入到DataTable中——End
+                workbook.Close(false, oMissiong, oMissiong);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                workbook = null;
+                app.Workbooks.Close();
+                app.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(app);
+                app = null;
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         private void qSFP28CWDM4ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -671,7 +811,7 @@ namespace SNOEC_GUI
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TestForm testFrom = new TestForm();
+            TestForm testFrom = new TestForm(dut);
             testFrom.ShowDialog();
         }
 
@@ -809,6 +949,12 @@ namespace SNOEC_GUI
             {
                 MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }   
+        }
+
+        private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CalculateForm calculateFrom = new CalculateForm(dut, dataTable_DUTCoeffControlByPN);
+            calculateFrom.Show();
+        }
     }
 }

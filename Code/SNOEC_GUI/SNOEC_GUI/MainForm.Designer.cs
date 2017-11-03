@@ -80,6 +80,7 @@
             this.innoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fNRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -107,59 +108,59 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.txtDMI_TxPower_Ch4 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.txtTxPowerADC_Ch4 = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.txtTxBiasADC_Ch4 = new System.Windows.Forms.TextBox();
             this.txtDMI_RxPower_Ch4 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
+            this.txtRxPowerADC_Ch4 = new System.Windows.Forms.TextBox();
             this.txtDMI_TxBias_Ch4 = new System.Windows.Forms.TextBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.txtDMI_TxPower_Ch3 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.txtTxPowerADC_Ch3 = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txtTxBiasADC_Ch3 = new System.Windows.Forms.TextBox();
             this.txtDMI_RxPower_Ch3 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.txtRxPowerADC_Ch3 = new System.Windows.Forms.TextBox();
             this.txtDMI_TxBias_Ch3 = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.txtDMI_TxPower_Ch2 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.txtTxPowerADC_Ch2 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.txtTxBiasADC_Ch2 = new System.Windows.Forms.TextBox();
             this.txtDMI_RxPower_Ch2 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.txtRxPowerADC_Ch2 = new System.Windows.Forms.TextBox();
             this.txtDMI_TxBias_Ch2 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtDMI_TxPower_Ch1 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtTxPowerADC_Ch1 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtTxBiasADC_Ch1 = new System.Windows.Forms.TextBox();
             this.txtDMI_RxPower_Ch1 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.txtRxPowerADC_Ch1 = new System.Windows.Forms.TextBox();
             this.txtDMI_TxBias_Ch1 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtVccADC = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -176,7 +177,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtDMI_Temp = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtTempADC = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.tabpageAlarmWarning = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -238,6 +239,22 @@
             this.tabpageI2CRead = new System.Windows.Forms.TabPage();
             this.panel13 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel12 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -266,6 +283,22 @@
             this.tabPageI2CWrite = new System.Windows.Forms.TabPage();
             this.panel17 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label54 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -326,38 +359,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -442,7 +443,7 @@
             // 
             // btnReadWrite
             // 
-            this.btnReadWrite.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReadWrite.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReadWrite.ForeColor = System.Drawing.Color.Black;
             this.btnReadWrite.Location = new System.Drawing.Point(636, 7);
             this.btnReadWrite.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -458,11 +459,12 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.configToolStripMenuItem,
             this.viewToolStripMenuItem,
+            this.calculateToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(764, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(764, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -472,7 +474,7 @@
             this.productsToolStripMenuItem,
             this.companyToolStripMenuItem});
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
             this.configToolStripMenuItem.Text = "Config";
             // 
             // productsToolStripMenuItem
@@ -481,7 +483,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -489,14 +491,14 @@
             this.qSFP28SR4ToolStripMenuItem.Checked = true;
             this.qSFP28SR4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.qSFP28SR4ToolStripMenuItem.Name = "qSFP28SR4ToolStripMenuItem";
-            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.qSFP28SR4ToolStripMenuItem.Text = "QSFP28 SR4";
             this.qSFP28SR4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28SR4ToolStripMenuItem_Click);
             // 
             // qSFP28CWDM4ToolStripMenuItem
             // 
             this.qSFP28CWDM4ToolStripMenuItem.Name = "qSFP28CWDM4ToolStripMenuItem";
-            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
             this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
             // 
@@ -507,7 +509,7 @@
             this.innoToolStripMenuItem,
             this.fNRToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -515,35 +517,42 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // fNRToolStripMenuItem
             // 
             this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
-            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.fNRToolStripMenuItem.Text = "FNR";
             this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
+            // calculateToolStripMenuItem
+            // 
+            this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(68, 19);
+            this.calculateToolStripMenuItem.Text = "Calculate";
+            this.calculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -554,13 +563,13 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.panel1.Size = new System.Drawing.Size(764, 495);
+            this.panel1.Size = new System.Drawing.Size(764, 497);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -571,7 +580,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 107);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(744, 378);
+            this.panel4.Size = new System.Drawing.Size(744, 380);
             this.panel4.TabIndex = 3;
             // 
             // tabControl1
@@ -588,7 +597,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(744, 378);
+            this.tabControl1.Size = new System.Drawing.Size(744, 380);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -605,12 +614,12 @@
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnRxCh1_4_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_4_Dis);
-            this.tabpageChOnOff.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageChOnOff.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageChOnOff.Location = new System.Drawing.Point(4, 28);
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabpageChOnOff.Name = "tabpageChOnOff";
             this.tabpageChOnOff.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 346);
+            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 348);
             this.tabpageChOnOff.TabIndex = 1;
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
@@ -744,11 +753,11 @@
             this.tabpageDMIADC.Controls.Add(this.panel7);
             this.tabpageDMIADC.Controls.Add(this.panel5);
             this.tabpageDMIADC.Controls.Add(this.panel6);
-            this.tabpageDMIADC.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageDMIADC.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageDMIADC.ForeColor = System.Drawing.Color.Black;
             this.tabpageDMIADC.Location = new System.Drawing.Point(4, 28);
             this.tabpageDMIADC.Name = "tabpageDMIADC";
-            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 346);
+            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 348);
             this.tabpageDMIADC.TabIndex = 2;
             this.tabpageDMIADC.Text = "DMI/ADC";
             this.tabpageDMIADC.UseVisualStyleBackColor = true;
@@ -835,13 +844,13 @@
             this.panel10.Controls.Add(this.label46);
             this.panel10.Controls.Add(this.label47);
             this.panel10.Controls.Add(this.txtDMI_TxPower_Ch4);
-            this.panel10.Controls.Add(this.textBox32);
+            this.panel10.Controls.Add(this.txtTxPowerADC_Ch4);
             this.panel10.Controls.Add(this.label48);
             this.panel10.Controls.Add(this.label49);
             this.panel10.Controls.Add(this.label50);
-            this.panel10.Controls.Add(this.textBox33);
+            this.panel10.Controls.Add(this.txtTxBiasADC_Ch4);
             this.panel10.Controls.Add(this.txtDMI_RxPower_Ch4);
-            this.panel10.Controls.Add(this.textBox35);
+            this.panel10.Controls.Add(this.txtRxPowerADC_Ch4);
             this.panel10.Controls.Add(this.txtDMI_TxBias_Ch4);
             this.panel10.Location = new System.Drawing.Point(617, 29);
             this.panel10.Name = "panel10";
@@ -884,14 +893,14 @@
             this.txtDMI_TxPower_Ch4.TabIndex = 0;
             this.txtDMI_TxPower_Ch4.Text = "NaN";
             // 
-            // textBox32
+            // txtTxPowerADC_Ch4
             // 
-            this.textBox32.Location = new System.Drawing.Point(11, 22);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(80, 22);
-            this.textBox32.TabIndex = 0;
-            this.textBox32.Text = "NaN";
+            this.txtTxPowerADC_Ch4.Location = new System.Drawing.Point(11, 22);
+            this.txtTxPowerADC_Ch4.Name = "txtTxPowerADC_Ch4";
+            this.txtTxPowerADC_Ch4.ReadOnly = true;
+            this.txtTxPowerADC_Ch4.Size = new System.Drawing.Size(80, 22);
+            this.txtTxPowerADC_Ch4.TabIndex = 0;
+            this.txtTxPowerADC_Ch4.Text = "NaN";
             // 
             // label48
             // 
@@ -923,14 +932,14 @@
             this.label50.TabIndex = 2;
             this.label50.Text = "Tx Bias DMI";
             // 
-            // textBox33
+            // txtTxBiasADC_Ch4
             // 
-            this.textBox33.Location = new System.Drawing.Point(11, 72);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(80, 22);
-            this.textBox33.TabIndex = 0;
-            this.textBox33.Text = "NaN";
+            this.txtTxBiasADC_Ch4.Location = new System.Drawing.Point(11, 72);
+            this.txtTxBiasADC_Ch4.Name = "txtTxBiasADC_Ch4";
+            this.txtTxBiasADC_Ch4.ReadOnly = true;
+            this.txtTxBiasADC_Ch4.Size = new System.Drawing.Size(80, 22);
+            this.txtTxBiasADC_Ch4.TabIndex = 0;
+            this.txtTxBiasADC_Ch4.Text = "NaN";
             // 
             // txtDMI_RxPower_Ch4
             // 
@@ -941,14 +950,14 @@
             this.txtDMI_RxPower_Ch4.TabIndex = 0;
             this.txtDMI_RxPower_Ch4.Text = "NaN";
             // 
-            // textBox35
+            // txtRxPowerADC_Ch4
             // 
-            this.textBox35.Location = new System.Drawing.Point(11, 122);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.ReadOnly = true;
-            this.textBox35.Size = new System.Drawing.Size(80, 22);
-            this.textBox35.TabIndex = 0;
-            this.textBox35.Text = "NaN";
+            this.txtRxPowerADC_Ch4.Location = new System.Drawing.Point(11, 122);
+            this.txtRxPowerADC_Ch4.Name = "txtRxPowerADC_Ch4";
+            this.txtRxPowerADC_Ch4.ReadOnly = true;
+            this.txtRxPowerADC_Ch4.Size = new System.Drawing.Size(80, 22);
+            this.txtRxPowerADC_Ch4.TabIndex = 0;
+            this.txtRxPowerADC_Ch4.Text = "NaN";
             // 
             // txtDMI_TxBias_Ch4
             // 
@@ -969,13 +978,13 @@
             this.panel9.Controls.Add(this.label39);
             this.panel9.Controls.Add(this.label40);
             this.panel9.Controls.Add(this.txtDMI_TxPower_Ch3);
-            this.panel9.Controls.Add(this.textBox26);
+            this.panel9.Controls.Add(this.txtTxPowerADC_Ch3);
             this.panel9.Controls.Add(this.label41);
             this.panel9.Controls.Add(this.label42);
             this.panel9.Controls.Add(this.label43);
-            this.panel9.Controls.Add(this.textBox27);
+            this.panel9.Controls.Add(this.txtTxBiasADC_Ch3);
             this.panel9.Controls.Add(this.txtDMI_RxPower_Ch3);
-            this.panel9.Controls.Add(this.textBox29);
+            this.panel9.Controls.Add(this.txtRxPowerADC_Ch3);
             this.panel9.Controls.Add(this.txtDMI_TxBias_Ch3);
             this.panel9.Location = new System.Drawing.Point(497, 29);
             this.panel9.Name = "panel9";
@@ -1018,14 +1027,14 @@
             this.txtDMI_TxPower_Ch3.TabIndex = 0;
             this.txtDMI_TxPower_Ch3.Text = "NaN";
             // 
-            // textBox26
+            // txtTxPowerADC_Ch3
             // 
-            this.textBox26.Location = new System.Drawing.Point(11, 22);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.ReadOnly = true;
-            this.textBox26.Size = new System.Drawing.Size(80, 22);
-            this.textBox26.TabIndex = 0;
-            this.textBox26.Text = "NaN";
+            this.txtTxPowerADC_Ch3.Location = new System.Drawing.Point(11, 22);
+            this.txtTxPowerADC_Ch3.Name = "txtTxPowerADC_Ch3";
+            this.txtTxPowerADC_Ch3.ReadOnly = true;
+            this.txtTxPowerADC_Ch3.Size = new System.Drawing.Size(80, 22);
+            this.txtTxPowerADC_Ch3.TabIndex = 0;
+            this.txtTxPowerADC_Ch3.Text = "NaN";
             // 
             // label41
             // 
@@ -1057,14 +1066,14 @@
             this.label43.TabIndex = 2;
             this.label43.Text = "Tx Bias DMI";
             // 
-            // textBox27
+            // txtTxBiasADC_Ch3
             // 
-            this.textBox27.Location = new System.Drawing.Point(11, 72);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(80, 22);
-            this.textBox27.TabIndex = 0;
-            this.textBox27.Text = "NaN";
+            this.txtTxBiasADC_Ch3.Location = new System.Drawing.Point(11, 72);
+            this.txtTxBiasADC_Ch3.Name = "txtTxBiasADC_Ch3";
+            this.txtTxBiasADC_Ch3.ReadOnly = true;
+            this.txtTxBiasADC_Ch3.Size = new System.Drawing.Size(80, 22);
+            this.txtTxBiasADC_Ch3.TabIndex = 0;
+            this.txtTxBiasADC_Ch3.Text = "NaN";
             // 
             // txtDMI_RxPower_Ch3
             // 
@@ -1075,14 +1084,14 @@
             this.txtDMI_RxPower_Ch3.TabIndex = 0;
             this.txtDMI_RxPower_Ch3.Text = "NaN";
             // 
-            // textBox29
+            // txtRxPowerADC_Ch3
             // 
-            this.textBox29.Location = new System.Drawing.Point(11, 122);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.ReadOnly = true;
-            this.textBox29.Size = new System.Drawing.Size(80, 22);
-            this.textBox29.TabIndex = 0;
-            this.textBox29.Text = "NaN";
+            this.txtRxPowerADC_Ch3.Location = new System.Drawing.Point(11, 122);
+            this.txtRxPowerADC_Ch3.Name = "txtRxPowerADC_Ch3";
+            this.txtRxPowerADC_Ch3.ReadOnly = true;
+            this.txtRxPowerADC_Ch3.Size = new System.Drawing.Size(80, 22);
+            this.txtRxPowerADC_Ch3.TabIndex = 0;
+            this.txtRxPowerADC_Ch3.Text = "NaN";
             // 
             // txtDMI_TxBias_Ch3
             // 
@@ -1103,13 +1112,13 @@
             this.panel8.Controls.Add(this.label32);
             this.panel8.Controls.Add(this.label33);
             this.panel8.Controls.Add(this.txtDMI_TxPower_Ch2);
-            this.panel8.Controls.Add(this.textBox20);
+            this.panel8.Controls.Add(this.txtTxPowerADC_Ch2);
             this.panel8.Controls.Add(this.label34);
             this.panel8.Controls.Add(this.label35);
             this.panel8.Controls.Add(this.label36);
-            this.panel8.Controls.Add(this.textBox21);
+            this.panel8.Controls.Add(this.txtTxBiasADC_Ch2);
             this.panel8.Controls.Add(this.txtDMI_RxPower_Ch2);
-            this.panel8.Controls.Add(this.textBox23);
+            this.panel8.Controls.Add(this.txtRxPowerADC_Ch2);
             this.panel8.Controls.Add(this.txtDMI_TxBias_Ch2);
             this.panel8.Location = new System.Drawing.Point(377, 29);
             this.panel8.Name = "panel8";
@@ -1152,14 +1161,14 @@
             this.txtDMI_TxPower_Ch2.TabIndex = 0;
             this.txtDMI_TxPower_Ch2.Text = "NaN";
             // 
-            // textBox20
+            // txtTxPowerADC_Ch2
             // 
-            this.textBox20.Location = new System.Drawing.Point(11, 22);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(80, 22);
-            this.textBox20.TabIndex = 0;
-            this.textBox20.Text = "NaN";
+            this.txtTxPowerADC_Ch2.Location = new System.Drawing.Point(11, 22);
+            this.txtTxPowerADC_Ch2.Name = "txtTxPowerADC_Ch2";
+            this.txtTxPowerADC_Ch2.ReadOnly = true;
+            this.txtTxPowerADC_Ch2.Size = new System.Drawing.Size(80, 22);
+            this.txtTxPowerADC_Ch2.TabIndex = 0;
+            this.txtTxPowerADC_Ch2.Text = "NaN";
             // 
             // label34
             // 
@@ -1191,14 +1200,14 @@
             this.label36.TabIndex = 2;
             this.label36.Text = "Tx Bias DMI";
             // 
-            // textBox21
+            // txtTxBiasADC_Ch2
             // 
-            this.textBox21.Location = new System.Drawing.Point(11, 72);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(80, 22);
-            this.textBox21.TabIndex = 0;
-            this.textBox21.Text = "NaN";
+            this.txtTxBiasADC_Ch2.Location = new System.Drawing.Point(11, 72);
+            this.txtTxBiasADC_Ch2.Name = "txtTxBiasADC_Ch2";
+            this.txtTxBiasADC_Ch2.ReadOnly = true;
+            this.txtTxBiasADC_Ch2.Size = new System.Drawing.Size(80, 22);
+            this.txtTxBiasADC_Ch2.TabIndex = 0;
+            this.txtTxBiasADC_Ch2.Text = "NaN";
             // 
             // txtDMI_RxPower_Ch2
             // 
@@ -1209,14 +1218,14 @@
             this.txtDMI_RxPower_Ch2.TabIndex = 0;
             this.txtDMI_RxPower_Ch2.Text = "NaN";
             // 
-            // textBox23
+            // txtRxPowerADC_Ch2
             // 
-            this.textBox23.Location = new System.Drawing.Point(11, 122);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(80, 22);
-            this.textBox23.TabIndex = 0;
-            this.textBox23.Text = "NaN";
+            this.txtRxPowerADC_Ch2.Location = new System.Drawing.Point(11, 122);
+            this.txtRxPowerADC_Ch2.Name = "txtRxPowerADC_Ch2";
+            this.txtRxPowerADC_Ch2.ReadOnly = true;
+            this.txtRxPowerADC_Ch2.Size = new System.Drawing.Size(80, 22);
+            this.txtRxPowerADC_Ch2.TabIndex = 0;
+            this.txtRxPowerADC_Ch2.Text = "NaN";
             // 
             // txtDMI_TxBias_Ch2
             // 
@@ -1237,13 +1246,13 @@
             this.panel7.Controls.Add(this.label25);
             this.panel7.Controls.Add(this.label26);
             this.panel7.Controls.Add(this.txtDMI_TxPower_Ch1);
-            this.panel7.Controls.Add(this.textBox14);
+            this.panel7.Controls.Add(this.txtTxPowerADC_Ch1);
             this.panel7.Controls.Add(this.label27);
             this.panel7.Controls.Add(this.label28);
             this.panel7.Controls.Add(this.label29);
-            this.panel7.Controls.Add(this.textBox15);
+            this.panel7.Controls.Add(this.txtTxBiasADC_Ch1);
             this.panel7.Controls.Add(this.txtDMI_RxPower_Ch1);
-            this.panel7.Controls.Add(this.textBox17);
+            this.panel7.Controls.Add(this.txtRxPowerADC_Ch1);
             this.panel7.Controls.Add(this.txtDMI_TxBias_Ch1);
             this.panel7.Location = new System.Drawing.Point(257, 29);
             this.panel7.Name = "panel7";
@@ -1286,14 +1295,14 @@
             this.txtDMI_TxPower_Ch1.TabIndex = 0;
             this.txtDMI_TxPower_Ch1.Text = "NaN";
             // 
-            // textBox14
+            // txtTxPowerADC_Ch1
             // 
-            this.textBox14.Location = new System.Drawing.Point(11, 22);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(80, 22);
-            this.textBox14.TabIndex = 0;
-            this.textBox14.Text = "NaN";
+            this.txtTxPowerADC_Ch1.Location = new System.Drawing.Point(11, 22);
+            this.txtTxPowerADC_Ch1.Name = "txtTxPowerADC_Ch1";
+            this.txtTxPowerADC_Ch1.ReadOnly = true;
+            this.txtTxPowerADC_Ch1.Size = new System.Drawing.Size(80, 22);
+            this.txtTxPowerADC_Ch1.TabIndex = 0;
+            this.txtTxPowerADC_Ch1.Text = "NaN";
             // 
             // label27
             // 
@@ -1325,14 +1334,14 @@
             this.label29.TabIndex = 2;
             this.label29.Text = "Tx Bias DMI";
             // 
-            // textBox15
+            // txtTxBiasADC_Ch1
             // 
-            this.textBox15.Location = new System.Drawing.Point(11, 72);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(80, 22);
-            this.textBox15.TabIndex = 0;
-            this.textBox15.Text = "NaN";
+            this.txtTxBiasADC_Ch1.Location = new System.Drawing.Point(11, 72);
+            this.txtTxBiasADC_Ch1.Name = "txtTxBiasADC_Ch1";
+            this.txtTxBiasADC_Ch1.ReadOnly = true;
+            this.txtTxBiasADC_Ch1.Size = new System.Drawing.Size(80, 22);
+            this.txtTxBiasADC_Ch1.TabIndex = 0;
+            this.txtTxBiasADC_Ch1.Text = "NaN";
             // 
             // txtDMI_RxPower_Ch1
             // 
@@ -1343,14 +1352,14 @@
             this.txtDMI_RxPower_Ch1.TabIndex = 0;
             this.txtDMI_RxPower_Ch1.Text = "NaN";
             // 
-            // textBox17
+            // txtRxPowerADC_Ch1
             // 
-            this.textBox17.Location = new System.Drawing.Point(11, 122);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(80, 22);
-            this.textBox17.TabIndex = 0;
-            this.textBox17.Text = "NaN";
+            this.txtRxPowerADC_Ch1.Location = new System.Drawing.Point(11, 122);
+            this.txtRxPowerADC_Ch1.Name = "txtRxPowerADC_Ch1";
+            this.txtRxPowerADC_Ch1.ReadOnly = true;
+            this.txtRxPowerADC_Ch1.Size = new System.Drawing.Size(80, 22);
+            this.txtRxPowerADC_Ch1.TabIndex = 0;
+            this.txtRxPowerADC_Ch1.Text = "NaN";
             // 
             // txtDMI_TxBias_Ch1
             // 
@@ -1371,7 +1380,7 @@
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Controls.Add(this.textBox2);
+            this.panel5.Controls.Add(this.txtVccADC);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Controls.Add(this.label15);
@@ -1420,14 +1429,14 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "NaN";
             // 
-            // textBox2
+            // txtVccADC
             // 
-            this.textBox2.Location = new System.Drawing.Point(11, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(80, 22);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "NaN";
+            this.txtVccADC.Location = new System.Drawing.Point(11, 22);
+            this.txtVccADC.Name = "txtVccADC";
+            this.txtVccADC.ReadOnly = true;
+            this.txtVccADC.Size = new System.Drawing.Size(80, 22);
+            this.txtVccADC.TabIndex = 0;
+            this.txtVccADC.Text = "NaN";
             // 
             // label13
             // 
@@ -1509,7 +1518,7 @@
             this.panel6.Controls.Add(this.label21);
             this.panel6.Controls.Add(this.label22);
             this.panel6.Controls.Add(this.txtDMI_Temp);
-            this.panel6.Controls.Add(this.textBox11);
+            this.panel6.Controls.Add(this.txtTempADC);
             this.panel6.Controls.Add(this.textBox12);
             this.panel6.Location = new System.Drawing.Point(17, 29);
             this.panel6.Name = "panel6";
@@ -1590,14 +1599,14 @@
             this.txtDMI_Temp.TabIndex = 0;
             this.txtDMI_Temp.Text = "NaN";
             // 
-            // textBox11
+            // txtTempADC
             // 
-            this.textBox11.Location = new System.Drawing.Point(11, 122);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(80, 22);
-            this.textBox11.TabIndex = 0;
-            this.textBox11.Text = "NaN";
+            this.txtTempADC.Location = new System.Drawing.Point(11, 122);
+            this.txtTempADC.Name = "txtTempADC";
+            this.txtTempADC.ReadOnly = true;
+            this.txtTempADC.Size = new System.Drawing.Size(80, 22);
+            this.txtTempADC.TabIndex = 0;
+            this.txtTempADC.Text = "NaN";
             // 
             // textBox12
             // 
@@ -1611,10 +1620,10 @@
             // tabpageAlarmWarning
             // 
             this.tabpageAlarmWarning.Controls.Add(this.groupBox2);
-            this.tabpageAlarmWarning.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageAlarmWarning.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 28);
             this.tabpageAlarmWarning.Name = "tabpageAlarmWarning";
-            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 346);
+            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 348);
             this.tabpageAlarmWarning.TabIndex = 5;
             this.tabpageAlarmWarning.Text = "Alarm/Warning";
             this.tabpageAlarmWarning.UseVisualStyleBackColor = true;
@@ -1679,7 +1688,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(736, 346);
+            this.groupBox2.Size = new System.Drawing.Size(736, 348);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -2263,10 +2272,10 @@
             this.tabpageI2CRead.Controls.Add(this.panel13);
             this.tabpageI2CRead.Controls.Add(this.panel12);
             this.tabpageI2CRead.Controls.Add(this.panel11);
-            this.tabpageI2CRead.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageI2CRead.Location = new System.Drawing.Point(4, 28);
             this.tabpageI2CRead.Name = "tabpageI2CRead";
-            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 346);
+            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 348);
             this.tabpageI2CRead.TabIndex = 3;
             this.tabpageI2CRead.Text = "I2C Read";
             this.tabpageI2CRead.UseVisualStyleBackColor = true;
@@ -2278,7 +2287,7 @@
             this.panel13.Location = new System.Drawing.Point(0, 48);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.panel13.Size = new System.Drawing.Size(736, 144);
+            this.panel13.Size = new System.Drawing.Size(736, 146);
             this.panel13.TabIndex = 3;
             // 
             // dataGridView1
@@ -2310,14 +2319,142 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(722, 144);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 146);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.Frozen = true;
+            this.Column1.HeaderText = "0";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 46;
+            // 
+            // Column2
+            // 
+            this.Column2.Frozen = true;
+            this.Column2.HeaderText = "1";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 46;
+            // 
+            // Column3
+            // 
+            this.Column3.Frozen = true;
+            this.Column3.HeaderText = "2";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 46;
+            // 
+            // Column4
+            // 
+            this.Column4.Frozen = true;
+            this.Column4.HeaderText = "3";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 46;
+            // 
+            // Column5
+            // 
+            this.Column5.Frozen = true;
+            this.Column5.HeaderText = "4";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 46;
+            // 
+            // Column6
+            // 
+            this.Column6.Frozen = true;
+            this.Column6.HeaderText = "5";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 46;
+            // 
+            // Column7
+            // 
+            this.Column7.Frozen = true;
+            this.Column7.HeaderText = "6";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 46;
+            // 
+            // Column8
+            // 
+            this.Column8.Frozen = true;
+            this.Column8.HeaderText = "7";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 46;
+            // 
+            // Column9
+            // 
+            this.Column9.Frozen = true;
+            this.Column9.HeaderText = "8";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 46;
+            // 
+            // Column10
+            // 
+            this.Column10.Frozen = true;
+            this.Column10.HeaderText = "9";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 46;
+            // 
+            // Column11
+            // 
+            this.Column11.Frozen = true;
+            this.Column11.HeaderText = "A";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Width = 46;
+            // 
+            // Column12
+            // 
+            this.Column12.Frozen = true;
+            this.Column12.HeaderText = "B";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Width = 46;
+            // 
+            // Column13
+            // 
+            this.Column13.Frozen = true;
+            this.Column13.HeaderText = "C";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Width = 46;
+            // 
+            // Column14
+            // 
+            this.Column14.Frozen = true;
+            this.Column14.HeaderText = "D";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Width = 46;
+            // 
+            // Column15
+            // 
+            this.Column15.Frozen = true;
+            this.Column15.HeaderText = "E";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.Width = 46;
+            // 
+            // Column16
+            // 
+            this.Column16.Frozen = true;
+            this.Column16.HeaderText = "F";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Width = 46;
             // 
             // panel12
             // 
             this.panel12.Controls.Add(this.dataGridView2);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 192);
+            this.panel12.Location = new System.Drawing.Point(0, 194);
             this.panel12.Name = "panel12";
             this.panel12.Padding = new System.Windows.Forms.Padding(7, 17, 7, 14);
             this.panel12.Size = new System.Drawing.Size(736, 154);
@@ -2553,10 +2690,10 @@
             this.tabPageI2CWrite.Controls.Add(this.panel17);
             this.tabPageI2CWrite.Controls.Add(this.panel14);
             this.tabPageI2CWrite.Controls.Add(this.panel15);
-            this.tabPageI2CWrite.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageI2CWrite.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 28);
             this.tabPageI2CWrite.Name = "tabPageI2CWrite";
-            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 346);
+            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 348);
             this.tabPageI2CWrite.TabIndex = 4;
             this.tabPageI2CWrite.Text = "I2C Write";
             this.tabPageI2CWrite.UseVisualStyleBackColor = true;
@@ -2568,7 +2705,7 @@
             this.panel17.Location = new System.Drawing.Point(0, 31);
             this.panel17.Name = "panel17";
             this.panel17.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.panel17.Size = new System.Drawing.Size(736, 144);
+            this.panel17.Size = new System.Drawing.Size(736, 146);
             this.panel17.TabIndex = 5;
             // 
             // dataGridView4
@@ -2600,9 +2737,121 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.RowHeadersWidth = 50;
-            this.dataGridView4.Size = new System.Drawing.Size(722, 144);
+            this.dataGridView4.Size = new System.Drawing.Size(722, 146);
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellEndEdit);
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.Frozen = true;
+            this.dataGridViewTextBoxColumn33.HeaderText = "0";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.Frozen = true;
+            this.dataGridViewTextBoxColumn34.HeaderText = "1";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.Frozen = true;
+            this.dataGridViewTextBoxColumn35.HeaderText = "2";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.Frozen = true;
+            this.dataGridViewTextBoxColumn36.HeaderText = "3";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.Frozen = true;
+            this.dataGridViewTextBoxColumn37.HeaderText = "4";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.Frozen = true;
+            this.dataGridViewTextBoxColumn38.HeaderText = "5";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn39
+            // 
+            this.dataGridViewTextBoxColumn39.Frozen = true;
+            this.dataGridViewTextBoxColumn39.HeaderText = "6";
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            this.dataGridViewTextBoxColumn39.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn40
+            // 
+            this.dataGridViewTextBoxColumn40.Frozen = true;
+            this.dataGridViewTextBoxColumn40.HeaderText = "7";
+            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            this.dataGridViewTextBoxColumn40.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn41
+            // 
+            this.dataGridViewTextBoxColumn41.Frozen = true;
+            this.dataGridViewTextBoxColumn41.HeaderText = "8";
+            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn42
+            // 
+            this.dataGridViewTextBoxColumn42.Frozen = true;
+            this.dataGridViewTextBoxColumn42.HeaderText = "9";
+            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn43
+            // 
+            this.dataGridViewTextBoxColumn43.Frozen = true;
+            this.dataGridViewTextBoxColumn43.HeaderText = "A";
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn44
+            // 
+            this.dataGridViewTextBoxColumn44.Frozen = true;
+            this.dataGridViewTextBoxColumn44.HeaderText = "B";
+            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            this.dataGridViewTextBoxColumn44.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn45
+            // 
+            this.dataGridViewTextBoxColumn45.Frozen = true;
+            this.dataGridViewTextBoxColumn45.HeaderText = "C";
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            this.dataGridViewTextBoxColumn45.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn46
+            // 
+            this.dataGridViewTextBoxColumn46.Frozen = true;
+            this.dataGridViewTextBoxColumn46.HeaderText = "D";
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            this.dataGridViewTextBoxColumn46.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.Frozen = true;
+            this.dataGridViewTextBoxColumn47.HeaderText = "E";
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            this.dataGridViewTextBoxColumn47.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn48
+            // 
+            this.dataGridViewTextBoxColumn48.Frozen = true;
+            this.dataGridViewTextBoxColumn48.HeaderText = "F";
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            this.dataGridViewTextBoxColumn48.Width = 46;
             // 
             // panel14
             // 
@@ -2627,7 +2876,7 @@
             this.panel15.Controls.Add(this.label55);
             this.panel15.Controls.Add(this.dataGridView3);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(0, 175);
+            this.panel15.Location = new System.Drawing.Point(0, 177);
             this.panel15.Name = "panel15";
             this.panel15.Padding = new System.Windows.Forms.Padding(7, 28, 7, 20);
             this.panel15.Size = new System.Drawing.Size(736, 171);
@@ -2807,7 +3056,7 @@
             this.tabDriver.Controls.Add(this.groupBox1);
             this.tabDriver.Location = new System.Drawing.Point(4, 28);
             this.tabDriver.Name = "tabDriver";
-            this.tabDriver.Size = new System.Drawing.Size(736, 346);
+            this.tabDriver.Size = new System.Drawing.Size(736, 348);
             this.tabDriver.TabIndex = 6;
             this.tabDriver.Text = "Driver";
             this.tabDriver.UseVisualStyleBackColor = true;
@@ -2860,7 +3109,7 @@
             // 
             // numericUpDownHeator_Get
             // 
-            this.numericUpDownHeator_Get.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownHeator_Get.Location = new System.Drawing.Point(97, 182);
             this.numericUpDownHeator_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownHeator_Get.Maximum = new decimal(new int[] {
@@ -2875,7 +3124,7 @@
             // 
             // numericUpDownHeator_Set
             // 
-            this.numericUpDownHeator_Set.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownHeator_Set.Location = new System.Drawing.Point(97, 142);
             this.numericUpDownHeator_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownHeator_Set.Maximum = new decimal(new int[] {
@@ -2889,7 +3138,7 @@
             // 
             // numericUpDownHeator_CH
             // 
-            this.numericUpDownHeator_CH.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownHeator_CH.Location = new System.Drawing.Point(97, 98);
             this.numericUpDownHeator_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownHeator_CH.Maximum = new decimal(new int[] {
@@ -3005,7 +3254,7 @@
             // 
             // numericUpDownIbias_CH
             // 
-            this.numericUpDownIbias_CH.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownIbias_CH.Location = new System.Drawing.Point(86, 98);
             this.numericUpDownIbias_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIbias_CH.Maximum = new decimal(new int[] {
@@ -3029,7 +3278,7 @@
             // 
             // numericUpDownIbias_Set
             // 
-            this.numericUpDownIbias_Set.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownIbias_Set.Location = new System.Drawing.Point(86, 142);
             this.numericUpDownIbias_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIbias_Set.Maximum = new decimal(new int[] {
@@ -3043,7 +3292,7 @@
             // 
             // numericUpDownIbias_Get
             // 
-            this.numericUpDownIbias_Get.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownIbias_Get.Location = new System.Drawing.Point(86, 182);
             this.numericUpDownIbias_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIbias_Get.Maximum = new decimal(new int[] {
@@ -3111,7 +3360,8 @@
             // 
             // comboBoxSoftHard
             // 
-            this.comboBoxSoftHard.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSoftHard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxSoftHard.FormattingEnabled = true;
             this.comboBoxSoftHard.Items.AddRange(new object[] {
             "SerialPort",
@@ -3125,7 +3375,6 @@
             this.comboBoxSoftHard.Name = "comboBoxSoftHard";
             this.comboBoxSoftHard.Size = new System.Drawing.Size(162, 25);
             this.comboBoxSoftHard.TabIndex = 9;
-            this.comboBoxSoftHard.Text = "SerialPort";
             this.comboBoxSoftHard.SelectedIndexChanged += new System.EventHandler(this.comboBoxSoftHard_SelectedIndexChanged);
             // 
             // label8
@@ -3190,7 +3439,7 @@
             // 
             // numericUpDownBytes
             // 
-            this.numericUpDownBytes.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
             this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownBytes.Name = "numericUpDownBytes";
@@ -3199,7 +3448,7 @@
             // 
             // numericUpDownRegAddress
             // 
-            this.numericUpDownRegAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
             this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
@@ -3213,7 +3462,7 @@
             // 
             // numericUpDownPage
             // 
-            this.numericUpDownPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownPage.Location = new System.Drawing.Point(444, 28);
             this.numericUpDownPage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownPage.Name = "numericUpDownPage";
@@ -3222,7 +3471,7 @@
             // 
             // domainUpDownDeviceAddress
             // 
-            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.domainUpDownDeviceAddress.Items.Add("0xA0");
             this.domainUpDownDeviceAddress.Items.Add("0xA2");
             this.domainUpDownDeviceAddress.Items.Add("0xA8");
@@ -3235,7 +3484,8 @@
             // 
             // comboBoxFrequency
             // 
-            this.comboBoxFrequency.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxFrequency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFrequency.FormattingEnabled = true;
             this.comboBoxFrequency.Items.AddRange(new object[] {
             "100K",
@@ -3247,12 +3497,12 @@
             this.comboBoxFrequency.Name = "comboBoxFrequency";
             this.comboBoxFrequency.Size = new System.Drawing.Size(67, 25);
             this.comboBoxFrequency.TabIndex = 1;
-            this.comboBoxFrequency.Text = "400K";
             this.comboBoxFrequency.SelectedIndexChanged += new System.EventHandler(this.comboBoxFrequency_SelectedIndexChanged);
             // 
             // comboBoxDeviceIndex
             // 
-            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxDeviceIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxDeviceIndex.FormattingEnabled = true;
             this.comboBoxDeviceIndex.Items.AddRange(new object[] {
             "Device 0",
@@ -3265,7 +3515,6 @@
             this.comboBoxDeviceIndex.Name = "comboBoxDeviceIndex";
             this.comboBoxDeviceIndex.Size = new System.Drawing.Size(86, 25);
             this.comboBoxDeviceIndex.TabIndex = 0;
-            this.comboBoxDeviceIndex.Text = "Device 1";
             this.comboBoxDeviceIndex.SelectedIndexChanged += new System.EventHandler(this.comboBoxDeviceIndex_SelectedIndexChanged);
             // 
             // panel2
@@ -3296,253 +3545,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(253, 0);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(152, 29);
+            this.labelTitle.Size = new System.Drawing.Size(154, 31);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "0";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 46;
-            // 
-            // Column2
-            // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "1";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 46;
-            // 
-            // Column3
-            // 
-            this.Column3.Frozen = true;
-            this.Column3.HeaderText = "2";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 46;
-            // 
-            // Column4
-            // 
-            this.Column4.Frozen = true;
-            this.Column4.HeaderText = "3";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 46;
-            // 
-            // Column5
-            // 
-            this.Column5.Frozen = true;
-            this.Column5.HeaderText = "4";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 46;
-            // 
-            // Column6
-            // 
-            this.Column6.Frozen = true;
-            this.Column6.HeaderText = "5";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 46;
-            // 
-            // Column7
-            // 
-            this.Column7.Frozen = true;
-            this.Column7.HeaderText = "6";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 46;
-            // 
-            // Column8
-            // 
-            this.Column8.Frozen = true;
-            this.Column8.HeaderText = "7";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 46;
-            // 
-            // Column9
-            // 
-            this.Column9.Frozen = true;
-            this.Column9.HeaderText = "8";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 46;
-            // 
-            // Column10
-            // 
-            this.Column10.Frozen = true;
-            this.Column10.HeaderText = "9";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 46;
-            // 
-            // Column11
-            // 
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "A";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 46;
-            // 
-            // Column12
-            // 
-            this.Column12.Frozen = true;
-            this.Column12.HeaderText = "B";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 46;
-            // 
-            // Column13
-            // 
-            this.Column13.Frozen = true;
-            this.Column13.HeaderText = "C";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 46;
-            // 
-            // Column14
-            // 
-            this.Column14.Frozen = true;
-            this.Column14.HeaderText = "D";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 46;
-            // 
-            // Column15
-            // 
-            this.Column15.Frozen = true;
-            this.Column15.HeaderText = "E";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 46;
-            // 
-            // Column16
-            // 
-            this.Column16.Frozen = true;
-            this.Column16.HeaderText = "F";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.Frozen = true;
-            this.dataGridViewTextBoxColumn33.HeaderText = "0";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.Frozen = true;
-            this.dataGridViewTextBoxColumn34.HeaderText = "1";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.Frozen = true;
-            this.dataGridViewTextBoxColumn35.HeaderText = "2";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.Frozen = true;
-            this.dataGridViewTextBoxColumn36.HeaderText = "3";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.Frozen = true;
-            this.dataGridViewTextBoxColumn37.HeaderText = "4";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.Frozen = true;
-            this.dataGridViewTextBoxColumn38.HeaderText = "5";
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            this.dataGridViewTextBoxColumn38.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn39
-            // 
-            this.dataGridViewTextBoxColumn39.Frozen = true;
-            this.dataGridViewTextBoxColumn39.HeaderText = "6";
-            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            this.dataGridViewTextBoxColumn39.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn40
-            // 
-            this.dataGridViewTextBoxColumn40.Frozen = true;
-            this.dataGridViewTextBoxColumn40.HeaderText = "7";
-            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-            this.dataGridViewTextBoxColumn40.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn41
-            // 
-            this.dataGridViewTextBoxColumn41.Frozen = true;
-            this.dataGridViewTextBoxColumn41.HeaderText = "8";
-            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
-            this.dataGridViewTextBoxColumn41.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn42
-            // 
-            this.dataGridViewTextBoxColumn42.Frozen = true;
-            this.dataGridViewTextBoxColumn42.HeaderText = "9";
-            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
-            this.dataGridViewTextBoxColumn42.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn43
-            // 
-            this.dataGridViewTextBoxColumn43.Frozen = true;
-            this.dataGridViewTextBoxColumn43.HeaderText = "A";
-            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-            this.dataGridViewTextBoxColumn43.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn44
-            // 
-            this.dataGridViewTextBoxColumn44.Frozen = true;
-            this.dataGridViewTextBoxColumn44.HeaderText = "B";
-            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
-            this.dataGridViewTextBoxColumn44.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn45
-            // 
-            this.dataGridViewTextBoxColumn45.Frozen = true;
-            this.dataGridViewTextBoxColumn45.HeaderText = "C";
-            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            this.dataGridViewTextBoxColumn45.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn46
-            // 
-            this.dataGridViewTextBoxColumn46.Frozen = true;
-            this.dataGridViewTextBoxColumn46.HeaderText = "D";
-            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            this.dataGridViewTextBoxColumn46.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn47
-            // 
-            this.dataGridViewTextBoxColumn47.Frozen = true;
-            this.dataGridViewTextBoxColumn47.HeaderText = "E";
-            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            this.dataGridViewTextBoxColumn47.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn48
-            // 
-            this.dataGridViewTextBoxColumn48.Frozen = true;
-            this.dataGridViewTextBoxColumn48.HeaderText = "F";
-            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-            this.dataGridViewTextBoxColumn48.Width = 46;
             // 
             // MainForm
             // 
@@ -3551,7 +3560,7 @@
             this.ClientSize = new System.Drawing.Size(764, 522);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -3703,7 +3712,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtDMI_Temp;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtTempADC;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label44;
@@ -3715,59 +3724,59 @@
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.TextBox txtDMI_TxPower_Ch4;
-        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.TextBox txtTxPowerADC_Ch4;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox txtTxBiasADC_Ch4;
         private System.Windows.Forms.TextBox txtDMI_RxPower_Ch4;
-        private System.Windows.Forms.TextBox textBox35;
+        private System.Windows.Forms.TextBox txtRxPowerADC_Ch4;
         private System.Windows.Forms.TextBox txtDMI_TxBias_Ch4;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox txtDMI_TxPower_Ch3;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox txtTxPowerADC_Ch3;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txtTxBiasADC_Ch3;
         private System.Windows.Forms.TextBox txtDMI_RxPower_Ch3;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox txtRxPowerADC_Ch3;
         private System.Windows.Forms.TextBox txtDMI_TxBias_Ch3;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txtDMI_TxPower_Ch2;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox txtTxPowerADC_Ch2;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox txtTxBiasADC_Ch2;
         private System.Windows.Forms.TextBox txtDMI_RxPower_Ch2;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox txtRxPowerADC_Ch2;
         private System.Windows.Forms.TextBox txtDMI_TxBias_Ch2;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtDMI_TxPower_Ch1;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtTxPowerADC_Ch1;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtTxBiasADC_Ch1;
         private System.Windows.Forms.TextBox txtDMI_RxPower_Ch1;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox txtRxPowerADC_Ch1;
         private System.Windows.Forms.TextBox txtDMI_TxBias_Ch1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVccADC;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
@@ -3952,6 +3961,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
+        private System.Windows.Forms.ToolStripMenuItem calculateToolStripMenuItem;
     }
 }
 

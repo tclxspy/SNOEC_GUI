@@ -496,5 +496,56 @@ namespace SNOEC_GUI
             return double.Parse(inPutArray[maxIndex].ToString());
         }
 
+        //将16进制字符串转化为 字节流
+        public static byte[] HexStringToBytes(string hexStr)
+        {
+            if (string.IsNullOrEmpty(hexStr))
+            {
+                return new byte[0];
+            }
+
+            if (hexStr.StartsWith("0x"))
+            {
+                hexStr = hexStr.Remove(0, 2);
+            }
+
+            var count = hexStr.Length;
+
+            if (count % 2 == 1)
+            {
+                throw new ArgumentException("Invalid length of bytes:" + count);
+            }
+
+            var byteCount = count / 2;
+            var result = new byte[byteCount];
+            for (int ii = 0; ii < byteCount; ++ii)
+            {
+                var tempBytes = Byte.Parse(hexStr.Substring(2 * ii, 2), System.Globalization.NumberStyles.HexNumber);
+                result[ii] = tempBytes;
+            }
+            Array.Reverse(result);
+            return result;
+        }
+
+        //将字节流转化为16进制字符串
+        public static string BytesTohexString(byte[] bytes)
+        {
+            if (bytes == null || bytes.Count() < 1)
+            {
+                return string.Empty;
+            }
+
+            var count = bytes.Count();
+            Array.Reverse(bytes);
+            var cache = new StringBuilder();
+            cache.Append("0x");
+            for (int ii = 0; ii < count; ++ii)
+            {
+                var tempHex = Convert.ToString(bytes[ii], 16).ToUpper();
+                cache.Append(tempHex.Length == 1 ? "0" + tempHex : tempHex);
+            }
+
+            return cache.ToString();
+        }
     }
 }

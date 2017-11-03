@@ -27,3 +27,7 @@ The interrupt shows module's status: Tx/Rx loss, high/low VCC, etc.
 Fist to set device address 0xA0 and then choose register address.
 
 ![](http://i.imgur.com/6dJSbiW.jpg)
+
+## Note: ##
+
+1. 由于USB虚拟串口一次性只能穿不超过64个字节的数据，加上前面8个字节为格式字节，所以一次性传输数据为不超过56个字节。当然可以分包传送更多字节，由上位机实现，如SNOEC_GUI。
