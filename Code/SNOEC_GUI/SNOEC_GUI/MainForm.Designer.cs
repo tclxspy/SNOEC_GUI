@@ -443,7 +443,7 @@
             // 
             // btnReadWrite
             // 
-            this.btnReadWrite.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReadWrite.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReadWrite.ForeColor = System.Drawing.Color.Black;
             this.btnReadWrite.Location = new System.Drawing.Point(636, 7);
             this.btnReadWrite.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -464,7 +464,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(764, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(764, 27);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -474,7 +474,7 @@
             this.productsToolStripMenuItem,
             this.companyToolStripMenuItem});
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.configToolStripMenuItem.Text = "Config";
             // 
             // productsToolStripMenuItem
@@ -483,7 +483,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -491,14 +491,14 @@
             this.qSFP28SR4ToolStripMenuItem.Checked = true;
             this.qSFP28SR4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.qSFP28SR4ToolStripMenuItem.Name = "qSFP28SR4ToolStripMenuItem";
-            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28SR4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.qSFP28SR4ToolStripMenuItem.Text = "QSFP28 SR4";
             this.qSFP28SR4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28SR4ToolStripMenuItem_Click);
             // 
             // qSFP28CWDM4ToolStripMenuItem
             // 
             this.qSFP28CWDM4ToolStripMenuItem.Name = "qSFP28CWDM4ToolStripMenuItem";
-            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.qSFP28CWDM4ToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.qSFP28CWDM4ToolStripMenuItem.Text = "QSFP28 CWDM4";
             this.qSFP28CWDM4ToolStripMenuItem.Click += new System.EventHandler(this.qSFP28CWDM4ToolStripMenuItem_Click);
             // 
@@ -509,7 +509,7 @@
             this.innoToolStripMenuItem,
             this.fNRToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -517,42 +517,42 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // fNRToolStripMenuItem
             // 
             this.fNRToolStripMenuItem.Name = "fNRToolStripMenuItem";
-            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.fNRToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.fNRToolStripMenuItem.Text = "FNR";
             this.fNRToolStripMenuItem.Click += new System.EventHandler(this.fNRToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
             // calculateToolStripMenuItem
             // 
             this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
-            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(68, 19);
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(72, 21);
             this.calculateToolStripMenuItem.Text = "Calculate";
             this.calculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -563,13 +563,13 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.panel1.Size = new System.Drawing.Size(764, 497);
+            this.panel1.Size = new System.Drawing.Size(764, 495);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -580,7 +580,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 107);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(744, 380);
+            this.panel4.Size = new System.Drawing.Size(744, 378);
             this.panel4.TabIndex = 3;
             // 
             // tabControl1
@@ -597,7 +597,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(744, 380);
+            this.tabControl1.Size = new System.Drawing.Size(744, 378);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
@@ -614,12 +614,12 @@
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnRxCh1_4_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_4_Dis);
-            this.tabpageChOnOff.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageChOnOff.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageChOnOff.Location = new System.Drawing.Point(4, 28);
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabpageChOnOff.Name = "tabpageChOnOff";
             this.tabpageChOnOff.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 348);
+            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 346);
             this.tabpageChOnOff.TabIndex = 1;
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
@@ -753,7 +753,7 @@
             this.tabpageDMIADC.Controls.Add(this.panel7);
             this.tabpageDMIADC.Controls.Add(this.panel5);
             this.tabpageDMIADC.Controls.Add(this.panel6);
-            this.tabpageDMIADC.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageDMIADC.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageDMIADC.ForeColor = System.Drawing.Color.Black;
             this.tabpageDMIADC.Location = new System.Drawing.Point(4, 28);
             this.tabpageDMIADC.Name = "tabpageDMIADC";
@@ -1620,7 +1620,7 @@
             // tabpageAlarmWarning
             // 
             this.tabpageAlarmWarning.Controls.Add(this.groupBox2);
-            this.tabpageAlarmWarning.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageAlarmWarning.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 28);
             this.tabpageAlarmWarning.Name = "tabpageAlarmWarning";
             this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 348);
@@ -2272,7 +2272,7 @@
             this.tabpageI2CRead.Controls.Add(this.panel13);
             this.tabpageI2CRead.Controls.Add(this.panel12);
             this.tabpageI2CRead.Controls.Add(this.panel11);
-            this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageI2CRead.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageI2CRead.Location = new System.Drawing.Point(4, 28);
             this.tabpageI2CRead.Name = "tabpageI2CRead";
             this.tabpageI2CRead.Size = new System.Drawing.Size(736, 348);
@@ -2690,7 +2690,7 @@
             this.tabPageI2CWrite.Controls.Add(this.panel17);
             this.tabPageI2CWrite.Controls.Add(this.panel14);
             this.tabPageI2CWrite.Controls.Add(this.panel15);
-            this.tabPageI2CWrite.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageI2CWrite.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 28);
             this.tabPageI2CWrite.Name = "tabPageI2CWrite";
             this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 348);
@@ -3109,7 +3109,7 @@
             // 
             // numericUpDownHeator_Get
             // 
-            this.numericUpDownHeator_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_Get.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownHeator_Get.Location = new System.Drawing.Point(97, 182);
             this.numericUpDownHeator_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownHeator_Get.Maximum = new decimal(new int[] {
@@ -3124,7 +3124,7 @@
             // 
             // numericUpDownHeator_Set
             // 
-            this.numericUpDownHeator_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_Set.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownHeator_Set.Location = new System.Drawing.Point(97, 142);
             this.numericUpDownHeator_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownHeator_Set.Maximum = new decimal(new int[] {
@@ -3138,7 +3138,7 @@
             // 
             // numericUpDownHeator_CH
             // 
-            this.numericUpDownHeator_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownHeator_CH.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownHeator_CH.Location = new System.Drawing.Point(97, 98);
             this.numericUpDownHeator_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownHeator_CH.Maximum = new decimal(new int[] {
@@ -3254,7 +3254,7 @@
             // 
             // numericUpDownIbias_CH
             // 
-            this.numericUpDownIbias_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_CH.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownIbias_CH.Location = new System.Drawing.Point(86, 98);
             this.numericUpDownIbias_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIbias_CH.Maximum = new decimal(new int[] {
@@ -3278,7 +3278,7 @@
             // 
             // numericUpDownIbias_Set
             // 
-            this.numericUpDownIbias_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_Set.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownIbias_Set.Location = new System.Drawing.Point(86, 142);
             this.numericUpDownIbias_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIbias_Set.Maximum = new decimal(new int[] {
@@ -3292,7 +3292,7 @@
             // 
             // numericUpDownIbias_Get
             // 
-            this.numericUpDownIbias_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIbias_Get.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownIbias_Get.Location = new System.Drawing.Point(86, 182);
             this.numericUpDownIbias_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIbias_Get.Maximum = new decimal(new int[] {
@@ -3361,7 +3361,7 @@
             // comboBoxSoftHard
             // 
             this.comboBoxSoftHard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSoftHard.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxSoftHard.FormattingEnabled = true;
             this.comboBoxSoftHard.Items.AddRange(new object[] {
             "SerialPort",
@@ -3439,7 +3439,7 @@
             // 
             // numericUpDownBytes
             // 
-            this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownBytes.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
             this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownBytes.Name = "numericUpDownBytes";
@@ -3448,7 +3448,7 @@
             // 
             // numericUpDownRegAddress
             // 
-            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownRegAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
             this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
@@ -3462,16 +3462,21 @@
             // 
             // numericUpDownPage
             // 
-            this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownPage.Location = new System.Drawing.Point(444, 28);
             this.numericUpDownPage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownPage.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.numericUpDownPage.Name = "numericUpDownPage";
             this.numericUpDownPage.Size = new System.Drawing.Size(50, 23);
             this.numericUpDownPage.TabIndex = 5;
             // 
             // domainUpDownDeviceAddress
             // 
-            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.domainUpDownDeviceAddress.Items.Add("0xA0");
             this.domainUpDownDeviceAddress.Items.Add("0xA2");
             this.domainUpDownDeviceAddress.Items.Add("0xA8");
@@ -3485,7 +3490,7 @@
             // comboBoxFrequency
             // 
             this.comboBoxFrequency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxFrequency.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFrequency.FormattingEnabled = true;
             this.comboBoxFrequency.Items.AddRange(new object[] {
             "100K",
@@ -3502,7 +3507,7 @@
             // comboBoxDeviceIndex
             // 
             this.comboBoxDeviceIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxDeviceIndex.FormattingEnabled = true;
             this.comboBoxDeviceIndex.Items.AddRange(new object[] {
             "Device 0",
@@ -3545,7 +3550,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(253, 0);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelTitle.Name = "labelTitle";
@@ -3560,7 +3565,7 @@
             this.ClientSize = new System.Drawing.Size(764, 522);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
