@@ -19,7 +19,8 @@ namespace SNOEC_GUI
         {
             SNOEC = 0,
             Inno = 1,
-            FNR = 2
+            Generic = 2,
+            Luxshare = 3
         }
 
         public QSFP28_SNOEC(DUTCoeffControlByPN tabe)
@@ -39,13 +40,33 @@ namespace SNOEC_GUI
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }
-            else
+            else if(company == Company.SNOEC)
             {
                 byte[] buff = new byte[5];
                 buff[0] = 0xdf;
                 buff[1] = 0x5e;
                 buff[2] = 0x75;
                 buff[3] = 0xcd;
+                buff[4] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+            }
+            else if(company == Company.Generic)
+            {
+                byte[] buff = new byte[5];
+                buff[0] = 0x00;
+                buff[1] = 0x00;
+                buff[2] = 0x10;
+                buff[3] = 0x11;
+                buff[4] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+            }
+            else if (company == Company.Luxshare)
+            {
+                byte[] buff = new byte[5];
+                buff[0] = 0xA6;
+                buff[1] = 0x06;
+                buff[2] = 0x4C;
+                buff[3] = 0x6E;
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }

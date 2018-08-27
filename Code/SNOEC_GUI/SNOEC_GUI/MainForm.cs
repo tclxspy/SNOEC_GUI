@@ -789,7 +789,7 @@ namespace SNOEC_GUI
         {
             QSFP28_SNOEC.company = QSFP28_SNOEC.Company.Inno;
             this.innoToolStripMenuItem.Checked = true;
-            this.fNRToolStripMenuItem.Checked = false;
+            this.genericToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = false;
         }
 
@@ -797,15 +797,15 @@ namespace SNOEC_GUI
         {
             QSFP28_SNOEC.company = QSFP28_SNOEC.Company.SNOEC;
             this.innoToolStripMenuItem.Checked = false;
-            this.fNRToolStripMenuItem.Checked = false;
+            this.genericToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = true;
         }
 
-        private void fNRToolStripMenuItem_Click(object sender, EventArgs e)
+        private void genericToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            QSFP28_SNOEC.company = QSFP28_SNOEC.Company.FNR;
+            QSFP28_SNOEC.company = QSFP28_SNOEC.Company.Generic;
             this.innoToolStripMenuItem.Checked = false;
-            this.fNRToolStripMenuItem.Checked = true;
+            this.genericToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.Checked = false;
         }
 
@@ -955,6 +955,14 @@ namespace SNOEC_GUI
         {
             CalculateForm calculateFrom = new CalculateForm(dut, dataTable_DUTCoeffControlByPN);
             calculateFrom.Show();
+        }
+
+        private void luxshareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QSFP28_SNOEC.company = QSFP28_SNOEC.Company.Luxshare;
+            this.innoToolStripMenuItem.Checked = false;
+            this.genericToolStripMenuItem.Checked = true;
+            this.sNOECToolStripMenuItem.Checked = false;
         }
     }
 }
