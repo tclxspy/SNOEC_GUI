@@ -33,6 +33,8 @@ namespace SNOEC_GUI
             this.comboBoxDeviceIndex.SelectedIndex = 1;
             this.comboBoxSoftHard.SelectedIndex = 0;
             this.comboBoxFrequency.SelectedIndex = 3;
+            this.comboBoxIC_Operation.SelectedIndex = 0;
+            this.comboBoxIC_Select.SelectedIndex = 0;
 
             this.tabControl1.SelectedIndex = 1;
 
@@ -48,6 +50,9 @@ namespace SNOEC_GUI
             this.dataGridView4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView4.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView5.AllowUserToAddRows = false;
 
             for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
             {
@@ -68,6 +73,12 @@ namespace SNOEC_GUI
             {
                 this.dataGridView4.Columns[i].Width = this.dataGridView4.Width / this.dataGridView4.Columns.Count;
             }
+
+            for (int i = 0; i < this.dataGridView5.Columns.Count; i++)
+            {
+                this.dataGridView5.Columns[i].Width = this.dataGridView5.Width / this.dataGridView5.Columns.Count;
+            }
+
             this.dataGridView1.Rows.Add(6);
             this.dataGridView2.Rows.Add(6);
             this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -76,6 +87,8 @@ namespace SNOEC_GUI
             this.dataGridView4.Rows.Add(6);
             this.dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView4.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView5.Rows.Add(9);
+            this.dataGridView5.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
 
             txts_dmi_TxPower[0] = txtDMI_TxPower_Ch1;
@@ -163,6 +176,10 @@ namespace SNOEC_GUI
             {
                 this.btnReadWrite.Text = "Write";
             }
+            else if (this.tabControl1.SelectedTab.ToString().Contains("IC"))
+            {
+                this.btnReadWrite.Text = "Execute";
+            }
             else
             {
                 this.btnReadWrite.Text = "Read";
@@ -194,20 +211,32 @@ namespace SNOEC_GUI
             }
         }
 
+        private int deviceAddress = 0xA0;
         private void btnReadWrite_Click(object sender, EventArgs e)
         {
             this.btnReadWrite.Enabled = false;
             this.btnReadWrite.BackColor = Color.Yellow;
             this.btnReadWrite.Refresh();
-            try
+            deviceAddress = 0xA0;
+            switch (this.domainUpDownDeviceAddress.Text)
             {
+                case "0xA0":
+                    deviceAddress = 0xA0;
+                    break;
 
-            }
-            catch (Exception)
-            {
+                case "0xA2":
+                    deviceAddress = 0xA2;
+                    break;
 
-                throw;
+                case "0xA8":
+                    deviceAddress = 0xA8;
+                    break;
+
+                default:
+                    deviceAddress = 0xA0;
+                    break;
             }
+
             try
             {              
 
@@ -218,29 +247,7 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("DMI/ADC"))
                 {
-                    ClearTextBox();
-
-                    this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
-                    this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
-                    if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
-                    {
-                        this.txtTempADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TemperatureAdc, 0).ToString();
-                        this.txtVccADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.VccAdc, 0).ToString();
-                    }
-                    this.txtFW_Version.Text = dut.ReadFWRev();
-                    for (int i = 0; i < txts_dmi_TxBias.Length; i++)
-                    {
-                        txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
-                        txts_dmi_TxPower[i].Text = dut.ReadDmiTxP(i + 1).ToString();
-                        txts_dmi_RxPower[i].Text = dut.ReadDmiRxP(i + 1).ToString();
-
-                        if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
-                        {
-                            txts_adc_TxBias[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxBiasAdc, (i + 1)).ToString();
-                            txts_adc_TxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxPowerAdc, (i + 1)).ToString();
-                            txts_adc_RxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.RxPowerAdc, (i + 1)).ToString();
-                        }
-                    }
+                    this.Tab_DMI_ADC();
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Alarm/Warning"))
@@ -260,119 +267,23 @@ namespace SNOEC_GUI
                     this.chart37.BackColor = this.chart38.BackColor = this.chart39.BackColor = this.chart40.BackColor = this.GetColor(dut.GetInteTempWarning());
                 }
 
-                int deviceAddress = 0xA0;
-                switch (this.domainUpDownDeviceAddress.Text)
-                {
-                    case "0xA0":
-                        deviceAddress = 0xA0;
-                        break;
-
-                    case "0xA2":
-                        deviceAddress = 0xA2;
-                        break;
-
-                    case "0xA8":
-                        deviceAddress = 0xA8;
-                        break;
-
-                    default:
-                        deviceAddress = 0xA0;
-                        break;
-                }
+                
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
                 {
-                    //clear cells
-                    for (int i = 0; i < maxCells; i++)
-                    {
-                        this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = null;
-                        this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = null;
-                    }
-
-                    this.txtSN.Text = dut.ReadSN();
-                    this.txtPN.Text = dut.ReadPn();
-                    this.txtFW.Text = dut.ReadFWRev();
-                    byte[] buff = new byte[(int)this.numericUpDownBytes.Value];
-                    if ((int)this.numericUpDownBytes.Value > 0)
-                    {
-
-                        buff = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
-                        if (buff == null)
-                        {
-                            this.btnReadWrite.Enabled = true;
-                            this.btnReadWrite.BackColor = SystemColors.Control;
-                            return;
-                        }
-                    }
-
-                    int length = Math.Min(maxCells, buff.Length);
-
-                    for (int i = 0; i < length; i++)
-                    {
-                        this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16).ToUpper();
-                        this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = Convert.ToChar(buff[i]);
-                    }
+                    this.Tab_I2C_Read();
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("I2C Write"))
                 {
-                    byte[] writeData = new byte[(int)this.numericUpDownBytes.Value];
-                    if (writeData.Length == 0)
-                    {
-                        this.btnReadWrite.Enabled = true;
-                        this.btnReadWrite.BackColor = SystemColors.Control;
-                        return;
-                    }
-
-                    //clear cells
-                    for (int i = 0; i < maxCells; i++)
-                    {
-                        this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = null;
-                    }
-
-                    try
-                    {
-                        for (int i = 0; i < writeData.Length; i++)
-                        {
-                            object ob = this.dataGridView4.Rows[i / 16].Cells[i % 16].Value;
-                            if (ob == null)
-                            {
-                                this.btnReadWrite.Enabled = true;
-                                this.btnReadWrite.BackColor = SystemColors.Control;
-                                return;
-                            }
-                            writeData[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
-                        }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.btnReadWrite.Enabled = true;
-                        this.btnReadWrite.BackColor = SystemColors.Control;
-                        return;
-                    }
-
-                    byte[] buff = dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, writeData);
-                    if (buff == null)
-                    {
-                        this.btnReadWrite.Enabled = true;
-                        this.btnReadWrite.BackColor = SystemColors.Control;
-                        return;
-                    }
-
-                    for (int i = 0; i < buff.Length; i++)
-                    {
-                        this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
-                    }
+                    this.Tab_I2C_Write();
                 }
 
-                if (this.tabControl1.SelectedTab.ToString().Contains("Driver"))
+
+                if (this.tabControl1.SelectedTab.ToString().Contains("IC"))
                 {
-
+                    this.Tab_IC();
                 }
-
-                this.btnReadWrite.Enabled = true;
-                this.btnReadWrite.BackColor = SystemColors.Control;
             }
 
             catch
@@ -381,8 +292,209 @@ namespace SNOEC_GUI
                 this.btnReadWrite.BackColor = SystemColors.Control;
                 MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            this.btnReadWrite.Enabled = true;
+            this.btnReadWrite.BackColor = SystemColors.Control;
         }
 
+        private void Tab_DMI_ADC()
+        {
+            ClearTextBox();
+
+            this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
+            this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
+            if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
+            {
+                this.txtTempADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TemperatureAdc, 0).ToString();
+                this.txtVccADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.VccAdc, 0).ToString();
+            }
+            this.txtFW_Version.Text = dut.ReadFWRev();
+            for (int i = 0; i < txts_dmi_TxBias.Length; i++)
+            {
+                txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
+                txts_dmi_TxPower[i].Text = dut.ReadDmiTxP(i + 1).ToString();
+                txts_dmi_RxPower[i].Text = dut.ReadDmiRxP(i + 1).ToString();
+
+                if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
+                {
+                    txts_adc_TxBias[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxBiasAdc, (i + 1)).ToString();
+                    txts_adc_TxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxPowerAdc, (i + 1)).ToString();
+                    txts_adc_RxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.RxPowerAdc, (i + 1)).ToString();
+                }
+            }
+        }
+
+        private void Tab_I2C_Read()
+        {
+            //clear cells
+            for (int i = 0; i < maxCells; i++)
+            {
+                this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = null;
+                this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = null;
+            }
+            this.dataGridView1.Refresh();
+            this.dataGridView2.Refresh();
+            //this.txtSN.Text = dut.ReadSN();
+            //this.txtPN.Text = dut.ReadPn();
+            //this.txtFW.Text = dut.ReadFWRev();
+            byte[] buff = new byte[(int)this.numericUpDownBytes.Value];
+            if ((int)this.numericUpDownBytes.Value > 0)
+            {
+
+                buff = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, (int)this.numericUpDownBytes.Value);
+                if (buff == null)
+                {
+                    this.btnReadWrite.Enabled = true;
+                    this.btnReadWrite.BackColor = SystemColors.Control;
+                    return;
+                }
+            }
+
+            int length = Math.Min(maxCells, buff.Length);
+
+            for (int i = 0; i < length; i++)
+            {
+                this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16).ToUpper();
+                this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = Convert.ToChar(buff[i]);
+            }
+        }
+
+        private void Tab_I2C_Write()
+        {
+            byte[] writeData = new byte[(int)this.numericUpDownBytes.Value];
+            if (writeData.Length == 0)
+            {
+                this.btnReadWrite.Enabled = true;
+                this.btnReadWrite.BackColor = SystemColors.Control;
+                return;
+            }
+
+            //clear cells
+            for (int i = 0; i < maxCells; i++)
+            {
+                this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = null;
+            }
+            this.dataGridView3.Refresh();
+
+            try
+            {
+                for (int i = 0; i < writeData.Length; i++)
+                {
+                    object ob = this.dataGridView4.Rows[i / 16].Cells[i % 16].Value;
+                    if (ob == null)
+                    {
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
+                        return;
+                    }
+                    writeData[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.btnReadWrite.Enabled = true;
+                this.btnReadWrite.BackColor = SystemColors.Control;
+                return;
+            }
+
+            byte[] buff = dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, (int)this.numericUpDownPage.Value, (int)this.numericUpDownRegAddress.Value, writeData);
+            if (buff == null)
+            {
+                this.btnReadWrite.Enabled = true;
+                this.btnReadWrite.BackColor = SystemColors.Control;
+                return;
+            }
+
+            for (int i = 0; i < buff.Length; i++)
+            {
+                this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
+            }
+        }
+
+        private void Tab_IC()
+        {
+            if (this.comboBoxIC_Operation.SelectedIndex == 0)
+            {
+                //clear cells
+                for (int i = 0; i < maxCells; i++)
+                {
+                    this.dataGridView5.Rows[i / 16].Cells[i % 16].Value = null;
+                }
+                this.dataGridView5.Refresh();
+
+                byte[] buffer = new byte[(int)this.numericUpDownIC_Bytes.Value];
+                if ((int)this.numericUpDownIC_Bytes.Value > 0)
+                {
+                    byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
+                    for (int i = 0; i < buffer.Length; i++)
+                    {
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd, 1 });
+
+                        for (int count = 0; count < 3; count++)//need read 2~ times for this IC chip
+                        {
+                            buffer[i] = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x82, 1)[0];
+                        }  
+                        ic_regAdd++;
+                    }
+
+                    if (buffer == null)
+                    {
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
+                        return;
+                    }
+                }
+
+                int length = Math.Min(maxCells, buffer.Length);
+
+                for (int i = 0; i < length; i++)
+                {
+                    this.dataGridView5.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buffer[i], 16).ToUpper();
+                }
+            }
+
+            if (this.comboBoxIC_Operation.SelectedIndex == 1)
+            {
+                byte[] writeData = new byte[(int)this.numericUpDownIC_Bytes.Value];
+                if (writeData.Length == 0)
+                {
+                    this.btnReadWrite.Enabled = true;
+                    this.btnReadWrite.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                try
+                {
+                    for (int i = 0; i < writeData.Length; i++)
+                    {
+                        object ob = this.dataGridView5.Rows[i / 16].Cells[i % 16].Value;
+                        if (ob == null)
+                        {
+                            this.btnReadWrite.Enabled = true;
+                            this.btnReadWrite.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        writeData[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnReadWrite.Enabled = true;
+                    this.btnReadWrite.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
+                for (int i = 0; i < writeData.Length; i++)
+                {
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd });
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x83, new byte[] { writeData[i], 1 });
+                    ic_regAdd++;
+                }
+            }
+        }
 
         //normal:0, low:1, high:2
         private Color GetColor(int value)
@@ -963,6 +1075,22 @@ namespace SNOEC_GUI
             this.innoToolStripMenuItem.Checked = false;
             this.genericToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.Checked = false;
+        }
+
+        private void dataGridView5_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var content = this.dataGridView5.CurrentCell.Value;
+            if (content == null)
+            {
+                return;
+            }
+
+            Regex reg = new Regex(@"^[0-9a-fA-F]{1,2}$");
+            if (!reg.IsMatch((string)content))
+            {
+                this.dataGridView5.CurrentCell.Value = null;
+                MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

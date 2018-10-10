@@ -42,13 +42,16 @@ namespace SNOEC_GUI
             }
             else if(company == Company.SNOEC)
             {
-                byte[] buff = new byte[5];
-                buff[0] = 0xdf;
-                buff[1] = 0x5e;
-                buff[2] = 0x75;
-                buff[3] = 0xcd;
-                buff[4] = (byte)page;
-                IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+                //byte[] buff = new byte[5];
+                //buff[0] = 0xdf;
+                //buff[1] = 0x5e;
+                //buff[2] = 0x75;
+                //buff[3] = 0xcd;
+                //buff[4] = (byte)page;
+                //IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+                byte[] buff = new byte[1];
+                buff[0] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 127, softHard, buff);
             }
             else if(company == Company.Generic)
             {

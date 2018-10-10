@@ -79,6 +79,7 @@
             this.sNOECToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.innoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genericToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.luxshareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -359,7 +360,32 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.luxshareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPageIC = new System.Windows.Forms.TabPage();
+            this.numericUpDownIC_Bytes = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.numericUpDownIC_RegAddress = new System.Windows.Forms.NumericUpDown();
+            this.comboBoxIC_Operation = new System.Windows.Forms.ComboBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.comboBoxIC_Select = new System.Windows.Forms.ComboBox();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -440,6 +466,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tabPageIC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReadWrite
@@ -484,7 +514,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -511,7 +541,7 @@
             this.genericToolStripMenuItem,
             this.luxshareToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -519,23 +549,30 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // genericToolStripMenuItem
             // 
             this.genericToolStripMenuItem.Name = "genericToolStripMenuItem";
-            this.genericToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.genericToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.genericToolStripMenuItem.Text = "Generic";
             this.genericToolStripMenuItem.Click += new System.EventHandler(this.genericToolStripMenuItem_Click);
+            // 
+            // luxshareToolStripMenuItem
+            // 
+            this.luxshareToolStripMenuItem.Name = "luxshareToolStripMenuItem";
+            this.luxshareToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.luxshareToolStripMenuItem.Text = "Luxshare";
+            this.luxshareToolStripMenuItem.Click += new System.EventHandler(this.luxshareToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -593,6 +630,7 @@
             this.tabControl1.Controls.Add(this.tabpageI2CRead);
             this.tabControl1.Controls.Add(this.tabPageI2CWrite);
             this.tabControl1.Controls.Add(this.tabDriver);
+            this.tabControl1.Controls.Add(this.tabPageIC);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -3560,12 +3598,259 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
             // 
-            // luxshareToolStripMenuItem
+            // tabPageIC
             // 
-            this.luxshareToolStripMenuItem.Name = "luxshareToolStripMenuItem";
-            this.luxshareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.luxshareToolStripMenuItem.Text = "Luxshare";
-            this.luxshareToolStripMenuItem.Click += new System.EventHandler(this.luxshareToolStripMenuItem_Click);
+            this.tabPageIC.Controls.Add(this.dataGridView5);
+            this.tabPageIC.Controls.Add(this.comboBoxIC_Select);
+            this.tabPageIC.Controls.Add(this.label78);
+            this.tabPageIC.Controls.Add(this.comboBoxIC_Operation);
+            this.tabPageIC.Controls.Add(this.label77);
+            this.tabPageIC.Controls.Add(this.label76);
+            this.tabPageIC.Controls.Add(this.label2);
+            this.tabPageIC.Controls.Add(this.numericUpDownIC_RegAddress);
+            this.tabPageIC.Controls.Add(this.numericUpDownIC_Bytes);
+            this.tabPageIC.Location = new System.Drawing.Point(4, 28);
+            this.tabPageIC.Name = "tabPageIC";
+            this.tabPageIC.Size = new System.Drawing.Size(736, 348);
+            this.tabPageIC.TabIndex = 7;
+            this.tabPageIC.Text = "IC";
+            this.tabPageIC.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDownIC_Bytes
+            // 
+            this.numericUpDownIC_Bytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIC_Bytes.Location = new System.Drawing.Point(355, 50);
+            this.numericUpDownIC_Bytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownIC_Bytes.Name = "numericUpDownIC_Bytes";
+            this.numericUpDownIC_Bytes.Size = new System.Drawing.Size(45, 23);
+            this.numericUpDownIC_Bytes.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(358, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Bytes";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(261, 26);
+            this.label76.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(58, 19);
+            this.label76.TabIndex = 12;
+            this.label76.Text = "Address";
+            // 
+            // numericUpDownIC_RegAddress
+            // 
+            this.numericUpDownIC_RegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownIC_RegAddress.Location = new System.Drawing.Point(265, 50);
+            this.numericUpDownIC_RegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownIC_RegAddress.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numericUpDownIC_RegAddress.Name = "numericUpDownIC_RegAddress";
+            this.numericUpDownIC_RegAddress.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownIC_RegAddress.TabIndex = 11;
+            // 
+            // comboBoxIC_Operation
+            // 
+            this.comboBoxIC_Operation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxIC_Operation.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxIC_Operation.FormattingEnabled = true;
+            this.comboBoxIC_Operation.Items.AddRange(new object[] {
+            "Read",
+            "Write"});
+            this.comboBoxIC_Operation.Location = new System.Drawing.Point(141, 48);
+            this.comboBoxIC_Operation.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxIC_Operation.Name = "comboBoxIC_Operation";
+            this.comboBoxIC_Operation.Size = new System.Drawing.Size(93, 25);
+            this.comboBoxIC_Operation.TabIndex = 11;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(149, 26);
+            this.label77.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(71, 19);
+            this.label77.TabIndex = 12;
+            this.label77.Text = "Operation";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(30, 26);
+            this.label78.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(63, 19);
+            this.label78.TabIndex = 12;
+            this.label78.Text = "IC Select";
+            // 
+            // comboBoxIC_Select
+            // 
+            this.comboBoxIC_Select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxIC_Select.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxIC_Select.FormattingEnabled = true;
+            this.comboBoxIC_Select.Items.AddRange(new object[] {
+            "MASC-37053A",
+            "MATA-37244C"});
+            this.comboBoxIC_Select.Location = new System.Drawing.Point(5, 48);
+            this.comboBoxIC_Select.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxIC_Select.Name = "comboBoxIC_Select";
+            this.comboBoxIC_Select.Size = new System.Drawing.Size(110, 25);
+            this.comboBoxIC_Select.TabIndex = 11;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToResizeColumns = false;
+            this.dataGridView5.AllowUserToResizeRows = false;
+            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn49,
+            this.dataGridViewTextBoxColumn50,
+            this.dataGridViewTextBoxColumn51,
+            this.dataGridViewTextBoxColumn52,
+            this.dataGridViewTextBoxColumn53,
+            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewTextBoxColumn55,
+            this.dataGridViewTextBoxColumn56,
+            this.dataGridViewTextBoxColumn57,
+            this.dataGridViewTextBoxColumn58,
+            this.dataGridViewTextBoxColumn59,
+            this.dataGridViewTextBoxColumn60,
+            this.dataGridViewTextBoxColumn61,
+            this.dataGridViewTextBoxColumn62,
+            this.dataGridViewTextBoxColumn63,
+            this.dataGridViewTextBoxColumn64});
+            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView5.Location = new System.Drawing.Point(0, 110);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersVisible = false;
+            this.dataGridView5.RowHeadersWidth = 50;
+            this.dataGridView5.Size = new System.Drawing.Size(736, 238);
+            this.dataGridView5.TabIndex = 13;
+            this.dataGridView5.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellEndEdit);
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.Frozen = true;
+            this.dataGridViewTextBoxColumn49.HeaderText = "0";
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.Frozen = true;
+            this.dataGridViewTextBoxColumn50.HeaderText = "1";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.Frozen = true;
+            this.dataGridViewTextBoxColumn51.HeaderText = "2";
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.Frozen = true;
+            this.dataGridViewTextBoxColumn52.HeaderText = "3";
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.Frozen = true;
+            this.dataGridViewTextBoxColumn53.HeaderText = "4";
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            this.dataGridViewTextBoxColumn53.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn54
+            // 
+            this.dataGridViewTextBoxColumn54.Frozen = true;
+            this.dataGridViewTextBoxColumn54.HeaderText = "5";
+            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+            this.dataGridViewTextBoxColumn54.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.Frozen = true;
+            this.dataGridViewTextBoxColumn55.HeaderText = "6";
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.dataGridViewTextBoxColumn55.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.Frozen = true;
+            this.dataGridViewTextBoxColumn56.HeaderText = "7";
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn57
+            // 
+            this.dataGridViewTextBoxColumn57.Frozen = true;
+            this.dataGridViewTextBoxColumn57.HeaderText = "8";
+            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            this.dataGridViewTextBoxColumn57.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn58
+            // 
+            this.dataGridViewTextBoxColumn58.Frozen = true;
+            this.dataGridViewTextBoxColumn58.HeaderText = "9";
+            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            this.dataGridViewTextBoxColumn58.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn59
+            // 
+            this.dataGridViewTextBoxColumn59.Frozen = true;
+            this.dataGridViewTextBoxColumn59.HeaderText = "A";
+            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            this.dataGridViewTextBoxColumn59.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn60
+            // 
+            this.dataGridViewTextBoxColumn60.Frozen = true;
+            this.dataGridViewTextBoxColumn60.HeaderText = "B";
+            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn61
+            // 
+            this.dataGridViewTextBoxColumn61.Frozen = true;
+            this.dataGridViewTextBoxColumn61.HeaderText = "C";
+            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.dataGridViewTextBoxColumn61.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.Frozen = true;
+            this.dataGridViewTextBoxColumn62.HeaderText = "D";
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dataGridViewTextBoxColumn62.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn63
+            // 
+            this.dataGridViewTextBoxColumn63.Frozen = true;
+            this.dataGridViewTextBoxColumn63.HeaderText = "E";
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn64
+            // 
+            this.dataGridViewTextBoxColumn64.Frozen = true;
+            this.dataGridViewTextBoxColumn64.HeaderText = "F";
+            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.Width = 46;
             // 
             // MainForm
             // 
@@ -3679,6 +3964,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPageIC.ResumeLayout(false);
+            this.tabPageIC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3977,6 +4267,32 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
         private System.Windows.Forms.ToolStripMenuItem calculateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem luxshareToolStripMenuItem;
+        private System.Windows.Forms.TabPage tabPageIC;
+        private System.Windows.Forms.ComboBox comboBoxIC_Select;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.ComboBox comboBoxIC_Operation;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDownIC_RegAddress;
+        private System.Windows.Forms.NumericUpDown numericUpDownIC_Bytes;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn54;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn55;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn56;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn57;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn58;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn59;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn60;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn61;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn62;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;
     }
 }
 
