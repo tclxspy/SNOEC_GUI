@@ -35,6 +35,7 @@ namespace SNOEC_GUI
             this.comboBoxFrequency.SelectedIndex = 3;
             this.comboBoxIC_Operation.SelectedIndex = 0;
             this.comboBoxIC_Select.SelectedIndex = 0;
+            this.comboBoxIC_Channel.SelectedIndex = 3;
 
             this.tabControl1.SelectedIndex = 1;
 
@@ -87,7 +88,7 @@ namespace SNOEC_GUI
             this.dataGridView4.Rows.Add(6);
             this.dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView4.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView5.Rows.Add(9);
+            this.dataGridView5.Rows.Add(6);
             this.dataGridView5.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
 
@@ -238,7 +239,7 @@ namespace SNOEC_GUI
             }
 
             try
-            {              
+            {
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Ch On/Off"))
                 {
@@ -267,7 +268,7 @@ namespace SNOEC_GUI
                     this.chart37.BackColor = this.chart38.BackColor = this.chart39.BackColor = this.chart40.BackColor = this.GetColor(dut.GetInteTempWarning());
                 }
 
-                
+
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
                 {
@@ -414,59 +415,95 @@ namespace SNOEC_GUI
 
         private void Tab_IC()
         {
-            if (this.comboBoxIC_Operation.SelectedIndex == 0)
+            if (this.comboBoxIC_Select.SelectedIndex == 0)
             {
-                //clear cells
-                for (int i = 0; i < maxCells; i++)
+                if (this.comboBoxIC_Operation.SelectedIndex == 0)
                 {
-                    this.dataGridView5.Rows[i / 16].Cells[i % 16].Value = null;
-                }
-                this.dataGridView5.Refresh();
-
-                byte[] buffer = new byte[(int)this.numericUpDownIC_Bytes.Value];
-                if ((int)this.numericUpDownIC_Bytes.Value > 0)
-                {
-                    byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
-                    for (int i = 0; i < buffer.Length; i++)
+                    //clear cells
+                    for (int i = 0; i < maxCells; i++)
                     {
-                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd, 1 });
+                        this.dataGridView5.Rows[i / 16].Cells[i % 16].Value = null;
+                    }
+                    this.dataGridView5.Refresh();
 
-                        for (int count = 0; count < 3; count++)//need read 2~ times for this IC chip
+                    byte[] buffer = new byte[(int)this.numericUpDownIC_Bytes.Value];
+                    if ((int)this.numericUpDownIC_Bytes.Value > 0)
+                    {
+                        byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
+                        for (int i = 0; i < buffer.Length; i++)
                         {
-                            buffer[i] = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x82, 1)[0];
-                        }  
-                        ic_regAdd++;
+                            dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd, 1 });
+
+                            for (int count = 0; count < 3; count++)//need read 2~ times for this IC chip
+                            {
+                                buffer[i] = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x82, 1)[0];
+                            }
+                            ic_regAdd++;
+                        }
+
+                        if (buffer == null)
+                        {
+                            this.btnReadWrite.Enabled = true;
+                            this.btnReadWrite.BackColor = SystemColors.Control;
+                            return;
+                        }
                     }
 
-                    if (buffer == null)
+                    int length = Math.Min(maxCells, buffer.Length);
+
+                    for (int i = 0; i < length; i++)
+                    {
+                        this.dataGridView5.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buffer[i], 16).ToUpper();
+                    }
+                }
+
+                if (this.comboBoxIC_Operation.SelectedIndex == 1)
+                {
+                    byte[] writeData = new byte[(int)this.numericUpDownIC_Bytes.Value];
+                    if (writeData.Length == 0)
                     {
                         this.btnReadWrite.Enabled = true;
                         this.btnReadWrite.BackColor = SystemColors.Control;
                         return;
                     }
-                }
 
-                int length = Math.Min(maxCells, buffer.Length);
+                    try
+                    {
+                        for (int i = 0; i < writeData.Length; i++)
+                        {
+                            object ob = this.dataGridView5.Rows[i / 16].Cells[i % 16].Value;
+                            if (ob == null)
+                            {
+                                this.btnReadWrite.Enabled = true;
+                                this.btnReadWrite.BackColor = SystemColors.Control;
+                                return;
+                            }
+                            writeData[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
+                        return;
+                    }
 
-                for (int i = 0; i < length; i++)
-                {
-                    this.dataGridView5.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buffer[i], 16).ToUpper();
+                    byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
+                    for (int i = 0; i < writeData.Length; i++)
+                    {
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd });
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x83, new byte[] { writeData[i], 1 });
+                        ic_regAdd++;
+                    }
                 }
             }
-
-            if (this.comboBoxIC_Operation.SelectedIndex == 1)
+            else if (this.comboBoxIC_Select.SelectedIndex == 1)
             {
-                byte[] writeData = new byte[(int)this.numericUpDownIC_Bytes.Value];
-                if (writeData.Length == 0)
+                if (this.comboBoxIC_Operation.SelectedIndex == 1)
                 {
-                    this.btnReadWrite.Enabled = true;
-                    this.btnReadWrite.BackColor = SystemColors.Control;
-                    return;
-                }
-
-                try
-                {
-                    for (int i = 0; i < writeData.Length; i++)
+                    byte[] writeData = new byte[4];
+                    for (int i = 0; i < 2; i++)
                     {
                         object ob = this.dataGridView5.Rows[i / 16].Cells[i % 16].Value;
                         if (ob == null)
@@ -477,21 +514,9 @@ namespace SNOEC_GUI
                         }
                         writeData[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
                     }
-                }
-                catch
-                {
-                    MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.btnReadWrite.Enabled = true;
-                    this.btnReadWrite.BackColor = SystemColors.Control;
-                    return;
-                }
-
-                byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
-                for (int i = 0; i < writeData.Length; i++)
-                {
-                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd });
-                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x83, new byte[] { writeData[i], 1 });
-                    ic_regAdd++;
+                    writeData[2] = (byte)((this.checkBoxCSource_EN1.Checked ? 1 : 0) + ((this.checkBoxCSource_EN2.Checked ? 1 : 0) << 1));
+                    writeData[3] = 1;//trig to write
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x89, writeData);
                 }
             }
         }
@@ -590,7 +615,7 @@ namespace SNOEC_GUI
             {
                 if (btnTxCh1_Dis.BackColor == Color.Lime)
                 {
-                    if(dut.SetSoftTxDis(1)==false)
+                    if (dut.SetSoftTxDis(1) == false)
                     {
                         throw new Exception();
                     }
@@ -599,7 +624,7 @@ namespace SNOEC_GUI
                 }
                 else
                 {
-                    if(dut.TxChannelEnable(1)==false)
+                    if (dut.TxChannelEnable(1) == false)
                     {
                         throw new Exception();
                     }
@@ -622,7 +647,7 @@ namespace SNOEC_GUI
             {
                 if (btnTxCh2_Dis.BackColor == Color.Lime)
                 {
-                    if(dut.SetSoftTxDis(2)==false)
+                    if (dut.SetSoftTxDis(2) == false)
                     {
                         throw new Exception();
                     }
@@ -631,7 +656,7 @@ namespace SNOEC_GUI
                 }
                 else
                 {
-                    if(dut.TxChannelEnable(2)==false)
+                    if (dut.TxChannelEnable(2) == false)
                     {
                         throw new Exception();
                     }
@@ -654,7 +679,7 @@ namespace SNOEC_GUI
             {
                 if (btnTxCh3_Dis.BackColor == Color.Lime)
                 {
-                    if(dut.SetSoftTxDis(3)==false)
+                    if (dut.SetSoftTxDis(3) == false)
                     {
                         throw new Exception();
                     }
@@ -663,7 +688,7 @@ namespace SNOEC_GUI
                 }
                 else
                 {
-                    if(dut.TxChannelEnable(3)==false)
+                    if (dut.TxChannelEnable(3) == false)
                     {
                         throw new Exception();
                     }
@@ -686,7 +711,7 @@ namespace SNOEC_GUI
             {
                 if (btnTxCh4_Dis.BackColor == Color.Lime)
                 {
-                    if(dut.SetSoftTxDis(4)==false)
+                    if (dut.SetSoftTxDis(4) == false)
                     {
                         throw new Exception();
                     }
@@ -695,7 +720,7 @@ namespace SNOEC_GUI
                 }
                 else
                 {
-                    if(dut.TxChannelEnable(4)==false)
+                    if (dut.TxChannelEnable(4) == false)
                     {
                         throw new Exception();
                     }
@@ -890,7 +915,7 @@ namespace SNOEC_GUI
             }
 
             Regex reg = new Regex(@"^[0-9a-fA-F]{1,2}$");
-            if(!reg.IsMatch((string)content))
+            if (!reg.IsMatch((string)content))
             {
                 this.dataGridView4.CurrentCell.Value = null;
                 MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1006,7 +1031,7 @@ namespace SNOEC_GUI
             try
             {
                 int value = (this.checkBoxIbias_EN1.Checked ? 1 : 0) + ((this.checkBoxIbias_EN2.Checked ? 1 : 0) << 1);
-                dut.PSM4_SetIbias(5, (byte)value);                
+                dut.PSM4_SetIbias(5, (byte)value);
             }
             catch
             {
@@ -1092,5 +1117,53 @@ namespace SNOEC_GUI
                 MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void comboBoxIC_Select_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.comboBoxIC_Select.SelectedIndex == 0)
+            {
+                this.comboBoxIC_Operation.SelectedIndex = 0;
+                this.comboBoxIC_Operation.Enabled = true;
+                this.numericUpDownIC_RegAddress.Enabled = true;
+                this.numericUpDownIC_Bytes.Enabled = true;
+                this.checkBoxCSource_EN1.Enabled = false;
+                this.checkBoxCSource_EN2.Enabled = false;
+            }
+            else if (this.comboBoxIC_Select.SelectedIndex == 1)
+            {
+                this.comboBoxIC_Operation.SelectedIndex = 1;
+                this.numericUpDownIC_Bytes.Value = 2;
+                this.comboBoxIC_Operation.Enabled = false;
+                this.numericUpDownIC_RegAddress.Enabled = false;
+                this.numericUpDownIC_Bytes.Enabled = false;
+                this.checkBoxCSource_EN1.Enabled = true;
+                this.checkBoxCSource_EN2.Enabled = true;
+            }
+        }
+
+        private void numericUpDownAD5317R_Data_ValueChanged(object sender, EventArgs e)
+        {
+            AD5317R_SetValue((ushort)this.numericUpDownAD5317R_Data.Value);
+            this.progressBar_AD5317R_DAC.Value = (int)this.numericUpDownAD5317R_Data.Value;
+        }
+
+        private void AD5317R_SetValue(UInt16 value)
+        {
+            try
+            {
+                value <<= 6;
+                byte[] writeData = new byte[4];
+                writeData[0] = (byte)(value >> 8);
+                writeData[1] = (byte)(value & 0xFF);
+                writeData[2] = (Byte)(1 << this.comboBoxIC_Channel.SelectedIndex);
+                writeData[3] = 1;//trig to write
+                dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x85, writeData);
+            }
+            catch
+            {
+                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
+
