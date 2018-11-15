@@ -40,7 +40,7 @@ namespace SNOEC_GUI
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }
-            else if(company == Company.SNOEC)
+            else if (company == Company.SNOEC)
             {
                 //byte[] buff = new byte[5];
                 //buff[0] = 0xdf;
@@ -49,9 +49,16 @@ namespace SNOEC_GUI
                 //buff[3] = 0xcd;
                 //buff[4] = (byte)page;
                 //IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
-                byte[] buff = new byte[1];
-                buff[0] = (byte)page;
-                IOPort.WriteReg(DUT_USB_Port, 0xA0, 127, softHard, buff);
+                byte[] buff = new byte[5];
+                buff[0] = 0x12;
+                buff[1] = 0x34;
+                buff[2] = 0x56;
+                buff[3] = 0x78;
+                buff[4] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+                //byte[] buff = new byte[1];//sip
+                //buff[0] = (byte)page;
+                //IOPort.WriteReg(DUT_USB_Port, 0xA0, 127, softHard, buff);
             }
             else if(company == Company.Generic)
             {
@@ -122,12 +129,22 @@ namespace SNOEC_GUI
             lock (syncRoot)
             {
                 string fwrev = "";
-                EnterEngMode(4);
-                fwrev = EEPROM_SNOEC.ReadFWRev(DUT_USB_Port, 0xA0, 128);
+                //EnterEngMode(4);
+                //fwrev = EEPROM_SNOEC.ReadFWRev(DUT_USB_Port, 0xA0, 128);
                 return fwrev;
             }
         }
 
+        public string ReadVendorName()
+        {
+            lock (syncRoot)
+            {
+                EnterEngMode(0);
+                string vendor = "";
+                vendor = EEPROM_SNOEC.ReadVendorName(DUT_USB_Port, 0xA0, 148);
+                return vendor.Trim();
+            }
+        }
 
         public double ReadDmiTemp()
         {

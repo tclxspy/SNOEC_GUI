@@ -238,7 +238,6 @@
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.tabpageI2CRead = new System.Windows.Forms.TabPage();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -256,33 +255,7 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtFW = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.txtPN = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtSN = new System.Windows.Forms.TextBox();
             this.tabPageI2CWrite = new System.Windows.Forms.TabPage();
-            this.panel17 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -300,77 +273,7 @@
             this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label54 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.label55 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabDriver = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.buttonWriteHeator = new System.Windows.Forms.Button();
-            this.buttonReadHeator = new System.Windows.Forms.Button();
-            this.label75 = new System.Windows.Forms.Label();
-            this.numericUpDownHeator_Get = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownHeator_Set = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownHeator_CH = new System.Windows.Forms.NumericUpDown();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonWriteIbias = new System.Windows.Forms.Button();
-            this.label74 = new System.Windows.Forms.Label();
-            this.checkBoxIbias_EN2 = new System.Windows.Forms.CheckBox();
-            this.buttonReadIbias = new System.Windows.Forms.Button();
-            this.checkBoxIbias_EN1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDownIbias_CH = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownIbias_Set = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownIbias_Get = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
             this.tabPageIC = new System.Windows.Forms.TabPage();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.progressBar_AD5317R_DAC = new System.Windows.Forms.ProgressBar();
-            this.label81 = new System.Windows.Forms.Label();
-            this.comboBoxIC_Channel = new System.Windows.Forms.ComboBox();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.numericUpDownAD5317R_Data = new System.Windows.Forms.NumericUpDown();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.checkBoxCSource_EN2 = new System.Windows.Forms.CheckBox();
             this.checkBoxCSource_EN1 = new System.Windows.Forms.CheckBox();
             this.comboBoxIC_Select = new System.Windows.Forms.ComboBox();
@@ -381,6 +284,34 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownIC_RegAddress = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownIC_Bytes = new System.Windows.Forms.NumericUpDown();
+            this.tabPageSemtechChip = new System.Windows.Forms.TabPage();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn69 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn70 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn71 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn72 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn73 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn74 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn75 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn76 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn77 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn78 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn79 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn80 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label88 = new System.Windows.Forms.Label();
+            this.comboBoxSemtechChip_Select = new System.Windows.Forms.ComboBox();
+            this.numericUpDownSemtechChip_Page = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownSemtechChip_Bytes = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownSemtechChip_Address = new System.Windows.Forms.NumericUpDown();
+            this.label84 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.comboBoxSemtechChip_Operation = new System.Windows.Forms.ComboBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
@@ -399,6 +330,47 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.btnRead_VendorName = new System.Windows.Forms.Button();
+            this.btnRead_FW_Version = new System.Windows.Forms.Button();
+            this.btnRead_PN = new System.Windows.Forms.Button();
+            this.btnRead_SN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtVendorName = new System.Windows.Forms.TextBox();
+            this.txtFW = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPN = new System.Windows.Forms.TextBox();
+            this.txtSN = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.numericUpDownAD5317R_Data = new System.Windows.Forms.NumericUpDown();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.comboBoxIC_Channel = new System.Windows.Forms.ComboBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.progressBar_AD5317R_DAC = new System.Windows.Forms.ProgressBar();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAD5371R_Set = new System.Windows.Forms.Button();
+            this.label55 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -454,39 +426,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabpageI2CRead.SuspendLayout();
-            this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel11.SuspendLayout();
             this.tabPageI2CWrite.SuspendLayout();
-            this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.panel14.SuspendLayout();
-            this.panel15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabDriver.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Get)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Set)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_CH)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_CH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Set)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Get)).BeginInit();
             this.tabPageIC.SuspendLayout();
-            this.panel19.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).BeginInit();
-            this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).BeginInit();
+            this.tabPageSemtechChip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSemtechChip_Page)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSemtechChip_Bytes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSemtechChip_Address)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReadWrite
@@ -646,9 +603,10 @@
             this.tabControl1.Controls.Add(this.tabpageAlarmWarning);
             this.tabControl1.Controls.Add(this.tabpageI2CRead);
             this.tabControl1.Controls.Add(this.tabPageI2CWrite);
-            this.tabControl1.Controls.Add(this.tabDriver);
             this.tabControl1.Controls.Add(this.tabPageIC);
+            this.tabControl1.Controls.Add(this.tabPageSemtechChip);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabControl1.Multiline = true;
@@ -672,11 +630,11 @@
             this.tabpageChOnOff.Controls.Add(this.btnRxCh1_4_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_4_Dis);
             this.tabpageChOnOff.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabpageChOnOff.Location = new System.Drawing.Point(4, 28);
+            this.tabpageChOnOff.Location = new System.Drawing.Point(4, 25);
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabpageChOnOff.Name = "tabpageChOnOff";
             this.tabpageChOnOff.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 348);
+            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 351);
             this.tabpageChOnOff.TabIndex = 1;
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
@@ -812,9 +770,9 @@
             this.tabpageDMIADC.Controls.Add(this.panel6);
             this.tabpageDMIADC.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageDMIADC.ForeColor = System.Drawing.Color.Black;
-            this.tabpageDMIADC.Location = new System.Drawing.Point(4, 28);
+            this.tabpageDMIADC.Location = new System.Drawing.Point(4, 25);
             this.tabpageDMIADC.Name = "tabpageDMIADC";
-            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 348);
+            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 351);
             this.tabpageDMIADC.TabIndex = 2;
             this.tabpageDMIADC.Text = "DMI/ADC";
             this.tabpageDMIADC.UseVisualStyleBackColor = true;
@@ -827,9 +785,9 @@
             this.label51.AutoSize = true;
             this.label51.Location = new System.Drawing.Point(641, 9);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(54, 16);
+            this.label51.Size = new System.Drawing.Size(60, 16);
             this.label51.TabIndex = 1;
-            this.label51.Text = "Channl 4";
+            this.label51.Text = "Channel 4";
             // 
             // label44
             // 
@@ -839,9 +797,9 @@
             this.label44.AutoSize = true;
             this.label44.Location = new System.Drawing.Point(520, 9);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(54, 16);
+            this.label44.Size = new System.Drawing.Size(60, 16);
             this.label44.TabIndex = 1;
-            this.label44.Text = "Channl 3";
+            this.label44.Text = "Channel 3";
             // 
             // label37
             // 
@@ -851,9 +809,9 @@
             this.label37.AutoSize = true;
             this.label37.Location = new System.Drawing.Point(401, 9);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(54, 16);
+            this.label37.Size = new System.Drawing.Size(60, 16);
             this.label37.TabIndex = 1;
-            this.label37.Text = "Channl 2";
+            this.label37.Text = "Channel 2";
             // 
             // label30
             // 
@@ -863,9 +821,9 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(282, 9);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(54, 16);
+            this.label30.Size = new System.Drawing.Size(60, 16);
             this.label30.TabIndex = 1;
-            this.label30.Text = "Channl 1";
+            this.label30.Text = "Channel 1";
             // 
             // label16
             // 
@@ -911,7 +869,7 @@
             this.panel10.Controls.Add(this.txtDMI_TxBias_Ch4);
             this.panel10.Location = new System.Drawing.Point(617, 29);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 305);
+            this.panel10.Size = new System.Drawing.Size(100, 308);
             this.panel10.TabIndex = 0;
             // 
             // label45
@@ -1045,7 +1003,7 @@
             this.panel9.Controls.Add(this.txtDMI_TxBias_Ch3);
             this.panel9.Location = new System.Drawing.Point(497, 29);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(100, 305);
+            this.panel9.Size = new System.Drawing.Size(100, 308);
             this.panel9.TabIndex = 0;
             // 
             // label38
@@ -1179,7 +1137,7 @@
             this.panel8.Controls.Add(this.txtDMI_TxBias_Ch2);
             this.panel8.Location = new System.Drawing.Point(377, 29);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(100, 305);
+            this.panel8.Size = new System.Drawing.Size(100, 308);
             this.panel8.TabIndex = 0;
             // 
             // label31
@@ -1313,7 +1271,7 @@
             this.panel7.Controls.Add(this.txtDMI_TxBias_Ch1);
             this.panel7.Location = new System.Drawing.Point(257, 29);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 305);
+            this.panel7.Size = new System.Drawing.Size(100, 308);
             this.panel7.TabIndex = 0;
             // 
             // label24
@@ -1447,7 +1405,7 @@
             this.panel5.Controls.Add(this.txtDMI_VCC);
             this.panel5.Location = new System.Drawing.Point(137, 29);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(100, 305);
+            this.panel5.Size = new System.Drawing.Size(100, 308);
             this.panel5.TabIndex = 0;
             // 
             // label10
@@ -1579,7 +1537,7 @@
             this.panel6.Controls.Add(this.textBox12);
             this.panel6.Location = new System.Drawing.Point(17, 29);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 305);
+            this.panel6.Size = new System.Drawing.Size(100, 308);
             this.panel6.TabIndex = 0;
             // 
             // label17
@@ -1678,9 +1636,9 @@
             // 
             this.tabpageAlarmWarning.Controls.Add(this.groupBox2);
             this.tabpageAlarmWarning.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 28);
+            this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 25);
             this.tabpageAlarmWarning.Name = "tabpageAlarmWarning";
-            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 348);
+            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 351);
             this.tabpageAlarmWarning.TabIndex = 5;
             this.tabpageAlarmWarning.Text = "Alarm/Warning";
             this.tabpageAlarmWarning.UseVisualStyleBackColor = true;
@@ -1745,7 +1703,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(736, 348);
+            this.groupBox2.Size = new System.Drawing.Size(736, 351);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -2326,26 +2284,27 @@
             // 
             // tabpageI2CRead
             // 
-            this.tabpageI2CRead.Controls.Add(this.panel13);
-            this.tabpageI2CRead.Controls.Add(this.panel12);
-            this.tabpageI2CRead.Controls.Add(this.panel11);
+            this.tabpageI2CRead.Controls.Add(this.label71);
+            this.tabpageI2CRead.Controls.Add(this.btnRead_VendorName);
+            this.tabpageI2CRead.Controls.Add(this.btnRead_FW_Version);
+            this.tabpageI2CRead.Controls.Add(this.btnRead_PN);
+            this.tabpageI2CRead.Controls.Add(this.btnRead_SN);
+            this.tabpageI2CRead.Controls.Add(this.label1);
+            this.tabpageI2CRead.Controls.Add(this.label53);
+            this.tabpageI2CRead.Controls.Add(this.txtVendorName);
+            this.tabpageI2CRead.Controls.Add(this.txtFW);
+            this.tabpageI2CRead.Controls.Add(this.label52);
+            this.tabpageI2CRead.Controls.Add(this.label18);
+            this.tabpageI2CRead.Controls.Add(this.txtPN);
+            this.tabpageI2CRead.Controls.Add(this.txtSN);
+            this.tabpageI2CRead.Controls.Add(this.dataGridView1);
             this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabpageI2CRead.Location = new System.Drawing.Point(4, 28);
+            this.tabpageI2CRead.Location = new System.Drawing.Point(4, 25);
             this.tabpageI2CRead.Name = "tabpageI2CRead";
-            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 348);
+            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 351);
             this.tabpageI2CRead.TabIndex = 3;
             this.tabpageI2CRead.Text = "I2C Read";
             this.tabpageI2CRead.UseVisualStyleBackColor = true;
-            // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.dataGridView1);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel13.Location = new System.Drawing.Point(0, 48);
-            this.panel13.Name = "panel13";
-            this.panel13.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.panel13.Size = new System.Drawing.Size(736, 146);
-            this.panel13.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -2370,13 +2329,12 @@
             this.Column14,
             this.Column15,
             this.Column16});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 60);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(722, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(736, 186);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -2507,263 +2465,17 @@
             this.Column16.ReadOnly = true;
             this.Column16.Width = 46;
             // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.dataGridView2);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 194);
-            this.panel12.Name = "panel12";
-            this.panel12.Padding = new System.Windows.Forms.Padding(7, 17, 7, 14);
-            this.panel12.Size = new System.Drawing.Size(736, 154);
-            this.panel12.TabIndex = 2;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.ColumnHeadersVisible = false;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 17);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(722, 123);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.Frozen = true;
-            this.dataGridViewTextBoxColumn1.HeaderText = "1";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.Frozen = true;
-            this.dataGridViewTextBoxColumn2.HeaderText = "2";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.Frozen = true;
-            this.dataGridViewTextBoxColumn3.HeaderText = "3";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.Frozen = true;
-            this.dataGridViewTextBoxColumn4.HeaderText = "4";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.Frozen = true;
-            this.dataGridViewTextBoxColumn5.HeaderText = "5";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.Frozen = true;
-            this.dataGridViewTextBoxColumn6.HeaderText = "6";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.Frozen = true;
-            this.dataGridViewTextBoxColumn7.HeaderText = "7";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.Frozen = true;
-            this.dataGridViewTextBoxColumn8.HeaderText = "8";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.Frozen = true;
-            this.dataGridViewTextBoxColumn9.HeaderText = "9";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.Frozen = true;
-            this.dataGridViewTextBoxColumn10.HeaderText = "10";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.Frozen = true;
-            this.dataGridViewTextBoxColumn11.HeaderText = "11";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.Frozen = true;
-            this.dataGridViewTextBoxColumn12.HeaderText = "12";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.Frozen = true;
-            this.dataGridViewTextBoxColumn13.HeaderText = "13";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.Frozen = true;
-            this.dataGridViewTextBoxColumn14.HeaderText = "14";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.Frozen = true;
-            this.dataGridViewTextBoxColumn15.HeaderText = "15";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.Frozen = true;
-            this.dataGridViewTextBoxColumn16.HeaderText = "16";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 46;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.label53);
-            this.panel11.Controls.Add(this.txtFW);
-            this.panel11.Controls.Add(this.label52);
-            this.panel11.Controls.Add(this.txtPN);
-            this.panel11.Controls.Add(this.label18);
-            this.panel11.Controls.Add(this.txtSN);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(736, 48);
-            this.panel11.TabIndex = 1;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(517, 19);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(25, 16);
-            this.label53.TabIndex = 1;
-            this.label53.Text = "FW";
-            // 
-            // txtFW
-            // 
-            this.txtFW.Location = new System.Drawing.Point(548, 16);
-            this.txtFW.Name = "txtFW";
-            this.txtFW.ReadOnly = true;
-            this.txtFW.Size = new System.Drawing.Size(100, 22);
-            this.txtFW.TabIndex = 0;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(277, 19);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(75, 16);
-            this.label52.TabIndex = 1;
-            this.label52.Text = "Part Number";
-            // 
-            // txtPN
-            // 
-            this.txtPN.Location = new System.Drawing.Point(365, 16);
-            this.txtPN.Name = "txtPN";
-            this.txtPN.ReadOnly = true;
-            this.txtPN.Size = new System.Drawing.Size(100, 22);
-            this.txtPN.TabIndex = 0;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(55, 19);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 16);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Serial Number";
-            // 
-            // txtSN
-            // 
-            this.txtSN.Location = new System.Drawing.Point(143, 16);
-            this.txtSN.Name = "txtSN";
-            this.txtSN.ReadOnly = true;
-            this.txtSN.Size = new System.Drawing.Size(100, 22);
-            this.txtSN.TabIndex = 0;
-            // 
             // tabPageI2CWrite
             // 
-            this.tabPageI2CWrite.Controls.Add(this.panel17);
-            this.tabPageI2CWrite.Controls.Add(this.panel14);
-            this.tabPageI2CWrite.Controls.Add(this.panel15);
+            this.tabPageI2CWrite.Controls.Add(this.label54);
+            this.tabPageI2CWrite.Controls.Add(this.dataGridView4);
             this.tabPageI2CWrite.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 28);
+            this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 25);
             this.tabPageI2CWrite.Name = "tabPageI2CWrite";
-            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 348);
+            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 351);
             this.tabPageI2CWrite.TabIndex = 4;
             this.tabPageI2CWrite.Text = "I2C Write";
             this.tabPageI2CWrite.UseVisualStyleBackColor = true;
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.dataGridView4);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(0, 31);
-            this.panel17.Name = "panel17";
-            this.panel17.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.panel17.Size = new System.Drawing.Size(736, 146);
-            this.panel17.TabIndex = 5;
             // 
             // dataGridView4
             // 
@@ -2788,13 +2500,12 @@
             this.dataGridViewTextBoxColumn46,
             this.dataGridViewTextBoxColumn47,
             this.dataGridViewTextBoxColumn48});
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(7, 0);
+            this.dataGridView4.Location = new System.Drawing.Point(0, 69);
             this.dataGridView4.MultiSelect = false;
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersVisible = false;
             this.dataGridView4.RowHeadersWidth = 50;
-            this.dataGridView4.Size = new System.Drawing.Size(722, 146);
+            this.dataGridView4.Size = new System.Drawing.Size(736, 186);
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellEndEdit);
             // 
@@ -2910,774 +2621,43 @@
             this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
             this.dataGridViewTextBoxColumn48.Width = 46;
             // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.label54);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 0);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(736, 31);
-            this.panel14.TabIndex = 0;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(7, 10);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(39, 16);
-            this.label54.TabIndex = 0;
-            this.label54.Text = "Write:";
-            // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.label55);
-            this.panel15.Controls.Add(this.dataGridView3);
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel15.Location = new System.Drawing.Point(0, 177);
-            this.panel15.Name = "panel15";
-            this.panel15.Padding = new System.Windows.Forms.Padding(7, 28, 7, 20);
-            this.panel15.Size = new System.Drawing.Size(736, 171);
-            this.panel15.TabIndex = 3;
-            // 
-            // label55
-            // 
-            this.label55.Location = new System.Drawing.Point(7, 6);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(69, 16);
-            this.label55.TabIndex = 0;
-            this.label55.Text = "ReadBack:";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToResizeColumns = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.ColumnHeadersVisible = false;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(7, 28);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(722, 123);
-            this.dataGridView3.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.Frozen = true;
-            this.dataGridViewTextBoxColumn17.HeaderText = "1";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.Frozen = true;
-            this.dataGridViewTextBoxColumn18.HeaderText = "2";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.Frozen = true;
-            this.dataGridViewTextBoxColumn19.HeaderText = "3";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.Frozen = true;
-            this.dataGridViewTextBoxColumn20.HeaderText = "4";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.Frozen = true;
-            this.dataGridViewTextBoxColumn21.HeaderText = "5";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.Frozen = true;
-            this.dataGridViewTextBoxColumn22.HeaderText = "6";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.Frozen = true;
-            this.dataGridViewTextBoxColumn23.HeaderText = "7";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.Frozen = true;
-            this.dataGridViewTextBoxColumn24.HeaderText = "8";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.Frozen = true;
-            this.dataGridViewTextBoxColumn25.HeaderText = "9";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.Frozen = true;
-            this.dataGridViewTextBoxColumn26.HeaderText = "10";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            this.dataGridViewTextBoxColumn26.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.Frozen = true;
-            this.dataGridViewTextBoxColumn27.HeaderText = "11";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.Frozen = true;
-            this.dataGridViewTextBoxColumn28.HeaderText = "12";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.Frozen = true;
-            this.dataGridViewTextBoxColumn29.HeaderText = "13";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
-            this.dataGridViewTextBoxColumn29.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.Frozen = true;
-            this.dataGridViewTextBoxColumn30.HeaderText = "14";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.ReadOnly = true;
-            this.dataGridViewTextBoxColumn30.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.Frozen = true;
-            this.dataGridViewTextBoxColumn31.HeaderText = "15";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.ReadOnly = true;
-            this.dataGridViewTextBoxColumn31.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.Frozen = true;
-            this.dataGridViewTextBoxColumn32.HeaderText = "16";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.ReadOnly = true;
-            this.dataGridViewTextBoxColumn32.Width = 46;
-            // 
-            // tabDriver
-            // 
-            this.tabDriver.Controls.Add(this.groupBox3);
-            this.tabDriver.Controls.Add(this.groupBox1);
-            this.tabDriver.Location = new System.Drawing.Point(4, 28);
-            this.tabDriver.Name = "tabDriver";
-            this.tabDriver.Size = new System.Drawing.Size(736, 348);
-            this.tabDriver.TabIndex = 6;
-            this.tabDriver.Text = "Driver";
-            this.tabDriver.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.buttonWriteHeator);
-            this.groupBox3.Controls.Add(this.buttonReadHeator);
-            this.groupBox3.Controls.Add(this.label75);
-            this.groupBox3.Controls.Add(this.numericUpDownHeator_Get);
-            this.groupBox3.Controls.Add(this.numericUpDownHeator_Set);
-            this.groupBox3.Controls.Add(this.numericUpDownHeator_CH);
-            this.groupBox3.Controls.Add(this.label73);
-            this.groupBox3.Controls.Add(this.label72);
-            this.groupBox3.Location = new System.Drawing.Point(386, 42);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(189, 228);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Heater";
-            // 
-            // buttonWriteHeator
-            // 
-            this.buttonWriteHeator.Location = new System.Drawing.Point(102, 45);
-            this.buttonWriteHeator.Name = "buttonWriteHeator";
-            this.buttonWriteHeator.Size = new System.Drawing.Size(75, 23);
-            this.buttonWriteHeator.TabIndex = 17;
-            this.buttonWriteHeator.Text = "write";
-            this.buttonWriteHeator.UseVisualStyleBackColor = true;
-            this.buttonWriteHeator.Click += new System.EventHandler(this.buttonWriteHeator_Click);
-            // 
-            // buttonReadHeator
-            // 
-            this.buttonReadHeator.Location = new System.Drawing.Point(15, 45);
-            this.buttonReadHeator.Name = "buttonReadHeator";
-            this.buttonReadHeator.Size = new System.Drawing.Size(75, 23);
-            this.buttonReadHeator.TabIndex = 16;
-            this.buttonReadHeator.Text = "read";
-            this.buttonReadHeator.UseVisualStyleBackColor = true;
-            this.buttonReadHeator.Click += new System.EventHandler(this.buttonReadHeator_Click);
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(6, 186);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(68, 19);
-            this.label75.TabIndex = 17;
-            this.label75.Text = "ReadData";
-            // 
-            // numericUpDownHeator_Get
-            // 
-            this.numericUpDownHeator_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownHeator_Get.Location = new System.Drawing.Point(97, 182);
-            this.numericUpDownHeator_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownHeator_Get.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numericUpDownHeator_Get.Name = "numericUpDownHeator_Get";
-            this.numericUpDownHeator_Get.ReadOnly = true;
-            this.numericUpDownHeator_Get.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownHeator_Get.TabIndex = 16;
-            // 
-            // numericUpDownHeator_Set
-            // 
-            this.numericUpDownHeator_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownHeator_Set.Location = new System.Drawing.Point(97, 142);
-            this.numericUpDownHeator_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownHeator_Set.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numericUpDownHeator_Set.Name = "numericUpDownHeator_Set";
-            this.numericUpDownHeator_Set.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownHeator_Set.TabIndex = 15;
-            // 
-            // numericUpDownHeator_CH
-            // 
-            this.numericUpDownHeator_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownHeator_CH.Location = new System.Drawing.Point(97, 98);
-            this.numericUpDownHeator_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownHeator_CH.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.numericUpDownHeator_CH.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownHeator_CH.Name = "numericUpDownHeator_CH";
-            this.numericUpDownHeator_CH.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownHeator_CH.TabIndex = 9;
-            this.numericUpDownHeator_CH.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(6, 142);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(71, 19);
-            this.label73.TabIndex = 16;
-            this.label73.Text = "WriteData";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(6, 102);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(59, 19);
-            this.label72.TabIndex = 10;
-            this.label72.Text = "Channel";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.buttonWriteIbias);
-            this.groupBox1.Controls.Add(this.label74);
-            this.groupBox1.Controls.Add(this.checkBoxIbias_EN2);
-            this.groupBox1.Controls.Add(this.buttonReadIbias);
-            this.groupBox1.Controls.Add(this.checkBoxIbias_EN1);
-            this.groupBox1.Controls.Add(this.numericUpDownIbias_CH);
-            this.groupBox1.Controls.Add(this.numericUpDownIbias_Set);
-            this.groupBox1.Controls.Add(this.numericUpDownIbias_Get);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label71);
-            this.groupBox1.Location = new System.Drawing.Point(116, 42);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 228);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ibias";
-            // 
-            // buttonWriteIbias
-            // 
-            this.buttonWriteIbias.Location = new System.Drawing.Point(77, 64);
-            this.buttonWriteIbias.Name = "buttonWriteIbias";
-            this.buttonWriteIbias.Size = new System.Drawing.Size(75, 23);
-            this.buttonWriteIbias.TabIndex = 14;
-            this.buttonWriteIbias.Text = "write";
-            this.buttonWriteIbias.UseVisualStyleBackColor = true;
-            this.buttonWriteIbias.Click += new System.EventHandler(this.buttonWriteIbias_Click);
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(7, 186);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(68, 19);
-            this.label74.TabIndex = 15;
-            this.label74.Text = "ReadData";
-            // 
-            // checkBoxIbias_EN2
-            // 
-            this.checkBoxIbias_EN2.AutoSize = true;
-            this.checkBoxIbias_EN2.Checked = true;
-            this.checkBoxIbias_EN2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxIbias_EN2.Location = new System.Drawing.Point(11, 65);
-            this.checkBoxIbias_EN2.Name = "checkBoxIbias_EN2";
-            this.checkBoxIbias_EN2.Size = new System.Drawing.Size(54, 23);
-            this.checkBoxIbias_EN2.TabIndex = 14;
-            this.checkBoxIbias_EN2.Text = "EN2";
-            this.checkBoxIbias_EN2.UseVisualStyleBackColor = true;
-            this.checkBoxIbias_EN2.CheckedChanged += new System.EventHandler(this.checkBoxIbias_EN2_CheckedChanged);
-            // 
-            // buttonReadIbias
-            // 
-            this.buttonReadIbias.Location = new System.Drawing.Point(77, 24);
-            this.buttonReadIbias.Name = "buttonReadIbias";
-            this.buttonReadIbias.Size = new System.Drawing.Size(75, 23);
-            this.buttonReadIbias.TabIndex = 11;
-            this.buttonReadIbias.Text = "read";
-            this.buttonReadIbias.UseVisualStyleBackColor = true;
-            this.buttonReadIbias.Click += new System.EventHandler(this.buttonReadDAC_Click);
-            // 
-            // checkBoxIbias_EN1
-            // 
-            this.checkBoxIbias_EN1.AutoSize = true;
-            this.checkBoxIbias_EN1.Checked = true;
-            this.checkBoxIbias_EN1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxIbias_EN1.Location = new System.Drawing.Point(12, 27);
-            this.checkBoxIbias_EN1.Name = "checkBoxIbias_EN1";
-            this.checkBoxIbias_EN1.Size = new System.Drawing.Size(54, 23);
-            this.checkBoxIbias_EN1.TabIndex = 13;
-            this.checkBoxIbias_EN1.Text = "EN1";
-            this.checkBoxIbias_EN1.UseVisualStyleBackColor = true;
-            this.checkBoxIbias_EN1.CheckedChanged += new System.EventHandler(this.checkBoxIbias_EN1_CheckedChanged);
-            // 
-            // numericUpDownIbias_CH
-            // 
-            this.numericUpDownIbias_CH.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownIbias_CH.Location = new System.Drawing.Point(86, 98);
-            this.numericUpDownIbias_CH.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownIbias_CH.Maximum = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            this.numericUpDownIbias_CH.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownIbias_CH.Name = "numericUpDownIbias_CH";
-            this.numericUpDownIbias_CH.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownIbias_CH.TabIndex = 7;
-            this.numericUpDownIbias_CH.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // numericUpDownIbias_Set
-            // 
-            this.numericUpDownIbias_Set.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownIbias_Set.Location = new System.Drawing.Point(86, 142);
-            this.numericUpDownIbias_Set.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownIbias_Set.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericUpDownIbias_Set.Name = "numericUpDownIbias_Set";
-            this.numericUpDownIbias_Set.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownIbias_Set.TabIndex = 7;
-            // 
-            // numericUpDownIbias_Get
-            // 
-            this.numericUpDownIbias_Get.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownIbias_Get.Location = new System.Drawing.Point(86, 182);
-            this.numericUpDownIbias_Get.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownIbias_Get.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericUpDownIbias_Get.Name = "numericUpDownIbias_Get";
-            this.numericUpDownIbias_Get.ReadOnly = true;
-            this.numericUpDownIbias_Get.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownIbias_Get.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 19);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Channel";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(7, 142);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(71, 19);
-            this.label71.TabIndex = 9;
-            this.label71.Text = "WriteData";
-            // 
             // tabPageIC
             // 
-            this.tabPageIC.Controls.Add(this.panel19);
-            this.tabPageIC.Controls.Add(this.panel18);
-            this.tabPageIC.Controls.Add(this.panel16);
-            this.tabPageIC.Location = new System.Drawing.Point(4, 28);
+            this.tabPageIC.Controls.Add(this.btnAD5371R_Set);
+            this.tabPageIC.Controls.Add(this.checkBoxCSource_EN2);
+            this.tabPageIC.Controls.Add(this.dataGridView5);
+            this.tabPageIC.Controls.Add(this.checkBoxCSource_EN1);
+            this.tabPageIC.Controls.Add(this.progressBar_AD5317R_DAC);
+            this.tabPageIC.Controls.Add(this.comboBoxIC_Select);
+            this.tabPageIC.Controls.Add(this.label78);
+            this.tabPageIC.Controls.Add(this.label81);
+            this.tabPageIC.Controls.Add(this.comboBoxIC_Operation);
+            this.tabPageIC.Controls.Add(this.comboBoxIC_Channel);
+            this.tabPageIC.Controls.Add(this.label77);
+            this.tabPageIC.Controls.Add(this.label83);
+            this.tabPageIC.Controls.Add(this.label76);
+            this.tabPageIC.Controls.Add(this.label2);
+            this.tabPageIC.Controls.Add(this.label82);
+            this.tabPageIC.Controls.Add(this.numericUpDownIC_RegAddress);
+            this.tabPageIC.Controls.Add(this.numericUpDownAD5317R_Data);
+            this.tabPageIC.Controls.Add(this.numericUpDownIC_Bytes);
+            this.tabPageIC.Controls.Add(this.label79);
+            this.tabPageIC.Controls.Add(this.label80);
+            this.tabPageIC.Location = new System.Drawing.Point(4, 25);
             this.tabPageIC.Name = "tabPageIC";
-            this.tabPageIC.Size = new System.Drawing.Size(736, 348);
+            this.tabPageIC.Size = new System.Drawing.Size(736, 351);
             this.tabPageIC.TabIndex = 7;
             this.tabPageIC.Text = "IC";
             this.tabPageIC.UseVisualStyleBackColor = true;
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.dataGridView5);
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel19.Location = new System.Drawing.Point(0, 174);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(736, 174);
-            this.panel19.TabIndex = 20;
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AllowUserToResizeColumns = false;
-            this.dataGridView5.AllowUserToResizeRows = false;
-            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn49,
-            this.dataGridViewTextBoxColumn50,
-            this.dataGridViewTextBoxColumn51,
-            this.dataGridViewTextBoxColumn52,
-            this.dataGridViewTextBoxColumn53,
-            this.dataGridViewTextBoxColumn54,
-            this.dataGridViewTextBoxColumn55,
-            this.dataGridViewTextBoxColumn56,
-            this.dataGridViewTextBoxColumn57,
-            this.dataGridViewTextBoxColumn58,
-            this.dataGridViewTextBoxColumn59,
-            this.dataGridViewTextBoxColumn60,
-            this.dataGridViewTextBoxColumn61,
-            this.dataGridViewTextBoxColumn62,
-            this.dataGridViewTextBoxColumn63,
-            this.dataGridViewTextBoxColumn64});
-            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView5.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView5.MultiSelect = false;
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersVisible = false;
-            this.dataGridView5.RowHeadersWidth = 50;
-            this.dataGridView5.Size = new System.Drawing.Size(736, 174);
-            this.dataGridView5.TabIndex = 14;
-            // 
-            // dataGridViewTextBoxColumn49
-            // 
-            this.dataGridViewTextBoxColumn49.Frozen = true;
-            this.dataGridViewTextBoxColumn49.HeaderText = "0";
-            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-            this.dataGridViewTextBoxColumn49.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn50
-            // 
-            this.dataGridViewTextBoxColumn50.Frozen = true;
-            this.dataGridViewTextBoxColumn50.HeaderText = "1";
-            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            this.dataGridViewTextBoxColumn50.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn51
-            // 
-            this.dataGridViewTextBoxColumn51.Frozen = true;
-            this.dataGridViewTextBoxColumn51.HeaderText = "2";
-            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-            this.dataGridViewTextBoxColumn51.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn52
-            // 
-            this.dataGridViewTextBoxColumn52.Frozen = true;
-            this.dataGridViewTextBoxColumn52.HeaderText = "3";
-            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-            this.dataGridViewTextBoxColumn52.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn53
-            // 
-            this.dataGridViewTextBoxColumn53.Frozen = true;
-            this.dataGridViewTextBoxColumn53.HeaderText = "4";
-            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-            this.dataGridViewTextBoxColumn53.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn54
-            // 
-            this.dataGridViewTextBoxColumn54.Frozen = true;
-            this.dataGridViewTextBoxColumn54.HeaderText = "5";
-            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-            this.dataGridViewTextBoxColumn54.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn55
-            // 
-            this.dataGridViewTextBoxColumn55.Frozen = true;
-            this.dataGridViewTextBoxColumn55.HeaderText = "6";
-            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
-            this.dataGridViewTextBoxColumn55.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn56
-            // 
-            this.dataGridViewTextBoxColumn56.Frozen = true;
-            this.dataGridViewTextBoxColumn56.HeaderText = "7";
-            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            this.dataGridViewTextBoxColumn56.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn57
-            // 
-            this.dataGridViewTextBoxColumn57.Frozen = true;
-            this.dataGridViewTextBoxColumn57.HeaderText = "8";
-            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            this.dataGridViewTextBoxColumn57.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn58
-            // 
-            this.dataGridViewTextBoxColumn58.Frozen = true;
-            this.dataGridViewTextBoxColumn58.HeaderText = "9";
-            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
-            this.dataGridViewTextBoxColumn58.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn59
-            // 
-            this.dataGridViewTextBoxColumn59.Frozen = true;
-            this.dataGridViewTextBoxColumn59.HeaderText = "A";
-            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
-            this.dataGridViewTextBoxColumn59.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn60
-            // 
-            this.dataGridViewTextBoxColumn60.Frozen = true;
-            this.dataGridViewTextBoxColumn60.HeaderText = "B";
-            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
-            this.dataGridViewTextBoxColumn60.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn61
-            // 
-            this.dataGridViewTextBoxColumn61.Frozen = true;
-            this.dataGridViewTextBoxColumn61.HeaderText = "C";
-            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
-            this.dataGridViewTextBoxColumn61.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn62
-            // 
-            this.dataGridViewTextBoxColumn62.Frozen = true;
-            this.dataGridViewTextBoxColumn62.HeaderText = "D";
-            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
-            this.dataGridViewTextBoxColumn62.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn63
-            // 
-            this.dataGridViewTextBoxColumn63.Frozen = true;
-            this.dataGridViewTextBoxColumn63.HeaderText = "E";
-            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
-            this.dataGridViewTextBoxColumn63.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn64
-            // 
-            this.dataGridViewTextBoxColumn64.Frozen = true;
-            this.dataGridViewTextBoxColumn64.HeaderText = "F";
-            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
-            this.dataGridViewTextBoxColumn64.Width = 46;
-            // 
-            // panel18
-            // 
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel18.Controls.Add(this.progressBar_AD5317R_DAC);
-            this.panel18.Controls.Add(this.label81);
-            this.panel18.Controls.Add(this.comboBoxIC_Channel);
-            this.panel18.Controls.Add(this.label83);
-            this.panel18.Controls.Add(this.label82);
-            this.panel18.Controls.Add(this.label79);
-            this.panel18.Controls.Add(this.label80);
-            this.panel18.Controls.Add(this.numericUpDownAD5317R_Data);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(0, 80);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(736, 94);
-            this.panel18.TabIndex = 19;
-            // 
-            // progressBar_AD5317R_DAC
-            // 
-            this.progressBar_AD5317R_DAC.Location = new System.Drawing.Point(426, 43);
-            this.progressBar_AD5317R_DAC.Maximum = 1023;
-            this.progressBar_AD5317R_DAC.Name = "progressBar_AD5317R_DAC";
-            this.progressBar_AD5317R_DAC.Size = new System.Drawing.Size(244, 23);
-            this.progressBar_AD5317R_DAC.TabIndex = 24;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(5, 17);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(68, 19);
-            this.label81.TabIndex = 23;
-            this.label81.Text = "AD5317R";
-            // 
-            // comboBoxIC_Channel
-            // 
-            this.comboBoxIC_Channel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxIC_Channel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxIC_Channel.FormattingEnabled = true;
-            this.comboBoxIC_Channel.Items.AddRange(new object[] {
-            "Channel 1",
-            "Channel 2",
-            "Channel 3",
-            "Channel 4"});
-            this.comboBoxIC_Channel.Location = new System.Drawing.Point(87, 41);
-            this.comboBoxIC_Channel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBoxIC_Channel.Name = "comboBoxIC_Channel";
-            this.comboBoxIC_Channel.Size = new System.Drawing.Size(110, 25);
-            this.comboBoxIC_Channel.TabIndex = 18;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(645, 19);
-            this.label83.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(41, 19);
-            this.label83.TabIndex = 20;
-            this.label83.Text = "1023";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(422, 19);
-            this.label82.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(17, 19);
-            this.label82.TabIndex = 20;
-            this.label82.Text = "0";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(113, 17);
-            this.label79.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(59, 19);
-            this.label79.TabIndex = 20;
-            this.label79.Text = "Channel";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(269, 17);
-            this.label80.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(70, 19);
-            this.label80.TabIndex = 21;
-            this.label80.Text = "DAC Data";
-            // 
-            // numericUpDownAD5317R_Data
-            // 
-            this.numericUpDownAD5317R_Data.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownAD5317R_Data.Location = new System.Drawing.Point(248, 43);
-            this.numericUpDownAD5317R_Data.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownAD5317R_Data.Maximum = new decimal(new int[] {
-            1023,
-            0,
-            0,
-            0});
-            this.numericUpDownAD5317R_Data.Name = "numericUpDownAD5317R_Data";
-            this.numericUpDownAD5317R_Data.Size = new System.Drawing.Size(96, 23);
-            this.numericUpDownAD5317R_Data.TabIndex = 19;
-            this.numericUpDownAD5317R_Data.ValueChanged += new System.EventHandler(this.numericUpDownAD5317R_Data_ValueChanged);
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.Transparent;
-            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel16.Controls.Add(this.checkBoxCSource_EN2);
-            this.panel16.Controls.Add(this.checkBoxCSource_EN1);
-            this.panel16.Controls.Add(this.comboBoxIC_Select);
-            this.panel16.Controls.Add(this.label78);
-            this.panel16.Controls.Add(this.comboBoxIC_Operation);
-            this.panel16.Controls.Add(this.label77);
-            this.panel16.Controls.Add(this.label76);
-            this.panel16.Controls.Add(this.label2);
-            this.panel16.Controls.Add(this.numericUpDownIC_RegAddress);
-            this.panel16.Controls.Add(this.numericUpDownIC_Bytes);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel16.Location = new System.Drawing.Point(0, 0);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(736, 80);
-            this.panel16.TabIndex = 18;
             // 
             // checkBoxCSource_EN2
             // 
             this.checkBoxCSource_EN2.AutoSize = true;
             this.checkBoxCSource_EN2.Checked = true;
             this.checkBoxCSource_EN2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCSource_EN2.Location = new System.Drawing.Point(613, 44);
+            this.checkBoxCSource_EN2.Location = new System.Drawing.Point(607, 38);
             this.checkBoxCSource_EN2.Name = "checkBoxCSource_EN2";
-            this.checkBoxCSource_EN2.Size = new System.Drawing.Size(54, 23);
+            this.checkBoxCSource_EN2.Size = new System.Drawing.Size(48, 20);
             this.checkBoxCSource_EN2.TabIndex = 26;
             this.checkBoxCSource_EN2.Text = "EN2";
             this.checkBoxCSource_EN2.UseVisualStyleBackColor = true;
@@ -3687,9 +2667,9 @@
             this.checkBoxCSource_EN1.AutoSize = true;
             this.checkBoxCSource_EN1.Checked = true;
             this.checkBoxCSource_EN1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCSource_EN1.Location = new System.Drawing.Point(510, 44);
+            this.checkBoxCSource_EN1.Location = new System.Drawing.Point(504, 38);
             this.checkBoxCSource_EN1.Name = "checkBoxCSource_EN1";
-            this.checkBoxCSource_EN1.Size = new System.Drawing.Size(54, 23);
+            this.checkBoxCSource_EN1.Size = new System.Drawing.Size(48, 20);
             this.checkBoxCSource_EN1.TabIndex = 25;
             this.checkBoxCSource_EN1.Text = "EN1";
             this.checkBoxCSource_EN1.UseVisualStyleBackColor = true;
@@ -3702,7 +2682,7 @@
             this.comboBoxIC_Select.Items.AddRange(new object[] {
             "MASC-37053A",
             "LTC3453"});
-            this.comboBoxIC_Select.Location = new System.Drawing.Point(35, 42);
+            this.comboBoxIC_Select.Location = new System.Drawing.Point(29, 36);
             this.comboBoxIC_Select.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBoxIC_Select.Name = "comboBoxIC_Select";
             this.comboBoxIC_Select.Size = new System.Drawing.Size(110, 25);
@@ -3712,10 +2692,10 @@
             // label78
             // 
             this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(60, 20);
+            this.label78.Location = new System.Drawing.Point(54, 14);
             this.label78.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(63, 19);
+            this.label78.Size = new System.Drawing.Size(52, 16);
             this.label78.TabIndex = 22;
             this.label78.Text = "IC Select";
             // 
@@ -3727,7 +2707,7 @@
             this.comboBoxIC_Operation.Items.AddRange(new object[] {
             "Read",
             "Write"});
-            this.comboBoxIC_Operation.Location = new System.Drawing.Point(190, 42);
+            this.comboBoxIC_Operation.Location = new System.Drawing.Point(184, 36);
             this.comboBoxIC_Operation.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBoxIC_Operation.Name = "comboBoxIC_Operation";
             this.comboBoxIC_Operation.Size = new System.Drawing.Size(93, 25);
@@ -3736,37 +2716,37 @@
             // label77
             // 
             this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(198, 20);
+            this.label77.Location = new System.Drawing.Point(192, 14);
             this.label77.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(71, 19);
+            this.label77.Size = new System.Drawing.Size(61, 16);
             this.label77.TabIndex = 23;
             this.label77.Text = "Operation";
             // 
             // label76
             // 
             this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(325, 18);
+            this.label76.Location = new System.Drawing.Point(319, 12);
             this.label76.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(58, 19);
+            this.label76.Size = new System.Drawing.Size(50, 16);
             this.label76.TabIndex = 24;
             this.label76.Text = "Address";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(422, 18);
+            this.label2.Location = new System.Drawing.Point(416, 12);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 19);
+            this.label2.Size = new System.Drawing.Size(36, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "Bytes";
             // 
             // numericUpDownIC_RegAddress
             // 
             this.numericUpDownIC_RegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownIC_RegAddress.Location = new System.Drawing.Point(329, 42);
+            this.numericUpDownIC_RegAddress.Location = new System.Drawing.Point(323, 36);
             this.numericUpDownIC_RegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIC_RegAddress.Maximum = new decimal(new int[] {
             65535,
@@ -3780,11 +2760,291 @@
             // numericUpDownIC_Bytes
             // 
             this.numericUpDownIC_Bytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownIC_Bytes.Location = new System.Drawing.Point(419, 42);
+            this.numericUpDownIC_Bytes.Location = new System.Drawing.Point(413, 36);
             this.numericUpDownIC_Bytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownIC_Bytes.Name = "numericUpDownIC_Bytes";
             this.numericUpDownIC_Bytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownIC_Bytes.TabIndex = 21;
+            // 
+            // tabPageSemtechChip
+            // 
+            this.tabPageSemtechChip.Controls.Add(this.label55);
+            this.tabPageSemtechChip.Controls.Add(this.dataGridView6);
+            this.tabPageSemtechChip.Controls.Add(this.label88);
+            this.tabPageSemtechChip.Controls.Add(this.comboBoxSemtechChip_Select);
+            this.tabPageSemtechChip.Controls.Add(this.numericUpDownSemtechChip_Page);
+            this.tabPageSemtechChip.Controls.Add(this.numericUpDownSemtechChip_Bytes);
+            this.tabPageSemtechChip.Controls.Add(this.numericUpDownSemtechChip_Address);
+            this.tabPageSemtechChip.Controls.Add(this.label84);
+            this.tabPageSemtechChip.Controls.Add(this.label87);
+            this.tabPageSemtechChip.Controls.Add(this.comboBoxSemtechChip_Operation);
+            this.tabPageSemtechChip.Controls.Add(this.label86);
+            this.tabPageSemtechChip.Controls.Add(this.label85);
+            this.tabPageSemtechChip.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageSemtechChip.Location = new System.Drawing.Point(4, 25);
+            this.tabPageSemtechChip.Name = "tabPageSemtechChip";
+            this.tabPageSemtechChip.Size = new System.Drawing.Size(736, 351);
+            this.tabPageSemtechChip.TabIndex = 8;
+            this.tabPageSemtechChip.Text = "SemtechChip";
+            this.tabPageSemtechChip.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToResizeColumns = false;
+            this.dataGridView6.AllowUserToResizeRows = false;
+            this.dataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn65,
+            this.dataGridViewTextBoxColumn66,
+            this.dataGridViewTextBoxColumn67,
+            this.dataGridViewTextBoxColumn68,
+            this.dataGridViewTextBoxColumn69,
+            this.dataGridViewTextBoxColumn70,
+            this.dataGridViewTextBoxColumn71,
+            this.dataGridViewTextBoxColumn72,
+            this.dataGridViewTextBoxColumn73,
+            this.dataGridViewTextBoxColumn74,
+            this.dataGridViewTextBoxColumn75,
+            this.dataGridViewTextBoxColumn76,
+            this.dataGridViewTextBoxColumn77,
+            this.dataGridViewTextBoxColumn78,
+            this.dataGridViewTextBoxColumn79,
+            this.dataGridViewTextBoxColumn80});
+            this.dataGridView6.Location = new System.Drawing.Point(-1, 130);
+            this.dataGridView6.MultiSelect = false;
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.RowHeadersVisible = false;
+            this.dataGridView6.RowHeadersWidth = 50;
+            this.dataGridView6.Size = new System.Drawing.Size(736, 186);
+            this.dataGridView6.TabIndex = 35;
+            // 
+            // dataGridViewTextBoxColumn65
+            // 
+            this.dataGridViewTextBoxColumn65.Frozen = true;
+            this.dataGridViewTextBoxColumn65.HeaderText = "0";
+            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
+            this.dataGridViewTextBoxColumn65.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn66
+            // 
+            this.dataGridViewTextBoxColumn66.Frozen = true;
+            this.dataGridViewTextBoxColumn66.HeaderText = "1";
+            this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
+            this.dataGridViewTextBoxColumn66.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn67
+            // 
+            this.dataGridViewTextBoxColumn67.Frozen = true;
+            this.dataGridViewTextBoxColumn67.HeaderText = "2";
+            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
+            this.dataGridViewTextBoxColumn67.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn68
+            // 
+            this.dataGridViewTextBoxColumn68.Frozen = true;
+            this.dataGridViewTextBoxColumn68.HeaderText = "3";
+            this.dataGridViewTextBoxColumn68.Name = "dataGridViewTextBoxColumn68";
+            this.dataGridViewTextBoxColumn68.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn69
+            // 
+            this.dataGridViewTextBoxColumn69.Frozen = true;
+            this.dataGridViewTextBoxColumn69.HeaderText = "4";
+            this.dataGridViewTextBoxColumn69.Name = "dataGridViewTextBoxColumn69";
+            this.dataGridViewTextBoxColumn69.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn70
+            // 
+            this.dataGridViewTextBoxColumn70.Frozen = true;
+            this.dataGridViewTextBoxColumn70.HeaderText = "5";
+            this.dataGridViewTextBoxColumn70.Name = "dataGridViewTextBoxColumn70";
+            this.dataGridViewTextBoxColumn70.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn71
+            // 
+            this.dataGridViewTextBoxColumn71.Frozen = true;
+            this.dataGridViewTextBoxColumn71.HeaderText = "6";
+            this.dataGridViewTextBoxColumn71.Name = "dataGridViewTextBoxColumn71";
+            this.dataGridViewTextBoxColumn71.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn72
+            // 
+            this.dataGridViewTextBoxColumn72.Frozen = true;
+            this.dataGridViewTextBoxColumn72.HeaderText = "7";
+            this.dataGridViewTextBoxColumn72.Name = "dataGridViewTextBoxColumn72";
+            this.dataGridViewTextBoxColumn72.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn73
+            // 
+            this.dataGridViewTextBoxColumn73.Frozen = true;
+            this.dataGridViewTextBoxColumn73.HeaderText = "8";
+            this.dataGridViewTextBoxColumn73.Name = "dataGridViewTextBoxColumn73";
+            this.dataGridViewTextBoxColumn73.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn74
+            // 
+            this.dataGridViewTextBoxColumn74.Frozen = true;
+            this.dataGridViewTextBoxColumn74.HeaderText = "9";
+            this.dataGridViewTextBoxColumn74.Name = "dataGridViewTextBoxColumn74";
+            this.dataGridViewTextBoxColumn74.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn75
+            // 
+            this.dataGridViewTextBoxColumn75.Frozen = true;
+            this.dataGridViewTextBoxColumn75.HeaderText = "A";
+            this.dataGridViewTextBoxColumn75.Name = "dataGridViewTextBoxColumn75";
+            this.dataGridViewTextBoxColumn75.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn76
+            // 
+            this.dataGridViewTextBoxColumn76.Frozen = true;
+            this.dataGridViewTextBoxColumn76.HeaderText = "B";
+            this.dataGridViewTextBoxColumn76.Name = "dataGridViewTextBoxColumn76";
+            this.dataGridViewTextBoxColumn76.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn77
+            // 
+            this.dataGridViewTextBoxColumn77.Frozen = true;
+            this.dataGridViewTextBoxColumn77.HeaderText = "C";
+            this.dataGridViewTextBoxColumn77.Name = "dataGridViewTextBoxColumn77";
+            this.dataGridViewTextBoxColumn77.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn78
+            // 
+            this.dataGridViewTextBoxColumn78.Frozen = true;
+            this.dataGridViewTextBoxColumn78.HeaderText = "D";
+            this.dataGridViewTextBoxColumn78.Name = "dataGridViewTextBoxColumn78";
+            this.dataGridViewTextBoxColumn78.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn79
+            // 
+            this.dataGridViewTextBoxColumn79.Frozen = true;
+            this.dataGridViewTextBoxColumn79.HeaderText = "E";
+            this.dataGridViewTextBoxColumn79.Name = "dataGridViewTextBoxColumn79";
+            this.dataGridViewTextBoxColumn79.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn80
+            // 
+            this.dataGridViewTextBoxColumn80.Frozen = true;
+            this.dataGridViewTextBoxColumn80.HeaderText = "F";
+            this.dataGridViewTextBoxColumn80.Name = "dataGridViewTextBoxColumn80";
+            this.dataGridViewTextBoxColumn80.Width = 46;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(382, 28);
+            this.label88.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(34, 16);
+            this.label88.TabIndex = 33;
+            this.label88.Text = "Page";
+            // 
+            // comboBoxSemtechChip_Select
+            // 
+            this.comboBoxSemtechChip_Select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSemtechChip_Select.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSemtechChip_Select.FormattingEnabled = true;
+            this.comboBoxSemtechChip_Select.Items.AddRange(new object[] {
+            "GN2108",
+            "GN2109"});
+            this.comboBoxSemtechChip_Select.Location = new System.Drawing.Point(63, 61);
+            this.comboBoxSemtechChip_Select.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxSemtechChip_Select.Name = "comboBoxSemtechChip_Select";
+            this.comboBoxSemtechChip_Select.Size = new System.Drawing.Size(110, 25);
+            this.comboBoxSemtechChip_Select.TabIndex = 36;
+            // 
+            // numericUpDownSemtechChip_Page
+            // 
+            this.numericUpDownSemtechChip_Page.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownSemtechChip_Page.Location = new System.Drawing.Point(382, 63);
+            this.numericUpDownSemtechChip_Page.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownSemtechChip_Page.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numericUpDownSemtechChip_Page.Name = "numericUpDownSemtechChip_Page";
+            this.numericUpDownSemtechChip_Page.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownSemtechChip_Page.TabIndex = 34;
+            // 
+            // numericUpDownSemtechChip_Bytes
+            // 
+            this.numericUpDownSemtechChip_Bytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownSemtechChip_Bytes.Location = new System.Drawing.Point(610, 61);
+            this.numericUpDownSemtechChip_Bytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownSemtechChip_Bytes.Name = "numericUpDownSemtechChip_Bytes";
+            this.numericUpDownSemtechChip_Bytes.Size = new System.Drawing.Size(45, 23);
+            this.numericUpDownSemtechChip_Bytes.TabIndex = 40;
+            // 
+            // numericUpDownSemtechChip_Address
+            // 
+            this.numericUpDownSemtechChip_Address.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownSemtechChip_Address.Location = new System.Drawing.Point(494, 63);
+            this.numericUpDownSemtechChip_Address.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownSemtechChip_Address.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.numericUpDownSemtechChip_Address.Name = "numericUpDownSemtechChip_Address";
+            this.numericUpDownSemtechChip_Address.Size = new System.Drawing.Size(59, 23);
+            this.numericUpDownSemtechChip_Address.TabIndex = 39;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(79, 28);
+            this.label84.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(66, 16);
+            this.label84.TabIndex = 41;
+            this.label84.Text = "Chip Select";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(604, 26);
+            this.label87.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(36, 16);
+            this.label87.TabIndex = 38;
+            this.label87.Text = "Bytes";
+            // 
+            // comboBoxSemtechChip_Operation
+            // 
+            this.comboBoxSemtechChip_Operation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSemtechChip_Operation.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSemtechChip_Operation.FormattingEnabled = true;
+            this.comboBoxSemtechChip_Operation.Items.AddRange(new object[] {
+            "Read",
+            "Write"});
+            this.comboBoxSemtechChip_Operation.Location = new System.Drawing.Point(228, 61);
+            this.comboBoxSemtechChip_Operation.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxSemtechChip_Operation.Name = "comboBoxSemtechChip_Operation";
+            this.comboBoxSemtechChip_Operation.Size = new System.Drawing.Size(93, 25);
+            this.comboBoxSemtechChip_Operation.TabIndex = 37;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(482, 28);
+            this.label86.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(50, 16);
+            this.label86.TabIndex = 43;
+            this.label86.Text = "Address";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(226, 28);
+            this.label85.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(61, 16);
+            this.label85.TabIndex = 42;
+            this.label85.Text = "Operation";
             // 
             // panel3
             // 
@@ -4021,6 +3281,385 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
             // 
+            // btnRead_VendorName
+            // 
+            this.btnRead_VendorName.Location = new System.Drawing.Point(626, 311);
+            this.btnRead_VendorName.Name = "btnRead_VendorName";
+            this.btnRead_VendorName.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_VendorName.TabIndex = 11;
+            this.btnRead_VendorName.Text = "Read";
+            this.btnRead_VendorName.UseVisualStyleBackColor = true;
+            this.btnRead_VendorName.Click += new System.EventHandler(this.btnRead_VendorName_Click);
+            // 
+            // btnRead_FW_Version
+            // 
+            this.btnRead_FW_Version.Location = new System.Drawing.Point(626, 267);
+            this.btnRead_FW_Version.Name = "btnRead_FW_Version";
+            this.btnRead_FW_Version.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_FW_Version.TabIndex = 12;
+            this.btnRead_FW_Version.Text = "Read";
+            this.btnRead_FW_Version.UseVisualStyleBackColor = true;
+            this.btnRead_FW_Version.Click += new System.EventHandler(this.btnRead_FW_Version_Click);
+            // 
+            // btnRead_PN
+            // 
+            this.btnRead_PN.Location = new System.Drawing.Point(255, 311);
+            this.btnRead_PN.Name = "btnRead_PN";
+            this.btnRead_PN.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_PN.TabIndex = 13;
+            this.btnRead_PN.Text = "Read";
+            this.btnRead_PN.UseVisualStyleBackColor = true;
+            this.btnRead_PN.Click += new System.EventHandler(this.btnRead_PN_Click);
+            // 
+            // btnRead_SN
+            // 
+            this.btnRead_SN.Location = new System.Drawing.Point(255, 268);
+            this.btnRead_SN.Name = "btnRead_SN";
+            this.btnRead_SN.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_SN.TabIndex = 14;
+            this.btnRead_SN.Text = "Read";
+            this.btnRead_SN.UseVisualStyleBackColor = true;
+            this.btnRead_SN.Click += new System.EventHandler(this.btnRead_SN_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(372, 314);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Vendor Name";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(372, 271);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(98, 16);
+            this.label53.TabIndex = 8;
+            this.label53.Text = "Firmware Version";
+            // 
+            // txtVendorName
+            // 
+            this.txtVendorName.Location = new System.Drawing.Point(488, 311);
+            this.txtVendorName.Name = "txtVendorName";
+            this.txtVendorName.ReadOnly = true;
+            this.txtVendorName.Size = new System.Drawing.Size(100, 22);
+            this.txtVendorName.TabIndex = 3;
+            // 
+            // txtFW
+            // 
+            this.txtFW.Location = new System.Drawing.Point(488, 268);
+            this.txtFW.Name = "txtFW";
+            this.txtFW.ReadOnly = true;
+            this.txtFW.Size = new System.Drawing.Size(100, 22);
+            this.txtFW.TabIndex = 4;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(26, 314);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(75, 16);
+            this.label52.TabIndex = 9;
+            this.label52.Text = "Part Number";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 271);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(82, 16);
+            this.label18.TabIndex = 10;
+            this.label18.Text = "Serial Number";
+            // 
+            // txtPN
+            // 
+            this.txtPN.Location = new System.Drawing.Point(125, 311);
+            this.txtPN.Name = "txtPN";
+            this.txtPN.ReadOnly = true;
+            this.txtPN.Size = new System.Drawing.Size(100, 22);
+            this.txtPN.TabIndex = 5;
+            // 
+            // txtSN
+            // 
+            this.txtSN.Location = new System.Drawing.Point(125, 268);
+            this.txtSN.Name = "txtSN";
+            this.txtSN.ReadOnly = true;
+            this.txtSN.Size = new System.Drawing.Size(100, 22);
+            this.txtSN.TabIndex = 6;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label71.Location = new System.Drawing.Point(272, 27);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(198, 19);
+            this.label71.TabIndex = 15;
+            this.label71.Text = "Hex read data (max 128 bytes)";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label54.Location = new System.Drawing.Point(241, 28);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(250, 19);
+            this.label54.TabIndex = 2;
+            this.label54.Text = "Hex data to be written (max 128 bytes)";
+            // 
+            // numericUpDownAD5317R_Data
+            // 
+            this.numericUpDownAD5317R_Data.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownAD5317R_Data.Location = new System.Drawing.Point(184, 310);
+            this.numericUpDownAD5317R_Data.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownAD5317R_Data.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.numericUpDownAD5317R_Data.Name = "numericUpDownAD5317R_Data";
+            this.numericUpDownAD5317R_Data.Size = new System.Drawing.Size(96, 23);
+            this.numericUpDownAD5317R_Data.TabIndex = 19;
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(211, 284);
+            this.label80.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(58, 16);
+            this.label80.TabIndex = 21;
+            this.label80.Text = "DAC Data";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(83, 284);
+            this.label79.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(51, 16);
+            this.label79.TabIndex = 20;
+            this.label79.Text = "Channel";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(304, 286);
+            this.label82.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(14, 16);
+            this.label82.TabIndex = 20;
+            this.label82.Text = "0";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(527, 286);
+            this.label83.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(32, 16);
+            this.label83.TabIndex = 20;
+            this.label83.Text = "1023";
+            // 
+            // comboBoxIC_Channel
+            // 
+            this.comboBoxIC_Channel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxIC_Channel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxIC_Channel.FormattingEnabled = true;
+            this.comboBoxIC_Channel.Items.AddRange(new object[] {
+            "Channel 1",
+            "Channel 2",
+            "Channel 3",
+            "Channel 4"});
+            this.comboBoxIC_Channel.Location = new System.Drawing.Point(57, 308);
+            this.comboBoxIC_Channel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxIC_Channel.Name = "comboBoxIC_Channel";
+            this.comboBoxIC_Channel.Size = new System.Drawing.Size(110, 25);
+            this.comboBoxIC_Channel.TabIndex = 18;
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(7, 270);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(55, 16);
+            this.label81.TabIndex = 23;
+            this.label81.Text = "AD5317R";
+            // 
+            // progressBar_AD5317R_DAC
+            // 
+            this.progressBar_AD5317R_DAC.Location = new System.Drawing.Point(307, 310);
+            this.progressBar_AD5317R_DAC.Maximum = 1023;
+            this.progressBar_AD5317R_DAC.Name = "progressBar_AD5317R_DAC";
+            this.progressBar_AD5317R_DAC.Size = new System.Drawing.Size(244, 23);
+            this.progressBar_AD5317R_DAC.TabIndex = 24;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToResizeColumns = false;
+            this.dataGridView5.AllowUserToResizeRows = false;
+            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn49,
+            this.dataGridViewTextBoxColumn50,
+            this.dataGridViewTextBoxColumn51,
+            this.dataGridViewTextBoxColumn52,
+            this.dataGridViewTextBoxColumn53,
+            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewTextBoxColumn55,
+            this.dataGridViewTextBoxColumn56,
+            this.dataGridViewTextBoxColumn57,
+            this.dataGridViewTextBoxColumn58,
+            this.dataGridViewTextBoxColumn59,
+            this.dataGridViewTextBoxColumn60,
+            this.dataGridViewTextBoxColumn61,
+            this.dataGridViewTextBoxColumn62,
+            this.dataGridViewTextBoxColumn63,
+            this.dataGridViewTextBoxColumn64});
+            this.dataGridView5.Location = new System.Drawing.Point(-1, 73);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersVisible = false;
+            this.dataGridView5.RowHeadersWidth = 50;
+            this.dataGridView5.Size = new System.Drawing.Size(736, 186);
+            this.dataGridView5.TabIndex = 14;
+            this.dataGridView5.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellEndEdit);
+            // 
+            // dataGridViewTextBoxColumn64
+            // 
+            this.dataGridViewTextBoxColumn64.Frozen = true;
+            this.dataGridViewTextBoxColumn64.HeaderText = "F";
+            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn63
+            // 
+            this.dataGridViewTextBoxColumn63.Frozen = true;
+            this.dataGridViewTextBoxColumn63.HeaderText = "E";
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.Frozen = true;
+            this.dataGridViewTextBoxColumn62.HeaderText = "D";
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dataGridViewTextBoxColumn62.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn61
+            // 
+            this.dataGridViewTextBoxColumn61.Frozen = true;
+            this.dataGridViewTextBoxColumn61.HeaderText = "C";
+            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.dataGridViewTextBoxColumn61.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn60
+            // 
+            this.dataGridViewTextBoxColumn60.Frozen = true;
+            this.dataGridViewTextBoxColumn60.HeaderText = "B";
+            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn59
+            // 
+            this.dataGridViewTextBoxColumn59.Frozen = true;
+            this.dataGridViewTextBoxColumn59.HeaderText = "A";
+            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            this.dataGridViewTextBoxColumn59.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn58
+            // 
+            this.dataGridViewTextBoxColumn58.Frozen = true;
+            this.dataGridViewTextBoxColumn58.HeaderText = "9";
+            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            this.dataGridViewTextBoxColumn58.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn57
+            // 
+            this.dataGridViewTextBoxColumn57.Frozen = true;
+            this.dataGridViewTextBoxColumn57.HeaderText = "8";
+            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            this.dataGridViewTextBoxColumn57.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.Frozen = true;
+            this.dataGridViewTextBoxColumn56.HeaderText = "7";
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.Frozen = true;
+            this.dataGridViewTextBoxColumn55.HeaderText = "6";
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.dataGridViewTextBoxColumn55.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn54
+            // 
+            this.dataGridViewTextBoxColumn54.Frozen = true;
+            this.dataGridViewTextBoxColumn54.HeaderText = "5";
+            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+            this.dataGridViewTextBoxColumn54.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.Frozen = true;
+            this.dataGridViewTextBoxColumn53.HeaderText = "4";
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            this.dataGridViewTextBoxColumn53.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.Frozen = true;
+            this.dataGridViewTextBoxColumn52.HeaderText = "3";
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.Frozen = true;
+            this.dataGridViewTextBoxColumn51.HeaderText = "2";
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.Frozen = true;
+            this.dataGridViewTextBoxColumn50.HeaderText = "1";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.Frozen = true;
+            this.dataGridViewTextBoxColumn49.HeaderText = "0";
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.Width = 46;
+            // 
+            // btnAD5371R_Set
+            // 
+            this.btnAD5371R_Set.Location = new System.Drawing.Point(607, 310);
+            this.btnAD5371R_Set.Name = "btnAD5371R_Set";
+            this.btnAD5371R_Set.Size = new System.Drawing.Size(75, 23);
+            this.btnAD5371R_Set.TabIndex = 27;
+            this.btnAD5371R_Set.Text = "Set";
+            this.btnAD5371R_Set.UseVisualStyleBackColor = true;
+            this.btnAD5371R_Set.Click += new System.EventHandler(this.btnAD5371R_Set_Click);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label55.Location = new System.Drawing.Point(6, 100);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(167, 19);
+            this.label55.TabIndex = 44;
+            this.label55.Text = "Hex data (max 128 bytes)";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -4037,6 +3676,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SNOEC GUI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -4102,40 +3742,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabpageI2CRead.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
+            this.tabpageI2CRead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel12.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.tabPageI2CWrite.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
+            this.tabPageI2CWrite.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabDriver.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Get)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_Set)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeator_CH)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_CH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Set)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIbias_Get)).EndInit();
             this.tabPageIC.ResumeLayout(false);
-            this.panel19.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
+            this.tabPageIC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).EndInit();
+            this.tabPageSemtechChip.ResumeLayout(false);
+            this.tabPageSemtechChip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSemtechChip_Page)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSemtechChip_Bytes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSemtechChip_Address)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).EndInit();
@@ -4143,6 +3764,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4263,55 +3886,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txtDMI_VCC;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox txtSN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox txtFW;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.TextBox txtPN;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Label label55;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
@@ -4386,27 +3961,6 @@
         private System.Windows.Forms.ToolStripMenuItem innoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem genericToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.TabPage tabDriver;
-        private System.Windows.Forms.NumericUpDown numericUpDownIbias_CH;
-        private System.Windows.Forms.NumericUpDown numericUpDownIbias_Set;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDownIbias_Get;
-        private System.Windows.Forms.Button buttonReadIbias;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label75;
-        private System.Windows.Forms.NumericUpDown numericUpDownHeator_Get;
-        private System.Windows.Forms.NumericUpDown numericUpDownHeator_Set;
-        private System.Windows.Forms.NumericUpDown numericUpDownHeator_CH;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.CheckBox checkBoxIbias_EN2;
-        private System.Windows.Forms.CheckBox checkBoxIbias_EN1;
-        private System.Windows.Forms.Button buttonWriteHeator;
-        private System.Windows.Forms.Button buttonReadHeator;
-        private System.Windows.Forms.Button buttonWriteIbias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -4442,7 +3996,58 @@
         private System.Windows.Forms.ToolStripMenuItem calculateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem luxshareToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPageIC;
-        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.CheckBox checkBoxCSource_EN2;
+        private System.Windows.Forms.CheckBox checkBoxCSource_EN1;
+        private System.Windows.Forms.ComboBox comboBoxIC_Select;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.ComboBox comboBoxIC_Operation;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDownIC_RegAddress;
+        private System.Windows.Forms.NumericUpDown numericUpDownIC_Bytes;
+        private System.Windows.Forms.TabPage tabPageSemtechChip;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn65;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn66;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn67;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn68;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn69;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn70;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn71;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn72;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn73;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn74;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn75;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn76;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn77;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn78;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn79;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn80;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.ComboBox comboBoxSemtechChip_Select;
+        private System.Windows.Forms.NumericUpDown numericUpDownSemtechChip_Page;
+        private System.Windows.Forms.NumericUpDown numericUpDownSemtechChip_Bytes;
+        private System.Windows.Forms.NumericUpDown numericUpDownSemtechChip_Address;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.ComboBox comboBoxSemtechChip_Operation;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Button btnRead_VendorName;
+        private System.Windows.Forms.Button btnRead_FW_Version;
+        private System.Windows.Forms.Button btnRead_PN;
+        private System.Windows.Forms.Button btnRead_SN;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox txtVendorName;
+        private System.Windows.Forms.TextBox txtFW;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtPN;
+        private System.Windows.Forms.TextBox txtSN;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
@@ -4460,26 +4065,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn62;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn64;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.ComboBox comboBoxIC_Channel;
-        private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.NumericUpDown numericUpDownAD5317R_Data;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.CheckBox checkBoxCSource_EN2;
-        private System.Windows.Forms.CheckBox checkBoxCSource_EN1;
-        private System.Windows.Forms.ComboBox comboBoxIC_Select;
-        private System.Windows.Forms.Label label78;
-        private System.Windows.Forms.ComboBox comboBoxIC_Operation;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label76;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDownIC_RegAddress;
-        private System.Windows.Forms.NumericUpDown numericUpDownIC_Bytes;
-        private System.Windows.Forms.Label label81;
         private System.Windows.Forms.ProgressBar progressBar_AD5317R_DAC;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.ComboBox comboBoxIC_Channel;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.NumericUpDown numericUpDownAD5317R_Data;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Button btnAD5371R_Set;
+        private System.Windows.Forms.Label label55;
     }
 }
 

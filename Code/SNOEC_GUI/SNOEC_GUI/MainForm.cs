@@ -16,6 +16,7 @@ namespace SNOEC_GUI
     public partial class MainForm : Form
     {
         private QSFP28_SNOEC dut;
+        private int deviceAddress = 0xA0;
         private DUTCoeffControlByPN dataTable_DUTCoeffControlByPN;
         private TextBox[] txts_dmi_TxPower = new TextBox[4];
         private TextBox[] txts_dmi_TxBias = new TextBox[4];
@@ -24,7 +25,7 @@ namespace SNOEC_GUI
         private TextBox[] txts_adc_TxBias = new TextBox[4];
         private TextBox[] txts_adc_RxPower = new TextBox[4];
         private Chart[,] chart = new Chart[5, 8];
-        private const int maxCells = 16 * 6;
+        private const int maxCells = 16 * 8;
 
         public MainForm()
         {
@@ -33,41 +34,25 @@ namespace SNOEC_GUI
             this.comboBoxDeviceIndex.SelectedIndex = 1;
             this.comboBoxSoftHard.SelectedIndex = 0;
             this.comboBoxFrequency.SelectedIndex = 3;
-            this.comboBoxIC_Operation.SelectedIndex = 0;
-            this.comboBoxIC_Select.SelectedIndex = 0;
-            this.comboBoxIC_Channel.SelectedIndex = 3;
 
             this.tabControl1.SelectedIndex = 1;
 
             this.dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView3.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView4.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView5.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView5.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView6.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView6.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView6.AllowUserToAddRows = false;
 
             for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
             {
                 this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
-            }
-
-            for (int i = 0; i < this.dataGridView2.Columns.Count; i++)
-            {
-                this.dataGridView2.Columns[i].Width = this.dataGridView2.Width / this.dataGridView2.Columns.Count;
-            }
-
-            for (int i = 0; i < this.dataGridView3.Columns.Count; i++)
-            {
-                this.dataGridView3.Columns[i].Width = this.dataGridView3.Width / this.dataGridView3.Columns.Count;
             }
 
             for (int i = 0; i < this.dataGridView4.Columns.Count; i++)
@@ -80,17 +65,19 @@ namespace SNOEC_GUI
                 this.dataGridView5.Columns[i].Width = this.dataGridView5.Width / this.dataGridView5.Columns.Count;
             }
 
-            this.dataGridView1.Rows.Add(6);
-            this.dataGridView2.Rows.Add(6);
-            this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView3.Rows.Add(6);
-            this.dataGridView4.Rows.Add(6);
-            this.dataGridView3.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView4.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView5.Rows.Add(6);
-            this.dataGridView5.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            for (int i = 0; i < this.dataGridView6.Columns.Count; i++)
+            {
+                this.dataGridView6.Columns[i].Width = this.dataGridView6.Width / this.dataGridView6.Columns.Count;
+            }
 
+            this.dataGridView1.Rows.Add(8);
+            this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView4.Rows.Add(8);
+            this.dataGridView4.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView5.Rows.Add(8);
+            this.dataGridView5.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView6.Rows.Add(8);
+            this.dataGridView6.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
             txts_dmi_TxPower[0] = txtDMI_TxPower_Ch1;
             txts_dmi_TxPower[1] = txtDMI_TxPower_Ch2;
@@ -180,16 +167,19 @@ namespace SNOEC_GUI
             else if (this.tabControl1.SelectedTab.ToString().Contains("IC"))
             {
                 this.btnReadWrite.Text = "Execute";
+                this.comboBoxIC_Operation.SelectedIndex = 0;
+                this.comboBoxIC_Select.SelectedIndex = 0;
+                this.comboBoxIC_Channel.SelectedIndex = 3;
+            }
+            else if (this.tabControl1.SelectedTab.ToString().Contains("SemtechChip"))
+            {
+                this.btnReadWrite.Text = "Execute";
+                this.comboBoxSemtechChip_Select.SelectedIndex = 0;
+                this.comboBoxSemtechChip_Operation.SelectedIndex = 0;
             }
             else
             {
                 this.btnReadWrite.Text = "Read";
-            }
-
-            if (this.tabControl1.SelectedTab.ToString().Contains("Driver"))
-            {
-                dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
-                this.btnReadWrite.Enabled = false;
             }
         }
 
@@ -212,7 +202,6 @@ namespace SNOEC_GUI
             }
         }
 
-        private int deviceAddress = 0xA0;
         private void btnReadWrite_Click(object sender, EventArgs e)
         {
             this.btnReadWrite.Enabled = false;
@@ -285,6 +274,11 @@ namespace SNOEC_GUI
                 {
                     this.Tab_IC();
                 }
+
+                if (this.tabControl1.SelectedTab.ToString().Contains("SemtechChip"))
+                {
+                    this.Tab_SemtechChip();
+                }
             }
 
             catch
@@ -331,13 +325,8 @@ namespace SNOEC_GUI
             for (int i = 0; i < maxCells; i++)
             {
                 this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = null;
-                this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = null;
             }
             this.dataGridView1.Refresh();
-            this.dataGridView2.Refresh();
-            //this.txtSN.Text = dut.ReadSN();
-            //this.txtPN.Text = dut.ReadPn();
-            //this.txtFW.Text = dut.ReadFWRev();
             byte[] buff = new byte[(int)this.numericUpDownBytes.Value];
             if ((int)this.numericUpDownBytes.Value > 0)
             {
@@ -356,7 +345,6 @@ namespace SNOEC_GUI
             for (int i = 0; i < length; i++)
             {
                 this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16).ToUpper();
-                this.dataGridView2.Rows[i / 16].Cells[i % 16].Value = Convert.ToChar(buff[i]);
             }
         }
 
@@ -369,13 +357,6 @@ namespace SNOEC_GUI
                 this.btnReadWrite.BackColor = SystemColors.Control;
                 return;
             }
-
-            //clear cells
-            for (int i = 0; i < maxCells; i++)
-            {
-                this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = null;
-            }
-            this.dataGridView3.Refresh();
 
             try
             {
@@ -406,11 +387,6 @@ namespace SNOEC_GUI
                 this.btnReadWrite.BackColor = SystemColors.Control;
                 return;
             }
-
-            for (int i = 0; i < buff.Length; i++)
-            {
-                this.dataGridView3.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16);
-            }
         }
 
         private void Tab_IC()
@@ -434,10 +410,8 @@ namespace SNOEC_GUI
                         {
                             dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd, 1 });
 
-                            for (int count = 0; count < 3; count++)//need read 2~ times for this IC chip
-                            {
-                                buffer[i] = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x82, 1)[0];
-                            }
+                            buffer[i] = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x82, 1)[0];
+
                             ic_regAdd++;
                         }
 
@@ -521,6 +495,129 @@ namespace SNOEC_GUI
             }
         }
 
+        private void Tab_SemtechChip()
+        {
+            int maxCells_dataGridView6 = 16 * 8;
+            byte map_page_chip_control = 0xC0;
+
+            byte map_address_chip_control_regAddress_MSB = 0;
+            byte map_address_chip_control_regAddress_LSB = 0;
+            byte map_address_chip_control_reg_read_trigger = 0;
+            byte map_address_chip_control_reg_read_data = 0;
+            byte map_address_chip_control_reg_write_data = 0;
+            byte map_address_chip_control_reg_write_trigger = 0;
+
+            byte value_map_address_chip_control_regAddress_MSB = 0;
+            byte value_map_address_chip_control_regAddress_LSB = 0;
+            byte value_map_address_chip_control_reg_read_trigger = 0;
+            byte value_map_address_chip_control_reg_read_data = 0;
+            byte value_map_address_chip_control_reg_write_data = 0;
+            byte value_map_address_chip_control_reg_write_trigger = 0;
+
+            if (this.comboBoxSemtechChip_Select.SelectedIndex==0)
+            {
+                map_address_chip_control_regAddress_MSB = 0x80;
+                map_address_chip_control_regAddress_LSB = 0x81;
+                map_address_chip_control_reg_read_trigger = 0x82;
+                map_address_chip_control_reg_read_data = 0x83;
+                map_address_chip_control_reg_write_data = 0x84;
+                map_address_chip_control_reg_write_trigger = 0x85;
+            }
+            else if (this.comboBoxSemtechChip_Select.SelectedIndex == 0)
+            {
+                map_address_chip_control_regAddress_MSB = 0x86;
+                map_address_chip_control_regAddress_LSB = 0x87;
+                map_address_chip_control_reg_read_trigger = 0x88;
+                map_address_chip_control_reg_read_data = 0x89;
+                map_address_chip_control_reg_write_data = 0x8A;
+                map_address_chip_control_reg_write_trigger = 0x8B;
+            }
+
+            value_map_address_chip_control_regAddress_MSB = (byte)this.numericUpDownSemtechChip_Page.Value;
+            value_map_address_chip_control_regAddress_LSB = (byte)this.numericUpDownSemtechChip_Address.Value;
+            byte[] buffer = new byte[(int)this.numericUpDownSemtechChip_Bytes.Value];
+
+            if (this.comboBoxSemtechChip_Operation.SelectedIndex == 0)//read
+            {
+                //clear cells
+                for (int i = 0; i < maxCells_dataGridView6; i++)
+                {
+                    this.dataGridView6.Rows[i / 16].Cells[i % 16].Value = null;
+                }
+                this.dataGridView6.Refresh();
+
+                if ((int)this.numericUpDownSemtechChip_Bytes.Value > 0)
+                {
+                    value_map_address_chip_control_reg_read_trigger = 1;
+                    for (int i = 0; i < buffer.Length; i++)
+                    {                        
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_MSB, new byte[] { value_map_address_chip_control_regAddress_MSB });
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_LSB, new byte[] { value_map_address_chip_control_regAddress_LSB });
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_read_trigger, new byte[] { value_map_address_chip_control_reg_read_trigger });
+                        value_map_address_chip_control_reg_read_data = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_read_data, 1)[0];
+                        buffer[i] = value_map_address_chip_control_reg_read_data;
+                        value_map_address_chip_control_regAddress_LSB++;
+                    }
+
+                    if (buffer == null)
+                    {
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
+                        return;
+                    }
+                }
+
+                int length = Math.Min(maxCells, buffer.Length);
+
+                for (int i = 0; i < length; i++)
+                {
+                    this.dataGridView6.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buffer[i], 16).ToUpper();
+                }
+            }
+
+            if (this.comboBoxSemtechChip_Operation.SelectedIndex == 1)//write
+            {
+                if (buffer.Length == 0)
+                {
+                    this.btnReadWrite.Enabled = true;
+                    this.btnReadWrite.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                try
+                {
+                    for (int i = 0; i < buffer.Length; i++)
+                    {
+                        object ob = this.dataGridView6.Rows[i / 16].Cells[i % 16].Value;
+                        if (ob == null)
+                        {
+                            this.btnReadWrite.Enabled = true;
+                            this.btnReadWrite.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        buffer[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnReadWrite.Enabled = true;
+                    this.btnReadWrite.BackColor = SystemColors.Control;
+                    return;
+                }
+                value_map_address_chip_control_reg_write_trigger = 1;
+                for (int i = 0; i < buffer.Length; i++)
+                {
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_MSB, new byte[] { value_map_address_chip_control_regAddress_MSB });
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_LSB, new byte[] { value_map_address_chip_control_regAddress_LSB });
+                    value_map_address_chip_control_reg_write_data = buffer[i];
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_write_data, new byte[] { value_map_address_chip_control_reg_write_data });
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_write_trigger, new byte[] { value_map_address_chip_control_reg_write_trigger });
+                    map_address_chip_control_regAddress_LSB++;
+                }
+            }
+        }
+
         //normal:0, low:1, high:2
         private Color GetColor(int value)
         {
@@ -548,7 +645,7 @@ namespace SNOEC_GUI
                 string strFileSourse = Application.StartupPath + @"\Map\" + "QSFP28_SR4_Map" + ".xlsx";
                 dataTable_DUTCoeffControlByPN = new DUTCoeffControlByPN(GetExcelTable(strFileSourse));
                 dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
-
+                this.tabControl1.SelectedIndex = 6;
             }
             catch (Exception ex)
             {
@@ -996,98 +1093,6 @@ namespace SNOEC_GUI
             IOPort.Frequency = (byte)(this.comboBoxFrequency.SelectedIndex + 1);
         }
 
-        private void buttonReadDAC_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                byte[] temp = dut.PSM4_GetIbias(6);
-                this.numericUpDownIbias_Get.Value = temp[0];
-            }
-            catch
-            {
-                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void buttonWriteIbias_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int channel = (int)numericUpDownIbias_CH.Value;
-
-                if ((channel <= 4) && (channel >= 1))
-                {
-                    dut.PSM4_SetIbias(channel, (byte)numericUpDownIbias_Set.Value);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void checkBoxIbias_EN2_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int value = (this.checkBoxIbias_EN1.Checked ? 1 : 0) + ((this.checkBoxIbias_EN2.Checked ? 1 : 0) << 1);
-                dut.PSM4_SetIbias(5, (byte)value);
-            }
-            catch
-            {
-                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void checkBoxIbias_EN1_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int value = (this.checkBoxIbias_EN1.Checked ? 1 : 0) + ((this.checkBoxIbias_EN2.Checked ? 1 : 0) << 1);
-                dut.PSM4_SetIbias(5, (byte)value);
-            }
-            catch
-            {
-                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void buttonWriteHeator_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int channel = (int)numericUpDownHeator_CH.Value;
-
-                if ((channel <= 4) && (channel >= 1))
-                {
-                    dut.PSM4_SetHeator(channel, (ushort)numericUpDownHeator_Set.Value);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void buttonReadHeator_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int channel = (int)numericUpDownHeator_CH.Value;
-
-                if ((channel <= 4) && (channel >= 1))
-                {
-                    byte[] temp = dut.PSM4_GetHeator(channel);
-                    this.numericUpDownHeator_Get.Value = temp[0] + temp[1] * 256;
-                    //this.numericUpDownHeator_Get.Value = temp[0];
-                }
-            }
-            catch
-            {
-                MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CalculateForm calculateFrom = new CalculateForm(dut, dataTable_DUTCoeffControlByPN);
@@ -1141,12 +1146,6 @@ namespace SNOEC_GUI
             }
         }
 
-        private void numericUpDownAD5317R_Data_ValueChanged(object sender, EventArgs e)
-        {
-            AD5317R_SetValue((ushort)this.numericUpDownAD5317R_Data.Value);
-            this.progressBar_AD5317R_DAC.Value = (int)this.numericUpDownAD5317R_Data.Value;
-        }
-
         private void AD5317R_SetValue(UInt16 value)
         {
             try
@@ -1163,6 +1162,65 @@ namespace SNOEC_GUI
             {
                 MessageBox.Show("No link.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRead_SN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.txtSN.Text = dut.ReadSN();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRead_FW_Version_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.txtFW.Text = dut.ReadFWRev();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRead_PN_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.txtPN.Text = dut.ReadPn();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnRead_VendorName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.txtVendorName.Text = dut.ReadVendorName();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAD5371R_Set_Click(object sender, EventArgs e)
+        {
+            AD5317R_SetValue((ushort)this.numericUpDownAD5317R_Data.Value);
+            this.progressBar_AD5317R_DAC.Value = (int)this.numericUpDownAD5317R_Data.Value;
         }
     }
 }

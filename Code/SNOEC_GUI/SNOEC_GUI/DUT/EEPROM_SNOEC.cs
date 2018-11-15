@@ -16,7 +16,7 @@ namespace SNOEC_GUI
         {
             byte[] buff1 = new byte[16];
             UInt16[] buff = new UInt16[16];
-            string sn = "ffffffff";
+            string sn = Algorithm.MyNaN.ToString();
             try
             {
                 if (mdiomode == 1)
@@ -46,7 +46,7 @@ namespace SNOEC_GUI
         {
             byte[] buff1 = new byte[16];
             UInt16[] buff = new UInt16[16];
-            string pn = "ffffffff";
+            string pn = Algorithm.MyNaN.ToString();
             try
             {
                 if (mdiomode == 1)
@@ -74,7 +74,7 @@ namespace SNOEC_GUI
         public static string ReadFWRev(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
         {
             byte[] buff = new byte[2];
-            string fwrev = "ff";
+            string fwrev = Algorithm.MyNaN.ToString();
             UInt16[] buff1 = new UInt16[1];
             try
             {
@@ -92,6 +92,36 @@ namespace SNOEC_GUI
                 }
                 fwrev = Convert.ToString((buff[0] * 256 + buff[1]), 16);
                 return fwrev.Trim();
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN.ToString();
+            }
+        }
+
+        public static string ReadVendorName(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
+        {
+            byte[] buff1 = new byte[16];
+            UInt16[] buff = new UInt16[16];
+            string vendor = Algorithm.MyNaN.ToString();
+            try
+            {
+                if (mdiomode == 1)
+                {
+                    buff = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 16);
+                    for (int i = 0; i < 16; i++)
+                    {
+                        buff1[i] = (byte)(buff[i]);
+                    }
+                }
+                else
+                {
+                    buff1 = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 16);
+                }
+                vendor = Convert.ToChar(Convert.ToInt64(buff1[0])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[1])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[2])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[3])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[4])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[5])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[6])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[7])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[8])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[9])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[10])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[11])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[12])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[13])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[14])).ToString() + Convert.ToChar(Convert.ToInt64(buff1[15])).ToString();
+                return vendor.Trim();
+
             }
             catch
             {

@@ -84,6 +84,7 @@
     <Compile Include="DUT\IOPort.cs" />
     <Compile Include="DUT\OnEasyB_I2C.cs" />
     <Compile Include="DUT\QSFP28_SNOEC.cs" />
+    <Compile Include="DUT\QSFP_DD_SNOEC.cs" />
     <Compile Include="FolderPath.cs" />
     <Compile Include="CalculateForm.cs">
       <SubType>Form</SubType>
@@ -96,6 +97,18 @@
     </Compile>
     <Compile Include="HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductSelectForm.Designer.cs">
+      <DependentUpon>ProductSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CMIS_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CMIS_Form.Designer.cs">
+      <DependentUpon>CMIS_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -119,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductSelectForm.resx">
+      <DependentUpon>ProductSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CMIS_Form.resx">
+      <DependentUpon>CMIS_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
