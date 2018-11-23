@@ -34,10 +34,6 @@ namespace SNOEC_GUI
             this.comboBoxSoftHard.SelectedIndex = 0;
             this.comboBoxFrequency.SelectedIndex = 3;
 
-
-            this.dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView4.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView4.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView4.AllowUserToAddRows = false;
@@ -45,10 +41,6 @@ namespace SNOEC_GUI
             this.dataGridView6.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView6.AllowUserToAddRows = false;
 
-            for (int i = 0; i < this.dataGridView1.Columns.Count; i++)
-            {
-                this.dataGridView1.Columns[i].Width = this.dataGridView1.Width / this.dataGridView1.Columns.Count;
-            }
 
             for (int i = 0; i < this.dataGridView4.Columns.Count; i++)
             {
@@ -59,8 +51,7 @@ namespace SNOEC_GUI
             {
                 this.dataGridView6.Columns[i].Width = this.dataGridView6.Width / this.dataGridView6.Columns.Count;
             }
-            this.dataGridView1.Rows.Add(8);
-            this.dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
             this.dataGridView4.Rows.Add(8);
             this.dataGridView4.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView6.Rows.Add(8);
@@ -147,9 +138,9 @@ namespace SNOEC_GUI
         {
             this.btnReadWrite.Enabled = true;
 
-            if (this.tabControl1.SelectedTab.ToString().Contains("I2C Write"))
+            if (this.tabControl1.SelectedTab.ToString().Contains("I2C Operation"))
             {
-                this.btnReadWrite.Text = "Write";
+                this.btnReadWrite.Text = "Execute";
             }
             else
             {
@@ -245,16 +236,20 @@ namespace SNOEC_GUI
                     //this.chart37.BackColor = this.chart38.BackColor = this.chart39.BackColor = this.chart40.BackColor = this.GetColor(dut.GetInteTempWarning());
                 }
 
-
-
-                if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
+                if (this.tabControl1.SelectedTab.ToString().Contains("I2C Operation"))
                 {
-                    this.Tab_I2C_Read();
-                }
-
-                if (this.tabControl1.SelectedTab.ToString().Contains("I2C Write"))
-                {
-                    this.Tab_I2C_Write();
+                    if(this.radioButtonI2C_Read.Checked)
+                    {
+                        this.I2C_Read();
+                    }
+                    if (this.radioButtonI2C_Write.Checked)
+                    {
+                        DialogResult result = MessageBox.Show("Are you sure to write", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            this.I2C_Write();
+                        }
+                    }
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("MacomChip"))
@@ -301,14 +296,14 @@ namespace SNOEC_GUI
         //    }
         //}
 
-        private void Tab_I2C_Read()
+        private void I2C_Read()
         {
             //clear cells
             for (int i = 0; i < maxCells; i++)
             {
-                this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = null;
+                this.dataGridView4.Rows[i / 16].Cells[i % 16].Value = null;
             }
-            this.dataGridView1.Refresh();
+            this.dataGridView4.Refresh();
 
             byte[] buff = new byte[(int)this.numericUpDownBytes.Value];
             if ((int)this.numericUpDownBytes.Value > 0)
@@ -327,11 +322,11 @@ namespace SNOEC_GUI
 
             for (int i = 0; i < length; i++)
             {
-                this.dataGridView1.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16).ToUpper();
+                this.dataGridView4.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buff[i], 16).ToUpper();
             }
         }
 
-        private void Tab_I2C_Write()
+        private void I2C_Write()
         {
             byte[] writeData = new byte[(int)this.numericUpDownBytes.Value];
             if (writeData.Length == 0)

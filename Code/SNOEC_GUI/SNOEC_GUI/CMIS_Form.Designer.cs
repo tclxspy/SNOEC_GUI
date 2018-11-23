@@ -229,38 +229,7 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
-            this.tabpageI2CRead = new System.Windows.Forms.TabPage();
-            this.label54 = new System.Windows.Forms.Label();
-            this.btnRead_VendorName = new System.Windows.Forms.Button();
-            this.btnRead_FW_Version = new System.Windows.Forms.Button();
-            this.btnRead_PN = new System.Windows.Forms.Button();
-            this.btnRead_SN = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtVendorName = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtFW = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtPN = new System.Windows.Forms.TextBox();
-            this.txtSN = new System.Windows.Forms.TextBox();
-            this.tabPageI2CWrite = new System.Windows.Forms.TabPage();
+            this.tabPageI2C_Operation = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -327,6 +296,20 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.radioButtonI2C_Read = new System.Windows.Forms.RadioButton();
+            this.radioButtonI2C_Write = new System.Windows.Forms.RadioButton();
+            this.btnRead_VendorName = new System.Windows.Forms.Button();
+            this.btnRead_FW_Version = new System.Windows.Forms.Button();
+            this.btnRead_PN = new System.Windows.Forms.Button();
+            this.btnRead_SN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtVendorName = new System.Windows.Forms.TextBox();
+            this.txtFW = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPN = new System.Windows.Forms.TextBox();
+            this.txtSN = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -381,9 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.tabpageI2CRead.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPageI2CWrite.SuspendLayout();
+            this.tabPageI2C_Operation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPageMacomChip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
@@ -399,7 +380,7 @@
             // 
             // btnReadWrite
             // 
-            this.btnReadWrite.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReadWrite.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReadWrite.ForeColor = System.Drawing.Color.Black;
             this.btnReadWrite.Location = new System.Drawing.Point(636, 7);
             this.btnReadWrite.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -420,32 +401,32 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(764, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(764, 27);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // configToolStripMenuItem
             // 
             this.configToolStripMenuItem.Name = "configToolStripMenuItem";
-            this.configToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
+            this.configToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
             this.configToolStripMenuItem.Text = "Config";
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // calculateToolStripMenuItem
             // 
             this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
-            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(68, 19);
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(72, 21);
             this.calculateToolStripMenuItem.Text = "Calculate";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(47, 21);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
@@ -456,13 +437,13 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel1.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.panel1.Size = new System.Drawing.Size(764, 497);
+            this.panel1.Size = new System.Drawing.Size(764, 495);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -474,7 +455,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 107);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(744, 380);
+            this.panel4.Size = new System.Drawing.Size(744, 378);
             this.panel4.TabIndex = 3;
             // 
             // tabControl1
@@ -482,17 +463,16 @@
             this.tabControl1.Controls.Add(this.tabpageChOnOff);
             this.tabControl1.Controls.Add(this.tabpageDMIADC);
             this.tabControl1.Controls.Add(this.tabpageAlarmWarning);
-            this.tabControl1.Controls.Add(this.tabpageI2CRead);
-            this.tabControl1.Controls.Add(this.tabPageI2CWrite);
+            this.tabControl1.Controls.Add(this.tabPageI2C_Operation);
             this.tabControl1.Controls.Add(this.tabPageMacomChip);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabControl1.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(744, 380);
+            this.tabControl1.Size = new System.Drawing.Size(744, 378);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -508,12 +488,12 @@
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnRxCh1_4_Dis);
             this.tabpageChOnOff.Controls.Add(this.btnTxCh1_4_Dis);
-            this.tabpageChOnOff.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageChOnOff.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageChOnOff.Location = new System.Drawing.Point(4, 25);
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabpageChOnOff.Name = "tabpageChOnOff";
             this.tabpageChOnOff.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 351);
+            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 349);
             this.tabpageChOnOff.TabIndex = 1;
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
@@ -642,11 +622,11 @@
             this.tabpageDMIADC.Controls.Add(this.panel7);
             this.tabpageDMIADC.Controls.Add(this.panel5);
             this.tabpageDMIADC.Controls.Add(this.panel6);
-            this.tabpageDMIADC.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageDMIADC.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageDMIADC.ForeColor = System.Drawing.Color.Black;
             this.tabpageDMIADC.Location = new System.Drawing.Point(4, 25);
             this.tabpageDMIADC.Name = "tabpageDMIADC";
-            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 351);
+            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 349);
             this.tabpageDMIADC.TabIndex = 2;
             this.tabpageDMIADC.Text = "DMI/ADC";
             this.tabpageDMIADC.UseVisualStyleBackColor = true;
@@ -1509,10 +1489,10 @@
             // tabpageAlarmWarning
             // 
             this.tabpageAlarmWarning.Controls.Add(this.groupBox2);
-            this.tabpageAlarmWarning.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageAlarmWarning.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 25);
             this.tabpageAlarmWarning.Name = "tabpageAlarmWarning";
-            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 351);
+            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 349);
             this.tabpageAlarmWarning.TabIndex = 5;
             this.tabpageAlarmWarning.Text = "Alarm/Warning";
             this.tabpageAlarmWarning.UseVisualStyleBackColor = true;
@@ -1577,7 +1557,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(736, 351);
+            this.groupBox2.Size = new System.Drawing.Size(736, 349);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -2156,328 +2136,41 @@
             this.label70.TabIndex = 4;
             this.label70.Text = "CH1";
             // 
-            // tabpageI2CRead
+            // tabPageI2C_Operation
             // 
-            this.tabpageI2CRead.Controls.Add(this.label54);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_VendorName);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_FW_Version);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_PN);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_SN);
-            this.tabpageI2CRead.Controls.Add(this.label1);
-            this.tabpageI2CRead.Controls.Add(this.label53);
-            this.tabpageI2CRead.Controls.Add(this.txtVendorName);
-            this.tabpageI2CRead.Controls.Add(this.dataGridView1);
-            this.tabpageI2CRead.Controls.Add(this.txtFW);
-            this.tabpageI2CRead.Controls.Add(this.label52);
-            this.tabpageI2CRead.Controls.Add(this.label18);
-            this.tabpageI2CRead.Controls.Add(this.txtPN);
-            this.tabpageI2CRead.Controls.Add(this.txtSN);
-            this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabpageI2CRead.Location = new System.Drawing.Point(4, 25);
-            this.tabpageI2CRead.Name = "tabpageI2CRead";
-            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 351);
-            this.tabpageI2CRead.TabIndex = 3;
-            this.tabpageI2CRead.Text = "I2C Read";
-            this.tabpageI2CRead.UseVisualStyleBackColor = true;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label54.Location = new System.Drawing.Point(269, 20);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(198, 19);
-            this.label54.TabIndex = 3;
-            this.label54.Text = "Hex read data (max 128 bytes)";
-            // 
-            // btnRead_VendorName
-            // 
-            this.btnRead_VendorName.Location = new System.Drawing.Point(625, 309);
-            this.btnRead_VendorName.Name = "btnRead_VendorName";
-            this.btnRead_VendorName.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_VendorName.TabIndex = 2;
-            this.btnRead_VendorName.Text = "Read";
-            this.btnRead_VendorName.UseVisualStyleBackColor = true;
-            this.btnRead_VendorName.Click += new System.EventHandler(this.btnRead_VendorName_Click);
-            // 
-            // btnRead_FW_Version
-            // 
-            this.btnRead_FW_Version.Location = new System.Drawing.Point(625, 265);
-            this.btnRead_FW_Version.Name = "btnRead_FW_Version";
-            this.btnRead_FW_Version.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_FW_Version.TabIndex = 2;
-            this.btnRead_FW_Version.Text = "Read";
-            this.btnRead_FW_Version.UseVisualStyleBackColor = true;
-            this.btnRead_FW_Version.Click += new System.EventHandler(this.btnRead_FW_Version_Click);
-            // 
-            // btnRead_PN
-            // 
-            this.btnRead_PN.Location = new System.Drawing.Point(254, 309);
-            this.btnRead_PN.Name = "btnRead_PN";
-            this.btnRead_PN.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_PN.TabIndex = 2;
-            this.btnRead_PN.Text = "Read";
-            this.btnRead_PN.UseVisualStyleBackColor = true;
-            this.btnRead_PN.Click += new System.EventHandler(this.btnRead_PN_Click);
-            // 
-            // btnRead_SN
-            // 
-            this.btnRead_SN.Location = new System.Drawing.Point(254, 266);
-            this.btnRead_SN.Name = "btnRead_SN";
-            this.btnRead_SN.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_SN.TabIndex = 2;
-            this.btnRead_SN.Text = "Read";
-            this.btnRead_SN.UseVisualStyleBackColor = true;
-            this.btnRead_SN.Click += new System.EventHandler(this.btnRead_SN_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(371, 312);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Vendor Name";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(371, 269);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(98, 16);
-            this.label53.TabIndex = 1;
-            this.label53.Text = "Firmware Version";
-            // 
-            // txtVendorName
-            // 
-            this.txtVendorName.Location = new System.Drawing.Point(487, 309);
-            this.txtVendorName.Name = "txtVendorName";
-            this.txtVendorName.ReadOnly = true;
-            this.txtVendorName.Size = new System.Drawing.Size(100, 22);
-            this.txtVendorName.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 56);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(736, 186);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "0";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 46;
-            // 
-            // Column2
-            // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "1";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 46;
-            // 
-            // Column3
-            // 
-            this.Column3.Frozen = true;
-            this.Column3.HeaderText = "2";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 46;
-            // 
-            // Column4
-            // 
-            this.Column4.Frozen = true;
-            this.Column4.HeaderText = "3";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 46;
-            // 
-            // Column5
-            // 
-            this.Column5.Frozen = true;
-            this.Column5.HeaderText = "4";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 46;
-            // 
-            // Column6
-            // 
-            this.Column6.Frozen = true;
-            this.Column6.HeaderText = "5";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 46;
-            // 
-            // Column7
-            // 
-            this.Column7.Frozen = true;
-            this.Column7.HeaderText = "6";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 46;
-            // 
-            // Column8
-            // 
-            this.Column8.Frozen = true;
-            this.Column8.HeaderText = "7";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 46;
-            // 
-            // Column9
-            // 
-            this.Column9.Frozen = true;
-            this.Column9.HeaderText = "8";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 46;
-            // 
-            // Column10
-            // 
-            this.Column10.Frozen = true;
-            this.Column10.HeaderText = "9";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 46;
-            // 
-            // Column11
-            // 
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "A";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 46;
-            // 
-            // Column12
-            // 
-            this.Column12.Frozen = true;
-            this.Column12.HeaderText = "B";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 46;
-            // 
-            // Column13
-            // 
-            this.Column13.Frozen = true;
-            this.Column13.HeaderText = "C";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 46;
-            // 
-            // Column14
-            // 
-            this.Column14.Frozen = true;
-            this.Column14.HeaderText = "D";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 46;
-            // 
-            // Column15
-            // 
-            this.Column15.Frozen = true;
-            this.Column15.HeaderText = "E";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 46;
-            // 
-            // Column16
-            // 
-            this.Column16.Frozen = true;
-            this.Column16.HeaderText = "F";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 46;
-            // 
-            // txtFW
-            // 
-            this.txtFW.Location = new System.Drawing.Point(487, 266);
-            this.txtFW.Name = "txtFW";
-            this.txtFW.ReadOnly = true;
-            this.txtFW.Size = new System.Drawing.Size(100, 22);
-            this.txtFW.TabIndex = 0;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(25, 312);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(75, 16);
-            this.label52.TabIndex = 1;
-            this.label52.Text = "Part Number";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(25, 269);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 16);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Serial Number";
-            // 
-            // txtPN
-            // 
-            this.txtPN.Location = new System.Drawing.Point(124, 309);
-            this.txtPN.Name = "txtPN";
-            this.txtPN.ReadOnly = true;
-            this.txtPN.Size = new System.Drawing.Size(100, 22);
-            this.txtPN.TabIndex = 0;
-            // 
-            // txtSN
-            // 
-            this.txtSN.Location = new System.Drawing.Point(124, 266);
-            this.txtSN.Name = "txtSN";
-            this.txtSN.ReadOnly = true;
-            this.txtSN.Size = new System.Drawing.Size(100, 22);
-            this.txtSN.TabIndex = 0;
-            // 
-            // tabPageI2CWrite
-            // 
-            this.tabPageI2CWrite.Controls.Add(this.label2);
-            this.tabPageI2CWrite.Controls.Add(this.dataGridView4);
-            this.tabPageI2CWrite.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 25);
-            this.tabPageI2CWrite.Name = "tabPageI2CWrite";
-            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 351);
-            this.tabPageI2CWrite.TabIndex = 4;
-            this.tabPageI2CWrite.Text = "I2C Write";
-            this.tabPageI2CWrite.UseVisualStyleBackColor = true;
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_VendorName);
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_FW_Version);
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_PN);
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_SN);
+            this.tabPageI2C_Operation.Controls.Add(this.label1);
+            this.tabPageI2C_Operation.Controls.Add(this.label53);
+            this.tabPageI2C_Operation.Controls.Add(this.txtVendorName);
+            this.tabPageI2C_Operation.Controls.Add(this.txtFW);
+            this.tabPageI2C_Operation.Controls.Add(this.label52);
+            this.tabPageI2C_Operation.Controls.Add(this.label18);
+            this.tabPageI2C_Operation.Controls.Add(this.txtPN);
+            this.tabPageI2C_Operation.Controls.Add(this.txtSN);
+            this.tabPageI2C_Operation.Controls.Add(this.radioButtonI2C_Write);
+            this.tabPageI2C_Operation.Controls.Add(this.radioButtonI2C_Read);
+            this.tabPageI2C_Operation.Controls.Add(this.label2);
+            this.tabPageI2C_Operation.Controls.Add(this.dataGridView4);
+            this.tabPageI2C_Operation.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageI2C_Operation.Location = new System.Drawing.Point(4, 25);
+            this.tabPageI2C_Operation.Name = "tabPageI2C_Operation";
+            this.tabPageI2C_Operation.Size = new System.Drawing.Size(736, 349);
+            this.tabPageI2C_Operation.TabIndex = 4;
+            this.tabPageI2C_Operation.Text = "I2C Operation";
+            this.tabPageI2C_Operation.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(230, 35);
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(7, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(250, 19);
+            this.label2.Size = new System.Drawing.Size(140, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Hex data to be written (max 128 bytes)";
+            this.label2.Text = "Hex data (max 128 bytes)";
             // 
             // dataGridView4
             // 
@@ -2502,7 +2195,7 @@
             this.dataGridViewTextBoxColumn46,
             this.dataGridViewTextBoxColumn47,
             this.dataGridViewTextBoxColumn48});
-            this.dataGridView4.Location = new System.Drawing.Point(-1, 84);
+            this.dataGridView4.Location = new System.Drawing.Point(1, 57);
             this.dataGridView4.MultiSelect = false;
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersVisible = false;
@@ -2638,10 +2331,10 @@
             this.tabPageMacomChip.Controls.Add(this.comboBoxMacomChip_Operation);
             this.tabPageMacomChip.Controls.Add(this.label86);
             this.tabPageMacomChip.Controls.Add(this.label85);
-            this.tabPageMacomChip.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageMacomChip.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPageMacomChip.Location = new System.Drawing.Point(4, 25);
             this.tabPageMacomChip.Name = "tabPageMacomChip";
-            this.tabPageMacomChip.Size = new System.Drawing.Size(736, 351);
+            this.tabPageMacomChip.Size = new System.Drawing.Size(736, 349);
             this.tabPageMacomChip.TabIndex = 8;
             this.tabPageMacomChip.Text = "MacomChip";
             this.tabPageMacomChip.UseVisualStyleBackColor = true;
@@ -2823,7 +2516,7 @@
             // comboBoxMacomChip_Select
             // 
             this.comboBoxMacomChip_Select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMacomChip_Select.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxMacomChip_Select.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxMacomChip_Select.FormattingEnabled = true;
             this.comboBoxMacomChip_Select.Items.AddRange(new object[] {
             "MA38053",
@@ -2838,7 +2531,7 @@
             // 
             // numericUpDownMacomChip_Page
             // 
-            this.numericUpDownMacomChip_Page.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownMacomChip_Page.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownMacomChip_Page.Location = new System.Drawing.Point(373, 84);
             this.numericUpDownMacomChip_Page.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownMacomChip_Page.Maximum = new decimal(new int[] {
@@ -2852,7 +2545,7 @@
             // 
             // numericUpDownMacomChip_Bytes
             // 
-            this.numericUpDownMacomChip_Bytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownMacomChip_Bytes.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownMacomChip_Bytes.Location = new System.Drawing.Point(601, 82);
             this.numericUpDownMacomChip_Bytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownMacomChip_Bytes.Name = "numericUpDownMacomChip_Bytes";
@@ -2861,7 +2554,7 @@
             // 
             // numericUpDownMacomChip_Address
             // 
-            this.numericUpDownMacomChip_Address.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownMacomChip_Address.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownMacomChip_Address.Location = new System.Drawing.Point(485, 84);
             this.numericUpDownMacomChip_Address.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownMacomChip_Address.Maximum = new decimal(new int[] {
@@ -2896,7 +2589,7 @@
             // comboBoxMacomChip_Operation
             // 
             this.comboBoxMacomChip_Operation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMacomChip_Operation.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxMacomChip_Operation.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxMacomChip_Operation.FormattingEnabled = true;
             this.comboBoxMacomChip_Operation.Items.AddRange(new object[] {
             "Read",
@@ -2966,7 +2659,7 @@
             // comboBoxSoftHard
             // 
             this.comboBoxSoftHard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSoftHard.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxSoftHard.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxSoftHard.FormattingEnabled = true;
             this.comboBoxSoftHard.Items.AddRange(new object[] {
             "SerialPort",
@@ -3044,16 +2737,21 @@
             // 
             // numericUpDownBytes
             // 
-            this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownBytes.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
             this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownBytes.Maximum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            0});
             this.numericUpDownBytes.Name = "numericUpDownBytes";
             this.numericUpDownBytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownBytes.TabIndex = 7;
             // 
             // numericUpDownRegAddress
             // 
-            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownRegAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
             this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
@@ -3067,7 +2765,7 @@
             // 
             // numericUpDownPage
             // 
-            this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownPage.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownPage.Location = new System.Drawing.Point(444, 28);
             this.numericUpDownPage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownPage.Maximum = new decimal(new int[] {
@@ -3081,7 +2779,7 @@
             // 
             // domainUpDownDeviceAddress
             // 
-            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.domainUpDownDeviceAddress.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.domainUpDownDeviceAddress.Items.Add("0xA0");
             this.domainUpDownDeviceAddress.Items.Add("0xA2");
             this.domainUpDownDeviceAddress.Items.Add("0xA8");
@@ -3095,7 +2793,7 @@
             // comboBoxFrequency
             // 
             this.comboBoxFrequency.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxFrequency.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFrequency.FormattingEnabled = true;
             this.comboBoxFrequency.Items.AddRange(new object[] {
             "100K",
@@ -3112,7 +2810,7 @@
             // comboBoxDeviceIndex
             // 
             this.comboBoxDeviceIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxDeviceIndex.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxDeviceIndex.FormattingEnabled = true;
             this.comboBoxDeviceIndex.Items.AddRange(new object[] {
             "Device 0",
@@ -3156,13 +2854,143 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.Location = new System.Drawing.Point(241, 0);
             this.labelTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(239, 31);
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "400G QSFP-DD GUI";
+            // 
+            // radioButtonI2C_Read
+            // 
+            this.radioButtonI2C_Read.AutoSize = true;
+            this.radioButtonI2C_Read.Checked = true;
+            this.radioButtonI2C_Read.Location = new System.Drawing.Point(279, 18);
+            this.radioButtonI2C_Read.Name = "radioButtonI2C_Read";
+            this.radioButtonI2C_Read.Size = new System.Drawing.Size(52, 20);
+            this.radioButtonI2C_Read.TabIndex = 15;
+            this.radioButtonI2C_Read.TabStop = true;
+            this.radioButtonI2C_Read.Text = "Read";
+            this.radioButtonI2C_Read.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonI2C_Write
+            // 
+            this.radioButtonI2C_Write.AutoSize = true;
+            this.radioButtonI2C_Write.Location = new System.Drawing.Point(437, 18);
+            this.radioButtonI2C_Write.Name = "radioButtonI2C_Write";
+            this.radioButtonI2C_Write.Size = new System.Drawing.Size(54, 20);
+            this.radioButtonI2C_Write.TabIndex = 16;
+            this.radioButtonI2C_Write.Text = "Write";
+            this.radioButtonI2C_Write.UseVisualStyleBackColor = true;
+            // 
+            // btnRead_VendorName
+            // 
+            this.btnRead_VendorName.Location = new System.Drawing.Point(627, 305);
+            this.btnRead_VendorName.Name = "btnRead_VendorName";
+            this.btnRead_VendorName.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_VendorName.TabIndex = 25;
+            this.btnRead_VendorName.Text = "Read";
+            this.btnRead_VendorName.UseVisualStyleBackColor = true;
+            this.btnRead_VendorName.Click += new System.EventHandler(this.btnRead_VendorName_Click);
+            // 
+            // btnRead_FW_Version
+            // 
+            this.btnRead_FW_Version.Location = new System.Drawing.Point(627, 261);
+            this.btnRead_FW_Version.Name = "btnRead_FW_Version";
+            this.btnRead_FW_Version.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_FW_Version.TabIndex = 26;
+            this.btnRead_FW_Version.Text = "Read";
+            this.btnRead_FW_Version.UseVisualStyleBackColor = true;
+            this.btnRead_FW_Version.Click += new System.EventHandler(this.btnRead_FW_Version_Click);
+            // 
+            // btnRead_PN
+            // 
+            this.btnRead_PN.Location = new System.Drawing.Point(256, 305);
+            this.btnRead_PN.Name = "btnRead_PN";
+            this.btnRead_PN.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_PN.TabIndex = 27;
+            this.btnRead_PN.Text = "Read";
+            this.btnRead_PN.UseVisualStyleBackColor = true;
+            this.btnRead_PN.Click += new System.EventHandler(this.btnRead_PN_Click);
+            // 
+            // btnRead_SN
+            // 
+            this.btnRead_SN.Location = new System.Drawing.Point(256, 262);
+            this.btnRead_SN.Name = "btnRead_SN";
+            this.btnRead_SN.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_SN.TabIndex = 28;
+            this.btnRead_SN.Text = "Read";
+            this.btnRead_SN.UseVisualStyleBackColor = true;
+            this.btnRead_SN.Click += new System.EventHandler(this.btnRead_SN_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(373, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Vendor Name";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(373, 265);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(98, 16);
+            this.label53.TabIndex = 22;
+            this.label53.Text = "Firmware Version";
+            // 
+            // txtVendorName
+            // 
+            this.txtVendorName.Location = new System.Drawing.Point(489, 305);
+            this.txtVendorName.Name = "txtVendorName";
+            this.txtVendorName.ReadOnly = true;
+            this.txtVendorName.Size = new System.Drawing.Size(100, 22);
+            this.txtVendorName.TabIndex = 17;
+            // 
+            // txtFW
+            // 
+            this.txtFW.Location = new System.Drawing.Point(489, 262);
+            this.txtFW.Name = "txtFW";
+            this.txtFW.ReadOnly = true;
+            this.txtFW.Size = new System.Drawing.Size(100, 22);
+            this.txtFW.TabIndex = 18;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(27, 308);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(75, 16);
+            this.label52.TabIndex = 23;
+            this.label52.Text = "Part Number";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(27, 265);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(82, 16);
+            this.label18.TabIndex = 24;
+            this.label18.Text = "Serial Number";
+            // 
+            // txtPN
+            // 
+            this.txtPN.Location = new System.Drawing.Point(126, 305);
+            this.txtPN.Name = "txtPN";
+            this.txtPN.ReadOnly = true;
+            this.txtPN.Size = new System.Drawing.Size(100, 22);
+            this.txtPN.TabIndex = 19;
+            // 
+            // txtSN
+            // 
+            this.txtSN.Location = new System.Drawing.Point(126, 262);
+            this.txtSN.Name = "txtSN";
+            this.txtSN.ReadOnly = true;
+            this.txtSN.Size = new System.Drawing.Size(100, 22);
+            this.txtSN.TabIndex = 20;
             // 
             // CMIS_Form
             // 
@@ -3171,7 +2999,7 @@
             this.ClientSize = new System.Drawing.Size(764, 522);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("微软雅黑", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -3245,11 +3073,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.tabpageI2CRead.ResumeLayout(false);
-            this.tabpageI2CRead.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPageI2CWrite.ResumeLayout(false);
-            this.tabPageI2CWrite.PerformLayout();
+            this.tabPageI2C_Operation.ResumeLayout(false);
+            this.tabPageI2C_Operation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPageMacomChip.ResumeLayout(false);
             this.tabPageMacomChip.PerformLayout();
@@ -3298,8 +3123,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabpageChOnOff;
         private System.Windows.Forms.TabPage tabpageDMIADC;
-        private System.Windows.Forms.TabPage tabpageI2CRead;
-        private System.Windows.Forms.TabPage tabPageI2CWrite;
+        private System.Windows.Forms.TabPage tabPageI2C_Operation;
         private System.Windows.Forms.TabPage tabpageAlarmWarning;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel6;
@@ -3383,13 +3207,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txtDMI_VCC;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox txtSN;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox txtFW;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.TextBox txtPN;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Label label57;
@@ -3457,22 +3274,6 @@
         private System.Windows.Forms.Button btnTxCh1_Dis;
         private System.Windows.Forms.Button btnRxCh1_4_Dis;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.ToolStripMenuItem calculateToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPageMacomChip;
         private System.Windows.Forms.DataGridView dataGridView6;
@@ -3521,14 +3322,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRead_VendorName;
         private System.Windows.Forms.Button btnRead_FW_Version;
         private System.Windows.Forms.Button btnRead_PN;
         private System.Windows.Forms.Button btnRead_SN;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label53;
         private System.Windows.Forms.TextBox txtVendorName;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtFW;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtPN;
+        private System.Windows.Forms.TextBox txtSN;
+        private System.Windows.Forms.RadioButton radioButtonI2C_Write;
+        private System.Windows.Forms.RadioButton radioButtonI2C_Read;
     }
 }
 
