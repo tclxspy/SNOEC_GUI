@@ -238,6 +238,7 @@
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.tabpageI2CRead = new System.Windows.Forms.TabPage();
+            this.label71 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -255,7 +256,8 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPageI2CWrite = new System.Windows.Forms.TabPage();
+            this.tabPageI2C_Operation = new System.Windows.Forms.TabPage();
+            this.label54 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -274,17 +276,44 @@
             this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageIC = new System.Windows.Forms.TabPage();
+            this.btnAD5371R_Set = new System.Windows.Forms.Button();
             this.checkBoxCSource_EN2 = new System.Windows.Forms.CheckBox();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBoxCSource_EN1 = new System.Windows.Forms.CheckBox();
+            this.progressBar_AD5317R_DAC = new System.Windows.Forms.ProgressBar();
             this.comboBoxIC_Select = new System.Windows.Forms.ComboBox();
             this.label78 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
             this.comboBoxIC_Operation = new System.Windows.Forms.ComboBox();
+            this.comboBoxIC_Channel = new System.Windows.Forms.ComboBox();
             this.label77 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
             this.label76 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
             this.numericUpDownIC_RegAddress = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAD5317R_Data = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownIC_Bytes = new System.Windows.Forms.NumericUpDown();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
             this.tabPageSemtechChip = new System.Windows.Forms.TabPage();
+            this.label55 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -342,35 +371,8 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtPN = new System.Windows.Forms.TextBox();
             this.txtSN = new System.Windows.Forms.TextBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.numericUpDownAD5317R_Data = new System.Windows.Forms.NumericUpDown();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.comboBoxIC_Channel = new System.Windows.Forms.ComboBox();
-            this.label81 = new System.Windows.Forms.Label();
-            this.progressBar_AD5317R_DAC = new System.Windows.Forms.ProgressBar();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAD5371R_Set = new System.Windows.Forms.Button();
-            this.label55 = new System.Windows.Forms.Label();
+            this.radioButtonI2C_Write = new System.Windows.Forms.RadioButton();
+            this.radioButtonI2C_Read = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -427,10 +429,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabpageI2CRead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPageI2CWrite.SuspendLayout();
+            this.tabPageI2C_Operation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPageIC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).BeginInit();
             this.tabPageSemtechChip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
@@ -442,8 +446,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReadWrite
@@ -602,7 +604,7 @@
             this.tabControl1.Controls.Add(this.tabpageDMIADC);
             this.tabControl1.Controls.Add(this.tabpageAlarmWarning);
             this.tabControl1.Controls.Add(this.tabpageI2CRead);
-            this.tabControl1.Controls.Add(this.tabPageI2CWrite);
+            this.tabControl1.Controls.Add(this.tabPageI2C_Operation);
             this.tabControl1.Controls.Add(this.tabPageIC);
             this.tabControl1.Controls.Add(this.tabPageSemtechChip);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -869,7 +871,7 @@
             this.panel10.Controls.Add(this.txtDMI_TxBias_Ch4);
             this.panel10.Location = new System.Drawing.Point(617, 29);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 308);
+            this.panel10.Size = new System.Drawing.Size(100, 310);
             this.panel10.TabIndex = 0;
             // 
             // label45
@@ -1003,7 +1005,7 @@
             this.panel9.Controls.Add(this.txtDMI_TxBias_Ch3);
             this.panel9.Location = new System.Drawing.Point(497, 29);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(100, 308);
+            this.panel9.Size = new System.Drawing.Size(100, 310);
             this.panel9.TabIndex = 0;
             // 
             // label38
@@ -1137,7 +1139,7 @@
             this.panel8.Controls.Add(this.txtDMI_TxBias_Ch2);
             this.panel8.Location = new System.Drawing.Point(377, 29);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(100, 308);
+            this.panel8.Size = new System.Drawing.Size(100, 310);
             this.panel8.TabIndex = 0;
             // 
             // label31
@@ -1271,7 +1273,7 @@
             this.panel7.Controls.Add(this.txtDMI_TxBias_Ch1);
             this.panel7.Location = new System.Drawing.Point(257, 29);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 308);
+            this.panel7.Size = new System.Drawing.Size(100, 310);
             this.panel7.TabIndex = 0;
             // 
             // label24
@@ -1405,7 +1407,7 @@
             this.panel5.Controls.Add(this.txtDMI_VCC);
             this.panel5.Location = new System.Drawing.Point(137, 29);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(100, 308);
+            this.panel5.Size = new System.Drawing.Size(100, 310);
             this.panel5.TabIndex = 0;
             // 
             // label10
@@ -1537,7 +1539,7 @@
             this.panel6.Controls.Add(this.textBox12);
             this.panel6.Location = new System.Drawing.Point(17, 29);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 308);
+            this.panel6.Size = new System.Drawing.Size(100, 310);
             this.panel6.TabIndex = 0;
             // 
             // label17
@@ -2285,18 +2287,6 @@
             // tabpageI2CRead
             // 
             this.tabpageI2CRead.Controls.Add(this.label71);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_VendorName);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_FW_Version);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_PN);
-            this.tabpageI2CRead.Controls.Add(this.btnRead_SN);
-            this.tabpageI2CRead.Controls.Add(this.label1);
-            this.tabpageI2CRead.Controls.Add(this.label53);
-            this.tabpageI2CRead.Controls.Add(this.txtVendorName);
-            this.tabpageI2CRead.Controls.Add(this.txtFW);
-            this.tabpageI2CRead.Controls.Add(this.label52);
-            this.tabpageI2CRead.Controls.Add(this.label18);
-            this.tabpageI2CRead.Controls.Add(this.txtPN);
-            this.tabpageI2CRead.Controls.Add(this.txtSN);
             this.tabpageI2CRead.Controls.Add(this.dataGridView1);
             this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageI2CRead.Location = new System.Drawing.Point(4, 25);
@@ -2305,6 +2295,16 @@
             this.tabpageI2CRead.TabIndex = 3;
             this.tabpageI2CRead.Text = "I2C Read";
             this.tabpageI2CRead.UseVisualStyleBackColor = true;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label71.Location = new System.Drawing.Point(272, 27);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(198, 19);
+            this.label71.TabIndex = 15;
+            this.label71.Text = "Hex read data (max 128 bytes)";
             // 
             // dataGridView1
             // 
@@ -2465,17 +2465,41 @@
             this.Column16.ReadOnly = true;
             this.Column16.Width = 46;
             // 
-            // tabPageI2CWrite
+            // tabPageI2C_Operation
             // 
-            this.tabPageI2CWrite.Controls.Add(this.label54);
-            this.tabPageI2CWrite.Controls.Add(this.dataGridView4);
-            this.tabPageI2CWrite.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPageI2CWrite.Location = new System.Drawing.Point(4, 25);
-            this.tabPageI2CWrite.Name = "tabPageI2CWrite";
-            this.tabPageI2CWrite.Size = new System.Drawing.Size(736, 351);
-            this.tabPageI2CWrite.TabIndex = 4;
-            this.tabPageI2CWrite.Text = "I2C Write";
-            this.tabPageI2CWrite.UseVisualStyleBackColor = true;
+            this.tabPageI2C_Operation.Controls.Add(this.radioButtonI2C_Write);
+            this.tabPageI2C_Operation.Controls.Add(this.radioButtonI2C_Read);
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_VendorName);
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_FW_Version);
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_PN);
+            this.tabPageI2C_Operation.Controls.Add(this.btnRead_SN);
+            this.tabPageI2C_Operation.Controls.Add(this.label1);
+            this.tabPageI2C_Operation.Controls.Add(this.label53);
+            this.tabPageI2C_Operation.Controls.Add(this.txtVendorName);
+            this.tabPageI2C_Operation.Controls.Add(this.txtFW);
+            this.tabPageI2C_Operation.Controls.Add(this.label52);
+            this.tabPageI2C_Operation.Controls.Add(this.label18);
+            this.tabPageI2C_Operation.Controls.Add(this.txtPN);
+            this.tabPageI2C_Operation.Controls.Add(this.txtSN);
+            this.tabPageI2C_Operation.Controls.Add(this.label54);
+            this.tabPageI2C_Operation.Controls.Add(this.dataGridView4);
+            this.tabPageI2C_Operation.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabPageI2C_Operation.Location = new System.Drawing.Point(4, 25);
+            this.tabPageI2C_Operation.Name = "tabPageI2C_Operation";
+            this.tabPageI2C_Operation.Size = new System.Drawing.Size(736, 351);
+            this.tabPageI2C_Operation.TabIndex = 4;
+            this.tabPageI2C_Operation.Text = "I2C Operation";
+            this.tabPageI2C_Operation.UseVisualStyleBackColor = true;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label54.Location = new System.Drawing.Point(3, 37);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(140, 16);
+            this.label54.TabIndex = 2;
+            this.label54.Text = "Hex data (max 128 bytes)";
             // 
             // dataGridView4
             // 
@@ -2500,7 +2524,7 @@
             this.dataGridViewTextBoxColumn46,
             this.dataGridViewTextBoxColumn47,
             this.dataGridViewTextBoxColumn48});
-            this.dataGridView4.Location = new System.Drawing.Point(0, 69);
+            this.dataGridView4.Location = new System.Drawing.Point(-1, 56);
             this.dataGridView4.MultiSelect = false;
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersVisible = false;
@@ -2650,6 +2674,16 @@
             this.tabPageIC.Text = "IC";
             this.tabPageIC.UseVisualStyleBackColor = true;
             // 
+            // btnAD5371R_Set
+            // 
+            this.btnAD5371R_Set.Location = new System.Drawing.Point(607, 310);
+            this.btnAD5371R_Set.Name = "btnAD5371R_Set";
+            this.btnAD5371R_Set.Size = new System.Drawing.Size(75, 23);
+            this.btnAD5371R_Set.TabIndex = 27;
+            this.btnAD5371R_Set.Text = "Set";
+            this.btnAD5371R_Set.UseVisualStyleBackColor = true;
+            this.btnAD5371R_Set.Click += new System.EventHandler(this.btnAD5371R_Set_Click);
+            // 
             // checkBoxCSource_EN2
             // 
             this.checkBoxCSource_EN2.AutoSize = true;
@@ -2662,6 +2696,150 @@
             this.checkBoxCSource_EN2.Text = "EN2";
             this.checkBoxCSource_EN2.UseVisualStyleBackColor = true;
             // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToResizeColumns = false;
+            this.dataGridView5.AllowUserToResizeRows = false;
+            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn49,
+            this.dataGridViewTextBoxColumn50,
+            this.dataGridViewTextBoxColumn51,
+            this.dataGridViewTextBoxColumn52,
+            this.dataGridViewTextBoxColumn53,
+            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewTextBoxColumn55,
+            this.dataGridViewTextBoxColumn56,
+            this.dataGridViewTextBoxColumn57,
+            this.dataGridViewTextBoxColumn58,
+            this.dataGridViewTextBoxColumn59,
+            this.dataGridViewTextBoxColumn60,
+            this.dataGridViewTextBoxColumn61,
+            this.dataGridViewTextBoxColumn62,
+            this.dataGridViewTextBoxColumn63,
+            this.dataGridViewTextBoxColumn64});
+            this.dataGridView5.Location = new System.Drawing.Point(-1, 73);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersVisible = false;
+            this.dataGridView5.RowHeadersWidth = 50;
+            this.dataGridView5.Size = new System.Drawing.Size(736, 186);
+            this.dataGridView5.TabIndex = 14;
+            this.dataGridView5.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellEndEdit);
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.Frozen = true;
+            this.dataGridViewTextBoxColumn49.HeaderText = "0";
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.Frozen = true;
+            this.dataGridViewTextBoxColumn50.HeaderText = "1";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.Frozen = true;
+            this.dataGridViewTextBoxColumn51.HeaderText = "2";
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.Frozen = true;
+            this.dataGridViewTextBoxColumn52.HeaderText = "3";
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.Frozen = true;
+            this.dataGridViewTextBoxColumn53.HeaderText = "4";
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            this.dataGridViewTextBoxColumn53.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn54
+            // 
+            this.dataGridViewTextBoxColumn54.Frozen = true;
+            this.dataGridViewTextBoxColumn54.HeaderText = "5";
+            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+            this.dataGridViewTextBoxColumn54.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.Frozen = true;
+            this.dataGridViewTextBoxColumn55.HeaderText = "6";
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.dataGridViewTextBoxColumn55.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.Frozen = true;
+            this.dataGridViewTextBoxColumn56.HeaderText = "7";
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn57
+            // 
+            this.dataGridViewTextBoxColumn57.Frozen = true;
+            this.dataGridViewTextBoxColumn57.HeaderText = "8";
+            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            this.dataGridViewTextBoxColumn57.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn58
+            // 
+            this.dataGridViewTextBoxColumn58.Frozen = true;
+            this.dataGridViewTextBoxColumn58.HeaderText = "9";
+            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            this.dataGridViewTextBoxColumn58.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn59
+            // 
+            this.dataGridViewTextBoxColumn59.Frozen = true;
+            this.dataGridViewTextBoxColumn59.HeaderText = "A";
+            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            this.dataGridViewTextBoxColumn59.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn60
+            // 
+            this.dataGridViewTextBoxColumn60.Frozen = true;
+            this.dataGridViewTextBoxColumn60.HeaderText = "B";
+            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn61
+            // 
+            this.dataGridViewTextBoxColumn61.Frozen = true;
+            this.dataGridViewTextBoxColumn61.HeaderText = "C";
+            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.dataGridViewTextBoxColumn61.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.Frozen = true;
+            this.dataGridViewTextBoxColumn62.HeaderText = "D";
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dataGridViewTextBoxColumn62.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn63
+            // 
+            this.dataGridViewTextBoxColumn63.Frozen = true;
+            this.dataGridViewTextBoxColumn63.HeaderText = "E";
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.Width = 46;
+            // 
+            // dataGridViewTextBoxColumn64
+            // 
+            this.dataGridViewTextBoxColumn64.Frozen = true;
+            this.dataGridViewTextBoxColumn64.HeaderText = "F";
+            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.Width = 46;
+            // 
             // checkBoxCSource_EN1
             // 
             this.checkBoxCSource_EN1.AutoSize = true;
@@ -2673,6 +2851,14 @@
             this.checkBoxCSource_EN1.TabIndex = 25;
             this.checkBoxCSource_EN1.Text = "EN1";
             this.checkBoxCSource_EN1.UseVisualStyleBackColor = true;
+            // 
+            // progressBar_AD5317R_DAC
+            // 
+            this.progressBar_AD5317R_DAC.Location = new System.Drawing.Point(307, 310);
+            this.progressBar_AD5317R_DAC.Maximum = 1023;
+            this.progressBar_AD5317R_DAC.Name = "progressBar_AD5317R_DAC";
+            this.progressBar_AD5317R_DAC.Size = new System.Drawing.Size(244, 23);
+            this.progressBar_AD5317R_DAC.TabIndex = 24;
             // 
             // comboBoxIC_Select
             // 
@@ -2699,6 +2885,15 @@
             this.label78.TabIndex = 22;
             this.label78.Text = "IC Select";
             // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(7, 270);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(55, 16);
+            this.label81.TabIndex = 23;
+            this.label81.Text = "AD5317R";
+            // 
             // comboBoxIC_Operation
             // 
             this.comboBoxIC_Operation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2713,6 +2908,22 @@
             this.comboBoxIC_Operation.Size = new System.Drawing.Size(93, 25);
             this.comboBoxIC_Operation.TabIndex = 18;
             // 
+            // comboBoxIC_Channel
+            // 
+            this.comboBoxIC_Channel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxIC_Channel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.comboBoxIC_Channel.FormattingEnabled = true;
+            this.comboBoxIC_Channel.Items.AddRange(new object[] {
+            "Channel 1",
+            "Channel 2",
+            "Channel 3",
+            "Channel 4"});
+            this.comboBoxIC_Channel.Location = new System.Drawing.Point(57, 308);
+            this.comboBoxIC_Channel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBoxIC_Channel.Name = "comboBoxIC_Channel";
+            this.comboBoxIC_Channel.Size = new System.Drawing.Size(110, 25);
+            this.comboBoxIC_Channel.TabIndex = 18;
+            // 
             // label77
             // 
             this.label77.AutoSize = true;
@@ -2722,6 +2933,16 @@
             this.label77.Size = new System.Drawing.Size(61, 16);
             this.label77.TabIndex = 23;
             this.label77.Text = "Operation";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(527, 286);
+            this.label83.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(32, 16);
+            this.label83.TabIndex = 20;
+            this.label83.Text = "1023";
             // 
             // label76
             // 
@@ -2743,6 +2964,16 @@
             this.label2.TabIndex = 19;
             this.label2.Text = "Bytes";
             // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(304, 286);
+            this.label82.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(14, 16);
+            this.label82.TabIndex = 20;
+            this.label82.Text = "0";
+            // 
             // numericUpDownIC_RegAddress
             // 
             this.numericUpDownIC_RegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -2757,14 +2988,53 @@
             this.numericUpDownIC_RegAddress.Size = new System.Drawing.Size(59, 23);
             this.numericUpDownIC_RegAddress.TabIndex = 20;
             // 
+            // numericUpDownAD5317R_Data
+            // 
+            this.numericUpDownAD5317R_Data.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDownAD5317R_Data.Location = new System.Drawing.Point(184, 310);
+            this.numericUpDownAD5317R_Data.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownAD5317R_Data.Maximum = new decimal(new int[] {
+            1023,
+            0,
+            0,
+            0});
+            this.numericUpDownAD5317R_Data.Name = "numericUpDownAD5317R_Data";
+            this.numericUpDownAD5317R_Data.Size = new System.Drawing.Size(96, 23);
+            this.numericUpDownAD5317R_Data.TabIndex = 19;
+            // 
             // numericUpDownIC_Bytes
             // 
             this.numericUpDownIC_Bytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownIC_Bytes.Location = new System.Drawing.Point(413, 36);
             this.numericUpDownIC_Bytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownIC_Bytes.Maximum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            0});
             this.numericUpDownIC_Bytes.Name = "numericUpDownIC_Bytes";
             this.numericUpDownIC_Bytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownIC_Bytes.TabIndex = 21;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(83, 284);
+            this.label79.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(51, 16);
+            this.label79.TabIndex = 20;
+            this.label79.Text = "Channel";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(211, 284);
+            this.label80.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(58, 16);
+            this.label80.TabIndex = 21;
+            this.label80.Text = "DAC Data";
             // 
             // tabPageSemtechChip
             // 
@@ -2787,6 +3057,16 @@
             this.tabPageSemtechChip.TabIndex = 8;
             this.tabPageSemtechChip.Text = "SemtechChip";
             this.tabPageSemtechChip.UseVisualStyleBackColor = true;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label55.Location = new System.Drawing.Point(6, 100);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(167, 19);
+            this.label55.TabIndex = 44;
+            this.label55.Text = "Hex data (max 128 bytes)";
             // 
             // dataGridView6
             // 
@@ -2974,6 +3254,11 @@
             this.numericUpDownSemtechChip_Bytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownSemtechChip_Bytes.Location = new System.Drawing.Point(610, 61);
             this.numericUpDownSemtechChip_Bytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownSemtechChip_Bytes.Maximum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            0});
             this.numericUpDownSemtechChip_Bytes.Name = "numericUpDownSemtechChip_Bytes";
             this.numericUpDownSemtechChip_Bytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownSemtechChip_Bytes.TabIndex = 40;
@@ -3165,6 +3450,11 @@
             this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
             this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.numericUpDownBytes.Maximum = new decimal(new int[] {
+            128,
+            0,
+            0,
+            0});
             this.numericUpDownBytes.Name = "numericUpDownBytes";
             this.numericUpDownBytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownBytes.TabIndex = 7;
@@ -3283,40 +3573,40 @@
             // 
             // btnRead_VendorName
             // 
-            this.btnRead_VendorName.Location = new System.Drawing.Point(626, 311);
+            this.btnRead_VendorName.Location = new System.Drawing.Point(626, 303);
             this.btnRead_VendorName.Name = "btnRead_VendorName";
             this.btnRead_VendorName.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_VendorName.TabIndex = 11;
+            this.btnRead_VendorName.TabIndex = 23;
             this.btnRead_VendorName.Text = "Read";
             this.btnRead_VendorName.UseVisualStyleBackColor = true;
             this.btnRead_VendorName.Click += new System.EventHandler(this.btnRead_VendorName_Click);
             // 
             // btnRead_FW_Version
             // 
-            this.btnRead_FW_Version.Location = new System.Drawing.Point(626, 267);
+            this.btnRead_FW_Version.Location = new System.Drawing.Point(626, 259);
             this.btnRead_FW_Version.Name = "btnRead_FW_Version";
             this.btnRead_FW_Version.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_FW_Version.TabIndex = 12;
+            this.btnRead_FW_Version.TabIndex = 24;
             this.btnRead_FW_Version.Text = "Read";
             this.btnRead_FW_Version.UseVisualStyleBackColor = true;
             this.btnRead_FW_Version.Click += new System.EventHandler(this.btnRead_FW_Version_Click);
             // 
             // btnRead_PN
             // 
-            this.btnRead_PN.Location = new System.Drawing.Point(255, 311);
+            this.btnRead_PN.Location = new System.Drawing.Point(255, 303);
             this.btnRead_PN.Name = "btnRead_PN";
             this.btnRead_PN.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_PN.TabIndex = 13;
+            this.btnRead_PN.TabIndex = 25;
             this.btnRead_PN.Text = "Read";
             this.btnRead_PN.UseVisualStyleBackColor = true;
             this.btnRead_PN.Click += new System.EventHandler(this.btnRead_PN_Click);
             // 
             // btnRead_SN
             // 
-            this.btnRead_SN.Location = new System.Drawing.Point(255, 268);
+            this.btnRead_SN.Location = new System.Drawing.Point(255, 260);
             this.btnRead_SN.Name = "btnRead_SN";
             this.btnRead_SN.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_SN.TabIndex = 14;
+            this.btnRead_SN.TabIndex = 26;
             this.btnRead_SN.Text = "Read";
             this.btnRead_SN.UseVisualStyleBackColor = true;
             this.btnRead_SN.Click += new System.EventHandler(this.btnRead_SN_Click);
@@ -3324,341 +3614,92 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 314);
+            this.label1.Location = new System.Drawing.Point(372, 306);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 16);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 19;
             this.label1.Text = "Vendor Name";
             // 
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(372, 271);
+            this.label53.Location = new System.Drawing.Point(372, 263);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(98, 16);
-            this.label53.TabIndex = 8;
+            this.label53.TabIndex = 20;
             this.label53.Text = "Firmware Version";
             // 
             // txtVendorName
             // 
-            this.txtVendorName.Location = new System.Drawing.Point(488, 311);
+            this.txtVendorName.Location = new System.Drawing.Point(488, 303);
             this.txtVendorName.Name = "txtVendorName";
             this.txtVendorName.ReadOnly = true;
             this.txtVendorName.Size = new System.Drawing.Size(100, 22);
-            this.txtVendorName.TabIndex = 3;
+            this.txtVendorName.TabIndex = 15;
             // 
             // txtFW
             // 
-            this.txtFW.Location = new System.Drawing.Point(488, 268);
+            this.txtFW.Location = new System.Drawing.Point(488, 260);
             this.txtFW.Name = "txtFW";
             this.txtFW.ReadOnly = true;
             this.txtFW.Size = new System.Drawing.Size(100, 22);
-            this.txtFW.TabIndex = 4;
+            this.txtFW.TabIndex = 16;
             // 
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(26, 314);
+            this.label52.Location = new System.Drawing.Point(26, 306);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(75, 16);
-            this.label52.TabIndex = 9;
+            this.label52.TabIndex = 21;
             this.label52.Text = "Part Number";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(26, 271);
+            this.label18.Location = new System.Drawing.Point(26, 263);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(82, 16);
-            this.label18.TabIndex = 10;
+            this.label18.TabIndex = 22;
             this.label18.Text = "Serial Number";
             // 
             // txtPN
             // 
-            this.txtPN.Location = new System.Drawing.Point(125, 311);
+            this.txtPN.Location = new System.Drawing.Point(125, 303);
             this.txtPN.Name = "txtPN";
             this.txtPN.ReadOnly = true;
             this.txtPN.Size = new System.Drawing.Size(100, 22);
-            this.txtPN.TabIndex = 5;
+            this.txtPN.TabIndex = 17;
             // 
             // txtSN
             // 
-            this.txtSN.Location = new System.Drawing.Point(125, 268);
+            this.txtSN.Location = new System.Drawing.Point(125, 260);
             this.txtSN.Name = "txtSN";
             this.txtSN.ReadOnly = true;
             this.txtSN.Size = new System.Drawing.Size(100, 22);
-            this.txtSN.TabIndex = 6;
+            this.txtSN.TabIndex = 18;
             // 
-            // label71
+            // radioButtonI2C_Write
             // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label71.Location = new System.Drawing.Point(272, 27);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(198, 19);
-            this.label71.TabIndex = 15;
-            this.label71.Text = "Hex read data (max 128 bytes)";
+            this.radioButtonI2C_Write.AutoSize = true;
+            this.radioButtonI2C_Write.Location = new System.Drawing.Point(413, 14);
+            this.radioButtonI2C_Write.Name = "radioButtonI2C_Write";
+            this.radioButtonI2C_Write.Size = new System.Drawing.Size(54, 20);
+            this.radioButtonI2C_Write.TabIndex = 28;
+            this.radioButtonI2C_Write.Text = "Write";
+            this.radioButtonI2C_Write.UseVisualStyleBackColor = true;
             // 
-            // label54
+            // radioButtonI2C_Read
             // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label54.Location = new System.Drawing.Point(241, 28);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(250, 19);
-            this.label54.TabIndex = 2;
-            this.label54.Text = "Hex data to be written (max 128 bytes)";
-            // 
-            // numericUpDownAD5317R_Data
-            // 
-            this.numericUpDownAD5317R_Data.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownAD5317R_Data.Location = new System.Drawing.Point(184, 310);
-            this.numericUpDownAD5317R_Data.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownAD5317R_Data.Maximum = new decimal(new int[] {
-            1023,
-            0,
-            0,
-            0});
-            this.numericUpDownAD5317R_Data.Name = "numericUpDownAD5317R_Data";
-            this.numericUpDownAD5317R_Data.Size = new System.Drawing.Size(96, 23);
-            this.numericUpDownAD5317R_Data.TabIndex = 19;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(211, 284);
-            this.label80.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(58, 16);
-            this.label80.TabIndex = 21;
-            this.label80.Text = "DAC Data";
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(83, 284);
-            this.label79.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(51, 16);
-            this.label79.TabIndex = 20;
-            this.label79.Text = "Channel";
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(304, 286);
-            this.label82.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(14, 16);
-            this.label82.TabIndex = 20;
-            this.label82.Text = "0";
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(527, 286);
-            this.label83.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(32, 16);
-            this.label83.TabIndex = 20;
-            this.label83.Text = "1023";
-            // 
-            // comboBoxIC_Channel
-            // 
-            this.comboBoxIC_Channel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxIC_Channel.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.comboBoxIC_Channel.FormattingEnabled = true;
-            this.comboBoxIC_Channel.Items.AddRange(new object[] {
-            "Channel 1",
-            "Channel 2",
-            "Channel 3",
-            "Channel 4"});
-            this.comboBoxIC_Channel.Location = new System.Drawing.Point(57, 308);
-            this.comboBoxIC_Channel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.comboBoxIC_Channel.Name = "comboBoxIC_Channel";
-            this.comboBoxIC_Channel.Size = new System.Drawing.Size(110, 25);
-            this.comboBoxIC_Channel.TabIndex = 18;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(7, 270);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(55, 16);
-            this.label81.TabIndex = 23;
-            this.label81.Text = "AD5317R";
-            // 
-            // progressBar_AD5317R_DAC
-            // 
-            this.progressBar_AD5317R_DAC.Location = new System.Drawing.Point(307, 310);
-            this.progressBar_AD5317R_DAC.Maximum = 1023;
-            this.progressBar_AD5317R_DAC.Name = "progressBar_AD5317R_DAC";
-            this.progressBar_AD5317R_DAC.Size = new System.Drawing.Size(244, 23);
-            this.progressBar_AD5317R_DAC.TabIndex = 24;
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AllowUserToResizeColumns = false;
-            this.dataGridView5.AllowUserToResizeRows = false;
-            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn49,
-            this.dataGridViewTextBoxColumn50,
-            this.dataGridViewTextBoxColumn51,
-            this.dataGridViewTextBoxColumn52,
-            this.dataGridViewTextBoxColumn53,
-            this.dataGridViewTextBoxColumn54,
-            this.dataGridViewTextBoxColumn55,
-            this.dataGridViewTextBoxColumn56,
-            this.dataGridViewTextBoxColumn57,
-            this.dataGridViewTextBoxColumn58,
-            this.dataGridViewTextBoxColumn59,
-            this.dataGridViewTextBoxColumn60,
-            this.dataGridViewTextBoxColumn61,
-            this.dataGridViewTextBoxColumn62,
-            this.dataGridViewTextBoxColumn63,
-            this.dataGridViewTextBoxColumn64});
-            this.dataGridView5.Location = new System.Drawing.Point(-1, 73);
-            this.dataGridView5.MultiSelect = false;
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersVisible = false;
-            this.dataGridView5.RowHeadersWidth = 50;
-            this.dataGridView5.Size = new System.Drawing.Size(736, 186);
-            this.dataGridView5.TabIndex = 14;
-            this.dataGridView5.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellEndEdit);
-            // 
-            // dataGridViewTextBoxColumn64
-            // 
-            this.dataGridViewTextBoxColumn64.Frozen = true;
-            this.dataGridViewTextBoxColumn64.HeaderText = "F";
-            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
-            this.dataGridViewTextBoxColumn64.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn63
-            // 
-            this.dataGridViewTextBoxColumn63.Frozen = true;
-            this.dataGridViewTextBoxColumn63.HeaderText = "E";
-            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
-            this.dataGridViewTextBoxColumn63.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn62
-            // 
-            this.dataGridViewTextBoxColumn62.Frozen = true;
-            this.dataGridViewTextBoxColumn62.HeaderText = "D";
-            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
-            this.dataGridViewTextBoxColumn62.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn61
-            // 
-            this.dataGridViewTextBoxColumn61.Frozen = true;
-            this.dataGridViewTextBoxColumn61.HeaderText = "C";
-            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
-            this.dataGridViewTextBoxColumn61.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn60
-            // 
-            this.dataGridViewTextBoxColumn60.Frozen = true;
-            this.dataGridViewTextBoxColumn60.HeaderText = "B";
-            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
-            this.dataGridViewTextBoxColumn60.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn59
-            // 
-            this.dataGridViewTextBoxColumn59.Frozen = true;
-            this.dataGridViewTextBoxColumn59.HeaderText = "A";
-            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
-            this.dataGridViewTextBoxColumn59.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn58
-            // 
-            this.dataGridViewTextBoxColumn58.Frozen = true;
-            this.dataGridViewTextBoxColumn58.HeaderText = "9";
-            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
-            this.dataGridViewTextBoxColumn58.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn57
-            // 
-            this.dataGridViewTextBoxColumn57.Frozen = true;
-            this.dataGridViewTextBoxColumn57.HeaderText = "8";
-            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            this.dataGridViewTextBoxColumn57.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn56
-            // 
-            this.dataGridViewTextBoxColumn56.Frozen = true;
-            this.dataGridViewTextBoxColumn56.HeaderText = "7";
-            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            this.dataGridViewTextBoxColumn56.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn55
-            // 
-            this.dataGridViewTextBoxColumn55.Frozen = true;
-            this.dataGridViewTextBoxColumn55.HeaderText = "6";
-            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
-            this.dataGridViewTextBoxColumn55.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn54
-            // 
-            this.dataGridViewTextBoxColumn54.Frozen = true;
-            this.dataGridViewTextBoxColumn54.HeaderText = "5";
-            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-            this.dataGridViewTextBoxColumn54.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn53
-            // 
-            this.dataGridViewTextBoxColumn53.Frozen = true;
-            this.dataGridViewTextBoxColumn53.HeaderText = "4";
-            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-            this.dataGridViewTextBoxColumn53.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn52
-            // 
-            this.dataGridViewTextBoxColumn52.Frozen = true;
-            this.dataGridViewTextBoxColumn52.HeaderText = "3";
-            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-            this.dataGridViewTextBoxColumn52.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn51
-            // 
-            this.dataGridViewTextBoxColumn51.Frozen = true;
-            this.dataGridViewTextBoxColumn51.HeaderText = "2";
-            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-            this.dataGridViewTextBoxColumn51.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn50
-            // 
-            this.dataGridViewTextBoxColumn50.Frozen = true;
-            this.dataGridViewTextBoxColumn50.HeaderText = "1";
-            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            this.dataGridViewTextBoxColumn50.Width = 46;
-            // 
-            // dataGridViewTextBoxColumn49
-            // 
-            this.dataGridViewTextBoxColumn49.Frozen = true;
-            this.dataGridViewTextBoxColumn49.HeaderText = "0";
-            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-            this.dataGridViewTextBoxColumn49.Width = 46;
-            // 
-            // btnAD5371R_Set
-            // 
-            this.btnAD5371R_Set.Location = new System.Drawing.Point(607, 310);
-            this.btnAD5371R_Set.Name = "btnAD5371R_Set";
-            this.btnAD5371R_Set.Size = new System.Drawing.Size(75, 23);
-            this.btnAD5371R_Set.TabIndex = 27;
-            this.btnAD5371R_Set.Text = "Set";
-            this.btnAD5371R_Set.UseVisualStyleBackColor = true;
-            this.btnAD5371R_Set.Click += new System.EventHandler(this.btnAD5371R_Set_Click);
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label55.Location = new System.Drawing.Point(6, 100);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(167, 19);
-            this.label55.TabIndex = 44;
-            this.label55.Text = "Hex data (max 128 bytes)";
+            this.radioButtonI2C_Read.AutoSize = true;
+            this.radioButtonI2C_Read.Checked = true;
+            this.radioButtonI2C_Read.Location = new System.Drawing.Point(255, 14);
+            this.radioButtonI2C_Read.Name = "radioButtonI2C_Read";
+            this.radioButtonI2C_Read.Size = new System.Drawing.Size(52, 20);
+            this.radioButtonI2C_Read.TabIndex = 27;
+            this.radioButtonI2C_Read.TabStop = true;
+            this.radioButtonI2C_Read.Text = "Read";
+            this.radioButtonI2C_Read.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -3744,12 +3785,14 @@
             this.tabpageI2CRead.ResumeLayout(false);
             this.tabpageI2CRead.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPageI2CWrite.ResumeLayout(false);
-            this.tabPageI2CWrite.PerformLayout();
+            this.tabPageI2C_Operation.ResumeLayout(false);
+            this.tabPageI2C_Operation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPageIC.ResumeLayout(false);
             this.tabPageIC.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).EndInit();
             this.tabPageSemtechChip.ResumeLayout(false);
             this.tabPageSemtechChip.PerformLayout();
@@ -3764,8 +3807,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3801,7 +3842,7 @@
         private System.Windows.Forms.TabPage tabpageChOnOff;
         private System.Windows.Forms.TabPage tabpageDMIADC;
         private System.Windows.Forms.TabPage tabpageI2CRead;
-        private System.Windows.Forms.TabPage tabPageI2CWrite;
+        private System.Windows.Forms.TabPage tabPageI2C_Operation;
         private System.Windows.Forms.TabPage tabpageAlarmWarning;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel6;
@@ -4034,18 +4075,6 @@
         private System.Windows.Forms.ComboBox comboBoxSemtechChip_Operation;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Button btnRead_VendorName;
-        private System.Windows.Forms.Button btnRead_FW_Version;
-        private System.Windows.Forms.Button btnRead_PN;
-        private System.Windows.Forms.Button btnRead_SN;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox txtVendorName;
-        private System.Windows.Forms.TextBox txtFW;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtPN;
-        private System.Windows.Forms.TextBox txtSN;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.DataGridView dataGridView5;
@@ -4075,6 +4104,20 @@
         private System.Windows.Forms.Label label80;
         private System.Windows.Forms.Button btnAD5371R_Set;
         private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Button btnRead_VendorName;
+        private System.Windows.Forms.Button btnRead_FW_Version;
+        private System.Windows.Forms.Button btnRead_PN;
+        private System.Windows.Forms.Button btnRead_SN;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox txtVendorName;
+        private System.Windows.Forms.TextBox txtFW;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtPN;
+        private System.Windows.Forms.TextBox txtSN;
+        private System.Windows.Forms.RadioButton radioButtonI2C_Write;
+        private System.Windows.Forms.RadioButton radioButtonI2C_Read;
     }
 }
 
