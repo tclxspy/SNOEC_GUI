@@ -84,8 +84,8 @@ namespace SNOEC_USB_I2C
             {
                 return null;
             }
-
-            if (buffer.Length <= 56)
+            const int subpackage = 56;//USB虚拟串口一次只能穿64个字节,减去8个字节的格式位，所以一次传送56个数据
+            if (buffer.Length <= subpackage)
             {
                 for (int count = 0; count < 3; count++)
                 {
@@ -100,18 +100,19 @@ namespace SNOEC_USB_I2C
 
             //USB虚拟串口一次只能穿64个字节,减去8个字节的格式位，所以一次传送56个数据
             byte[] readBytes = new byte[buffer.Length];
-            int cycles = buffer.Length / 56;
-            int left = buffer.Length % 56;
+            int cycles = buffer.Length / subpackage;
+            int left = buffer.Length % subpackage;
             byte[] buff;
             int i = 0;
 
             for (; i < cycles; i++)
             {
-                buff = new byte[56];
-                Array.Copy(buffer, i * 56, buff, 0, 56);
+                buff = new byte[subpackage];
+                Array.Copy(buffer, i * subpackage, buff, 0, subpackage);
                 for (int count = 0; count < 3; count++)
                 {
-                    byte[] buf = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * 56, regAddressWide, ReadWrite.Write, buff);
+                    Thread.Sleep(300);
+                    byte[] buf = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * subpackage, regAddressWide, ReadWrite.Write, buff);
                     if (buf != null)
                     {
                         break;
@@ -120,10 +121,11 @@ namespace SNOEC_USB_I2C
             }
 
             buff = new byte[left];
-            Array.Copy(buffer, i * 56, buff, 0, left);
+            Array.Copy(buffer, i * subpackage, buff, 0, left);
             for (int count = 0; count < 3; count++)
             {
-                buff = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * 56, regAddressWide, ReadWrite.Write, buff);
+                Thread.Sleep(300);
+                buff = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * subpackage, regAddressWide, ReadWrite.Write, buff);
                 if (buff != null)
                 {
                     break;
