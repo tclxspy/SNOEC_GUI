@@ -237,7 +237,10 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
-            this.tabpageI2CRead = new System.Windows.Forms.TabPage();
+            this.tabpageSetting = new System.Windows.Forms.TabPage();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtSettingFilePath = new System.Windows.Forms.TextBox();
+            this.btnLoadSetting = new System.Windows.Forms.Button();
             this.label71 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -257,6 +260,20 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageI2C_Operation = new System.Windows.Forms.TabPage();
+            this.radioButtonI2C_Write = new System.Windows.Forms.RadioButton();
+            this.radioButtonI2C_Read = new System.Windows.Forms.RadioButton();
+            this.btnRead_VendorName = new System.Windows.Forms.Button();
+            this.btnRead_FW_Version = new System.Windows.Forms.Button();
+            this.btnRead_PN = new System.Windows.Forms.Button();
+            this.btnRead_SN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtVendorName = new System.Windows.Forms.TextBox();
+            this.txtFW = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPN = new System.Windows.Forms.TextBox();
+            this.txtSN = new System.Windows.Forms.TextBox();
             this.label54 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -359,20 +376,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.btnRead_VendorName = new System.Windows.Forms.Button();
-            this.btnRead_FW_Version = new System.Windows.Forms.Button();
-            this.btnRead_PN = new System.Windows.Forms.Button();
-            this.btnRead_SN = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.txtVendorName = new System.Windows.Forms.TextBox();
-            this.txtFW = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtPN = new System.Windows.Forms.TextBox();
-            this.txtSN = new System.Windows.Forms.TextBox();
-            this.radioButtonI2C_Write = new System.Windows.Forms.RadioButton();
-            this.radioButtonI2C_Read = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -427,7 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.tabpageI2CRead.SuspendLayout();
+            this.tabpageSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPageI2C_Operation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -600,10 +603,10 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabpageSetting);
             this.tabControl1.Controls.Add(this.tabpageChOnOff);
             this.tabControl1.Controls.Add(this.tabpageDMIADC);
             this.tabControl1.Controls.Add(this.tabpageAlarmWarning);
-            this.tabControl1.Controls.Add(this.tabpageI2CRead);
             this.tabControl1.Controls.Add(this.tabPageI2C_Operation);
             this.tabControl1.Controls.Add(this.tabPageIC);
             this.tabControl1.Controls.Add(this.tabPageSemtechChip);
@@ -2284,17 +2287,47 @@
             this.label70.TabIndex = 4;
             this.label70.Text = "CH1";
             // 
-            // tabpageI2CRead
+            // tabpageSetting
             // 
-            this.tabpageI2CRead.Controls.Add(this.label71);
-            this.tabpageI2CRead.Controls.Add(this.dataGridView1);
-            this.tabpageI2CRead.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabpageI2CRead.Location = new System.Drawing.Point(4, 25);
-            this.tabpageI2CRead.Name = "tabpageI2CRead";
-            this.tabpageI2CRead.Size = new System.Drawing.Size(736, 351);
-            this.tabpageI2CRead.TabIndex = 3;
-            this.tabpageI2CRead.Text = "I2C Read";
-            this.tabpageI2CRead.UseVisualStyleBackColor = true;
+            this.tabpageSetting.Controls.Add(this.btnBrowse);
+            this.tabpageSetting.Controls.Add(this.txtSettingFilePath);
+            this.tabpageSetting.Controls.Add(this.btnLoadSetting);
+            this.tabpageSetting.Controls.Add(this.label71);
+            this.tabpageSetting.Controls.Add(this.dataGridView1);
+            this.tabpageSetting.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageSetting.Location = new System.Drawing.Point(4, 25);
+            this.tabpageSetting.Name = "tabpageSetting";
+            this.tabpageSetting.Size = new System.Drawing.Size(736, 351);
+            this.tabpageSetting.TabIndex = 3;
+            this.tabpageSetting.Text = "SETTING";
+            this.tabpageSetting.UseVisualStyleBackColor = true;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(10, 277);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.TabIndex = 29;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // txtSettingFilePath
+            // 
+            this.txtSettingFilePath.Location = new System.Drawing.Point(106, 278);
+            this.txtSettingFilePath.Name = "txtSettingFilePath";
+            this.txtSettingFilePath.Size = new System.Drawing.Size(509, 22);
+            this.txtSettingFilePath.TabIndex = 28;
+            // 
+            // btnLoadSetting
+            // 
+            this.btnLoadSetting.Location = new System.Drawing.Point(641, 277);
+            this.btnLoadSetting.Name = "btnLoadSetting";
+            this.btnLoadSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadSetting.TabIndex = 27;
+            this.btnLoadSetting.Text = "Load";
+            this.btnLoadSetting.UseVisualStyleBackColor = true;
+            this.btnLoadSetting.Click += new System.EventHandler(this.btnLoadSetting_Click);
             // 
             // label71
             // 
@@ -2490,6 +2523,136 @@
             this.tabPageI2C_Operation.TabIndex = 4;
             this.tabPageI2C_Operation.Text = "I2C Operation";
             this.tabPageI2C_Operation.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonI2C_Write
+            // 
+            this.radioButtonI2C_Write.AutoSize = true;
+            this.radioButtonI2C_Write.Location = new System.Drawing.Point(413, 14);
+            this.radioButtonI2C_Write.Name = "radioButtonI2C_Write";
+            this.radioButtonI2C_Write.Size = new System.Drawing.Size(54, 20);
+            this.radioButtonI2C_Write.TabIndex = 28;
+            this.radioButtonI2C_Write.Text = "Write";
+            this.radioButtonI2C_Write.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonI2C_Read
+            // 
+            this.radioButtonI2C_Read.AutoSize = true;
+            this.radioButtonI2C_Read.Checked = true;
+            this.radioButtonI2C_Read.Location = new System.Drawing.Point(255, 14);
+            this.radioButtonI2C_Read.Name = "radioButtonI2C_Read";
+            this.radioButtonI2C_Read.Size = new System.Drawing.Size(52, 20);
+            this.radioButtonI2C_Read.TabIndex = 27;
+            this.radioButtonI2C_Read.TabStop = true;
+            this.radioButtonI2C_Read.Text = "Read";
+            this.radioButtonI2C_Read.UseVisualStyleBackColor = true;
+            // 
+            // btnRead_VendorName
+            // 
+            this.btnRead_VendorName.Location = new System.Drawing.Point(626, 303);
+            this.btnRead_VendorName.Name = "btnRead_VendorName";
+            this.btnRead_VendorName.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_VendorName.TabIndex = 23;
+            this.btnRead_VendorName.Text = "Read";
+            this.btnRead_VendorName.UseVisualStyleBackColor = true;
+            this.btnRead_VendorName.Click += new System.EventHandler(this.btnRead_VendorName_Click);
+            // 
+            // btnRead_FW_Version
+            // 
+            this.btnRead_FW_Version.Location = new System.Drawing.Point(626, 259);
+            this.btnRead_FW_Version.Name = "btnRead_FW_Version";
+            this.btnRead_FW_Version.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_FW_Version.TabIndex = 24;
+            this.btnRead_FW_Version.Text = "Read";
+            this.btnRead_FW_Version.UseVisualStyleBackColor = true;
+            this.btnRead_FW_Version.Click += new System.EventHandler(this.btnRead_FW_Version_Click);
+            // 
+            // btnRead_PN
+            // 
+            this.btnRead_PN.Location = new System.Drawing.Point(255, 303);
+            this.btnRead_PN.Name = "btnRead_PN";
+            this.btnRead_PN.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_PN.TabIndex = 25;
+            this.btnRead_PN.Text = "Read";
+            this.btnRead_PN.UseVisualStyleBackColor = true;
+            this.btnRead_PN.Click += new System.EventHandler(this.btnRead_PN_Click);
+            // 
+            // btnRead_SN
+            // 
+            this.btnRead_SN.Location = new System.Drawing.Point(255, 260);
+            this.btnRead_SN.Name = "btnRead_SN";
+            this.btnRead_SN.Size = new System.Drawing.Size(75, 23);
+            this.btnRead_SN.TabIndex = 26;
+            this.btnRead_SN.Text = "Read";
+            this.btnRead_SN.UseVisualStyleBackColor = true;
+            this.btnRead_SN.Click += new System.EventHandler(this.btnRead_SN_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(372, 306);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Vendor Name";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(372, 263);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(98, 16);
+            this.label53.TabIndex = 20;
+            this.label53.Text = "Firmware Version";
+            // 
+            // txtVendorName
+            // 
+            this.txtVendorName.Location = new System.Drawing.Point(488, 303);
+            this.txtVendorName.Name = "txtVendorName";
+            this.txtVendorName.ReadOnly = true;
+            this.txtVendorName.Size = new System.Drawing.Size(100, 22);
+            this.txtVendorName.TabIndex = 15;
+            // 
+            // txtFW
+            // 
+            this.txtFW.Location = new System.Drawing.Point(488, 260);
+            this.txtFW.Name = "txtFW";
+            this.txtFW.ReadOnly = true;
+            this.txtFW.Size = new System.Drawing.Size(100, 22);
+            this.txtFW.TabIndex = 16;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(26, 306);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(75, 16);
+            this.label52.TabIndex = 21;
+            this.label52.Text = "Part Number";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(26, 263);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(82, 16);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "Serial Number";
+            // 
+            // txtPN
+            // 
+            this.txtPN.Location = new System.Drawing.Point(125, 303);
+            this.txtPN.Name = "txtPN";
+            this.txtPN.ReadOnly = true;
+            this.txtPN.Size = new System.Drawing.Size(100, 22);
+            this.txtPN.TabIndex = 17;
+            // 
+            // txtSN
+            // 
+            this.txtSN.Location = new System.Drawing.Point(125, 260);
+            this.txtSN.Name = "txtSN";
+            this.txtSN.ReadOnly = true;
+            this.txtSN.Size = new System.Drawing.Size(100, 22);
+            this.txtSN.TabIndex = 18;
             // 
             // label54
             // 
@@ -3571,136 +3734,6 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
             // 
-            // btnRead_VendorName
-            // 
-            this.btnRead_VendorName.Location = new System.Drawing.Point(626, 303);
-            this.btnRead_VendorName.Name = "btnRead_VendorName";
-            this.btnRead_VendorName.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_VendorName.TabIndex = 23;
-            this.btnRead_VendorName.Text = "Read";
-            this.btnRead_VendorName.UseVisualStyleBackColor = true;
-            this.btnRead_VendorName.Click += new System.EventHandler(this.btnRead_VendorName_Click);
-            // 
-            // btnRead_FW_Version
-            // 
-            this.btnRead_FW_Version.Location = new System.Drawing.Point(626, 259);
-            this.btnRead_FW_Version.Name = "btnRead_FW_Version";
-            this.btnRead_FW_Version.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_FW_Version.TabIndex = 24;
-            this.btnRead_FW_Version.Text = "Read";
-            this.btnRead_FW_Version.UseVisualStyleBackColor = true;
-            this.btnRead_FW_Version.Click += new System.EventHandler(this.btnRead_FW_Version_Click);
-            // 
-            // btnRead_PN
-            // 
-            this.btnRead_PN.Location = new System.Drawing.Point(255, 303);
-            this.btnRead_PN.Name = "btnRead_PN";
-            this.btnRead_PN.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_PN.TabIndex = 25;
-            this.btnRead_PN.Text = "Read";
-            this.btnRead_PN.UseVisualStyleBackColor = true;
-            this.btnRead_PN.Click += new System.EventHandler(this.btnRead_PN_Click);
-            // 
-            // btnRead_SN
-            // 
-            this.btnRead_SN.Location = new System.Drawing.Point(255, 260);
-            this.btnRead_SN.Name = "btnRead_SN";
-            this.btnRead_SN.Size = new System.Drawing.Size(75, 23);
-            this.btnRead_SN.TabIndex = 26;
-            this.btnRead_SN.Text = "Read";
-            this.btnRead_SN.UseVisualStyleBackColor = true;
-            this.btnRead_SN.Click += new System.EventHandler(this.btnRead_SN_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(372, 306);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 16);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Vendor Name";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(372, 263);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(98, 16);
-            this.label53.TabIndex = 20;
-            this.label53.Text = "Firmware Version";
-            // 
-            // txtVendorName
-            // 
-            this.txtVendorName.Location = new System.Drawing.Point(488, 303);
-            this.txtVendorName.Name = "txtVendorName";
-            this.txtVendorName.ReadOnly = true;
-            this.txtVendorName.Size = new System.Drawing.Size(100, 22);
-            this.txtVendorName.TabIndex = 15;
-            // 
-            // txtFW
-            // 
-            this.txtFW.Location = new System.Drawing.Point(488, 260);
-            this.txtFW.Name = "txtFW";
-            this.txtFW.ReadOnly = true;
-            this.txtFW.Size = new System.Drawing.Size(100, 22);
-            this.txtFW.TabIndex = 16;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(26, 306);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(75, 16);
-            this.label52.TabIndex = 21;
-            this.label52.Text = "Part Number";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(26, 263);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 16);
-            this.label18.TabIndex = 22;
-            this.label18.Text = "Serial Number";
-            // 
-            // txtPN
-            // 
-            this.txtPN.Location = new System.Drawing.Point(125, 303);
-            this.txtPN.Name = "txtPN";
-            this.txtPN.ReadOnly = true;
-            this.txtPN.Size = new System.Drawing.Size(100, 22);
-            this.txtPN.TabIndex = 17;
-            // 
-            // txtSN
-            // 
-            this.txtSN.Location = new System.Drawing.Point(125, 260);
-            this.txtSN.Name = "txtSN";
-            this.txtSN.ReadOnly = true;
-            this.txtSN.Size = new System.Drawing.Size(100, 22);
-            this.txtSN.TabIndex = 18;
-            // 
-            // radioButtonI2C_Write
-            // 
-            this.radioButtonI2C_Write.AutoSize = true;
-            this.radioButtonI2C_Write.Location = new System.Drawing.Point(413, 14);
-            this.radioButtonI2C_Write.Name = "radioButtonI2C_Write";
-            this.radioButtonI2C_Write.Size = new System.Drawing.Size(54, 20);
-            this.radioButtonI2C_Write.TabIndex = 28;
-            this.radioButtonI2C_Write.Text = "Write";
-            this.radioButtonI2C_Write.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonI2C_Read
-            // 
-            this.radioButtonI2C_Read.AutoSize = true;
-            this.radioButtonI2C_Read.Checked = true;
-            this.radioButtonI2C_Read.Location = new System.Drawing.Point(255, 14);
-            this.radioButtonI2C_Read.Name = "radioButtonI2C_Read";
-            this.radioButtonI2C_Read.Size = new System.Drawing.Size(52, 20);
-            this.radioButtonI2C_Read.TabIndex = 27;
-            this.radioButtonI2C_Read.TabStop = true;
-            this.radioButtonI2C_Read.Text = "Read";
-            this.radioButtonI2C_Read.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -3782,8 +3815,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.tabpageI2CRead.ResumeLayout(false);
-            this.tabpageI2CRead.PerformLayout();
+            this.tabpageSetting.ResumeLayout(false);
+            this.tabpageSetting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPageI2C_Operation.ResumeLayout(false);
             this.tabPageI2C_Operation.PerformLayout();
@@ -3841,7 +3874,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabpageChOnOff;
         private System.Windows.Forms.TabPage tabpageDMIADC;
-        private System.Windows.Forms.TabPage tabpageI2CRead;
+        private System.Windows.Forms.TabPage tabpageSetting;
         private System.Windows.Forms.TabPage tabPageI2C_Operation;
         private System.Windows.Forms.TabPage tabpageAlarmWarning;
         private System.Windows.Forms.Label label23;
@@ -4118,6 +4151,9 @@
         private System.Windows.Forms.TextBox txtSN;
         private System.Windows.Forms.RadioButton radioButtonI2C_Write;
         private System.Windows.Forms.RadioButton radioButtonI2C_Read;
+        private System.Windows.Forms.Button btnLoadSetting;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.TextBox txtSettingFilePath;
     }
 }
 
