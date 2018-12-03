@@ -89,6 +89,8 @@ namespace SNOEC_USB_I2C
             {
                 for (int count = 0; count < 3; count++)
                 {
+                    //Thread.Sleep(300);
+                    Thread.Sleep(50);
                     byte[] buf = ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, ReadWrite.Write, buffer);
                     if (buf != null)
                     {
@@ -111,7 +113,7 @@ namespace SNOEC_USB_I2C
                 Array.Copy(buffer, i * subpackage, buff, 0, subpackage);
                 for (int count = 0; count < 3; count++)
                 {
-                    Thread.Sleep(300);
+                    Thread.Sleep(500);
                     byte[] buf = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * subpackage, regAddressWide, ReadWrite.Write, buff);
                     if (buf != null)
                     {
@@ -124,7 +126,7 @@ namespace SNOEC_USB_I2C
             Array.Copy(buffer, i * subpackage, buff, 0, left);
             for (int count = 0; count < 3; count++)
             {
-                Thread.Sleep(300);
+                Thread.Sleep(500);
                 buff = ReadWriteReg(deviceIndex, deviceAddress, regAddress + i * subpackage, regAddressWide, ReadWrite.Write, buff);
                 if (buff != null)
                 {
