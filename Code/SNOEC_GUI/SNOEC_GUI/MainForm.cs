@@ -259,9 +259,9 @@ namespace SNOEC_GUI
 
 
 
-                if (this.tabControl1.SelectedTab.ToString().Contains("I2C Read"))
+                if (this.tabControl1.SelectedTab.ToString().Contains("SETTING"))
                 {
-                    this.I2C_Read();
+                    //this.I2C_Read();
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("I2C Operation"))
@@ -525,7 +525,7 @@ namespace SNOEC_GUI
             byte value_map_address_chip_control_reg_write_data = 0;
             byte value_map_address_chip_control_reg_write_trigger = 0;
 
-            if (this.comboBoxSemtechChip_Select.SelectedIndex==0)
+            if (this.comboBoxSemtechChip_Select.SelectedIndex == 0)
             {
                 map_address_chip_control_regAddress_MSB = 0x80;
                 map_address_chip_control_regAddress_LSB = 0x81;
@@ -670,7 +670,7 @@ namespace SNOEC_GUI
 
             value_map_address_chip_control_regAddress_MSB = (byte)this.numericUpDownSemtechChip_Page.Value;
             value_map_address_chip_control_regAddress_LSB = (byte)this.numericUpDownSemtechChip_Address.Value;
-            value_map_address_chip_control_reg_data_length= (byte)this.numericUpDownSemtechChip_Bytes.Value;
+            value_map_address_chip_control_reg_data_length = (byte)this.numericUpDownSemtechChip_Bytes.Value;
             byte[] buffer = new byte[(int)this.numericUpDownSemtechChip_Bytes.Value];
 
             if (this.comboBoxSemtechChip_Operation.SelectedIndex == 0)//read
@@ -695,7 +695,7 @@ namespace SNOEC_GUI
                     }
                     else
                     {
-                        buffer = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_update_chip_reg_page_start  + value_map_address_chip_control_regAddress_MSB, value_map_address_chip_control_regAddress_LSB + 0x80, buffer.Length);
+                        buffer = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_update_chip_reg_page_start + value_map_address_chip_control_regAddress_MSB, value_map_address_chip_control_regAddress_LSB + 0x80, buffer.Length);
                     }
 
                     if (buffer == null)
@@ -785,9 +785,10 @@ namespace SNOEC_GUI
             try
             {
                 this.labelTitle.Text = "QSFP28 SR4 GUI";
-                string strFileSourse = Application.StartupPath + @"\Map\" + "QSFP28_SR4_Map" + ".xlsx";
-                dataTable_DUTCoeffControlByPN = new DUTCoeffControlByPN(GetExcelTable(strFileSourse));
-                dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
+                //string strFileSourse = Application.StartupPath + @"\Map\" + "QSFP28_SR4_Map" + ".xlsx";
+                //dataTable_DUTCoeffControlByPN = new DUTCoeffControlByPN(GetExcelTable(strFileSourse));
+                //dut = new QSFP28_SNOEC(dataTable_DUTCoeffControlByPN);
+                dut = new QSFP28_SNOEC();
                 this.tabControl1.SelectedIndex = 6;
             }
             catch (Exception ex)
@@ -1124,6 +1125,14 @@ namespace SNOEC_GUI
                 GC.Collect();
                 GC.WaitForPendingFinalizers();
 
+                //add to kill excel.exe -nicholas 20181128
+                foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName("Excel"))
+                {
+                    if (string.IsNullOrEmpty(p.MainWindowTitle))
+                    {
+                        p.Kill();
+                    }
+                }
 
                 return dt;
             }
@@ -1364,6 +1373,95 @@ namespace SNOEC_GUI
         {
             AD5317R_SetValue((ushort)this.numericUpDownAD5317R_Data.Value);
             this.progressBar_AD5317R_DAC.Value = (int)this.numericUpDownAD5317R_Data.Value;
+        }
+
+        private void btnLoadSetting_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.btnLoadSetting.Enabled = false;
+                this.btnLoadSetting.BackColor = Color.Yellow;
+                this.btnLoadSetting.Refresh();
+
+                if (this.txtSettingFilePath.Text == "")
+                {
+                    return;
+                }
+
+                DirectoryInfo directoryInfo = Directory.GetParent(this.txtSettingFilePath.Text);
+                if (!directoryInfo.Exists)
+                {
+                    MessageBox.Show("File is no exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnLoadSetting.Enabled = true;
+                    this.btnLoadSetting.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                DataTable setting_table = this.GetExcelTable(this.txtSettingFilePath.Text);
+                int cycles = setting_table.Rows.Count / 8;
+
+                byte[] buff = new byte[128];
+                int i = 0;
+                for (int row = 0; row < setting_table.Rows.Count; row++)
+                {
+                    for (int colunm = 0; colunm < 16; colunm++)
+                    {
+                        object ob = setting_table.Rows[row][colunm + 1].ToString();
+                        if (ob == null)
+                        {
+                            this.btnLoadSetting.Enabled = true;
+                            this.btnLoadSetting.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        buff[i++] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                    }
+                    if (i == 128)
+                    {
+                        i = 0;
+                        object ob = setting_table.Rows[row - 7][0].ToString();
+                        if (ob == null)
+                        {
+                            this.btnLoadSetting.Enabled = true;
+                            this.btnLoadSetting.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        short page_addr = short.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                        byte page_num = (byte)((page_addr >> 8) & 0xFF);
+                        byte addr_start = (byte)(page_addr & 0xFF);
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, page_num, addr_start, buff);
+                    }
+
+                }
+
+                this.btnLoadSetting.Enabled = true;
+                this.btnLoadSetting.BackColor = SystemColors.Control;
+                MessageBox.Show("Done", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string settingFilePath = Application.StartupPath + @"\Set\" + "setting" + ".xlsx";
+
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Multiselect = true;//该值确定是否可以选择多个文件
+                dialog.Title = "请选择文件夹";
+                dialog.Filter = "EXCEL文件|*.xlsx";
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.txtSettingFilePath.Text = dialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "file path error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

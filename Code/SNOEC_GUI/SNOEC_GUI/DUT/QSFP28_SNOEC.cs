@@ -28,6 +28,10 @@ namespace SNOEC_GUI
             this.dataTable_DUTCoeffControlByPN = tabe;
         }
 
+        public QSFP28_SNOEC()
+        {
+        }
+
         private void EnterEngMode(int page)
         {
             if (company == Company.Inno)
