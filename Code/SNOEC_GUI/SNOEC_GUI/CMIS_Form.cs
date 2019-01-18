@@ -1043,6 +1043,95 @@ namespace SNOEC_GUI
                 MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnLoadSetting_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.btnLoadSetting.Enabled = false;
+                this.btnLoadSetting.BackColor = Color.Yellow;
+                this.btnLoadSetting.Refresh();
+
+                if (this.txtSettingFilePath.Text == "")
+                {
+                    return;
+                }
+
+                DirectoryInfo directoryInfo = Directory.GetParent(this.txtSettingFilePath.Text);
+                if (!directoryInfo.Exists)
+                {
+                    MessageBox.Show("File is no exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnLoadSetting.Enabled = true;
+                    this.btnLoadSetting.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                DataTable setting_table = this.GetExcelTable(this.txtSettingFilePath.Text);
+                int cycles = setting_table.Rows.Count / 8;
+
+                byte[] buff = new byte[128];
+                int i = 0;
+                for (int row = 0; row < setting_table.Rows.Count; row++)
+                {
+                    for (int colunm = 0; colunm < 16; colunm++)
+                    {
+                        object ob = setting_table.Rows[row][colunm + 1].ToString();
+                        if (ob == null)
+                        {
+                            this.btnLoadSetting.Enabled = true;
+                            this.btnLoadSetting.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        buff[i++] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                    }
+                    if (i == 128)
+                    {
+                        i = 0;
+                        object ob = setting_table.Rows[row - 7][0].ToString();
+                        if (ob == null)
+                        {
+                            this.btnLoadSetting.Enabled = true;
+                            this.btnLoadSetting.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        short page_addr = short.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                        byte page_num = (byte)((page_addr >> 8) & 0xFF);
+                        byte addr_start = (byte)(page_addr & 0xFF);
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, page_num, addr_start, buff);
+                    }
+
+                }
+
+                this.btnLoadSetting.Enabled = true;
+                this.btnLoadSetting.BackColor = SystemColors.Control;
+                MessageBox.Show("Done", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string settingFilePath = Application.StartupPath + @"\Set\" + "setting" + ".xlsx";
+
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Multiselect = true;//该值确定是否可以选择多个文件
+                dialog.Title = "请选择文件夹";
+                dialog.Filter = "EXCEL文件|*.xlsx";
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.txtSettingFilePath.Text = dialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "file path error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 
