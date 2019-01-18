@@ -60,6 +60,7 @@ namespace SNOEC_GUI
                 buff[3] = 0x78;
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+
                 //byte[] buff = new byte[1];//sip
                 //buff[0] = (byte)page;
                 //IOPort.WriteReg(DUT_USB_Port, 0xA0, 127, softHard, buff);
