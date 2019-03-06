@@ -77,11 +77,19 @@ namespace SNOEC_GUI
             }
             else if (company == Company.Luxshare)
             {
-                byte[] buff = new byte[5];
-                buff[0] = 0xA6;
-                buff[1] = 0x06;
-                buff[2] = 0x4C;
-                buff[3] = 0x6E;
+                //byte[] buff = new byte[5];//100G
+                //buff[0] = 0xA6;
+                //buff[1] = 0x06;
+                //buff[2] = 0x4C;
+                //buff[3] = 0x6E;
+                //buff[4] = (byte)page;
+                //IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+
+                byte[] buff = new byte[5];//56G
+                buff[0] = 0xE0;
+                buff[1] = 0x55;
+                buff[2] = 0x3E;
+                buff[3] = 0x8A;
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }

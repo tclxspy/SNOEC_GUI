@@ -289,7 +289,8 @@ namespace SNOEC_GUI
                 if (this.tabControl1.SelectedTab.ToString().Contains("SemtechChip"))
                 {
                     //this.Tab_SemtechChip();
-                    this.Tab_SemtechChip_New();
+                    //this.Tab_SemtechChip_New();
+                    Tab_SemtechChip_Final();
                 }
             }
 
@@ -761,6 +762,120 @@ namespace SNOEC_GUI
             }
         }
 
+        private void Tab_SemtechChip_Final()
+        {
+            int maxCells_dataGridView6 = 16 * 8;
+            byte map_page_chip_control = 0xC0;
+
+            byte map_address_chip_control_regAddress_MSB = 0;
+            byte map_address_chip_control_regAddress_LSB = 0;
+            byte map_address_chip_control_reg_read_trigger = 0;
+            byte map_address_chip_control_reg_data_length = 0;
+            byte map_address_chip_control_reg_write_trigger = 0;
+
+            byte value_map_address_chip_control_regAddress_MSB = 0;
+            byte value_map_address_chip_control_regAddress_LSB = 0;
+            byte value_map_address_chip_control_reg_read_trigger = 0;
+            byte value_map_address_chip_control_reg_data_length = 0;
+            byte value_map_address_chip_control_reg_write_trigger = 0;
+
+            byte map_update_chip_reg_page = 0xC1;
+
+            if (this.comboBoxSemtechChip_Select.SelectedIndex == 0)
+            {
+                map_address_chip_control_regAddress_MSB = 0x80;
+                map_address_chip_control_regAddress_LSB = 0x81;
+                map_address_chip_control_reg_read_trigger = 0x82;
+                map_address_chip_control_reg_data_length = 0x83;
+                map_address_chip_control_reg_write_trigger = 0x84;
+            }
+            else if (this.comboBoxSemtechChip_Select.SelectedIndex == 1)
+            {
+                map_address_chip_control_regAddress_MSB = 0x85;
+                map_address_chip_control_regAddress_LSB = 0x86;
+                map_address_chip_control_reg_read_trigger = 0x87;
+                map_address_chip_control_reg_data_length = 0x88;
+                map_address_chip_control_reg_write_trigger = 0x89;
+            }
+
+            value_map_address_chip_control_regAddress_MSB = (byte)this.numericUpDownSemtechChip_Page.Value;
+            value_map_address_chip_control_regAddress_LSB = (byte)this.numericUpDownSemtechChip_Address.Value;
+            value_map_address_chip_control_reg_data_length = (byte)this.numericUpDownSemtechChip_Bytes.Value;
+            byte[] buffer = new byte[(int)this.numericUpDownSemtechChip_Bytes.Value];
+
+            if (this.comboBoxSemtechChip_Operation.SelectedIndex == 0)//read
+            {
+                //clear cells
+                for (int i = 0; i < maxCells_dataGridView6; i++)
+                {
+                    this.dataGridView6.Rows[i / 16].Cells[i % 16].Value = null;
+                }
+                this.dataGridView6.Refresh();
+
+                if ((int)this.numericUpDownSemtechChip_Bytes.Value > 0)
+                {
+                    value_map_address_chip_control_reg_read_trigger = 1;
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_MSB, new byte[] { value_map_address_chip_control_regAddress_MSB });
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_LSB, new byte[] { value_map_address_chip_control_regAddress_LSB });
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_data_length, new byte[] { value_map_address_chip_control_reg_data_length });
+                    dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_read_trigger, new byte[] { value_map_address_chip_control_reg_read_trigger });
+                    buffer = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_update_chip_reg_page, 0x80, buffer.Length);
+
+
+                    if (buffer == null)
+                    {
+                        this.btnReadWrite.Enabled = true;
+                        this.btnReadWrite.BackColor = SystemColors.Control;
+                        return;
+                    }
+                }
+
+                int length = Math.Min(maxCells, buffer.Length);
+
+                for (int i = 0; i < length; i++)
+                {
+                    this.dataGridView6.Rows[i / 16].Cells[i % 16].Value = Convert.ToString(buffer[i], 16).ToUpper();
+                }
+            }
+
+            if (this.comboBoxSemtechChip_Operation.SelectedIndex == 1)//write
+            {
+                if (buffer.Length == 0)
+                {
+                    this.btnReadWrite.Enabled = true;
+                    this.btnReadWrite.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                try
+                {
+                    for (int i = 0; i < buffer.Length; i++)
+                    {
+                        object ob = this.dataGridView6.Rows[i / 16].Cells[i % 16].Value;
+                        if (ob == null)
+                        {
+                            this.btnReadWrite.Enabled = true;
+                            this.btnReadWrite.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        buffer[i] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnReadWrite.Enabled = true;
+                    this.btnReadWrite.BackColor = SystemColors.Control;
+                    return;
+                }
+                value_map_address_chip_control_reg_write_trigger = 1;
+                dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_MSB, new byte[] { value_map_address_chip_control_regAddress_MSB });
+                dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_regAddress_LSB, new byte[] { value_map_address_chip_control_regAddress_LSB });
+                dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_data_length, new byte[] { value_map_address_chip_control_reg_data_length });
+                dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_update_chip_reg_page, 0x80, buffer);
+                dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_write_trigger, new byte[] { value_map_address_chip_control_reg_write_trigger });
+            }
+        }
         //normal:0, low:1, high:2
         private Color GetColor(int value)
         {
@@ -1177,6 +1292,7 @@ namespace SNOEC_GUI
             this.innoToolStripMenuItem.Checked = true;
             this.genericToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = false;
+            this.luxshareToolStripMenuItem.Checked = false;
         }
 
         private void sNOECToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1185,6 +1301,7 @@ namespace SNOEC_GUI
             this.innoToolStripMenuItem.Checked = false;
             this.genericToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = true;
+            this.luxshareToolStripMenuItem.Checked = false;
         }
 
         private void genericToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1193,6 +1310,7 @@ namespace SNOEC_GUI
             this.innoToolStripMenuItem.Checked = false;
             this.genericToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.Checked = false;
+            this.luxshareToolStripMenuItem.Checked = false;
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1228,6 +1346,33 @@ namespace SNOEC_GUI
 
                 case "OnEasyB_I2C":
                     QSFP28_SNOEC.softHard = IOPort.SoftHard.OnEasyB_I2C;
+                    try
+                    {
+                        byte i, re;
+                        OnEasyB_I2C.serialNumber = new StringBuilder(255);
+                        byte MaxDevNum = OnEasyB_I2C.USBIO_GetMaxNumofDev();
+                        List<String> list = new List<string>();
+
+                        for (i = 0; i < MaxDevNum; i++)
+                        {
+                            re = OnEasyB_I2C.USBIO_GetSerialNo(i, OnEasyB_I2C.serialNumber);
+                            if (re != 0)
+                            {
+                                list.Add(OnEasyB_I2C.serialNumber.ToString());
+                            }
+                        }
+
+                        if (list.Count == 0)
+                        {
+                            MessageBox.Show("Disconnect to OnEasyB_I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Disconnect to OnEasyB_I2C", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    this.comboBoxDeviceIndex.SelectedIndex = 0;
                     break;
 
                 case "SerialPort":
@@ -1255,8 +1400,9 @@ namespace SNOEC_GUI
         {
             QSFP28_SNOEC.company = QSFP28_SNOEC.Company.Luxshare;
             this.innoToolStripMenuItem.Checked = false;
-            this.genericToolStripMenuItem.Checked = true;
+            this.genericToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = false;
+            this.luxshareToolStripMenuItem.Checked = true;
         }
 
         private void dataGridView5_CellEndEdit(object sender, DataGridViewCellEventArgs e)
