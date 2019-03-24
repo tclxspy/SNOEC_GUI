@@ -86,6 +86,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabpageSetting = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnBrowse_I2C_Batch_File = new System.Windows.Forms.Button();
+            this.btnLoad_I2C_Batch = new System.Windows.Forms.Button();
+            this.txtI2C_Batch_FilePath = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBrowseSetting = new System.Windows.Forms.Button();
+            this.btnLoadSetting = new System.Windows.Forms.Button();
+            this.txtSettingFilePath = new System.Windows.Forms.TextBox();
             this.tabpageChOnOff = new System.Windows.Forms.TabPage();
             this.btnRxCh4_Dis = new System.Windows.Forms.Button();
             this.btnTxCh4_Dis = new System.Windows.Forms.Button();
@@ -237,28 +246,6 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
-            this.tabpageSetting = new System.Windows.Forms.TabPage();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.txtSettingFilePath = new System.Windows.Forms.TextBox();
-            this.btnLoadSetting = new System.Windows.Forms.Button();
-            this.label71 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageI2C_Operation = new System.Windows.Forms.TabPage();
             this.radioButtonI2C_Write = new System.Windows.Forms.RadioButton();
             this.radioButtonI2C_Read = new System.Windows.Forms.RadioButton();
@@ -359,6 +346,7 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtRegAdress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -368,18 +356,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownBytes = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownRegAddress = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPage = new System.Windows.Forms.NumericUpDown();
             this.domainUpDownDeviceAddress = new System.Windows.Forms.DomainUpDown();
             this.comboBoxFrequency = new System.Windows.Forms.ComboBox();
             this.comboBoxDeviceIndex = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBoxSoft_I2C = new System.Windows.Forms.CheckBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabpageSetting.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tabpageChOnOff.SuspendLayout();
             this.tabpageDMIADC.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -430,8 +421,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.tabpageSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPageI2C_Operation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPageIC.SuspendLayout();
@@ -446,7 +435,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSemtechChip_Address)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -621,6 +609,98 @@
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
+            // 
+            // tabpageSetting
+            // 
+            this.tabpageSetting.Controls.Add(this.groupBox3);
+            this.tabpageSetting.Controls.Add(this.groupBox1);
+            this.tabpageSetting.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.tabpageSetting.Location = new System.Drawing.Point(4, 25);
+            this.tabpageSetting.Name = "tabpageSetting";
+            this.tabpageSetting.Size = new System.Drawing.Size(736, 351);
+            this.tabpageSetting.TabIndex = 3;
+            this.tabpageSetting.Text = "SETTING";
+            this.tabpageSetting.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnBrowse_I2C_Batch_File);
+            this.groupBox3.Controls.Add(this.btnLoad_I2C_Batch);
+            this.groupBox3.Controls.Add(this.txtI2C_Batch_FilePath);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(0, 181);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(736, 170);
+            this.groupBox3.TabIndex = 31;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Load script file .txt|.xlsx";
+            // 
+            // btnBrowse_I2C_Batch_File
+            // 
+            this.btnBrowse_I2C_Batch_File.Location = new System.Drawing.Point(10, 72);
+            this.btnBrowse_I2C_Batch_File.Name = "btnBrowse_I2C_Batch_File";
+            this.btnBrowse_I2C_Batch_File.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse_I2C_Batch_File.TabIndex = 29;
+            this.btnBrowse_I2C_Batch_File.Text = "Browse";
+            this.btnBrowse_I2C_Batch_File.UseVisualStyleBackColor = true;
+            this.btnBrowse_I2C_Batch_File.Click += new System.EventHandler(this.btnBrowse_I2C_Batch_File_Click);
+            // 
+            // btnLoad_I2C_Batch
+            // 
+            this.btnLoad_I2C_Batch.Location = new System.Drawing.Point(641, 72);
+            this.btnLoad_I2C_Batch.Name = "btnLoad_I2C_Batch";
+            this.btnLoad_I2C_Batch.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad_I2C_Batch.TabIndex = 27;
+            this.btnLoad_I2C_Batch.Text = "Load";
+            this.btnLoad_I2C_Batch.UseVisualStyleBackColor = true;
+            this.btnLoad_I2C_Batch.Click += new System.EventHandler(this.btnLoad_I2C_Batch_Click);
+            // 
+            // txtI2C_Batch_FilePath
+            // 
+            this.txtI2C_Batch_FilePath.Location = new System.Drawing.Point(106, 73);
+            this.txtI2C_Batch_FilePath.Name = "txtI2C_Batch_FilePath";
+            this.txtI2C_Batch_FilePath.Size = new System.Drawing.Size(509, 22);
+            this.txtI2C_Batch_FilePath.TabIndex = 28;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnBrowseSetting);
+            this.groupBox1.Controls.Add(this.btnLoadSetting);
+            this.groupBox1.Controls.Add(this.txtSettingFilePath);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(736, 181);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Load .xlsx to EEPROM(only for QSFP)";
+            // 
+            // btnBrowseSetting
+            // 
+            this.btnBrowseSetting.Location = new System.Drawing.Point(10, 75);
+            this.btnBrowseSetting.Name = "btnBrowseSetting";
+            this.btnBrowseSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowseSetting.TabIndex = 29;
+            this.btnBrowseSetting.Text = "Browse";
+            this.btnBrowseSetting.UseVisualStyleBackColor = true;
+            this.btnBrowseSetting.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // btnLoadSetting
+            // 
+            this.btnLoadSetting.Location = new System.Drawing.Point(641, 75);
+            this.btnLoadSetting.Name = "btnLoadSetting";
+            this.btnLoadSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadSetting.TabIndex = 27;
+            this.btnLoadSetting.Text = "Load";
+            this.btnLoadSetting.UseVisualStyleBackColor = true;
+            this.btnLoadSetting.Click += new System.EventHandler(this.btnLoadSetting_Click);
+            // 
+            // txtSettingFilePath
+            // 
+            this.txtSettingFilePath.Location = new System.Drawing.Point(106, 76);
+            this.txtSettingFilePath.Name = "txtSettingFilePath";
+            this.txtSettingFilePath.Size = new System.Drawing.Size(509, 22);
+            this.txtSettingFilePath.TabIndex = 28;
             // 
             // tabpageChOnOff
             // 
@@ -2287,217 +2367,6 @@
             this.label70.TabIndex = 4;
             this.label70.Text = "CH1";
             // 
-            // tabpageSetting
-            // 
-            this.tabpageSetting.Controls.Add(this.btnBrowse);
-            this.tabpageSetting.Controls.Add(this.txtSettingFilePath);
-            this.tabpageSetting.Controls.Add(this.btnLoadSetting);
-            this.tabpageSetting.Controls.Add(this.label71);
-            this.tabpageSetting.Controls.Add(this.dataGridView1);
-            this.tabpageSetting.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabpageSetting.Location = new System.Drawing.Point(4, 25);
-            this.tabpageSetting.Name = "tabpageSetting";
-            this.tabpageSetting.Size = new System.Drawing.Size(736, 351);
-            this.tabpageSetting.TabIndex = 3;
-            this.tabpageSetting.Text = "SETTING";
-            this.tabpageSetting.UseVisualStyleBackColor = true;
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(10, 277);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowse.TabIndex = 29;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // txtSettingFilePath
-            // 
-            this.txtSettingFilePath.Location = new System.Drawing.Point(106, 278);
-            this.txtSettingFilePath.Name = "txtSettingFilePath";
-            this.txtSettingFilePath.Size = new System.Drawing.Size(509, 22);
-            this.txtSettingFilePath.TabIndex = 28;
-            // 
-            // btnLoadSetting
-            // 
-            this.btnLoadSetting.Location = new System.Drawing.Point(641, 277);
-            this.btnLoadSetting.Name = "btnLoadSetting";
-            this.btnLoadSetting.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadSetting.TabIndex = 27;
-            this.btnLoadSetting.Text = "Load";
-            this.btnLoadSetting.UseVisualStyleBackColor = true;
-            this.btnLoadSetting.Click += new System.EventHandler(this.btnLoadSetting_Click);
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label71.Location = new System.Drawing.Point(272, 27);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(198, 19);
-            this.label71.TabIndex = 15;
-            this.label71.Text = "Hex read data (max 128 bytes)";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16});
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 60);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(736, 186);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.Frozen = true;
-            this.Column1.HeaderText = "0";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 46;
-            // 
-            // Column2
-            // 
-            this.Column2.Frozen = true;
-            this.Column2.HeaderText = "1";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 46;
-            // 
-            // Column3
-            // 
-            this.Column3.Frozen = true;
-            this.Column3.HeaderText = "2";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 46;
-            // 
-            // Column4
-            // 
-            this.Column4.Frozen = true;
-            this.Column4.HeaderText = "3";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 46;
-            // 
-            // Column5
-            // 
-            this.Column5.Frozen = true;
-            this.Column5.HeaderText = "4";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 46;
-            // 
-            // Column6
-            // 
-            this.Column6.Frozen = true;
-            this.Column6.HeaderText = "5";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 46;
-            // 
-            // Column7
-            // 
-            this.Column7.Frozen = true;
-            this.Column7.HeaderText = "6";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 46;
-            // 
-            // Column8
-            // 
-            this.Column8.Frozen = true;
-            this.Column8.HeaderText = "7";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 46;
-            // 
-            // Column9
-            // 
-            this.Column9.Frozen = true;
-            this.Column9.HeaderText = "8";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 46;
-            // 
-            // Column10
-            // 
-            this.Column10.Frozen = true;
-            this.Column10.HeaderText = "9";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 46;
-            // 
-            // Column11
-            // 
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "A";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 46;
-            // 
-            // Column12
-            // 
-            this.Column12.Frozen = true;
-            this.Column12.HeaderText = "B";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 46;
-            // 
-            // Column13
-            // 
-            this.Column13.Frozen = true;
-            this.Column13.HeaderText = "C";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Width = 46;
-            // 
-            // Column14
-            // 
-            this.Column14.Frozen = true;
-            this.Column14.HeaderText = "D";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 46;
-            // 
-            // Column15
-            // 
-            this.Column15.Frozen = true;
-            this.Column15.HeaderText = "E";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Width = 46;
-            // 
-            // Column16
-            // 
-            this.Column16.Frozen = true;
-            this.Column16.HeaderText = "F";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Width = 46;
-            // 
             // tabPageI2C_Operation
             // 
             this.tabPageI2C_Operation.Controls.Add(this.radioButtonI2C_Write);
@@ -3497,6 +3366,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtRegAdress);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.btnReadWrite);
             this.panel3.Controls.Add(this.comboBoxSoftHard);
@@ -3507,7 +3377,6 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.numericUpDownBytes);
-            this.panel3.Controls.Add(this.numericUpDownRegAddress);
             this.panel3.Controls.Add(this.numericUpDownPage);
             this.panel3.Controls.Add(this.domainUpDownDeviceAddress);
             this.panel3.Controls.Add(this.comboBoxFrequency);
@@ -3519,15 +3388,24 @@
             this.panel3.Size = new System.Drawing.Size(744, 69);
             this.panel3.TabIndex = 2;
             // 
+            // txtRegAdress
+            // 
+            this.txtRegAdress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRegAdress.Location = new System.Drawing.Point(502, 28);
+            this.txtRegAdress.Name = "txtRegAdress";
+            this.txtRegAdress.Size = new System.Drawing.Size(61, 23);
+            this.txtRegAdress.TabIndex = 12;
+            this.txtRegAdress.Text = "0x00";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(105, 4);
+            this.label9.Location = new System.Drawing.Point(124, 4);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 19);
+            this.label9.Size = new System.Drawing.Size(38, 19);
             this.label9.TabIndex = 10;
-            this.label9.Text = "Hard/Soft";
+            this.label9.Text = "Type";
             // 
             // comboBoxSoftHard
             // 
@@ -3622,20 +3500,6 @@
             this.numericUpDownBytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownBytes.TabIndex = 7;
             // 
-            // numericUpDownRegAddress
-            // 
-            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
-            this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numericUpDownRegAddress.Name = "numericUpDownRegAddress";
-            this.numericUpDownRegAddress.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownRegAddress.TabIndex = 6;
-            // 
             // numericUpDownPage
             // 
             this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -3669,10 +3533,8 @@
             this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFrequency.FormattingEnabled = true;
             this.comboBoxFrequency.Items.AddRange(new object[] {
-            "100K",
-            "200K",
-            "300K",
-            "400K"});
+            "400K",
+            "100K"});
             this.comboBoxFrequency.Location = new System.Drawing.Point(281, 27);
             this.comboBoxFrequency.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBoxFrequency.Name = "comboBoxFrequency";
@@ -3700,6 +3562,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.checkBoxSoft_I2C);
             this.panel2.Controls.Add(this.labelDate);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3708,6 +3571,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(744, 33);
             this.panel2.TabIndex = 1;
+            // 
+            // checkBoxSoft_I2C
+            // 
+            this.checkBoxSoft_I2C.AutoSize = true;
+            this.checkBoxSoft_I2C.Checked = true;
+            this.checkBoxSoft_I2C.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSoft_I2C.Location = new System.Drawing.Point(644, 11);
+            this.checkBoxSoft_I2C.Name = "checkBoxSoft_I2C";
+            this.checkBoxSoft_I2C.Size = new System.Drawing.Size(79, 23);
+            this.checkBoxSoft_I2C.TabIndex = 2;
+            this.checkBoxSoft_I2C.Text = "Soft I2C";
+            this.checkBoxSoft_I2C.UseVisualStyleBackColor = true;
+            this.checkBoxSoft_I2C.CheckedChanged += new System.EventHandler(this.checkBoxSoft_I2C_CheckedChanged);
             // 
             // labelDate
             // 
@@ -3757,6 +3633,11 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabpageSetting.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabpageChOnOff.ResumeLayout(false);
             this.tabpageDMIADC.ResumeLayout(false);
             this.tabpageDMIADC.PerformLayout();
@@ -3815,9 +3696,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            this.tabpageSetting.ResumeLayout(false);
-            this.tabpageSetting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPageI2C_Operation.ResumeLayout(false);
             this.tabPageI2C_Operation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -3836,7 +3714,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -3863,7 +3740,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownBytes;
-        private System.Windows.Forms.NumericUpDown numericUpDownRegAddress;
         private System.Windows.Forms.NumericUpDown numericUpDownPage;
         private System.Windows.Forms.DomainUpDown domainUpDownDeviceAddress;
         private System.Windows.Forms.ComboBox comboBoxFrequency;
@@ -3959,7 +3835,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txtDMI_VCC;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label56;
@@ -4035,22 +3910,6 @@
         private System.Windows.Forms.ToolStripMenuItem innoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem genericToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
@@ -4108,7 +3967,6 @@
         private System.Windows.Forms.ComboBox comboBoxSemtechChip_Operation;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
@@ -4152,8 +4010,15 @@
         private System.Windows.Forms.RadioButton radioButtonI2C_Write;
         private System.Windows.Forms.RadioButton radioButtonI2C_Read;
         private System.Windows.Forms.Button btnLoadSetting;
-        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Button btnBrowseSetting;
         private System.Windows.Forms.TextBox txtSettingFilePath;
+        private System.Windows.Forms.CheckBox checkBoxSoft_I2C;
+        private System.Windows.Forms.TextBox txtRegAdress;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnBrowse_I2C_Batch_File;
+        private System.Windows.Forms.Button btnLoad_I2C_Batch;
+        private System.Windows.Forms.TextBox txtI2C_Batch_FilePath;
     }
 }
 
