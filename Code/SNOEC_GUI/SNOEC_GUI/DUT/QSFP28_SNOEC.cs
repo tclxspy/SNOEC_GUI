@@ -97,13 +97,13 @@ namespace SNOEC_GUI
 
         public byte[] WriteReg(int deviceIndex, int deviceAddress, int page, int regAddress, byte[] dataToWrite)
         {
-            EnterEngMode(page);
+            //EnterEngMode(page);
             return IOPort.WriteReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite);
         }
 
         public byte[] ReadReg(int deviceIndex, int deviceAddress, int page, int regAddress, int length)
         {
-            EnterEngMode(page);
+            //EnterEngMode(page);
             return IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, length);
         }
 

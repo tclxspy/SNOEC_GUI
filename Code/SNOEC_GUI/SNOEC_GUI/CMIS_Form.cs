@@ -194,7 +194,7 @@ namespace SNOEC_GUI
                     break;
 
                 case "0xA2":
-                    deviceAddress = 0xA2;
+                    deviceAddress = 0x20;//0x16
                     break;
 
                 case "0xA8":
