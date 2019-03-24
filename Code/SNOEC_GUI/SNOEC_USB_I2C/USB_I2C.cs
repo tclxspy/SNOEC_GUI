@@ -11,6 +11,8 @@ namespace SNOEC_USB_I2C
     public class USB_I2C
     {
         //private static Semaphore semaphore = new Semaphore(1, 1);
+        public static volatile bool i2c_soft_enable = true;  //soft: 1; hard: 0
+        public static volatile bool I2C_standard_speed = false;//400k:0, 100k:1
 
         private USB_I2C() { }
 
@@ -148,12 +150,12 @@ namespace SNOEC_USB_I2C
 
             arr[0] = regAddressWide ? (byte)1 : (byte)0;
             arr[1] = (byte)(regAddress / 256);
-            arr[2] = (byte)0x01;//SoftHard
+            arr[2] = i2c_soft_enable ? (byte)1 : (byte)0; ;//soft
             arr[3] = (byte)operate;
             arr[4] = (byte)deviceAddress;
             arr[5] = (byte)(regAddress & 0xFF);
             arr[6] = (byte)buffer.Length;
-            arr[7] = (byte)0;//CFKType
+            arr[7] = I2C_standard_speed ? (byte)1 : (byte)0;////400k:0, 100k:1
             buffer.CopyTo(arr, 8);
 
             //USB虚拟串口一次只能穿64个字节
@@ -227,8 +229,8 @@ namespace SNOEC_USB_I2C
 
                 _serialPort.DiscardInBuffer();
                 _serialPort.Write(arr, 0, arr.Length);
-                System.Threading.Thread.Sleep(20);
-
+                System.Threading.Thread.Sleep(300);//support ADI MCU with FTDI USB to UART
+                //System.Threading.Thread.Sleep(20);//support STM32L073 MCU with USB
                 if (operate == ReadWrite.Read)
                 {
                     _serialPort.Read(readBytes, 0, buffer.Length);

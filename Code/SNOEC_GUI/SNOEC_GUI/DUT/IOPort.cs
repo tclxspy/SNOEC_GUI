@@ -352,9 +352,28 @@ namespace SNOEC_GUI
                     return null;
                 }
 
-                byte[] cmd = BitConverter.GetBytes(regAddress);
-                byte[] readData = new byte[readLength];
-                bool result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length / 4), readData, (ushort)readLength);
+                bool result = false;
+                byte[] readData;
+                if (regAddress <= 0xFF)
+                {
+                    byte[] cmd = BitConverter.GetBytes(regAddress);
+                    readData = new byte[readLength];
+                    byte cmdLength = 1;
+                    result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, readData, (ushort)readLength);
+                }
+                else
+                {
+                    byte[] buf = BitConverter.GetBytes(regAddress);
+                    readData = new byte[readLength];
+
+                    byte[] cmd = new byte[2];
+                    cmd[0] = buf[1];
+                    cmd[1] = buf[0];
+
+                    byte cmdLength = 2;
+
+                    result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, readData, (ushort)readLength);
+                }
 
                 OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);
                 Thread.Sleep(20);
@@ -365,7 +384,16 @@ namespace SNOEC_GUI
                 return readData;
             }
 
-            return ReadWriteReg(deviceIndex, deviceAddress, regAddress, false, softHard, ReadWrite.Read,
+            bool regAddressWide = false;
+            if (regAddress > 0xFF)
+            {
+                regAddressWide = true;
+            }
+            else
+            {
+                regAddressWide = false;
+            }
+            return ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, softHard, ReadWrite.Read,
             (CFKType)0, new byte[readLength]);
         }
 
@@ -384,8 +412,24 @@ namespace SNOEC_GUI
                     return null;
                 }
 
-                byte[] cmd = BitConverter.GetBytes((byte)regAddress);
-                bool result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, (byte)(cmd.Length / 2), dataToWrite, (ushort)dataToWrite.Length);
+                bool result = false;
+
+                if (regAddress <= 0xFF)
+                {
+                    byte[] cmd = BitConverter.GetBytes(regAddress);
+                    byte cmdLength = 1;//
+                    result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, dataToWrite, (ushort)dataToWrite.Length);
+                }
+                else
+                {
+                    byte[] buf = BitConverter.GetBytes(regAddress);
+                    byte cmdLength = 2;//
+                    byte[] cmd = new byte[2];
+                    cmd[0] = buf[1];
+                    cmd[1] = buf[0];
+
+                    result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, dataToWrite, (ushort)dataToWrite.Length);
+                }
                 Thread.Sleep(50);
                 byte[] readData = new byte[dataToWrite.Length];
                 OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);
@@ -394,9 +438,21 @@ namespace SNOEC_GUI
                 {
                     return null;
                 }
-                return ReadReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite.Length);
+                //return ReadReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite.Length);
+                return readData;
             }
-            return ReadWriteReg(deviceIndex, deviceAddress, regAddress, false, softHard, ReadWrite.Write,
+
+            bool regAddressWide = false;
+            if (regAddress > 0xFF)
+            {
+                regAddressWide = true;
+            }
+            else
+            {
+                regAddressWide = false;
+            }
+
+            return ReadWriteReg(deviceIndex, deviceAddress, regAddress, regAddressWide, softHard, ReadWrite.Write,
                 (CFKType)0, dataToWrite);
         }
 
