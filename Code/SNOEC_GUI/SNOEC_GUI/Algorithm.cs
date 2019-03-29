@@ -547,5 +547,10 @@ namespace SNOEC_GUI
 
             return cache.ToString();
         }
+
+        public static UInt16 LITTLE_TO_BIG_16(UInt16 A)
+        {
+            return (UInt16)(((A & 0xff00) >> 0x08) | ((A & 0x00ff) << 0x08));
+        }
     }
 }

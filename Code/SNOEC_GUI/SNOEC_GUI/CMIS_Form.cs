@@ -216,7 +216,7 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("DMI/ADC"))
                 {
-                    //this.Tab_DMI_ADC();
+                    this.Tab_DMI_ADC();
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Alarm/Warning"))
@@ -230,10 +230,10 @@ namespace SNOEC_GUI
                     //    chart[2, i].BackColor = this.GetColor(dut.GetInteRxPowerAlarm(i + 1));
                     //    chart[2, i + 4].BackColor = this.GetColor(dut.GetInteRxPowerWarning(i + 1));
                     //}
-                    //this.chart25.BackColor = this.chart26.BackColor = this.chart27.BackColor = this.chart28.BackColor = this.GetColor(dut.GetInteVccAlarm());
-                    //this.chart29.BackColor = this.chart30.BackColor = this.chart31.BackColor = this.chart32.BackColor = this.GetColor(dut.GetInteVccWarning());
-                    //this.chart33.BackColor = this.chart34.BackColor = this.chart35.BackColor = this.chart36.BackColor = this.GetColor(dut.GetInteTempAlarm());
-                    //this.chart37.BackColor = this.chart38.BackColor = this.chart39.BackColor = this.chart40.BackColor = this.GetColor(dut.GetInteTempWarning());
+                    this.chart25.BackColor = this.chart26.BackColor = this.chart27.BackColor = this.chart28.BackColor = this.GetColor(dut.GetInteVccAlarm());
+                    this.chart29.BackColor = this.chart30.BackColor = this.chart31.BackColor = this.chart32.BackColor = this.GetColor(dut.GetInteVccWarning());
+                    this.chart33.BackColor = this.chart34.BackColor = this.chart35.BackColor = this.chart36.BackColor = this.GetColor(dut.GetInteTempAlarm());
+                    this.chart37.BackColor = this.chart38.BackColor = this.chart39.BackColor = this.chart40.BackColor = this.GetColor(dut.GetInteTempWarning());
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("I2C Operation"))
@@ -269,32 +269,52 @@ namespace SNOEC_GUI
             this.btnReadWrite.BackColor = SystemColors.Control;
         }
 
-        //private void Tab_DMI_ADC()
-        //{
-        //    ClearTextBox();
+        //normal:0, high:1, low:2
+        private Color GetColor(int value)
+        {
+            switch (value)
+            {
+                case 0:
+                    return Color.Lime;
 
-        //    this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
-        //    this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
-        //    if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
-        //    {
-        //        this.txtTempADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TemperatureAdc, 0).ToString();
-        //        this.txtVccADC.Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.VccAdc, 0).ToString();
-        //    }
-        //    this.txtFW_Version.Text = dut.ReadFWRev();
-        //    for (int i = 0; i < txts_dmi_TxBias.Length; i++)
-        //    {
-        //        txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
-        //        txts_dmi_TxPower[i].Text = dut.ReadDmiTxP(i + 1).ToString();
-        //        txts_dmi_RxPower[i].Text = dut.ReadDmiRxP(i + 1).ToString();
 
-        //        if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
-        //        {
-        //            txts_adc_TxBias[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxBiasAdc, (i + 1)).ToString();
-        //            txts_adc_TxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.TxPowerAdc, (i + 1)).ToString();
-        //            txts_adc_RxPower[i].Text = dut.ReadADC(QSFP28_SNOEC.NameOfADC.RxPowerAdc, (i + 1)).ToString();
-        //        }
-        //    }
-        //}
+                case 1:
+                    return Color.Red;
+
+                case 2:
+                    return Color.Gray;
+
+                default:
+                    return Color.Lime;
+            }
+        }
+
+        private void Tab_DMI_ADC()
+        {
+            ClearTextBox();
+
+            this.txtDMI_Temp.Text = dut.ReadDmiTemp().ToString();
+            this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
+            if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
+            {
+                this.txtTempADC.Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcTemp()), 16).ToUpper(); 
+                this.txtVccADC.Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcVcc()), 16).ToUpper(); 
+            }
+            this.txtFW_Version.Text = dut.ReadFWRev();
+            for (int i = 0; i < txts_dmi_TxBias.Length; i++)
+            {
+                txts_dmi_TxBias[i].Text = dut.ReadDmiBias(i + 1).ToString();
+                txts_dmi_TxPower[i].Text = dut.ReadDmiTxP(i + 1).ToString();
+                txts_dmi_RxPower[i].Text = dut.ReadDmiRxP(i + 1).ToString();
+
+                if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
+                {
+                    txts_adc_TxBias[i].Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcBias(i + 1)), 16).ToUpper();
+                    txts_adc_TxPower[i].Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcTxP(i + 1)), 16).ToUpper();
+                    txts_adc_RxPower[i].Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcRxP(i + 1)), 16).ToUpper();
+                }
+            }
+        }
 
         private void I2C_Read()
         {
@@ -515,25 +535,6 @@ namespace SNOEC_GUI
                     dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_write_trigger, new byte[] { value_map_address_chip_control_reg_write_trigger });
                     value_map_address_chip_control_regAddress++;
                 }
-            }
-        }
-
-        //normal:0, low:1, high:2
-        private Color GetColor(int value)
-        {
-            switch (value)
-            {
-                case 0:
-                    return Color.Lime;
-
-                case 1:
-                    return Color.Gray;
-
-                case 2:
-                    return Color.Red;
-
-                default:
-                    return Color.Lime;
             }
         }
 

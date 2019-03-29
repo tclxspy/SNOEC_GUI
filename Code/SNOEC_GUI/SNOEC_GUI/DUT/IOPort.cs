@@ -354,15 +354,15 @@ namespace SNOEC_GUI
 
                 bool result = false;
                 byte[] readData;
-                if (regAddress <= 0xFF)
-                {
-                    byte[] cmd = BitConverter.GetBytes(regAddress);
-                    readData = new byte[readLength];
-                    byte cmdLength = 1;
-                    result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, readData, (ushort)readLength);
-                }
-                else
-                {
+                //if (regAddress <= 0xFF)//use for regAddressWide = false
+                //{
+                //    byte[] cmd = BitConverter.GetBytes(regAddress);
+                //    readData = new byte[readLength];
+                //    byte cmdLength = 1;
+                //    result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, readData, (ushort)readLength);
+                //}
+                //else
+                //{
                     byte[] buf = BitConverter.GetBytes(regAddress);
                     readData = new byte[readLength];
 
@@ -373,7 +373,7 @@ namespace SNOEC_GUI
                     byte cmdLength = 2;
 
                     result = OnEasyB_I2C.USBIO_I2cRead((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, readData, (ushort)readLength);
-                }
+                //}
 
                 OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);
                 Thread.Sleep(20);
@@ -414,14 +414,14 @@ namespace SNOEC_GUI
 
                 bool result = false;
 
-                if (regAddress <= 0xFF)
-                {
-                    byte[] cmd = BitConverter.GetBytes(regAddress);
-                    byte cmdLength = 1;//
-                    result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, dataToWrite, (ushort)dataToWrite.Length);
-                }
-                else
-                {
+                //if (regAddress <= 0xFF)//use for regAddressWide = false
+                //{
+                //    byte[] cmd = BitConverter.GetBytes(regAddress);
+                //    byte cmdLength = 1;//
+                //    result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, dataToWrite, (ushort)dataToWrite.Length);
+                //}
+                //else
+                //{
                     byte[] buf = BitConverter.GetBytes(regAddress);
                     byte cmdLength = 2;//
                     byte[] cmd = new byte[2];
@@ -429,7 +429,7 @@ namespace SNOEC_GUI
                     cmd[1] = buf[0];
 
                     result = OnEasyB_I2C.USBIO_I2cWrite((byte)deviceIndex, (byte)deviceAddress, cmd, cmdLength, dataToWrite, (ushort)dataToWrite.Length);
-                }
+                //}
                 Thread.Sleep(50);
                 byte[] readData = new byte[dataToWrite.Length];
                 OnEasyB_I2C.USBIO_CloseDevice((byte)deviceIndex);

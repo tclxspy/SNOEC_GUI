@@ -26,22 +26,22 @@ namespace SNOEC_GUI
         {
             if (company == Company.SNOEC)
             {
-                //byte[] buff = new byte[5];
-                //buff[0] = 0x12;
-                //buff[1] = 0x34;
-                //buff[2] = 0x56;
-                //buff[3] = 0x78;
-                //buff[4] = (byte)page;
-                //IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+                byte[] buff = new byte[5];
+                buff[0] = 0x12;
+                buff[1] = 0x34;
+                buff[2] = 0x56;
+                buff[3] = 0x78;
+                buff[4] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
 
-                byte[] buff = new byte[6];
-                buff[0] = 0x93;
-                buff[1] = 0x78;
-                buff[2] = 0xCC;
-                buff[3] = 0xAE;
-                buff[4] = 0x00;
-                buff[5] = (byte)page;
-                IOPort.WriteReg(DUT_USB_Port, 0xA0, 122, softHard, buff);
+                //byte[] buff = new byte[6];
+                //buff[0] = 0x93;
+                //buff[1] = 0x78;
+                //buff[2] = 0xCC;
+                //buff[3] = 0xAE;
+                //buff[4] = 0x00;
+                //buff[5] = (byte)page;
+                //IOPort.WriteReg(DUT_USB_Port, 0xA0, 122, softHard, buff);
             }    
         }
 
@@ -100,5 +100,404 @@ namespace SNOEC_GUI
                 return vendor.Trim();
             }
         }
+
+        public double ReadDmiTemp()
+        {
+            lock (syncRoot)
+            {
+                EnterEngMode(0);
+                return EEPROM_SNOEC.readdmitemp(DUT_USB_Port, 0xA0, 14);
+            }
+        }
+
+        public double ReadDmiVcc()
+        {
+            lock (syncRoot)
+            {
+                EnterEngMode(0);
+                return EEPROM_SNOEC.readdmivcc(DUT_USB_Port, 0xA0, 16);
+            }
+        }
+
+        public double ReadDmiBias(int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    EnterEngMode(0x11);
+                    double dmibias = 0.0;
+                    switch (channel)
+                    {
+                        case 1:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 170);
+                            break;
+                        case 2:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 172);
+                            break;
+                        case 3:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 174);
+                            break;
+                        case 4:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 176);
+                            break;
+                        case 5:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 178);
+                            break;
+                        case 6:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 180);
+                            break;
+                        case 7:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 182);
+                            break;
+                        case 8:
+                            dmibias = EEPROM_SNOEC.readdmibias(DUT_USB_Port, 0xA0, 184);
+                            break;
+                        default:
+                            break;
+                    }
+                    return dmibias;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return Algorithm.MyNaN;
+                }
+            }
+        }
+
+        public double ReadDmiTxP(int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    EnterEngMode(0x11);
+                    double dmitxp = 0.0;
+                    switch (channel)
+                    {
+                        case 1:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 154);
+                            break;
+                        case 2:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 156);
+                            break;
+                        case 3:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 158);
+                            break;
+                        case 4:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 160);
+                            break;
+                        case 5:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 162);
+                            break;
+                        case 6:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 164);
+                            break;
+                        case 7:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 166);
+                            break;
+                        case 8:
+                            dmitxp = EEPROM_SNOEC.readdmitxp(DUT_USB_Port, 0xA0, 170);
+                            break;
+                        default:
+                            break;
+                    }
+                    return dmitxp;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return Algorithm.MyNaN;
+                }
+            }
+        }
+
+        public double ReadDmiRxP(int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    EnterEngMode(0x11);
+                    double dmirxp = 0.0;
+                    switch (channel)
+                    {
+                        case 1:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 186);
+                            break;
+                        case 2:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 188);
+                            break;
+                        case 3:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 190);
+                            break;
+                        case 4:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 192);
+                            break;
+                        case 5:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 194);
+                            break;
+                        case 6:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 196);
+                            break;
+                        case 7:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 198);
+                            break;
+                        case 8:
+                            dmirxp = EEPROM_SNOEC.readdmirxp(DUT_USB_Port, 0xA0, 200);
+                            break;
+                        default:
+                            break;
+                    }
+                    return dmirxp;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return Algorithm.MyNaN;
+                }
+            }
+        }
+
+        public ushort ReadAdcTemp()
+        {
+            lock (syncRoot)
+            {
+                EnterEngMode(0xC1);
+                return EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x80);
+            }
+        }
+
+        public ushort ReadAdcVcc()
+        {
+            lock (syncRoot)
+            {
+                EnterEngMode(0xC1);
+                return EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x82);
+            }
+        }
+
+        public ushort ReadAdcBias(int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    EnterEngMode(0xC1);
+                    ushort adcbias = 0;
+                    switch (channel)
+                    {
+                        case 1:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x94);
+                            break;
+                        case 2:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x96);
+                            break;
+                        case 3:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x98);
+                            break;
+                        case 4:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x9A);
+                            break;
+                        case 5:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x9C);
+                            break;
+                        case 6:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x9E);
+                            break;
+                        case 7:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xA0);
+                            break;
+                        case 8:
+                            adcbias = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xA2);
+                            break;
+                        default:
+                            break;
+                    }
+                    return adcbias;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return Algorithm.MyNaN;
+                }
+            }
+        }
+
+        public ushort ReadAdcTxP(int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    EnterEngMode(0xC1);
+                    ushort adctxp = 0;
+                    switch (channel)
+                    {
+                        case 1:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x84);
+                            break;
+                        case 2:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x86);
+                            break;
+                        case 3:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x88);
+                            break;
+                        case 4:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x8A);
+                            break;
+                        case 5:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x8C);
+                            break;
+                        case 6:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x8E);
+                            break;
+                        case 7:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x90);
+                            break;
+                        case 8:
+                            adctxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x92);
+                            break;
+                        default:
+                            break;
+                    }
+                    return adctxp;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return Algorithm.MyNaN;
+                }
+            }
+        }
+
+        public ushort ReadAdcRxP(int channel)
+        {
+            lock (syncRoot)
+            {
+                try
+                {
+                    EnterEngMode(0xC1);
+                    ushort adcrxp = 0;
+                    switch (channel)
+                    {
+                        case 1:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xA4);
+                            break;
+                        case 2:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xA6);
+                            break;
+                        case 3:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xA8);
+                            break;
+                        case 4:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xAA);
+                            break;
+                        case 5:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xAC);
+                            break;
+                        case 6:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xAE);
+                            break;
+                        case 7:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xB0);
+                            break;
+                        case 8:
+                            adcrxp = EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0xB2);
+                            break;
+                        default:
+                            break;
+                    }
+                    return adcrxp;
+                }
+                catch
+                {
+                    //Log.SaveLogToTxt(ex.ToString());
+                    return Algorithm.MyNaN;
+                }
+            }
+        }
+
+        //normal:0, high:1, low:2
+        public int GetInteTempAlarm()
+        {
+            try
+            {
+                EnterEngMode(0);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0] & 0x03;
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        //normal:0, high:1, low:2
+        public int GetInteTempWarning()
+        {
+            try
+            {
+                EnterEngMode(0);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return (buff[0] >> 2) & 0x03;
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        //normal:0, high:1, low:2
+        public int GetInteVccAlarm()
+        {
+            try
+            {
+                EnterEngMode(0);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return (buff[0] >> 4) & 0x03;
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        //normal:0, high:1, low:2
+        public int GetInteVccWarning()
+        {
+            try
+            {
+                EnterEngMode(0);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return (buff[0] >> 6) & 0x03;
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
     }
 }
