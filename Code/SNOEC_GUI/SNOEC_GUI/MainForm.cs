@@ -1059,6 +1059,7 @@ namespace SNOEC_GUI
             this.genericToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = false;
             this.luxshareToolStripMenuItem.Checked = false;
+            this.nopasswordsToolStripMenuItem.Checked = false;
         }
 
         private void sNOECToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1068,6 +1069,7 @@ namespace SNOEC_GUI
             this.genericToolStripMenuItem.Checked = false;
             this.sNOECToolStripMenuItem.Checked = true;
             this.luxshareToolStripMenuItem.Checked = false;
+            this.nopasswordsToolStripMenuItem.Checked = false;
         }
 
         private void genericToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1077,6 +1079,7 @@ namespace SNOEC_GUI
             this.genericToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.Checked = false;
             this.luxshareToolStripMenuItem.Checked = false;
+            this.nopasswordsToolStripMenuItem.Checked = false;
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1524,6 +1527,16 @@ namespace SNOEC_GUI
             {
                 MessageBox.Show(ex.Message, "file path error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void nopasswordsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            QSFP28_SNOEC.company = QSFP28_SNOEC.Company.Nopasswords;
+            this.innoToolStripMenuItem.Checked = false;
+            this.genericToolStripMenuItem.Checked = false;
+            this.sNOECToolStripMenuItem.Checked = false;
+            this.luxshareToolStripMenuItem.Checked = false;
+            this.nopasswordsToolStripMenuItem.Checked = true;
         }
     }
 }

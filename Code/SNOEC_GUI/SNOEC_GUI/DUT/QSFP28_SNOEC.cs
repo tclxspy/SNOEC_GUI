@@ -20,7 +20,8 @@ namespace SNOEC_GUI
             SNOEC = 0,
             Inno = 1,
             Generic = 2,
-            Luxshare = 3
+            Luxshare = 3,
+            Nopasswords = 4
         }
 
         public QSFP28_SNOEC(DUTCoeffControlByPN tabe)
@@ -93,17 +94,21 @@ namespace SNOEC_GUI
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }
+            else if (company == Company.Nopasswords)
+            {
+                //no code
+            }
         }
 
         public byte[] WriteReg(int deviceIndex, int deviceAddress, int page, int regAddress, byte[] dataToWrite)
         {
-            //EnterEngMode(page);
+            EnterEngMode(page);
             return IOPort.WriteReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite);
         }
 
         public byte[] ReadReg(int deviceIndex, int deviceAddress, int page, int regAddress, int length)
         {
-            //EnterEngMode(page);
+            EnterEngMode(page);
             return IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, length);
         }
 

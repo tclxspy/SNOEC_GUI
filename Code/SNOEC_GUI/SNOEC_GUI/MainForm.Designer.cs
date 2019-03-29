@@ -364,6 +364,7 @@
             this.checkBoxSoft_I2C = new System.Windows.Forms.CheckBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.nopasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -481,7 +482,7 @@
             this.qSFP28SR4ToolStripMenuItem,
             this.qSFP28CWDM4ToolStripMenuItem});
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // qSFP28SR4ToolStripMenuItem
@@ -506,9 +507,10 @@
             this.sNOECToolStripMenuItem,
             this.innoToolStripMenuItem,
             this.genericToolStripMenuItem,
-            this.luxshareToolStripMenuItem});
+            this.luxshareToolStripMenuItem,
+            this.nopasswordsToolStripMenuItem});
             this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.companyToolStripMenuItem.Text = "Company";
             // 
             // sNOECToolStripMenuItem
@@ -516,28 +518,28 @@
             this.sNOECToolStripMenuItem.Checked = true;
             this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
-            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
             this.sNOECToolStripMenuItem.Click += new System.EventHandler(this.sNOECToolStripMenuItem_Click);
             // 
             // innoToolStripMenuItem
             // 
             this.innoToolStripMenuItem.Name = "innoToolStripMenuItem";
-            this.innoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.innoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.innoToolStripMenuItem.Text = "Inno";
             this.innoToolStripMenuItem.Click += new System.EventHandler(this.innoToolStripMenuItem_Click);
             // 
             // genericToolStripMenuItem
             // 
             this.genericToolStripMenuItem.Name = "genericToolStripMenuItem";
-            this.genericToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.genericToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.genericToolStripMenuItem.Text = "Generic";
             this.genericToolStripMenuItem.Click += new System.EventHandler(this.genericToolStripMenuItem_Click);
             // 
             // luxshareToolStripMenuItem
             // 
             this.luxshareToolStripMenuItem.Name = "luxshareToolStripMenuItem";
-            this.luxshareToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.luxshareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.luxshareToolStripMenuItem.Text = "Luxshare";
             this.luxshareToolStripMenuItem.Click += new System.EventHandler(this.luxshareToolStripMenuItem_Click);
             // 
@@ -3610,6 +3612,13 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
             // 
+            // nopasswordsToolStripMenuItem
+            // 
+            this.nopasswordsToolStripMenuItem.Name = "nopasswordsToolStripMenuItem";
+            this.nopasswordsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nopasswordsToolStripMenuItem.Text = "Nopasswords";
+            this.nopasswordsToolStripMenuItem.Click += new System.EventHandler(this.nopasswordsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -4019,6 +4028,7 @@
         private System.Windows.Forms.Button btnBrowse_I2C_Batch_File;
         private System.Windows.Forms.Button btnLoad_I2C_Batch;
         private System.Windows.Forms.TextBox txtI2C_Batch_FilePath;
+        private System.Windows.Forms.ToolStripMenuItem nopasswordsToolStripMenuItem;
     }
 }
 
