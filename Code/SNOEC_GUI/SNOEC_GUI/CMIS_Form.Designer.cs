@@ -78,6 +78,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageSetting = new System.Windows.Forms.TabPage();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.txtSettingFilePath = new System.Windows.Forms.TextBox();
+            this.btnLoadSetting = new System.Windows.Forms.Button();
             this.tabpageChOnOff = new System.Windows.Forms.TabPage();
             this.btnRxCh4_Dis = new System.Windows.Forms.Button();
             this.btnTxCh4_Dis = new System.Windows.Forms.Button();
@@ -284,9 +288,7 @@
             this.radioButtonMacomChip_Block1 = new System.Windows.Forms.RadioButton();
             this.label88 = new System.Windows.Forms.Label();
             this.comboBoxMacomChip_Select = new System.Windows.Forms.ComboBox();
-            this.numericUpDownMacomChip_Page = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownMacomChip_Bytes = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownMacomChip_Address = new System.Windows.Forms.NumericUpDown();
             this.label84 = new System.Windows.Forms.Label();
             this.label87 = new System.Windows.Forms.Label();
             this.comboBoxMacomChip_Operation = new System.Windows.Forms.ComboBox();
@@ -302,22 +304,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDownBytes = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownRegAddress = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownPage = new System.Windows.Forms.NumericUpDown();
             this.domainUpDownDeviceAddress = new System.Windows.Forms.DomainUpDown();
             this.comboBoxFrequency = new System.Windows.Forms.ComboBox();
             this.comboBoxDeviceIndex = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.tabPageSetting = new System.Windows.Forms.TabPage();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.txtSettingFilePath = new System.Windows.Forms.TextBox();
-            this.btnLoadSetting = new System.Windows.Forms.Button();
+            this.txtRegAdress = new System.Windows.Forms.TextBox();
+            this.txtPage = new System.Windows.Forms.TextBox();
+            this.txtMacomChip_Page = new System.Windows.Forms.TextBox();
+            this.txtMacomChip_Address = new System.Windows.Forms.TextBox();
+            this.checkBoxSoft_I2C = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPageSetting.SuspendLayout();
             this.tabpageChOnOff.SuspendLayout();
             this.tabpageDMIADC.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -372,22 +374,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPageMacomChip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMacomChip_Page)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMacomChip_Bytes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMacomChip_Address)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).BeginInit();
             this.panel2.SuspendLayout();
-            this.tabPageSetting.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReadWrite
             // 
             this.btnReadWrite.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnReadWrite.ForeColor = System.Drawing.Color.Black;
-            this.btnReadWrite.Location = new System.Drawing.Point(636, 7);
+            this.btnReadWrite.Location = new System.Drawing.Point(640, 7);
             this.btnReadWrite.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnReadWrite.Name = "btnReadWrite";
             this.btnReadWrite.Size = new System.Drawing.Size(83, 48);
@@ -481,6 +478,45 @@
             this.tabControl1.Size = new System.Drawing.Size(744, 380);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tabPageSetting
+            // 
+            this.tabPageSetting.Controls.Add(this.btnBrowse);
+            this.tabPageSetting.Controls.Add(this.txtSettingFilePath);
+            this.tabPageSetting.Controls.Add(this.btnLoadSetting);
+            this.tabPageSetting.Location = new System.Drawing.Point(4, 25);
+            this.tabPageSetting.Name = "tabPageSetting";
+            this.tabPageSetting.Size = new System.Drawing.Size(736, 351);
+            this.tabPageSetting.TabIndex = 9;
+            this.tabPageSetting.Text = "SETTING";
+            this.tabPageSetting.UseVisualStyleBackColor = true;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(15, 164);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.TabIndex = 32;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // txtSettingFilePath
+            // 
+            this.txtSettingFilePath.Location = new System.Drawing.Point(111, 165);
+            this.txtSettingFilePath.Name = "txtSettingFilePath";
+            this.txtSettingFilePath.Size = new System.Drawing.Size(509, 22);
+            this.txtSettingFilePath.TabIndex = 31;
+            // 
+            // btnLoadSetting
+            // 
+            this.btnLoadSetting.Location = new System.Drawing.Point(646, 164);
+            this.btnLoadSetting.Name = "btnLoadSetting";
+            this.btnLoadSetting.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadSetting.TabIndex = 30;
+            this.btnLoadSetting.Text = "Load";
+            this.btnLoadSetting.UseVisualStyleBackColor = true;
+            this.btnLoadSetting.Click += new System.EventHandler(this.btnLoadSetting_Click);
             // 
             // tabpageChOnOff
             // 
@@ -2454,14 +2490,14 @@
             // 
             // tabPageMacomChip
             // 
+            this.tabPageMacomChip.Controls.Add(this.txtMacomChip_Address);
+            this.tabPageMacomChip.Controls.Add(this.txtMacomChip_Page);
             this.tabPageMacomChip.Controls.Add(this.radioButtonMacomChip_Block2);
             this.tabPageMacomChip.Controls.Add(this.dataGridView6);
             this.tabPageMacomChip.Controls.Add(this.radioButtonMacomChip_Block1);
             this.tabPageMacomChip.Controls.Add(this.label88);
             this.tabPageMacomChip.Controls.Add(this.comboBoxMacomChip_Select);
-            this.tabPageMacomChip.Controls.Add(this.numericUpDownMacomChip_Page);
             this.tabPageMacomChip.Controls.Add(this.numericUpDownMacomChip_Bytes);
-            this.tabPageMacomChip.Controls.Add(this.numericUpDownMacomChip_Address);
             this.tabPageMacomChip.Controls.Add(this.label84);
             this.tabPageMacomChip.Controls.Add(this.label87);
             this.tabPageMacomChip.Controls.Add(this.comboBoxMacomChip_Operation);
@@ -2665,42 +2701,20 @@
             this.comboBoxMacomChip_Select.Size = new System.Drawing.Size(110, 25);
             this.comboBoxMacomChip_Select.TabIndex = 25;
             // 
-            // numericUpDownMacomChip_Page
-            // 
-            this.numericUpDownMacomChip_Page.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownMacomChip_Page.Location = new System.Drawing.Point(373, 84);
-            this.numericUpDownMacomChip_Page.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownMacomChip_Page.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numericUpDownMacomChip_Page.Name = "numericUpDownMacomChip_Page";
-            this.numericUpDownMacomChip_Page.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownMacomChip_Page.TabIndex = 11;
-            // 
             // numericUpDownMacomChip_Bytes
             // 
             this.numericUpDownMacomChip_Bytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.numericUpDownMacomChip_Bytes.Location = new System.Drawing.Point(601, 82);
             this.numericUpDownMacomChip_Bytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownMacomChip_Bytes.Name = "numericUpDownMacomChip_Bytes";
-            this.numericUpDownMacomChip_Bytes.Size = new System.Drawing.Size(45, 23);
-            this.numericUpDownMacomChip_Bytes.TabIndex = 29;
-            // 
-            // numericUpDownMacomChip_Address
-            // 
-            this.numericUpDownMacomChip_Address.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownMacomChip_Address.Location = new System.Drawing.Point(485, 84);
-            this.numericUpDownMacomChip_Address.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownMacomChip_Address.Maximum = new decimal(new int[] {
-            65535,
+            this.numericUpDownMacomChip_Bytes.Maximum = new decimal(new int[] {
+            128,
             0,
             0,
             0});
-            this.numericUpDownMacomChip_Address.Name = "numericUpDownMacomChip_Address";
-            this.numericUpDownMacomChip_Address.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownMacomChip_Address.TabIndex = 28;
+            this.numericUpDownMacomChip_Bytes.Name = "numericUpDownMacomChip_Bytes";
+            this.numericUpDownMacomChip_Bytes.Size = new System.Drawing.Size(45, 23);
+            this.numericUpDownMacomChip_Bytes.TabIndex = 29;
+            this.numericUpDownMacomChip_Bytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label84
             // 
@@ -2760,6 +2774,8 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Gray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtPage);
+            this.panel3.Controls.Add(this.txtRegAdress);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.btnReadWrite);
             this.panel3.Controls.Add(this.comboBoxSoftHard);
@@ -2770,8 +2786,6 @@
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.numericUpDownBytes);
-            this.panel3.Controls.Add(this.numericUpDownRegAddress);
-            this.panel3.Controls.Add(this.numericUpDownPage);
             this.panel3.Controls.Add(this.domainUpDownDeviceAddress);
             this.panel3.Controls.Add(this.comboBoxFrequency);
             this.panel3.Controls.Add(this.comboBoxDeviceIndex);
@@ -2814,7 +2828,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(569, 4);
+            this.label8.Location = new System.Drawing.Point(576, 4);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 19);
@@ -2824,7 +2838,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(500, 4);
+            this.label7.Location = new System.Drawing.Point(504, 4);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 19);
@@ -2874,7 +2888,7 @@
             // numericUpDownBytes
             // 
             this.numericUpDownBytes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownBytes.Location = new System.Drawing.Point(573, 28);
+            this.numericUpDownBytes.Location = new System.Drawing.Point(580, 28);
             this.numericUpDownBytes.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.numericUpDownBytes.Maximum = new decimal(new int[] {
             128,
@@ -2884,34 +2898,7 @@
             this.numericUpDownBytes.Name = "numericUpDownBytes";
             this.numericUpDownBytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownBytes.TabIndex = 7;
-            // 
-            // numericUpDownRegAddress
-            // 
-            this.numericUpDownRegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownRegAddress.Location = new System.Drawing.Point(504, 28);
-            this.numericUpDownRegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownRegAddress.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numericUpDownRegAddress.Name = "numericUpDownRegAddress";
-            this.numericUpDownRegAddress.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownRegAddress.TabIndex = 6;
-            // 
-            // numericUpDownPage
-            // 
-            this.numericUpDownPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownPage.Location = new System.Drawing.Point(444, 28);
-            this.numericUpDownPage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownPage.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericUpDownPage.Name = "numericUpDownPage";
-            this.numericUpDownPage.Size = new System.Drawing.Size(50, 23);
-            this.numericUpDownPage.TabIndex = 5;
+            this.numericUpDownBytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // domainUpDownDeviceAddress
             // 
@@ -2925,6 +2912,7 @@
             this.domainUpDownDeviceAddress.Size = new System.Drawing.Size(76, 23);
             this.domainUpDownDeviceAddress.TabIndex = 2;
             this.domainUpDownDeviceAddress.Text = "0xA0";
+            this.domainUpDownDeviceAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBoxFrequency
             // 
@@ -2932,10 +2920,8 @@
             this.comboBoxFrequency.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.comboBoxFrequency.FormattingEnabled = true;
             this.comboBoxFrequency.Items.AddRange(new object[] {
-            "100K",
-            "200K",
-            "300K",
-            "400K"});
+            "400K",
+            "100K"});
             this.comboBoxFrequency.Location = new System.Drawing.Point(281, 27);
             this.comboBoxFrequency.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBoxFrequency.Name = "comboBoxFrequency";
@@ -2964,6 +2950,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.checkBoxSoft_I2C);
             this.panel2.Controls.Add(this.labelDate);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -2998,44 +2985,57 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "400G QSFP-DD GUI";
             // 
-            // tabPageSetting
+            // txtRegAdress
             // 
-            this.tabPageSetting.Controls.Add(this.btnBrowse);
-            this.tabPageSetting.Controls.Add(this.txtSettingFilePath);
-            this.tabPageSetting.Controls.Add(this.btnLoadSetting);
-            this.tabPageSetting.Location = new System.Drawing.Point(4, 25);
-            this.tabPageSetting.Name = "tabPageSetting";
-            this.tabPageSetting.Size = new System.Drawing.Size(736, 351);
-            this.tabPageSetting.TabIndex = 9;
-            this.tabPageSetting.Text = "SETTING";
-            this.tabPageSetting.UseVisualStyleBackColor = true;
+            this.txtRegAdress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRegAdress.Location = new System.Drawing.Point(506, 28);
+            this.txtRegAdress.Name = "txtRegAdress";
+            this.txtRegAdress.Size = new System.Drawing.Size(61, 23);
+            this.txtRegAdress.TabIndex = 13;
+            this.txtRegAdress.Text = "0x00";
+            this.txtRegAdress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnBrowse
+            // txtPage
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(15, 164);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowse.TabIndex = 32;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            this.txtPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPage.Location = new System.Drawing.Point(437, 28);
+            this.txtPage.Name = "txtPage";
+            this.txtPage.Size = new System.Drawing.Size(61, 23);
+            this.txtPage.TabIndex = 14;
+            this.txtPage.Text = "0x00";
+            this.txtPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtSettingFilePath
+            // txtMacomChip_Page
             // 
-            this.txtSettingFilePath.Location = new System.Drawing.Point(111, 165);
-            this.txtSettingFilePath.Name = "txtSettingFilePath";
-            this.txtSettingFilePath.Size = new System.Drawing.Size(509, 22);
-            this.txtSettingFilePath.TabIndex = 31;
+            this.txtMacomChip_Page.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMacomChip_Page.Location = new System.Drawing.Point(370, 84);
+            this.txtMacomChip_Page.Name = "txtMacomChip_Page";
+            this.txtMacomChip_Page.Size = new System.Drawing.Size(61, 23);
+            this.txtMacomChip_Page.TabIndex = 15;
+            this.txtMacomChip_Page.Text = "0x00";
+            this.txtMacomChip_Page.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnLoadSetting
+            // txtMacomChip_Address
             // 
-            this.btnLoadSetting.Location = new System.Drawing.Point(646, 164);
-            this.btnLoadSetting.Name = "btnLoadSetting";
-            this.btnLoadSetting.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadSetting.TabIndex = 30;
-            this.btnLoadSetting.Text = "Load";
-            this.btnLoadSetting.UseVisualStyleBackColor = true;
-            this.btnLoadSetting.Click += new System.EventHandler(this.btnLoadSetting_Click);
+            this.txtMacomChip_Address.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMacomChip_Address.Location = new System.Drawing.Point(479, 84);
+            this.txtMacomChip_Address.Name = "txtMacomChip_Address";
+            this.txtMacomChip_Address.Size = new System.Drawing.Size(61, 23);
+            this.txtMacomChip_Address.TabIndex = 15;
+            this.txtMacomChip_Address.Text = "0x00";
+            this.txtMacomChip_Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // checkBoxSoft_I2C
+            // 
+            this.checkBoxSoft_I2C.AutoSize = true;
+            this.checkBoxSoft_I2C.Checked = true;
+            this.checkBoxSoft_I2C.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSoft_I2C.Location = new System.Drawing.Point(658, 9);
+            this.checkBoxSoft_I2C.Name = "checkBoxSoft_I2C";
+            this.checkBoxSoft_I2C.Size = new System.Drawing.Size(79, 23);
+            this.checkBoxSoft_I2C.TabIndex = 3;
+            this.checkBoxSoft_I2C.Text = "Soft I2C";
+            this.checkBoxSoft_I2C.UseVisualStyleBackColor = true;
             // 
             // CMIS_Form
             // 
@@ -3060,6 +3060,8 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.tabPageSetting.ResumeLayout(false);
+            this.tabPageSetting.PerformLayout();
             this.tabpageChOnOff.ResumeLayout(false);
             this.tabpageDMIADC.ResumeLayout(false);
             this.tabpageDMIADC.PerformLayout();
@@ -3124,18 +3126,12 @@
             this.tabPageMacomChip.ResumeLayout(false);
             this.tabPageMacomChip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMacomChip_Page)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMacomChip_Bytes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMacomChip_Address)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBytes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRegAddress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPage)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabPageSetting.ResumeLayout(false);
-            this.tabPageSetting.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3159,8 +3155,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDownBytes;
-        private System.Windows.Forms.NumericUpDown numericUpDownRegAddress;
-        private System.Windows.Forms.NumericUpDown numericUpDownPage;
         private System.Windows.Forms.DomainUpDown domainUpDownDeviceAddress;
         private System.Windows.Forms.ComboBox comboBoxFrequency;
         private System.Windows.Forms.ComboBox comboBoxDeviceIndex;
@@ -3346,10 +3340,8 @@
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.NumericUpDown numericUpDownMacomChip_Address;
         private System.Windows.Forms.NumericUpDown numericUpDownMacomChip_Bytes;
         private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.NumericUpDown numericUpDownMacomChip_Page;
         private System.Windows.Forms.RadioButton radioButtonMacomChip_Block2;
         private System.Windows.Forms.RadioButton radioButtonMacomChip_Block1;
         private System.Windows.Forms.DataGridView dataGridView4;
@@ -3388,6 +3380,11 @@
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox txtSettingFilePath;
         private System.Windows.Forms.Button btnLoadSetting;
+        private System.Windows.Forms.TextBox txtRegAdress;
+        private System.Windows.Forms.TextBox txtPage;
+        private System.Windows.Forms.TextBox txtMacomChip_Address;
+        private System.Windows.Forms.TextBox txtMacomChip_Page;
+        private System.Windows.Forms.CheckBox checkBoxSoft_I2C;
     }
 }
 
