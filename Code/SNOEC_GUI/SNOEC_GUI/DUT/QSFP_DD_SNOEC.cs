@@ -264,7 +264,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0xC1);
+                EnterEngMode(0xC2);
                 return EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x80);
             }
         }
@@ -273,7 +273,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0xC1);
+                EnterEngMode(0xC2);
                 return EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x82);
             }
         }
@@ -284,7 +284,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0xC1);
+                    EnterEngMode(0xC2);
                     ushort adcbias = 0;
                     switch (channel)
                     {
@@ -331,7 +331,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0xC1);
+                    EnterEngMode(0xC2);
                     ushort adctxp = 0;
                     switch (channel)
                     {
@@ -378,7 +378,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0xC1);
+                    EnterEngMode(0xC2);
                     ushort adcrxp = 0;
                     switch (channel)
                     {
