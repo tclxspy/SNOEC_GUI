@@ -80,6 +80,7 @@
             this.innoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.genericToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.luxshareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nopasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -250,6 +251,7 @@
             this.radioButtonI2C_Write = new System.Windows.Forms.RadioButton();
             this.radioButtonI2C_Read = new System.Windows.Forms.RadioButton();
             this.btnRead_VendorName = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.btnRead_FW_Version = new System.Windows.Forms.Button();
             this.btnRead_PN = new System.Windows.Forms.Button();
             this.btnRead_SN = new System.Windows.Forms.Button();
@@ -364,7 +366,6 @@
             this.checkBoxSoft_I2C = new System.Windows.Forms.CheckBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.nopasswordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -515,8 +516,6 @@
             // 
             // sNOECToolStripMenuItem
             // 
-            this.sNOECToolStripMenuItem.Checked = true;
-            this.sNOECToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.sNOECToolStripMenuItem.Name = "sNOECToolStripMenuItem";
             this.sNOECToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sNOECToolStripMenuItem.Text = "SNOEC";
@@ -542,6 +541,15 @@
             this.luxshareToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.luxshareToolStripMenuItem.Text = "Luxshare";
             this.luxshareToolStripMenuItem.Click += new System.EventHandler(this.luxshareToolStripMenuItem_Click);
+            // 
+            // nopasswordsToolStripMenuItem
+            // 
+            this.nopasswordsToolStripMenuItem.Checked = true;
+            this.nopasswordsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.nopasswordsToolStripMenuItem.Name = "nopasswordsToolStripMenuItem";
+            this.nopasswordsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nopasswordsToolStripMenuItem.Text = "Nopasswords";
+            this.nopasswordsToolStripMenuItem.Click += new System.EventHandler(this.nopasswordsToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -2374,6 +2382,7 @@
             this.tabPageI2C_Operation.Controls.Add(this.radioButtonI2C_Write);
             this.tabPageI2C_Operation.Controls.Add(this.radioButtonI2C_Read);
             this.tabPageI2C_Operation.Controls.Add(this.btnRead_VendorName);
+            this.tabPageI2C_Operation.Controls.Add(this.btnExport);
             this.tabPageI2C_Operation.Controls.Add(this.btnRead_FW_Version);
             this.tabPageI2C_Operation.Controls.Add(this.btnRead_PN);
             this.tabPageI2C_Operation.Controls.Add(this.btnRead_SN);
@@ -2426,6 +2435,16 @@
             this.btnRead_VendorName.Text = "Read";
             this.btnRead_VendorName.UseVisualStyleBackColor = true;
             this.btnRead_VendorName.Click += new System.EventHandler(this.btnRead_VendorName_Click);
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(633, 14);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 24;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnRead_FW_Version
             // 
@@ -3612,13 +3631,6 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 GUI";
             // 
-            // nopasswordsToolStripMenuItem
-            // 
-            this.nopasswordsToolStripMenuItem.Name = "nopasswordsToolStripMenuItem";
-            this.nopasswordsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.nopasswordsToolStripMenuItem.Text = "Nopasswords";
-            this.nopasswordsToolStripMenuItem.Click += new System.EventHandler(this.nopasswordsToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -4029,6 +4041,7 @@
         private System.Windows.Forms.Button btnLoad_I2C_Batch;
         private System.Windows.Forms.TextBox txtI2C_Batch_FilePath;
         private System.Windows.Forms.ToolStripMenuItem nopasswordsToolStripMenuItem;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 

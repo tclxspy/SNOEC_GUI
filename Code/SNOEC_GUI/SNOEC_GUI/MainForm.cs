@@ -30,7 +30,6 @@ namespace SNOEC_GUI
         public MainForm()
         {
             InitializeComponent();
-            this.labelDate.Text = DateTime.Now.ToShortDateString() + "   " + DateTime.Now.ToShortTimeString();
             this.comboBoxDeviceIndex.SelectedIndex = 1;
             this.comboBoxSoftHard.SelectedIndex = 0;
             this.comboBoxFrequency.SelectedIndex = 0;
@@ -1537,6 +1536,90 @@ namespace SNOEC_GUI
             this.sNOECToolStripMenuItem.Checked = false;
             this.luxshareToolStripMenuItem.Checked = false;
             this.nopasswordsToolStripMenuItem.Checked = true;
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            string fileName = "";
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Multiselect = true;//该值确定是否可以选择多个文件
+                dialog.Title = "请选择文件夹";
+                dialog.Filter = "TXT文件|*.txt";
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    fileName = dialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "file path error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            try
+            {
+                DirectoryInfo directoryInfo = Directory.GetParent(fileName);
+
+                if (!directoryInfo.Exists)
+                {
+                    directoryInfo.Create();
+                }
+
+                FileStream fileStream = null;
+                StreamWriter writer = null;
+                FileInfo fileInfo = new FileInfo(fileName);
+                if (!fileInfo.Exists)
+                {
+                    fileStream = fileInfo.Create();
+                }
+                else
+                {
+                    fileStream = fileInfo.Open(FileMode.Append, FileAccess.Write);
+                }
+                writer = new StreamWriter(fileStream);
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("// " + DateTime.Now.ToShortDateString() + "   " + DateTime.Now.ToShortTimeString());
+                sb.AppendLine("// i2c address: " + this.domainUpDownDeviceAddress.Text);
+                sb.AppendLine("// page num: " + this.numericUpDownPage.Value);
+                sb.AppendLine("// reg address: " + this.txtRegAdress.Text);
+                sb.AppendLine("// length: " + this.numericUpDownBytes.Value);
+
+                foreach (DataGridViewRow dr in this.dataGridView4.Rows)
+                {
+                    string temp = "";
+                    for (int i = 0; i < this.dataGridView4.ColumnCount; i++)
+                    {
+                        if(dr.Cells[i].Value == null)
+                        {
+                            sb.AppendLine(temp);
+                            goto save;
+                        }
+
+                        if (i == this.dataGridView4.ColumnCount - 1)
+                        {
+                            temp += dr.Cells[i].Value;
+                        }
+                        else
+                        {
+                            temp += dr.Cells[i].Value + "\t";
+                        }
+                    }
+                    sb.AppendLine(temp);
+                }
+                save: writer.WriteLine(sb.ToString());
+                writer.Close();
+                writer.Dispose();
+                fileStream.Close();
+                fileStream.Dispose();
+
+                MessageBox.Show("Done", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Export failed.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

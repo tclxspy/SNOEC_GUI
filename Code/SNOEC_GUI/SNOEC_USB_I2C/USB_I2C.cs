@@ -229,8 +229,8 @@ namespace SNOEC_USB_I2C
 
                 _serialPort.DiscardInBuffer();
                 _serialPort.Write(arr, 0, arr.Length);
-                //System.Threading.Thread.Sleep(300);//support ADI MCU with FTDI USB to UART
-                System.Threading.Thread.Sleep(50);//support STM32L073 MCU with USB
+                System.Threading.Thread.Sleep(300);//support ADI MCU with FTDI USB to UART
+                //System.Threading.Thread.Sleep(50);//support STM32L073 MCU with USB
                 if (operate == ReadWrite.Read)
                 {
                     _serialPort.Read(readBytes, 0, buffer.Length);

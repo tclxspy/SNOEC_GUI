@@ -22,38 +22,39 @@ namespace SNOEC_GUI
             SNOEC = 0,
         }
 
-        private void EnterEngMode(int page)
+        private void EnterEngMode(int bank, int page)
         {
             if (company == Company.SNOEC)
             {
-                byte[] buff = new byte[5];
+                byte[] buff = new byte[6];
                 buff[0] = 0x12;
                 buff[1] = 0x34;
                 buff[2] = 0x56;
                 buff[3] = 0x78;
-                buff[4] = (byte)page;
-                IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+                buff[4] = (byte)bank;
+                buff[5] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 122, softHard, buff);
 
                 //byte[] buff = new byte[6];
                 //buff[0] = 0x93;
                 //buff[1] = 0x78;
                 //buff[2] = 0xCC;
                 //buff[3] = 0xAE;
-                //buff[4] = 0x00;
+                //buff[4] = (byte)bank;
                 //buff[5] = (byte)page;
                 //IOPort.WriteReg(DUT_USB_Port, 0xA0, 122, softHard, buff);
-            }    
+            }
         }
 
         public byte[] WriteReg(int deviceIndex, int deviceAddress, int page, int regAddress, byte[] dataToWrite)
         {
-            EnterEngMode(page);
+            EnterEngMode(0x00, page);
             return IOPort.WriteReg(deviceIndex, deviceAddress, regAddress, softHard, dataToWrite);
         }
 
         public byte[] ReadReg(int deviceIndex, int deviceAddress, int page, int regAddress, int length)
         {
-            EnterEngMode(page);
+            EnterEngMode(0x00, page);
             return IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, length);
         }
 
@@ -61,7 +62,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0); 
+                EnterEngMode(0x00, 0); 
                 string SN = "";
                 SN = EEPROM_SNOEC.ReadSn(DUT_USB_Port, 0xA0, 166);
                 return SN.Trim();
@@ -72,7 +73,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 string pn = "";
                 pn = EEPROM_SNOEC.ReadPn(DUT_USB_Port, 0xA0, 148);
                 return pn.Trim();
@@ -84,8 +85,8 @@ namespace SNOEC_GUI
             lock (syncRoot)
             {
                 string fwrev = "";
-                //EnterEngMode(4);
-                //fwrev = EEPROM_SNOEC.ReadFWRev(DUT_USB_Port, 0xA0, 128);
+                EnterEngMode(0x00, 0xC2);
+                fwrev = EEPROM_SNOEC.ReadFWRev(DUT_USB_Port, 0xA0, 0xB4);
                 return fwrev;
             }
         }
@@ -94,7 +95,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 string vendor = "";
                 vendor = EEPROM_SNOEC.ReadVendorName(DUT_USB_Port, 0xA0, 129);
                 return vendor.Trim();
@@ -105,7 +106,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 return EEPROM_SNOEC.readdmitemp(DUT_USB_Port, 0xA0, 14);
             }
         }
@@ -114,7 +115,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 return EEPROM_SNOEC.readdmivcc(DUT_USB_Port, 0xA0, 16);
             }
         }
@@ -125,7 +126,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0x11);
+                    EnterEngMode(0x00, 0x11);
                     double dmibias = 0.0;
                     switch (channel)
                     {
@@ -172,7 +173,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0x11);
+                    EnterEngMode(0x00, 0x11);
                     double dmitxp = 0.0;
                     switch (channel)
                     {
@@ -219,7 +220,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0x11);
+                    EnterEngMode(0x00, 0x11);
                     double dmirxp = 0.0;
                     switch (channel)
                     {
@@ -264,7 +265,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0xC2);
+                EnterEngMode(0x00, 0xC2);
                 return EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x80);
             }
         }
@@ -273,7 +274,7 @@ namespace SNOEC_GUI
         {
             lock (syncRoot)
             {
-                EnterEngMode(0xC2);
+                EnterEngMode(0x00, 0xC2);
                 return EEPROM_SNOEC.readadc(DUT_USB_Port, 0xA0, 0x82);
             }
         }
@@ -284,7 +285,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0xC2);
+                    EnterEngMode(0x00, 0xC2);
                     ushort adcbias = 0;
                     switch (channel)
                     {
@@ -331,7 +332,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0xC2);
+                    EnterEngMode(0x00, 0xC2);
                     ushort adctxp = 0;
                     switch (channel)
                     {
@@ -378,7 +379,7 @@ namespace SNOEC_GUI
             {
                 try
                 {
-                    EnterEngMode(0xC2);
+                    EnterEngMode(0x00, 0xC2);
                     ushort adcrxp = 0;
                     switch (channel)
                     {
@@ -419,12 +420,241 @@ namespace SNOEC_GUI
             }
         }
 
+        public ushort GetTxPwrHighAlarm()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x8B, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetTxPwrLowAlarm()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x8C, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetTxPwrHighWarning()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x8D, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetTxPwrLowWarning()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x8E, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetTxBiasHighAlarm()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x8F, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetTxBiasLowAlarm()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x90, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetTxBiasHighWarning()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x91, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetTxBiasLowWarning()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x92, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetRxPwrHighAlarm()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x95, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetRxPwrLowAlarm()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x96, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetRxPwrHighWarning()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x97, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+        public ushort GetRxPwrLowWarning()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x11);
+                byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x98, softHard, 1);
+                if (buff == null)
+                {
+                    return Algorithm.MyNaN;
+                }
+                return buff[0];
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+                return Algorithm.MyNaN;
+            }
+        }
+
+
         //normal:0, high:1, low:2
         public int GetInteTempAlarm()
         {
             try
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
                 if (buff == null)
                 {
@@ -444,7 +674,7 @@ namespace SNOEC_GUI
         {
             try
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
                 if (buff == null)
                 {
@@ -464,7 +694,7 @@ namespace SNOEC_GUI
         {
             try
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
                 if (buff == null)
                 {
@@ -484,7 +714,7 @@ namespace SNOEC_GUI
         {
             try
             {
-                EnterEngMode(0);
+                EnterEngMode(0x00, 0);
                 byte[] buff = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x09, softHard, 1);
                 if (buff == null)
                 {
@@ -499,5 +729,168 @@ namespace SNOEC_GUI
             }
         }
 
+        public void DataPathPwrUp_1()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x00);
+                byte[] data = new byte[1] { 0x00 };
+                Byte[] buff = IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x1A, softHard, data);
+
+                EnterEngMode(0x00, 0x10);
+                data = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x80, softHard, 1);
+
+                data[0] |=  0x0F;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x80, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void DataPathPwrUp_2()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x00);
+                byte[] data = new byte[1] { 0x00 };
+                Byte[] buff = IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x1A, softHard, data);
+
+                EnterEngMode(0x00, 0x10);
+                data = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x80, softHard, 1);
+
+                data[0] |= 0xF0;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x80, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void DataPathPwrDn_1()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x00);
+                byte[] data = new byte[1] { 0x00 };
+                Byte[] buff = IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x1A, softHard, data);
+
+                EnterEngMode(0x00, 0x10);
+                data = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x80, softHard, 1);
+
+                data[0] &= 0xF0;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x80, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void DataPathPwrDn_2()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x00);
+                byte[] data = new byte[1] { 0x00 };
+                Byte[] buff = IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x1A, softHard, data);
+
+                EnterEngMode(0x00, 0x10);
+                data = IOPort.ReadReg(DUT_USB_Port, 0xA0, 0x80, softHard, 1);
+
+                data[0] &= 0x0F;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x80, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void LowPwr()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x00);
+                byte[] data = new byte[1] { 0x10 };
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x1A, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void SoftRest()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x00);
+                byte[] data = new byte[1] { 0x08 };
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x1A, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void Apply_DataPathInit_Staged_0()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x10);
+                byte[] data = new byte[1] { 0xFF };
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x8F, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void Apply_DataPathInit_Staged_1()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x10);
+                byte[] data = new byte[1] { 0xFF };
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0xB2, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void Apply_Immediate_Staged_0()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x10);
+                byte[] data = new byte[1] { 0xFF };
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0x90, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
+
+        public void Apply_Immediate_Staged_1()
+        {
+            try
+            {
+                EnterEngMode(0x00, 0x10);
+                byte[] data = new byte[1] { 0xFF };
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 0xB3, softHard, data);
+            }
+            catch
+            {
+                //Log.SaveLogToTxt(ex.Message);
+            }
+        }
     }
 }

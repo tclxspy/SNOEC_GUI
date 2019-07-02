@@ -10,7 +10,7 @@ namespace SNOEC_GUI
     public class QSFP28_SNOEC
     {
         public static int DUT_USB_Port = 1;        
-        public static Company company = Company.SNOEC;
+        public static Company company = Company.Nopasswords;
         public static IOPort.SoftHard softHard = IOPort.SoftHard.SerialPort;
         private static object syncRoot = new Object();//used for thread synchronization
         protected DUTCoeffControlByPN dataTable_DUTCoeffControlByPN;
@@ -86,11 +86,19 @@ namespace SNOEC_GUI
                 //buff[4] = (byte)page;
                 //IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
 
+                //byte[] buff = new byte[5];//56G
+                //buff[0] = 0xE0;
+                //buff[1] = 0x55;
+                //buff[2] = 0x3E;
+                //buff[3] = 0x8A;
+                //buff[4] = (byte)page;
+                //IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
+
                 byte[] buff = new byte[5];//56G
-                buff[0] = 0xE0;
-                buff[1] = 0x55;
-                buff[2] = 0x3E;
-                buff[3] = 0x8A;
+                buff[0] = 0x4C;
+                buff[1] = 0x4F;
+                buff[2] = 0x45;
+                buff[3] = 0x54;
                 buff[4] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 123, softHard, buff);
             }
