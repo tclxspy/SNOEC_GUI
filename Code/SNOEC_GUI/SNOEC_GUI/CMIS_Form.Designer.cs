@@ -234,6 +234,14 @@
             this.label69 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.tabPageI2C_Operation = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnApply_Staged_1 = new System.Windows.Forms.Button();
+            this.btnApply_Staged_0 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnLowPwr = new System.Windows.Forms.Button();
+            this.btnDataPathPwrUp_1 = new System.Windows.Forms.Button();
+            this.btnDataPathPwrUp_2 = new System.Windows.Forms.Button();
             this.btnRead_VendorName = new System.Windows.Forms.Button();
             this.btnRead_FW_Version = new System.Windows.Forms.Button();
             this.btnRead_PN = new System.Windows.Forms.Button();
@@ -267,6 +275,8 @@
             this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageMacomChip = new System.Windows.Forms.TabPage();
+            this.txtMacomChip_Address = new System.Windows.Forms.TextBox();
+            this.txtMacomChip_Page = new System.Windows.Forms.TextBox();
             this.radioButtonMacomChip_Block2 = new System.Windows.Forms.RadioButton();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -295,6 +305,8 @@
             this.label86 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtPage = new System.Windows.Forms.TextBox();
+            this.txtRegAdress = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxSoftHard = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -308,13 +320,9 @@
             this.comboBoxFrequency = new System.Windows.Forms.ComboBox();
             this.comboBoxDeviceIndex = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBoxSoft_I2C = new System.Windows.Forms.CheckBox();
             this.labelDate = new System.Windows.Forms.Label();
             this.labelTitle = new System.Windows.Forms.Label();
-            this.txtRegAdress = new System.Windows.Forms.TextBox();
-            this.txtPage = new System.Windows.Forms.TextBox();
-            this.txtMacomChip_Page = new System.Windows.Forms.TextBox();
-            this.txtMacomChip_Address = new System.Windows.Forms.TextBox();
-            this.checkBoxSoft_I2C = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -403,7 +411,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(764, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(823, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -445,7 +453,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
-            this.panel1.Size = new System.Drawing.Size(764, 497);
+            this.panel1.Size = new System.Drawing.Size(823, 560);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -457,7 +465,7 @@
             this.panel4.Location = new System.Drawing.Point(10, 107);
             this.panel4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(744, 380);
+            this.panel4.Size = new System.Drawing.Size(803, 443);
             this.panel4.TabIndex = 3;
             // 
             // tabControl1
@@ -475,7 +483,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(744, 380);
+            this.tabControl1.Size = new System.Drawing.Size(803, 443);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -486,7 +494,7 @@
             this.tabPageSetting.Controls.Add(this.btnLoadSetting);
             this.tabPageSetting.Location = new System.Drawing.Point(4, 25);
             this.tabPageSetting.Name = "tabPageSetting";
-            this.tabPageSetting.Size = new System.Drawing.Size(736, 351);
+            this.tabPageSetting.Size = new System.Drawing.Size(794, 417);
             this.tabPageSetting.TabIndex = 9;
             this.tabPageSetting.Text = "SETTING";
             this.tabPageSetting.UseVisualStyleBackColor = true;
@@ -535,7 +543,7 @@
             this.tabpageChOnOff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tabpageChOnOff.Name = "tabpageChOnOff";
             this.tabpageChOnOff.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.tabpageChOnOff.Size = new System.Drawing.Size(736, 351);
+            this.tabpageChOnOff.Size = new System.Drawing.Size(795, 414);
             this.tabpageChOnOff.TabIndex = 1;
             this.tabpageChOnOff.Text = "Ch On/Off";
             this.tabpageChOnOff.UseVisualStyleBackColor = true;
@@ -668,7 +676,7 @@
             this.tabpageDMIADC.ForeColor = System.Drawing.Color.Black;
             this.tabpageDMIADC.Location = new System.Drawing.Point(4, 25);
             this.tabpageDMIADC.Name = "tabpageDMIADC";
-            this.tabpageDMIADC.Size = new System.Drawing.Size(736, 351);
+            this.tabpageDMIADC.Size = new System.Drawing.Size(795, 414);
             this.tabpageDMIADC.TabIndex = 2;
             this.tabpageDMIADC.Text = "DMI/ADC";
             this.tabpageDMIADC.UseVisualStyleBackColor = true;
@@ -765,7 +773,7 @@
             this.panel10.Controls.Add(this.txtDMI_TxBias_Ch4);
             this.panel10.Location = new System.Drawing.Point(617, 29);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(100, 310);
+            this.panel10.Size = new System.Drawing.Size(101, 307);
             this.panel10.TabIndex = 0;
             // 
             // label45
@@ -899,7 +907,7 @@
             this.panel9.Controls.Add(this.txtDMI_TxBias_Ch3);
             this.panel9.Location = new System.Drawing.Point(497, 29);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(100, 310);
+            this.panel9.Size = new System.Drawing.Size(101, 307);
             this.panel9.TabIndex = 0;
             // 
             // label38
@@ -1033,7 +1041,7 @@
             this.panel8.Controls.Add(this.txtDMI_TxBias_Ch2);
             this.panel8.Location = new System.Drawing.Point(377, 29);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(100, 310);
+            this.panel8.Size = new System.Drawing.Size(101, 307);
             this.panel8.TabIndex = 0;
             // 
             // label31
@@ -1167,7 +1175,7 @@
             this.panel7.Controls.Add(this.txtDMI_TxBias_Ch1);
             this.panel7.Location = new System.Drawing.Point(257, 29);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 310);
+            this.panel7.Size = new System.Drawing.Size(101, 307);
             this.panel7.TabIndex = 0;
             // 
             // label24
@@ -1301,7 +1309,7 @@
             this.panel5.Controls.Add(this.txtDMI_VCC);
             this.panel5.Location = new System.Drawing.Point(137, 29);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(100, 310);
+            this.panel5.Size = new System.Drawing.Size(101, 307);
             this.panel5.TabIndex = 0;
             // 
             // label10
@@ -1433,7 +1441,7 @@
             this.panel6.Controls.Add(this.textBox12);
             this.panel6.Location = new System.Drawing.Point(17, 29);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 310);
+            this.panel6.Size = new System.Drawing.Size(101, 307);
             this.panel6.TabIndex = 0;
             // 
             // label17
@@ -1534,7 +1542,7 @@
             this.tabpageAlarmWarning.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabpageAlarmWarning.Location = new System.Drawing.Point(4, 25);
             this.tabpageAlarmWarning.Name = "tabpageAlarmWarning";
-            this.tabpageAlarmWarning.Size = new System.Drawing.Size(736, 351);
+            this.tabpageAlarmWarning.Size = new System.Drawing.Size(795, 414);
             this.tabpageAlarmWarning.TabIndex = 5;
             this.tabpageAlarmWarning.Text = "Alarm/Warning";
             this.tabpageAlarmWarning.UseVisualStyleBackColor = true;
@@ -1599,7 +1607,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(736, 351);
+            this.groupBox2.Size = new System.Drawing.Size(795, 414);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
@@ -2180,6 +2188,14 @@
             // 
             // tabPageI2C_Operation
             // 
+            this.tabPageI2C_Operation.Controls.Add(this.button2);
+            this.tabPageI2C_Operation.Controls.Add(this.button1);
+            this.tabPageI2C_Operation.Controls.Add(this.btnApply_Staged_1);
+            this.tabPageI2C_Operation.Controls.Add(this.btnApply_Staged_0);
+            this.tabPageI2C_Operation.Controls.Add(this.btnReset);
+            this.tabPageI2C_Operation.Controls.Add(this.btnLowPwr);
+            this.tabPageI2C_Operation.Controls.Add(this.btnDataPathPwrUp_1);
+            this.tabPageI2C_Operation.Controls.Add(this.btnDataPathPwrUp_2);
             this.tabPageI2C_Operation.Controls.Add(this.btnRead_VendorName);
             this.tabPageI2C_Operation.Controls.Add(this.btnRead_FW_Version);
             this.tabPageI2C_Operation.Controls.Add(this.btnRead_PN);
@@ -2199,10 +2215,90 @@
             this.tabPageI2C_Operation.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPageI2C_Operation.Location = new System.Drawing.Point(4, 25);
             this.tabPageI2C_Operation.Name = "tabPageI2C_Operation";
-            this.tabPageI2C_Operation.Size = new System.Drawing.Size(736, 351);
+            this.tabPageI2C_Operation.Size = new System.Drawing.Size(795, 414);
             this.tabPageI2C_Operation.TabIndex = 4;
             this.tabPageI2C_Operation.Text = "I2C Operation";
             this.tabPageI2C_Operation.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(303, 28);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(179, 23);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Apply_Immediate_Staged_1";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(303, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(179, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Apply_Immediate_Staged_0";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnApply_Staged_1
+            // 
+            this.btnApply_Staged_1.Location = new System.Drawing.Point(503, 28);
+            this.btnApply_Staged_1.Name = "btnApply_Staged_1";
+            this.btnApply_Staged_1.Size = new System.Drawing.Size(185, 23);
+            this.btnApply_Staged_1.TabIndex = 30;
+            this.btnApply_Staged_1.Text = "Apply_DataPathInit_Staged_1";
+            this.btnApply_Staged_1.UseVisualStyleBackColor = true;
+            this.btnApply_Staged_1.Click += new System.EventHandler(this.btnApply_Staged_1_Click_1);
+            // 
+            // btnApply_Staged_0
+            // 
+            this.btnApply_Staged_0.Location = new System.Drawing.Point(503, 3);
+            this.btnApply_Staged_0.Name = "btnApply_Staged_0";
+            this.btnApply_Staged_0.Size = new System.Drawing.Size(186, 23);
+            this.btnApply_Staged_0.TabIndex = 30;
+            this.btnApply_Staged_0.Text = "Apply_DataPathInit_Staged_0";
+            this.btnApply_Staged_0.UseVisualStyleBackColor = true;
+            this.btnApply_Staged_0.Click += new System.EventHandler(this.btnApply_Staged_0_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(3, 12);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 29;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnLowPwr
+            // 
+            this.btnLowPwr.Location = new System.Drawing.Point(84, 12);
+            this.btnLowPwr.Name = "btnLowPwr";
+            this.btnLowPwr.Size = new System.Drawing.Size(75, 23);
+            this.btnLowPwr.TabIndex = 29;
+            this.btnLowPwr.Text = "LowPwr";
+            this.btnLowPwr.UseVisualStyleBackColor = true;
+            this.btnLowPwr.Click += new System.EventHandler(this.btnLowPwr_Click);
+            // 
+            // btnDataPathPwrUp_1
+            // 
+            this.btnDataPathPwrUp_1.Location = new System.Drawing.Point(505, 334);
+            this.btnDataPathPwrUp_1.Name = "btnDataPathPwrUp_1";
+            this.btnDataPathPwrUp_1.Size = new System.Drawing.Size(124, 23);
+            this.btnDataPathPwrUp_1.TabIndex = 29;
+            this.btnDataPathPwrUp_1.Text = "DataPathPwrUp_1";
+            this.btnDataPathPwrUp_1.UseVisualStyleBackColor = true;
+            this.btnDataPathPwrUp_1.Click += new System.EventHandler(this.btnDataPathPwrUp_1_Click);
+            // 
+            // btnDataPathPwrUp_2
+            // 
+            this.btnDataPathPwrUp_2.Location = new System.Drawing.Point(303, 334);
+            this.btnDataPathPwrUp_2.Name = "btnDataPathPwrUp_2";
+            this.btnDataPathPwrUp_2.Size = new System.Drawing.Size(124, 23);
+            this.btnDataPathPwrUp_2.TabIndex = 29;
+            this.btnDataPathPwrUp_2.Text = "DataPathPwrUp_2";
+            this.btnDataPathPwrUp_2.UseVisualStyleBackColor = true;
+            this.btnDataPathPwrUp_2.Click += new System.EventHandler(this.btnDataPathPwrUp_2_Click);
             // 
             // btnRead_VendorName
             // 
@@ -2315,7 +2411,7 @@
             // radioButtonI2C_Write
             // 
             this.radioButtonI2C_Write.AutoSize = true;
-            this.radioButtonI2C_Write.Location = new System.Drawing.Point(437, 18);
+            this.radioButtonI2C_Write.Location = new System.Drawing.Point(243, 19);
             this.radioButtonI2C_Write.Name = "radioButtonI2C_Write";
             this.radioButtonI2C_Write.Size = new System.Drawing.Size(54, 20);
             this.radioButtonI2C_Write.TabIndex = 16;
@@ -2326,7 +2422,7 @@
             // 
             this.radioButtonI2C_Read.AutoSize = true;
             this.radioButtonI2C_Read.Checked = true;
-            this.radioButtonI2C_Read.Location = new System.Drawing.Point(279, 18);
+            this.radioButtonI2C_Read.Location = new System.Drawing.Point(174, 19);
             this.radioButtonI2C_Read.Name = "radioButtonI2C_Read";
             this.radioButtonI2C_Read.Size = new System.Drawing.Size(52, 20);
             this.radioButtonI2C_Read.TabIndex = 15;
@@ -2506,10 +2602,30 @@
             this.tabPageMacomChip.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabPageMacomChip.Location = new System.Drawing.Point(4, 25);
             this.tabPageMacomChip.Name = "tabPageMacomChip";
-            this.tabPageMacomChip.Size = new System.Drawing.Size(736, 351);
+            this.tabPageMacomChip.Size = new System.Drawing.Size(795, 414);
             this.tabPageMacomChip.TabIndex = 8;
             this.tabPageMacomChip.Text = "MacomChip";
             this.tabPageMacomChip.UseVisualStyleBackColor = true;
+            // 
+            // txtMacomChip_Address
+            // 
+            this.txtMacomChip_Address.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMacomChip_Address.Location = new System.Drawing.Point(479, 84);
+            this.txtMacomChip_Address.Name = "txtMacomChip_Address";
+            this.txtMacomChip_Address.Size = new System.Drawing.Size(61, 23);
+            this.txtMacomChip_Address.TabIndex = 15;
+            this.txtMacomChip_Address.Text = "0x00";
+            this.txtMacomChip_Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtMacomChip_Page
+            // 
+            this.txtMacomChip_Page.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMacomChip_Page.Location = new System.Drawing.Point(370, 84);
+            this.txtMacomChip_Page.Name = "txtMacomChip_Page";
+            this.txtMacomChip_Page.Size = new System.Drawing.Size(61, 23);
+            this.txtMacomChip_Page.TabIndex = 15;
+            this.txtMacomChip_Page.Text = "0x00";
+            this.txtMacomChip_Page.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // radioButtonMacomChip_Block2
             // 
@@ -2793,8 +2909,28 @@
             this.panel3.Location = new System.Drawing.Point(10, 38);
             this.panel3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(744, 69);
+            this.panel3.Size = new System.Drawing.Size(803, 69);
             this.panel3.TabIndex = 2;
+            // 
+            // txtPage
+            // 
+            this.txtPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtPage.Location = new System.Drawing.Point(437, 28);
+            this.txtPage.Name = "txtPage";
+            this.txtPage.Size = new System.Drawing.Size(61, 23);
+            this.txtPage.TabIndex = 14;
+            this.txtPage.Text = "0x11";
+            this.txtPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtRegAdress
+            // 
+            this.txtRegAdress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtRegAdress.Location = new System.Drawing.Point(506, 28);
+            this.txtRegAdress.Name = "txtRegAdress";
+            this.txtRegAdress.Size = new System.Drawing.Size(61, 23);
+            this.txtRegAdress.TabIndex = 13;
+            this.txtRegAdress.Text = "0x80";
+            this.txtRegAdress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -2899,6 +3035,11 @@
             this.numericUpDownBytes.Size = new System.Drawing.Size(45, 23);
             this.numericUpDownBytes.TabIndex = 7;
             this.numericUpDownBytes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownBytes.Value = new decimal(new int[] {
+            128,
+            0,
+            0,
+            0});
             // 
             // domainUpDownDeviceAddress
             // 
@@ -2957,14 +3098,26 @@
             this.panel2.Location = new System.Drawing.Point(10, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(744, 33);
+            this.panel2.Size = new System.Drawing.Size(803, 33);
             this.panel2.TabIndex = 1;
+            // 
+            // checkBoxSoft_I2C
+            // 
+            this.checkBoxSoft_I2C.AutoSize = true;
+            this.checkBoxSoft_I2C.Checked = true;
+            this.checkBoxSoft_I2C.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSoft_I2C.Location = new System.Drawing.Point(658, 9);
+            this.checkBoxSoft_I2C.Name = "checkBoxSoft_I2C";
+            this.checkBoxSoft_I2C.Size = new System.Drawing.Size(79, 23);
+            this.checkBoxSoft_I2C.TabIndex = 3;
+            this.checkBoxSoft_I2C.Text = "Soft I2C";
+            this.checkBoxSoft_I2C.UseVisualStyleBackColor = true;
             // 
             // labelDate
             // 
             this.labelDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(531, 14);
+            this.labelDate.Location = new System.Drawing.Point(590, 14);
             this.labelDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(35, 19);
@@ -2985,63 +3138,11 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "400G QSFP-DD GUI";
             // 
-            // txtRegAdress
-            // 
-            this.txtRegAdress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtRegAdress.Location = new System.Drawing.Point(506, 28);
-            this.txtRegAdress.Name = "txtRegAdress";
-            this.txtRegAdress.Size = new System.Drawing.Size(61, 23);
-            this.txtRegAdress.TabIndex = 13;
-            this.txtRegAdress.Text = "0x00";
-            this.txtRegAdress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtPage
-            // 
-            this.txtPage.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPage.Location = new System.Drawing.Point(437, 28);
-            this.txtPage.Name = "txtPage";
-            this.txtPage.Size = new System.Drawing.Size(61, 23);
-            this.txtPage.TabIndex = 14;
-            this.txtPage.Text = "0x00";
-            this.txtPage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMacomChip_Page
-            // 
-            this.txtMacomChip_Page.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtMacomChip_Page.Location = new System.Drawing.Point(370, 84);
-            this.txtMacomChip_Page.Name = "txtMacomChip_Page";
-            this.txtMacomChip_Page.Size = new System.Drawing.Size(61, 23);
-            this.txtMacomChip_Page.TabIndex = 15;
-            this.txtMacomChip_Page.Text = "0x00";
-            this.txtMacomChip_Page.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMacomChip_Address
-            // 
-            this.txtMacomChip_Address.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtMacomChip_Address.Location = new System.Drawing.Point(479, 84);
-            this.txtMacomChip_Address.Name = "txtMacomChip_Address";
-            this.txtMacomChip_Address.Size = new System.Drawing.Size(61, 23);
-            this.txtMacomChip_Address.TabIndex = 15;
-            this.txtMacomChip_Address.Text = "0x00";
-            this.txtMacomChip_Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // checkBoxSoft_I2C
-            // 
-            this.checkBoxSoft_I2C.AutoSize = true;
-            this.checkBoxSoft_I2C.Checked = true;
-            this.checkBoxSoft_I2C.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSoft_I2C.Location = new System.Drawing.Point(658, 9);
-            this.checkBoxSoft_I2C.Name = "checkBoxSoft_I2C";
-            this.checkBoxSoft_I2C.Size = new System.Drawing.Size(79, 23);
-            this.checkBoxSoft_I2C.TabIndex = 3;
-            this.checkBoxSoft_I2C.Text = "Soft I2C";
-            this.checkBoxSoft_I2C.UseVisualStyleBackColor = true;
-            // 
             // CMIS_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 522);
+            this.ClientSize = new System.Drawing.Size(823, 585);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -3385,6 +3486,14 @@
         private System.Windows.Forms.TextBox txtMacomChip_Address;
         private System.Windows.Forms.TextBox txtMacomChip_Page;
         private System.Windows.Forms.CheckBox checkBoxSoft_I2C;
+        private System.Windows.Forms.Button btnDataPathPwrUp_2;
+        private System.Windows.Forms.Button btnLowPwr;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnDataPathPwrUp_1;
+        private System.Windows.Forms.Button btnApply_Staged_1;
+        private System.Windows.Forms.Button btnApply_Staged_0;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

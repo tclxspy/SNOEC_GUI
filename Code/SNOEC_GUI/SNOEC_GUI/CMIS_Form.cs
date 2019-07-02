@@ -219,24 +219,67 @@ namespace SNOEC_GUI
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("Alarm/Warning"))
                 {
-                    //for (int i = 0; i < 4; i++)
-                    //{
-                    //    chart[0, i].BackColor = this.GetColor(dut.GetInteTxPowerAlarm(i + 1));
-                    //    chart[0, i + 4].BackColor = this.GetColor(dut.GetInteTxPowerWarning(i + 1));
-                    //    chart[1, i].BackColor = this.GetColor(dut.GetInteTxBiasAlarm(i + 1));
-                    //    chart[1, i + 4].BackColor = this.GetColor(dut.GetInteTxBiasWarning(i + 1));
-                    //    chart[2, i].BackColor = this.GetColor(dut.GetInteRxPowerAlarm(i + 1));
-                    //    chart[2, i + 4].BackColor = this.GetColor(dut.GetInteRxPowerWarning(i + 1));
-                    //}
+                    byte[] temp = dut.ReadReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0x11, 0x8B, (0x98 - 0x8B +1)); 
+                    byte temp_TxPwrHighAlarm = temp[0];
+                    byte temp_TxPwrLowAlarm = temp[1];
+                    byte temp_TxPwrHighWarning = temp[2];
+                    byte temp_TxPwrLowWarning = temp[3];
+                    byte temp_TxBiasHighAlarm = temp[4];
+                    byte temp_TxBiasLowAlarm = temp[5];
+                    byte temp_TxBiasHighWarning = temp[6];
+                    byte temp_TxBiasLowWarning = temp[7];
+                    byte temp_RxPwrHighAlarm = temp[10];
+                    byte temp_RxPwrLowAlarm = temp[11];
+                    byte temp_RxPwrHighWarning = temp[12];
+                    byte temp_RxPwrLowWarning = temp[13];
+                    for (int i = 0; i < 4; i++)
+                    {
+                        chart[0, i].BackColor = ((temp_TxPwrHighAlarm & (0x01 << i)) != 0x00) ? Color.Red : Color.Lime;
+                        if (chart[0, i].BackColor == Color.Lime)
+                        {
+                            chart[0, i].BackColor = ((temp_TxPwrLowAlarm & (0x01 << i)) != 0x00) ? Color.Gray : Color.Lime;
+                        }
+
+                        chart[0, i + 4].BackColor = ((temp_TxPwrHighWarning & (0x01 << i)) != 0x00) ? Color.Red : Color.Lime;
+                        if (chart[0, i + 4].BackColor == Color.Lime)
+                        {
+                            chart[0, i + 4].BackColor = ((temp_TxPwrLowWarning & (0x01 << i)) != 0x00) ? Color.Gray : Color.Lime;
+                        }
+
+                        chart[1, i].BackColor = ((temp_TxBiasHighAlarm & (0x01 << i)) != 0x00) ? Color.Red : Color.Lime;
+                        if (chart[1, i].BackColor == Color.Lime)
+                        {
+                            chart[1, i].BackColor = ((temp_TxBiasLowAlarm & (0x01 << i)) != 0x00) ? Color.Gray : Color.Lime;
+                        }
+
+                        chart[1, i + 4].BackColor = ((temp_TxBiasHighWarning & (0x01 << i)) != 0x00) ? Color.Red : Color.Lime;
+                        if (chart[1, i + 4].BackColor == Color.Lime)
+                        {
+                            chart[1, i + 4].BackColor = ((temp_TxBiasLowWarning & (0x01 << i)) != 0x00) ? Color.Gray : Color.Lime;
+                        }
+
+                        chart[2, i].BackColor = ((temp_RxPwrHighAlarm & (0x01 << i)) != 0x00) ? Color.Red : Color.Lime;
+                        if (chart[2, i].BackColor == Color.Lime)
+                        {
+                            chart[2, i].BackColor = ((temp_RxPwrLowAlarm & (0x01 << i)) != 0x00) ? Color.Gray : Color.Lime;
+                        }
+
+                        chart[2, i + 4].BackColor = ((temp_RxPwrHighWarning & (0x01 << i)) != 0x00) ? Color.Red : Color.Lime;
+                        if (chart[2, i + 4].BackColor == Color.Lime)
+                        {
+                            chart[2, i + 4].BackColor = ((temp_RxPwrLowWarning & (0x01 << i)) != 0x00) ? Color.Gray : Color.Lime;
+                        }
+                    }
                     this.chart25.BackColor = this.chart26.BackColor = this.chart27.BackColor = this.chart28.BackColor = this.GetColor(dut.GetInteVccAlarm());
                     this.chart29.BackColor = this.chart30.BackColor = this.chart31.BackColor = this.chart32.BackColor = this.GetColor(dut.GetInteVccWarning());
                     this.chart33.BackColor = this.chart34.BackColor = this.chart35.BackColor = this.chart36.BackColor = this.GetColor(dut.GetInteTempAlarm());
                     this.chart37.BackColor = this.chart38.BackColor = this.chart39.BackColor = this.chart40.BackColor = this.GetColor(dut.GetInteTempWarning());
+                    this.Refresh();
                 }
 
                 if (this.tabControl1.SelectedTab.ToString().Contains("I2C Operation"))
                 {
-                    if(this.radioButtonI2C_Read.Checked)
+                    if (this.radioButtonI2C_Read.Checked)
                     {
                         this.I2C_Read();
                     }
@@ -296,8 +339,8 @@ namespace SNOEC_GUI
             this.txtDMI_VCC.Text = dut.ReadDmiVcc().ToString();
             if (QSFP28_SNOEC.company == QSFP28_SNOEC.Company.SNOEC)
             {
-                this.txtTempADC.Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcTemp()), 16).ToUpper(); 
-                this.txtVccADC.Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcVcc()), 16).ToUpper(); 
+                this.txtTempADC.Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcTemp()), 16).ToUpper();
+                this.txtVccADC.Text = "0x" + Convert.ToString(Algorithm.LITTLE_TO_BIG_16(dut.ReadAdcVcc()), 16).ToUpper();
             }
             this.txtFW_Version.Text = dut.ReadFWRev();
             for (int i = 0; i < txts_dmi_TxBias.Length; i++)
@@ -742,7 +785,7 @@ namespace SNOEC_GUI
                 dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_update_chip_reg_page, 0x80, buffer);
                 dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, map_page_chip_control, map_address_chip_control_reg_write_trigger, new byte[] { value_map_address_chip_control_reg_write_trigger });
             }
-        }       
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -1379,6 +1422,126 @@ namespace SNOEC_GUI
                 SNOEC_USB_I2C.USB_I2C.i2c_soft_enable = false;
             }
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dut.SoftRest();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLowPwr_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dut.LowPwr();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        bool data_path_pwr_up_1 = false;
+        private void btnDataPathPwrUp_1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (data_path_pwr_up_1 == false)
+                {
+                    dut.DataPathPwrUp_1();
+                    data_path_pwr_up_1 = true;
+                    this.btnDataPathPwrUp_1.Text = "DataPathPwrDn_1";
+                }
+                else
+                {
+                    dut.DataPathPwrDn_1();
+                    data_path_pwr_up_1 = false;
+                    this.btnDataPathPwrUp_1.Text = "DataPathPwrUp_1";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        bool data_path_pwr_up_2 = false;
+        private void btnDataPathPwrUp_2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (data_path_pwr_up_2 == false)
+                {
+                    dut.DataPathPwrUp_2();
+                    data_path_pwr_up_2 = true;
+                    this.btnDataPathPwrUp_2.Text = "DataPathPwrDn_2";
+                }
+                else
+                {
+                    dut.DataPathPwrDn_2();
+                    data_path_pwr_up_2 = false;
+                    this.btnDataPathPwrUp_2.Text = "DataPathPwrUp_2";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnApply_Staged_0_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dut.Apply_DataPathInit_Staged_0();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnApply_Staged_1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                dut.Apply_DataPathInit_Staged_1();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dut.Apply_Immediate_Staged_0();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dut.Apply_Immediate_Staged_1();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -73,24 +73,26 @@ namespace SNOEC_GUI
 
         public static string ReadFWRev(int deviceIndex, int deviceAddress, int regAddress, int phycialAdress = 0, int mdiomode = 0)
         {
-            byte[] buff = new byte[2];
+            byte[] buff = new byte[4];
             string fwrev = Algorithm.MyNaN.ToString();
             UInt16[] buff1 = new UInt16[1];
             try
             {
                 if (mdiomode == 1)
                 {
-                    buff1 = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 2);
+                    buff1 = IOPort.ReadMDIO(deviceIndex, deviceAddress, phycialAdress, regAddress, IOPort.MDIOSoftHard.SOFTWARE, 4);
                     buff[0] = (byte)(buff1[0]);
                     buff[1] = (byte)(buff1[1]);
+                    buff[2] = (byte)(buff1[2]);
+                    buff[3] = (byte)(buff1[3]);
                 }
                 else
                 {
 
-                    buff = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 2);
+                    buff = IOPort.ReadReg(deviceIndex, deviceAddress, regAddress, softHard, 4);
 
                 }
-                fwrev = Convert.ToString((buff[0] * 256 + buff[1]), 16);
+                fwrev = Convert.ToString((buff[0] << 24) |( buff[1] << 16) |(buff[2] << 8) | buff[3], 16).ToUpper();
                 return fwrev.Trim();
             }
             catch
