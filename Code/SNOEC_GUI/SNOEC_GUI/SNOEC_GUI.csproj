@@ -86,34 +86,35 @@
     <Compile Include="DUT\QSFP28_SNOEC.cs" />
     <Compile Include="DUT\QSFP_DD_SNOEC.cs" />
     <Compile Include="FolderPath.cs" />
-    <Compile Include="CalculateForm.cs">
+    <Compile Include="Products_GUI\CalculateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CalculateForm.Designer.cs">
+    <Compile Include="Products_GUI\CalculateForm.Designer.cs">
       <DependentUpon>CalculateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelpForm.cs">
+    <Compile Include="Products_GUI\HelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelpForm.Designer.cs">
+    <Compile Include="Products_GUI\HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edemux_Form.cs">
+    <Compile Include="Products_GUI\Edemux_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Edemux_Form.Designer.cs">
+    <Compile Include="Products_GUI\Edemux_Form.Desinger.cs">
       <DependentUpon>Edemux_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="_100G_DR1_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="_100G_DR1_Form.Designer.cs">
+    <Compile Include="Products_GUI\_100G_DR1_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products_GUI\_100G_DR1_Form.designer.cs">
       <DependentUpon>_100G_DR1_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="QSFP28_PSM4_Form.cs">
+    <Compile Include="Products_GUI\QSFP28_PSM4_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QSFP28_PSM4_Form.Designer.cs">
+    <Compile Include="Products_GUI\QSFP28_PSM4_Form.Designer.cs">
       <DependentUpon>QSFP28_PSM4_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductSelectForm.cs">
@@ -122,16 +123,16 @@
     <Compile Include="ProductSelectForm.Designer.cs">
       <DependentUpon>ProductSelectForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CMIS_Form.cs">
+    <Compile Include="Products_GUI\CMIS_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CMIS_Form.Designer.cs">
+    <Compile Include="Products_GUI\CMIS_Form.Designer.cs">
       <DependentUpon>CMIS_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Products_GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Products_GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Parameter\DUTCoeffControlByPN.cs">
@@ -139,34 +140,34 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestForm.cs">
+    <Compile Include="Products_GUI\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestForm.Designer.cs">
+    <Compile Include="Products_GUI\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CalculateForm.resx">
+    <EmbeddedResource Include="Products_GUI\CalculateForm.resx">
       <DependentUpon>CalculateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.resx">
+    <EmbeddedResource Include="Products_GUI\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edemux_Form.resx">
+    <EmbeddedResource Include="Products_GUI\Edemux_Form.resx">
       <DependentUpon>Edemux_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="_100G_DR1_Form.resx">
+    <EmbeddedResource Include="Products_GUI\_100G_DR1_Form.resx">
       <DependentUpon>_100G_DR1_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="QSFP28_PSM4_Form.resx">
+    <EmbeddedResource Include="Products_GUI\QSFP28_PSM4_Form.resx">
       <DependentUpon>QSFP28_PSM4_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductSelectForm.resx">
       <DependentUpon>ProductSelectForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CMIS_Form.resx">
+    <EmbeddedResource Include="Products_GUI\CMIS_Form.resx">
       <DependentUpon>CMIS_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Products_GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -179,7 +180,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TestForm.resx">
+    <EmbeddedResource Include="Products_GUI\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
