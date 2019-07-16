@@ -47,5 +47,26 @@ namespace SNOEC_GUI
             this.Visible = false;
             form.Show();
         }
+
+        private void btnSelect_QSFP28_PSM4_Click(object sender, EventArgs e)
+        {
+            Form form = new QSFP28_PSM4_Form();
+            this.Visible = false;
+            form.Show();
+        }
+
+        private void btnSelect_Edemux_Click(object sender, EventArgs e)
+        {
+            Form form = new Edemux_Form();
+            this.Visible = false;
+            form.Show();
+        }
+
+        private void btnSelect_100G_DR1_Click(object sender, EventArgs e)
+        {
+            Form form = new _100G_DR1_From();
+            this.Visible = false;
+            form.Show();
+        }
     }
 }

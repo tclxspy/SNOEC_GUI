@@ -98,6 +98,24 @@
     <Compile Include="HelpForm.Designer.cs">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edemux_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edemux_Form.Designer.cs">
+      <DependentUpon>Edemux_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_100G_DR1_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="_100G_DR1_Form.Designer.cs">
+      <DependentUpon>_100G_DR1_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QSFP28_PSM4_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QSFP28_PSM4_Form.Designer.cs">
+      <DependentUpon>QSFP28_PSM4_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edemux_Form.resx">
+      <DependentUpon>Edemux_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_100G_DR1_Form.resx">
+      <DependentUpon>_100G_DR1_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QSFP28_PSM4_Form.resx">
+      <DependentUpon>QSFP28_PSM4_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductSelectForm.resx">
       <DependentUpon>ProductSelectForm.cs</DependentUpon>

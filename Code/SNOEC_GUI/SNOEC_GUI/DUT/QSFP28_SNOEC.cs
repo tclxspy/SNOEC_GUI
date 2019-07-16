@@ -21,7 +21,8 @@ namespace SNOEC_GUI
             Inno = 1,
             Generic = 2,
             Luxshare = 3,
-            Nopasswords = 4
+            Nopasswords = 4,
+            Nopasswords_Nopage = 5
         }
 
         public QSFP28_SNOEC(DUTCoeffControlByPN tabe)
@@ -104,10 +105,13 @@ namespace SNOEC_GUI
             }
             else if (company == Company.Nopasswords)
             {
-                //no code
                 byte[] buff = new byte[1];
                 buff[0] = (byte)page;
                 IOPort.WriteReg(DUT_USB_Port, 0xA0, 127, softHard, buff);
+            }
+            else if (company == Company.Nopasswords_Nopage)
+            {
+                //no code
             }
         }
 
