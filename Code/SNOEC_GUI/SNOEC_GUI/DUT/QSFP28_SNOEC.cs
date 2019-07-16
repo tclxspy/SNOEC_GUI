@@ -105,6 +105,9 @@ namespace SNOEC_GUI
             else if (company == Company.Nopasswords)
             {
                 //no code
+                byte[] buff = new byte[1];
+                buff[0] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 127, softHard, buff);
             }
         }
 
