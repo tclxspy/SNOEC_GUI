@@ -110,7 +110,6 @@
             this.label76 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
-            this.numericUpDownIC_RegAddress = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownAD5317R_Data = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownIC_Bytes = new System.Windows.Forms.NumericUpDown();
             this.label79 = new System.Windows.Forms.Label();
@@ -133,6 +132,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBoxSoft_I2C = new System.Windows.Forms.CheckBox();
             this.labelTitle = new System.Windows.Forms.Label();
+            this.txtMacomChip_Address = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -144,7 +144,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPageIC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).BeginInit();
             this.panel3.SuspendLayout();
@@ -643,6 +642,7 @@
             // 
             // tabPageIC
             // 
+            this.tabPageIC.Controls.Add(this.txtMacomChip_Address);
             this.tabPageIC.Controls.Add(this.btnAD5371R_Set);
             this.tabPageIC.Controls.Add(this.checkBoxCSource_EN2);
             this.tabPageIC.Controls.Add(this.dataGridView5);
@@ -658,7 +658,6 @@
             this.tabPageIC.Controls.Add(this.label76);
             this.tabPageIC.Controls.Add(this.label2);
             this.tabPageIC.Controls.Add(this.label82);
-            this.tabPageIC.Controls.Add(this.numericUpDownIC_RegAddress);
             this.tabPageIC.Controls.Add(this.numericUpDownAD5317R_Data);
             this.tabPageIC.Controls.Add(this.numericUpDownIC_Bytes);
             this.tabPageIC.Controls.Add(this.label79);
@@ -970,20 +969,6 @@
             this.label82.TabIndex = 20;
             this.label82.Text = "0";
             // 
-            // numericUpDownIC_RegAddress
-            // 
-            this.numericUpDownIC_RegAddress.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.numericUpDownIC_RegAddress.Location = new System.Drawing.Point(323, 36);
-            this.numericUpDownIC_RegAddress.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.numericUpDownIC_RegAddress.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numericUpDownIC_RegAddress.Name = "numericUpDownIC_RegAddress";
-            this.numericUpDownIC_RegAddress.Size = new System.Drawing.Size(59, 23);
-            this.numericUpDownIC_RegAddress.TabIndex = 20;
-            // 
             // numericUpDownAD5317R_Data
             // 
             this.numericUpDownAD5317R_Data.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1267,6 +1252,16 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "QSFP28 PSM4 With MZ Silicon Chip ";
             // 
+            // txtMacomChip_Address
+            // 
+            this.txtMacomChip_Address.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMacomChip_Address.Location = new System.Drawing.Point(310, 35);
+            this.txtMacomChip_Address.Name = "txtMacomChip_Address";
+            this.txtMacomChip_Address.Size = new System.Drawing.Size(61, 23);
+            this.txtMacomChip_Address.TabIndex = 28;
+            this.txtMacomChip_Address.Text = "0x00";
+            this.txtMacomChip_Address.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // QSFP28_PSM4_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -1301,7 +1296,6 @@
             this.tabPageIC.ResumeLayout(false);
             this.tabPageIC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_RegAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAD5317R_Data)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIC_Bytes)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -1367,7 +1361,6 @@
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDownIC_RegAddress;
         private System.Windows.Forms.NumericUpDown numericUpDownIC_Bytes;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.DataGridView dataGridView5;
@@ -1421,6 +1414,7 @@
         private System.Windows.Forms.Button btnLoad_I2C_Batch;
         private System.Windows.Forms.TextBox txtI2C_Batch_FilePath;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.TextBox txtMacomChip_Address;
     }
 }
 

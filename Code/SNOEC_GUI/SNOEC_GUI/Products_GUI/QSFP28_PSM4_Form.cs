@@ -261,7 +261,7 @@ namespace SNOEC_GUI
                     byte[] buffer = new byte[(int)this.numericUpDownIC_Bytes.Value];
                     if ((int)this.numericUpDownIC_Bytes.Value > 0)
                     {
-                        byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
+                        byte ic_regAdd = Algorithm.HexStringToBytes(this.txtMacomChip_Address.Text)[0];
                         for (int i = 0; i < buffer.Length; i++)
                         {
                             dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd, 1 });
@@ -319,7 +319,7 @@ namespace SNOEC_GUI
                         return;
                     }
 
-                    byte ic_regAdd = (byte)this.numericUpDownIC_RegAddress.Value;
+                    byte ic_regAdd = (byte)Algorithm.HexStringToBytes(this.txtMacomChip_Address.Text)[0]; 
                     for (int i = 0; i < writeData.Length; i++)
                     {
                         dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0xC0, 0x80, new byte[] { ic_regAdd });
@@ -621,7 +621,7 @@ namespace SNOEC_GUI
             {
                 this.comboBoxIC_Operation.SelectedIndex = 0;
                 this.comboBoxIC_Operation.Enabled = true;
-                this.numericUpDownIC_RegAddress.Enabled = true;
+                this.txtMacomChip_Address.Enabled = true;
                 this.numericUpDownIC_Bytes.Enabled = true;
                 this.checkBoxCSource_EN1.Enabled = false;
                 this.checkBoxCSource_EN2.Enabled = false;
@@ -631,7 +631,7 @@ namespace SNOEC_GUI
                 this.comboBoxIC_Operation.SelectedIndex = 1;
                 this.numericUpDownIC_Bytes.Value = 2;
                 this.comboBoxIC_Operation.Enabled = false;
-                this.numericUpDownIC_RegAddress.Enabled = false;
+                this.txtMacomChip_Address.Enabled = false;
                 this.numericUpDownIC_Bytes.Enabled = false;
                 this.checkBoxCSource_EN1.Enabled = true;
                 this.checkBoxCSource_EN2.Enabled = true;
