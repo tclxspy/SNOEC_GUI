@@ -26,14 +26,18 @@ namespace SNOEC_GUI
         {
             if (company == Company.SNOEC)
             {
-                byte[] buff = new byte[6];
-                buff[0] = 0x12;
-                buff[1] = 0x34;
-                buff[2] = 0x56;
-                buff[3] = 0x78;
-                buff[4] = (byte)bank;
-                buff[5] = (byte)page;
-                IOPort.WriteReg(DUT_USB_Port, 0xA0, 122, softHard, buff);
+                //byte[] buff = new byte[6];
+                //buff[0] = 0x12;
+                //buff[1] = 0x34;
+                //buff[2] = 0x56;
+                //buff[3] = 0x78;
+                //buff[4] = (byte)bank;
+                //buff[5] = (byte)page;
+                //IOPort.WriteReg(DUT_USB_Port, 0xA0, 122, softHard, buff);
+
+                byte[] buff = new byte[1];
+                buff[0] = (byte)page;
+                IOPort.WriteReg(DUT_USB_Port, 0xA0, 127, softHard, buff);
 
                 //byte[] buff = new byte[6];
                 //buff[0] = 0x93;

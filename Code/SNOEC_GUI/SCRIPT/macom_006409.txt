@@ -1,0 +1,11 @@
+Index	RegAddress	Value	Comments
+0x00	0x0203	0xA0B0	Power on bar clock monitor and set DIV16, 0.875G,0X
+0x01	0x0304	0xA0B1	Power on bar clock monitor LDO, set bit 2 to High
+0x02	0x0305	0xA0B2	CLK driver amplitude: [24:20]
+0x03	0x0206	0xA0B3	 [31:25]: adjusts CLK mon amplitude
+0x04	0x0207	0xA0B4	[31:27]: Adjusts CM for CLK mon driver through PMOS bleeder
+0x05	0x0208	0xA0B5	CLKmon bandgap: Controls master current of clkmon bandgap, calibrates by R-cal, 0000 = 50uA (default), 0111 = 58.75uA, 1000=40uA
+0x06	0x0209	0xA0B6	Need to check bit 5 default value is Low? For LTX0, 0: selects HRX1, 1 selects HRX3, For LTX1, 0: selects HRX3, 1: selects HRX1
+0x07	0x020A	0xA0B7	Default is 0
+0x08	0x020B	0xA0B8	bit 0 set High, Power up HRX3
+0x09	0x0212	0xA0B9	Bit 5 set High, Enable PLL LDO

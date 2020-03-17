@@ -35,6 +35,7 @@
             this.btnSelect_Edemux = new System.Windows.Forms.Button();
             this.btnSelect_100G_DR1 = new System.Windows.Forms.Button();
             this.btnSelect_400G_DR4 = new System.Windows.Forms.Button();
+            this.btnSFP28 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSelect_QSFP28
@@ -107,12 +108,26 @@
             this.btnSelect_400G_DR4.TabIndex = 3;
             this.btnSelect_400G_DR4.Text = "400G DR4 Chip";
             this.btnSelect_400G_DR4.UseVisualStyleBackColor = false;
+            this.btnSelect_400G_DR4.Click += new System.EventHandler(this.btnSelect_400G_DR4_Click);
+            // 
+            // btnSFP28
+            // 
+            this.btnSFP28.BackColor = System.Drawing.Color.Transparent;
+            this.btnSFP28.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.btnSFP28.Location = new System.Drawing.Point(32, 238);
+            this.btnSFP28.Name = "btnSFP28";
+            this.btnSFP28.Size = new System.Drawing.Size(111, 68);
+            this.btnSFP28.TabIndex = 3;
+            this.btnSFP28.Text = "SFP28 EPIC";
+            this.btnSFP28.UseVisualStyleBackColor = false;
+            this.btnSFP28.Click += new System.EventHandler(this.btnSFP28_Click);
             // 
             // ProductSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 239);
+            this.ClientSize = new System.Drawing.Size(571, 336);
+            this.Controls.Add(this.btnSFP28);
             this.Controls.Add(this.btnSelect_400G_DR4);
             this.Controls.Add(this.btnSelect_100G_DR1);
             this.Controls.Add(this.btnSelect_Edemux);
@@ -139,5 +154,6 @@
         private System.Windows.Forms.Button btnSelect_Edemux;
         private System.Windows.Forms.Button btnSelect_100G_DR1;
         private System.Windows.Forms.Button btnSelect_400G_DR4;
+        private System.Windows.Forms.Button btnSFP28;
     }
 }

@@ -68,5 +68,19 @@ namespace SNOEC_GUI
             this.Visible = false;
             form.Show();
         }
+
+        private void btnSelect_400G_DR4_Click(object sender, EventArgs e)
+        {
+            Form form = new DR4_TX_Form();
+            this.Visible = false;
+            form.Show();
+        }
+
+        private void btnSFP28_Click(object sender, EventArgs e)
+        {
+            Form form = new SFP28_Form();
+            this.Visible = false;
+            form.Show();
+        }
     }
 }

@@ -58,6 +58,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>C:\Windows\assembly\GAC_32\Ivi.Visa.Interop\5.7.0.0__a128c98f1d7717c1\Ivi.Visa.Interop.dll</HintPath>
     </Reference>
+    <Reference Include="MCP2210DLL-M-dotNet4, Version=1.0.5415.18842, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MCP2210DLL-M-dotNet4.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -82,15 +86,24 @@
     <Compile Include="Algorithm.cs" />
     <Compile Include="DUT\EEPROM_SNOEC.cs" />
     <Compile Include="DUT\IOPort.cs" />
+    <Compile Include="DUT\MACOM_006409.cs" />
     <Compile Include="DUT\OnEasyB_I2C.cs" />
     <Compile Include="DUT\QSFP28_SNOEC.cs" />
     <Compile Include="DUT\QSFP_DD_SNOEC.cs" />
+    <Compile Include="DUT\SFP28_SNOEC.cs" />
+    <Compile Include="DUT\USB_SPI.cs" />
     <Compile Include="FolderPath.cs" />
     <Compile Include="Products_GUI\CalculateForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Products_GUI\CalculateForm.Designer.cs">
       <DependentUpon>CalculateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Products_GUI\DR4_TX_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products_GUI\DR4_TX_Form.Designer.cs">
+      <DependentUpon>DR4_TX_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Products_GUI\HelpForm.cs">
       <SubType>Form</SubType>
@@ -104,6 +117,12 @@
     <Compile Include="Products_GUI\Edemux_Form.Desinger.cs">
       <DependentUpon>Edemux_Form.cs</DependentUpon>
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products_GUI\SFP28_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products_GUI\SFP28_Form.Designer.cs">
+      <DependentUpon>SFP28_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Products_GUI\_100G_DR1_Form.cs">
       <SubType>Form</SubType>
@@ -149,11 +168,17 @@
     <EmbeddedResource Include="Products_GUI\CalculateForm.resx">
       <DependentUpon>CalculateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Products_GUI\DR4_TX_Form.resx">
+      <DependentUpon>DR4_TX_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Products_GUI\HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products_GUI\Edemux_Form.resx">
       <DependentUpon>Edemux_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products_GUI\SFP28_Form.resx">
+      <DependentUpon>SFP28_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products_GUI\_100G_DR1_Form.resx">
       <DependentUpon>_100G_DR1_Form.cs</DependentUpon>
