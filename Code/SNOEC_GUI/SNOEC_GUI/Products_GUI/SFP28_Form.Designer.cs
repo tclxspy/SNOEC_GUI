@@ -1122,6 +1122,7 @@
             this.btnBrowse_I2C_Batch_File.TabIndex = 29;
             this.btnBrowse_I2C_Batch_File.Text = "Browse";
             this.btnBrowse_I2C_Batch_File.UseVisualStyleBackColor = true;
+            this.btnBrowse_I2C_Batch_File.Click += new System.EventHandler(this.btnBrowse_I2C_Batch_File_Click);
             // 
             // btnLoad_I2C_Batch
             // 
@@ -1131,6 +1132,7 @@
             this.btnLoad_I2C_Batch.TabIndex = 27;
             this.btnLoad_I2C_Batch.Text = "Load";
             this.btnLoad_I2C_Batch.UseVisualStyleBackColor = true;
+            this.btnLoad_I2C_Batch.Click += new System.EventHandler(this.btnLoad_I2C_Batch_Click);
             // 
             // txtI2C_Batch_FilePath
             // 
@@ -1160,6 +1162,7 @@
             this.btnBrowseSetting.TabIndex = 29;
             this.btnBrowseSetting.Text = "Browse";
             this.btnBrowseSetting.UseVisualStyleBackColor = true;
+            this.btnBrowseSetting.Click += new System.EventHandler(this.btnBrowseSetting_Click);
             // 
             // btnLoadSetting
             // 
@@ -1169,6 +1172,7 @@
             this.btnLoadSetting.TabIndex = 27;
             this.btnLoadSetting.Text = "Load";
             this.btnLoadSetting.UseVisualStyleBackColor = true;
+            this.btnLoadSetting.Click += new System.EventHandler(this.btnLoadSetting_Click);
             // 
             // txtSettingFilePath
             // 

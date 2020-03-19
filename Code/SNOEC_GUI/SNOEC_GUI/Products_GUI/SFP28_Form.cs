@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SNOEC_GUI
 {
@@ -361,6 +362,327 @@ namespace SNOEC_GUI
             else
             {
                 this.btnReadWrite.Text = "Read";
+            }
+        }
+
+        private void btnBrowse_I2C_Batch_File_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Multiselect = true;//该值确定是否可以选择多个文件
+                dialog.Title = "请选择文件夹";
+                dialog.Filter = "EXCEL文件|*.xlsx|TXT文件|*.txt";
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.txtI2C_Batch_FilePath.Text = dialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "file path error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// 将Excel文件读取到DataTable
+        /// </summary>
+        /// <param name="excelFilePath"></param>
+        /// <returns></returns>
+        public DataTable GetExcelTable(string excelFilePath)
+        {
+            try
+            {
+                Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Sheets sheets;
+                Microsoft.Office.Interop.Excel.Workbook workbook;
+                System.Data.DataTable dt = new System.Data.DataTable();
+                if (app == null)
+                {
+                    return null;
+                }
+
+
+                object oMissiong = System.Reflection.Missing.Value;
+                workbook = app.Workbooks.Open(excelFilePath, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong, oMissiong);
+
+
+                //将数据读入到DataTable中——Start   
+                sheets = workbook.Worksheets;
+                Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)sheets.get_Item(1);
+                if (worksheet == null)
+                    return null;
+
+
+                string cellContent;
+                int iRowCount = worksheet.UsedRange.Rows.Count;
+                int iColCount = worksheet.UsedRange.Columns.Count;
+                Microsoft.Office.Interop.Excel.Range range;
+
+
+                for (int iRow = 1; iRow <= iRowCount; iRow++)
+                {
+                    DataRow dr = dt.NewRow();
+
+
+                    for (int iCol = 1; iCol <= iColCount; iCol++)
+                    {
+                        range = (Microsoft.Office.Interop.Excel.Range)worksheet.Cells[iRow, iCol];
+
+
+                        cellContent = (range.Value2 == null) ? "" : range.Text.ToString();
+
+
+                        if (iRow == 1)
+                        {
+                            dt.Columns.Add(cellContent);
+                        }
+                        else
+                        {
+                            dr[iCol - 1] = cellContent;
+                        }
+                    }
+
+
+                    if (iRow != 1)
+                        dt.Rows.Add(dr);
+                }
+
+
+                //将数据读入到DataTable中——End
+                workbook.Close(false, oMissiong, oMissiong);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                workbook = null;
+                app.Workbooks.Close();
+                app.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(app);
+                app = null;
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                //add to kill excel.exe -nicholas 20181128
+                foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName("Excel"))
+                {
+                    if (string.IsNullOrEmpty(p.MainWindowTitle))
+                    {
+                        p.Kill();
+                    }
+                }
+
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private void btnLoad_I2C_Batch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IOPort.SoftHard softHard = IOPort.SoftHard.SerialPort;
+                switch (this.comboBoxSoftHard.Text)
+                {
+                    case "OnEasyB_I2C":
+                        softHard = IOPort.SoftHard.OnEasyB_I2C;
+                        try
+                        {
+                            byte i, re;
+                            OnEasyB_I2C.serialNumber = new StringBuilder(255);
+                            byte MaxDevNum = OnEasyB_I2C.USBIO_GetMaxNumofDev();
+                            List<String> list = new List<string>();
+
+                            for (i = 0; i < MaxDevNum; i++)
+                            {
+                                re = OnEasyB_I2C.USBIO_GetSerialNo(i, OnEasyB_I2C.serialNumber);
+                                if (re != 0)
+                                {
+                                    list.Add(OnEasyB_I2C.serialNumber.ToString());
+                                }
+                            }
+
+                            if (list.Count == 0)
+                            {
+                                MessageBox.Show("Disconnect to OnEasyB_I2C", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Disconnect to OnEasyB_I2C", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        this.comboBoxDeviceIndex.SelectedIndex = 0;
+                        break;
+
+                    case "SerialPort":
+                        softHard = IOPort.SoftHard.SerialPort;
+                        break;
+
+                    default:
+                        softHard = IOPort.SoftHard.SerialPort;
+                        break;
+                }
+
+                if (this.txtI2C_Batch_FilePath.Text == "")
+                {
+                    return;
+                }
+
+                this.btnLoad_I2C_Batch.Enabled = false;
+                this.btnLoad_I2C_Batch.BackColor = Color.Yellow;
+                this.btnLoad_I2C_Batch.Refresh();
+
+                DirectoryInfo directoryInfo = Directory.GetParent(this.txtI2C_Batch_FilePath.Text);
+                if (!directoryInfo.Exists)
+                {
+                    MessageBox.Show("File is no exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnLoadSetting.Enabled = true;
+                    this.btnLoadSetting.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                DataTable setting_table = this.GetExcelTable(this.txtI2C_Batch_FilePath.Text);
+
+                for (int row = 0; row < setting_table.Rows.Count; row++)
+                {
+                    byte[] deviceAddress = new byte[1];
+                    int regAddress = 0;
+                    byte[] page_num = new byte[1];
+                    byte[] writeData = new byte[1];
+
+                    try
+                    {
+                        deviceAddress = Algorithm.HexStringToBytes(setting_table.Rows[row][0].ToString());
+                        page_num = Algorithm.HexStringToBytes(setting_table.Rows[row][1].ToString());
+
+                        byte[] buf_regAdress = Algorithm.HexStringToBytes(setting_table.Rows[row][2].ToString());
+
+                        for (int i = 0; i < buf_regAdress.Length; i++)
+                        {
+                            regAddress += buf_regAdress[i] << 8 * i;
+                        }
+
+                        writeData = Algorithm.HexStringToBytes(setting_table.Rows[row][3].ToString());
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Unfomart", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.btnLoad_I2C_Batch.Enabled = true;
+                        this.btnLoad_I2C_Batch.BackColor = SystemColors.Control;
+                        return;
+                    }
+
+                    byte[] buff = dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress[0], page_num[0], regAddress, writeData);
+                    
+                    if (buff == null)
+                    {
+                        this.btnLoad_I2C_Batch.Enabled = true;
+                        this.btnLoad_I2C_Batch.BackColor = SystemColors.Control;
+                        return;
+                    }
+                }
+
+                this.btnLoad_I2C_Batch.Enabled = true;
+                this.btnLoad_I2C_Batch.BackColor = SystemColors.Control;
+                MessageBox.Show("Done", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBrowseSetting_Click(object sender, EventArgs e)
+        {
+            try
+            {              
+
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Multiselect = true;//该值确定是否可以选择多个文件
+                dialog.Title = "请选择文件夹";
+                dialog.Filter = "EXCEL文件|*.xlsx";
+                if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    this.txtSettingFilePath.Text = dialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "file path error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLoadSetting_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.btnLoadSetting.Enabled = false;
+                this.btnLoadSetting.BackColor = Color.Yellow;
+                this.btnLoadSetting.Refresh();
+
+                if (this.txtSettingFilePath.Text == "")
+                {
+                    return;
+                }
+
+                DirectoryInfo directoryInfo = Directory.GetParent(this.txtSettingFilePath.Text);
+                if (!directoryInfo.Exists)
+                {
+                    MessageBox.Show("File is no exist", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.btnLoadSetting.Enabled = true;
+                    this.btnLoadSetting.BackColor = SystemColors.Control;
+                    return;
+                }
+
+                DataTable setting_table = this.GetExcelTable(this.txtSettingFilePath.Text);
+                int cycles = setting_table.Rows.Count / 8;
+
+                byte[] buff = new byte[128];
+                int i = 0;
+                for (int row = 0; row < setting_table.Rows.Count; row++)
+                {
+                    for (int colunm = 0; colunm < 16; colunm++)
+                    {
+                        object ob = setting_table.Rows[row][colunm + 1].ToString();
+                        if (ob == null)
+                        {
+                            this.btnLoadSetting.Enabled = true;
+                            this.btnLoadSetting.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        buff[i++] = byte.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                    }
+                    if (i == 128)
+                    {
+                        i = 0;
+                        object ob = setting_table.Rows[row - 7][0].ToString();
+                        if (ob == null)
+                        {
+                            this.btnLoadSetting.Enabled = true;
+                            this.btnLoadSetting.BackColor = SystemColors.Control;
+                            return;
+                        }
+                        short page_addr = short.Parse((string)ob, System.Globalization.NumberStyles.HexNumber);
+                        byte page_num = (byte)((page_addr >> 8) & 0xFF);
+                        byte addr_start = (byte)(page_addr & 0xFF);
+                        dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, page_num, addr_start, buff);
+                    }
+
+                }
+
+                dut.WriteReg(this.comboBoxDeviceIndex.SelectedIndex, deviceAddress, 0x06, 0x87, new byte[1] { 1 });
+
+                this.btnLoadSetting.Enabled = true;
+                this.btnLoadSetting.BackColor = SystemColors.Control;
+                MessageBox.Show("Done", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "No link.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
